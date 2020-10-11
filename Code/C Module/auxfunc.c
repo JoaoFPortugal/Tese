@@ -199,17 +199,10 @@ ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
 int dominated(int *dominated, Label  *dominatorlabel, int size){
 
 
-    printf("Inspecting labels\n");
-    printVector(dominated,2);
 
     if(dominatorlabel == NULL){
-      printf("\nNon - Dominated\n");
       return 0;
     }
-
-    printVector(dominatorlabel->value,2);
-    printf("\n\n");
-
 
     int *dominator = dominatorlabel->value;
 
@@ -223,11 +216,9 @@ int dominated(int *dominated, Label  *dominatorlabel, int size){
         x2 = dominator[i];
 
         if(x1>x2){
-          printf("Non - Dominated\n");
             return 0; //label 1 is non dominated
         }
     }
-    printf("Dominated\n");
     return 1; //label 1 is dominated;
 }
 
@@ -279,8 +270,10 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
     Label *start1 = Sj_1->label;
     Label *start2 = Sj_aw->label;
 
+    printf("HELLO!\n");
+    printVector(start2->value,2);
 
-    int *sum;
+
     int res;
 
     Label *head = result->label;
@@ -305,11 +298,17 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             if (v_dominated != 1) {
 
                  if(head == NULL){
+                     printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
                       result->label = tmp;
                       head = result->label;
                   }
 
                   else{
+                      printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
                       head->next = tmp;
                       head = head->next;
                   }
@@ -322,10 +321,13 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
 
         else if (start1 == NULL) {
 
+            int *sum;
+            sum = labelsum(start2->value, v, size);
+
             Label *tmp = (struct Label *) malloc(sizeof(struct Label));
             tmp->next = NULL;
             tmp->value = malloc(size * sizeof(int));
-            memcpy(tmp->value,start2->value,size*sizeof(int));
+            memcpy(tmp->value,sum,size*sizeof(int));
 
 
             int v_dominated = dominated(tmp->value, head, size);
@@ -333,11 +335,17 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             if (v_dominated != 1) {
 
                  if(head == NULL){
+                     printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
                       result->label = tmp;
                       head = result->label;
                   }
 
                   else{
+                      printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
                       head->next = tmp;
                       head = head->next;
                   }
@@ -348,15 +356,14 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             start2 = start2->next;
         }
 
-        else {
-
-            printf("start2 tag is: %d\n ", Sj_aw->tag);
+        else{
+            int *sum;
             sum = labelsum(start2->value, v, size);
+
             res = lexmin(start1->value, sum,size);
 
 
             if (res == 1) {
-
                 Label *tmp = (struct Label *) malloc(sizeof(struct Label));
                 tmp->next = NULL;
                 tmp->value = malloc(size * sizeof(int));
@@ -370,13 +377,19 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                 if (v_dominated != 1) {
 
                      if(head == NULL){
-                         result->label = tmp;
-                          head = result->label;
+                       printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
+                       result->label = tmp;
+                       head = result->label;
                     }
 
                       else{
-                          head->next = tmp;
-                          head = head->next;
+                        printf("\n Adding vector to result\n");
+                        printVector(tmp->value,2);
+                        printf("\n");
+                        head->next = tmp;
+                        head = head->next;
                   }
             }
                 start1 = start1->next;
@@ -390,7 +403,7 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   tmp->next = NULL;
                   tmp->value = malloc(size * sizeof(int));
 
-                  memcpy(tmp->value,start2->value,size*sizeof(int));
+                  memcpy(tmp->value,sum,size*sizeof(int));
 
 
                   int v_dominated = dominated(tmp->value, head, size);
@@ -398,11 +411,17 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   if (v_dominated != 1) {
 
                       if(head == NULL){
+                          printf("\n Adding vector to result\n");
+                          printVector(tmp->value,2);
+                          printf("\n");
                           result->label = tmp;
                           head = result->label;
                       }
 
                       else{
+                        printf("\n Adding vector to result\n");
+                       printVector(tmp->value,2);
+                       printf("\n");
                           head->next = tmp;
                           head = head->next;
                      }
@@ -468,12 +487,14 @@ int *neg(int* src, int size){
 
 
 int lexmin(int *label1, int *label2, int size){
-
     int i;
 
     for(i=0;i<size;i++){
         if(label1[i]<label2[i]){
             return 1;
+        }
+        else if(label2[i]<label1[i]){
+          return 0;
         }
     }
     return 0;
@@ -482,16 +503,17 @@ int lexmin(int *label1, int *label2, int size){
 
 
 
-int *labelsum(int  *src1, int  *src2, size_t len){
+int *labelsum(int  *src1, int  *src2, int len){
 
+    int *v = (int*)malloc(sizeof(int)*len);
     int i = 0;
 
     for(i=0;i<len;i++){
         int negv = -src2[i];
-        src1[i] = src1[i] + negv;
+       v[i] = src1[i] + negv;
     }
 
-    return src1;
+    return v;
 }
 
 
@@ -583,4 +605,3 @@ void freeLabels(Label *label){
       free (prev);
     }
 }
-

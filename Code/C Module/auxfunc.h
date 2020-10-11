@@ -41,7 +41,7 @@ ItemLabels * sumVectors(ItemLabels *header , ItemLabels * source, int *v, int a,
 ItemLabels * copyVector(ItemLabels *S, ItemLabels *S_2,int a,int size);
 ItemLabels * addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, int size);
 int lexmin(int *label1, int *label2, int size);
-int *labelsum(int  *src1, int  *src2, size_t len);
+int *labelsum(int  *src1, int  *src2, int len);
 int dominated(int *label1, Label  *label2, int size);
 ItemLabels *compareLabels(ItemLabels *result, ItemLabels *Sj_1, ItemLabels *Sj_aw, int * v, int size);
 ItemLabels *initItems(ItemLabels *S, int w, int *v, int size);
@@ -52,6 +52,7 @@ int * addV(int *V, int a, int elements);
 void freeItemLabels(ItemLabels **res, int numberofitems);
 void freeItemLabel(ItemLabels *item);
 void freeLabels(Label *label);
+int *setSum(int *v, int size);
 
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

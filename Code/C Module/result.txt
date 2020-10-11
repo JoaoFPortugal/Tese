@@ -55,17 +55,26 @@ Copying Vector:
 a is: 1
 a is: 2
 'a' and a-2 belong to T, comparing Labels
-start2 tag is: 0
- Inspecting labels
+HELLO!
+0 0 
+Inspecting labels
 -9 -2 
 
 Non - Dominated
+
+ Adding vector to result
+-9 -2 
+
 Inspecting labels
 -3 -10 
 -9 -2 
 
 
 Non - Dominated
+
+ Adding vector to result
+-3 -10 
+
 a is: 3
 only 'a' belongs to T
 
@@ -84,17 +93,26 @@ Copying Vector:
 
 a is: 5
 'a' and a-2 belong to T, comparing Labels
-start2 tag is: 3
- Inspecting labels
+HELLO!
+-8 -3 
+Inspecting labels
 -17 -5 
 
 Non - Dominated
+
+ Adding vector to result
+-17 -5 
+
 Inspecting labels
 -11 -13 
 -17 -5 
 
 
 Non - Dominated
+
+ Adding vector to result
+-11 -13 
+
 a is: 6
 a is: 7
 only a-wj belongs to T
@@ -140,17 +158,26 @@ Copying Vector:
 
 a is: 4
 'a' and a-4 belong to T, comparing Labels
-start2 tag is: 0
- Inspecting labels
+HELLO!
+0 0 
+Inspecting labels
 -12 -12 
 
 Non - Dominated
+
+ Adding vector to result
+-12 -12 
+
 Inspecting labels
 -7 -6 
 -12 -12 
 
 
 Non - Dominated
+
+ Adding vector to result
+-7 -6 
+
 a is: 5
 only 'a' belongs to T
 
@@ -175,17 +202,26 @@ Copying Vector:
 
 a is: 7
 'a' and a-4 belong to T, comparing Labels
-start2 tag is: 3
- Inspecting labels
+HELLO!
+-8 -3 
+Inspecting labels
 -20 -15 
 
 Non - Dominated
+
+ Adding vector to result
+-20 -15 
+
 Inspecting labels
 -15 -9 
 -20 -15 
 
 
 Non - Dominated
+
+ Adding vector to result
+-15 -9 
+
 a is: 8
 only a-wj belongs to T
 
@@ -231,17 +267,26 @@ Copying Vector:
 
 a is: 3
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 0
- Inspecting labels
+HELLO!
+0 0 
+Inspecting labels
 -8 -3 
 
 Non - Dominated
+
+ Adding vector to result
+-8 -3 
+
 Inspecting labels
 -6 -9 
 -8 -3 
 
 
 Non - Dominated
+
+ Adding vector to result
+-6 -9 
+
 a is: 4
 only 'a' belongs to T
 
@@ -255,123 +300,193 @@ Copying Vector:
 
 a is: 5
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 2
- Inspecting labels
+HELLO!
+-9 -2 
+Inspecting labels
 -17 -5 
 
 Non - Dominated
-start2 tag is: 2
- Inspecting labels
--21 -20 
+
+ Adding vector to result
+-17 -5 
+
+Inspecting labels
+-15 -11 
 -17 -5 
 
 
-Dominated
-start2 tag is: 2
- Inspecting labels
+Non - Dominated
+
+ Adding vector to result
+-15 -11 
+
+Inspecting labels
 -11 -13 
--17 -5 
+-15 -11 
 
 
 Non - Dominated
+
+ Adding vector to result
+-11 -13 
+
 Inspecting labels
 -9 -19 
 -11 -13 
 
 
 Non - Dominated
+
+ Adding vector to result
+-9 -19 
+
 a is: 6
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 3
- Inspecting labels
+HELLO!
+-8 -3 
+Inspecting labels
 -16 -8 
 
 Non - Dominated
-start2 tag is: 3
- Inspecting labels
--20 -21 
+
+ Adding vector to result
+-16 -8 
+
+Inspecting labels
+-14 -12 
 -16 -8 
 
 
-Dominated
+Non - Dominated
+
+ Adding vector to result
+-14 -12 
+
 Inspecting labels
 -10 -16 
--16 -8 
+-14 -12 
 
 
 Non - Dominated
+
+ Adding vector to result
+-10 -16 
+
 a is: 7
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 4
- Inspecting labels
+HELLO!
+-12 -12 
+Inspecting labels
 -20 -15 
 
 Non - Dominated
-start2 tag is: 4
- Inspecting labels
--24 -30 
+
+ Adding vector to result
+-20 -15 
+
+Inspecting labels
+-18 -21 
 -20 -15 
 
 
-Dominated
-start2 tag is: 4
- Inspecting labels
+Non - Dominated
+
+ Adding vector to result
+-18 -21 
+
+Inspecting labels
 -15 -9 
--20 -15 
+-18 -21 
 
 
 Non - Dominated
+
+ Adding vector to result
+-15 -9 
+
 Inspecting labels
 -13 -15 
 -15 -9 
 
 
 Non - Dominated
+
+ Adding vector to result
+-13 -15 
+
 a is: 8
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 5
- Inspecting labels
--19 -18 
-
-Non - Dominated
+HELLO!
+-17 -5 
 Inspecting labels
 -23 -14 
--19 -18 
-
 
 Non - Dominated
+
+ Adding vector to result
+-23 -14 
+
 Inspecting labels
--11 -13 
+-19 -18 
 -23 -14 
 
 
 Non - Dominated
+
+ Adding vector to result
+-19 -18 
+
+Inspecting labels
+-17 -22 
+-19 -18 
+
+
+Non - Dominated
+
+ Adding vector to result
+-17 -22 
+
 a is: 9
 'a' and a-3 belong to T, comparing Labels
-start2 tag is: 6
- Inspecting labels
+HELLO!
+-16 -8 
+Inspecting labels
 -24 -11 
 
 Non - Dominated
-start2 tag is: 6
- Inspecting labels
--28 -26 
+
+ Adding vector to result
+-24 -11 
+
+Inspecting labels
+-22 -17 
 -24 -11 
 
 
-Dominated
-start2 tag is: 6
- Inspecting labels
+Non - Dominated
+
+ Adding vector to result
+-22 -17 
+
+Inspecting labels
 -18 -19 
--24 -11 
+-22 -17 
 
 
 Non - Dominated
+
+ Adding vector to result
+-18 -19 
+
 Inspecting labels
 -16 -25 
 -18 -19 
 
 
 Non - Dominated
+
+ Adding vector to result
+-16 -25 
+
 
 
