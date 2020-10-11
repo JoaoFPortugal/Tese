@@ -8,56 +8,6 @@
 #include <string.h>
 
 
-double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
-    double theta, dist;
-    if ((lat1 == lat2) && (lon1 == lon2)) {
-        return 0;
-    }
-    else {
-        theta = lon1 - lon2;
-        dist = sin(deg2rad(lat1)) * sin(deg2rad(lat2)) + cos(deg2rad(lat1)) * cos(deg2rad(lat2)) * cos(deg2rad(theta));
-        dist = acos(dist);
-        dist = rad2deg(dist);
-        dist = dist * 60 * 1.1515;
-        switch(unit) {
-            case 'M':
-                break;
-            case 'K':
-                dist = dist * 1.609344;
-                break;
-            case 'N':
-                dist = dist * 0.8684;
-                break;
-        }
-        return (dist);
-    }
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::  This function converts decimal degrees to radians             :*/
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-double deg2rad(double deg) {
-    return (deg * pi / 180);
-}
-
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::  This function converts radians to decimal degrees             :*/
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-double rad2deg(double rad) {
-    return (rad * 180 / pi);
-}
-
-int insideArray(int *T, int a, int size){
-    int i=0;
-    while(i!=size){
-        if(T[i]==a){
-            return 1;
-        }
-        i++;
-    }
-    return 0;
-}
-
 ItemLabels *sumVectors(ItemLabels * _S , ItemLabels * source, int *v, int a, int a_wj, int size){
 
   ItemLabels *S = _S;
@@ -97,6 +47,7 @@ ItemLabels *sumVectors(ItemLabels * _S , ItemLabels * source, int *v, int a, int
     //while there are labels in S[j-1]^a-wj sum these to v and add them to S[j]^a
 
 
+    //copy label S[j-1]^a + v[j]
 
     while(origin!=NULL){
 
@@ -143,12 +94,15 @@ ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
     ItemLabels *header = S;
     ItemLabels *sndHeader = S_2;
 
+    //scan for S[j]^a
     while(header!=NULL){
         if(header->tag == a){
             break;
         }
         header = header->next;
     }
+
+    //scan for S[j-1]^a
 
     while(sndHeader!=NULL){
         if(sndHeader->tag == a){
@@ -164,6 +118,8 @@ ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
 
     Label *tocopy = sndHeader->label;
     Label *newlabel = header->label;
+
+    // Copy labels in S[j-1]^a to S[j]
 
     while(tocopy!=NULL){
 
@@ -206,8 +162,6 @@ int dominated(int *dominated, Label  *dominatorlabel, int size){
 
     int *dominator = dominatorlabel->value;
 
-
-
     int i;
     int x1;
     int x2;
@@ -224,8 +178,6 @@ int dominated(int *dominated, Label  *dominatorlabel, int size){
 
 
 
-
-
 ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, int size){
 
     ItemLabels *header = S;
@@ -233,6 +185,7 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
     ItemLabels *toadd = S_2;
 
 
+    //scan for S[j]^a
 
     while(header!=NULL){
         if(header->tag == a){
@@ -241,6 +194,8 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
         header = header->next;
     }
 
+    //scan for S[j-1]^a
+
     while(sndHeader!=NULL){
         if(sndHeader->tag == a){
             break;
@@ -248,12 +203,17 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
         sndHeader = sndHeader->next;
     }
 
+    //scan for S[j-1]^(a-wj)
+
     while(toadd!=NULL){
         if(toadd->tag == wj){
             break;
         }
         toadd = toadd->next;
     }
+
+    //compare labels between S[j-1]^a e S[j-1]^a-wj + v[j] to add to S[j]
+
     header = compareLabels(header,sndHeader,toadd,_v,size);
 
   return S;
@@ -270,10 +230,6 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
     Label *start1 = Sj_1->label;
     Label *start2 = Sj_aw->label;
 
-    printf("HELLO!\n");
-    printVector(start2->value,2);
-
-
     int res;
 
     Label *head = result->label;
@@ -281,9 +237,14 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
 
     while(1) {
 
+        //if both labels are null, there's nothing to add to S[j]
+
         if (start1 == NULL && start2 == NULL){
             break;
         }
+
+        //S[j-1]^a-wj is empty, so scan in S[j-1]^a for the remaining labels to add to S[j]
+        // if they are non dominated
 
         else if (start2 == NULL) {
 
@@ -298,7 +259,7 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             if (v_dominated != 1) {
 
                  if(head == NULL){
-                     printf("\n Adding vector to result\n");
+                     printf("\nAdding vector to result\n");
                        printVector(tmp->value,2);
                        printf("\n");
                       result->label = tmp;
@@ -306,7 +267,7 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   }
 
                   else{
-                      printf("\n Adding vector to result\n");
+                      printf("\nAdding vector to result\n");
                        printVector(tmp->value,2);
                        printf("\n");
                       head->next = tmp;
@@ -314,10 +275,17 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   }
             }
 
+            else{
+                free(tmp);
+            }
+
             //FALTA REMOVER O ELEMENTO
 
             start1 = start1->next;
         }
+
+        // S[j-1]^a is empty, so scan in S[j-1]^a-wj for the remaining labels add v[j] to them
+        // and add to S[j] if they are non dominated
 
         else if (start1 == NULL) {
 
@@ -351,10 +319,20 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   }
             }
 
+            else{
+                free(tmp);
+            }
+
             //FALTA REMOVER O ELEMENTO
 
             start2 = start2->next;
         }
+
+        //Compare label in S[j-1]^a and v[j] + S[j-1]^a-wj, get the lexicographic minimum
+        //and if it is non dominated comparing to the last label added to S[j] then add it to S[j]
+        //if label came from S[j-1]^a we can advance forward to the next label in S[j-1]^a and compare it
+        // to the label in S[j-1]^a-wj. Likewise process for the label inside S[j-1]^a-wj
+
 
         else{
             int *sum;
@@ -392,6 +370,10 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                         head = head->next;
                   }
             }
+                else{
+                    free(tmp);
+                }
+
                 start1 = start1->next;
 
             }
@@ -427,6 +409,10 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                      }
             }
 
+                  else{
+                      free(tmp);
+                  }
+
                 start2 = start2->next;
 
                 //FALTA REMOVER O ELEMENTO
@@ -435,6 +421,10 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
     }
     return result;
 }
+
+
+//init label in S[1]^0 to {0,...,0}
+//init label in S[1]^w1 to {-v1,...,-vr}
 
 ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
 
@@ -476,6 +466,10 @@ ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
 }
 
 
+
+//aux functions
+
+
 int *neg(int* src, int size){
   int i;
   int * p = malloc(size * sizeof(int));
@@ -502,11 +496,10 @@ int lexmin(int *label1, int *label2, int size){
 
 
 
-
 int *labelsum(int  *src1, int  *src2, int len){
 
     int *v = (int*)malloc(sizeof(int)*len);
-    int i = 0;
+    int i;
 
     for(i=0;i<len;i++){
         int negv = -src2[i];
@@ -568,6 +561,18 @@ int * addV(int *V, int a, int elements)
 
 
 
+int insideArray(int *T, int a, int size){
+    int i=0;
+    while(i!=size){
+        if(T[i]==a){
+            return 1;
+        }
+        i++;
+    }
+    return 0;
+}
+
+
 
 void freeItemLabels(ItemLabels **res, int numberofitems){
 
@@ -604,4 +609,41 @@ void freeLabels(Label *label){
       freed = freed->next;
       free (prev);
     }
+}
+
+
+
+double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+    double theta, dist;
+    if ((lat1 == lat2) && (lon1 == lon2)) {
+        return 0;
+    }
+    else {
+        theta = lon1 - lon2;
+        dist = sin(deg2rad(lat1)) * sin(deg2rad(lat2)) + cos(deg2rad(lat1)) * cos(deg2rad(lat2)) * cos(deg2rad(theta));
+        dist = acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+        switch(unit) {
+            case 'M':
+                break;
+            case 'K':
+                dist = dist * 1.609344;
+                break;
+            case 'N':
+                dist = dist * 0.8684;
+                break;
+        }
+        return (dist);
+    }
+}
+
+
+double deg2rad(double deg) {
+    return (deg * pi / 180);
+}
+
+
+double rad2deg(double rad) {
+    return (rad * 180 / pi);
 }
