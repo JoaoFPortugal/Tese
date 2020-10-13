@@ -296,6 +296,7 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             tmp->next = NULL;
             tmp->value = malloc(size * sizeof(int));
             memcpy(tmp->value,sum,size*sizeof(int));
+            free(sum);
 
 
             int v_dominated = dominated(tmp->value, head, size);
@@ -341,7 +342,9 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
             res = lexmin(start1->value, sum,size);
 
 
+
             if (res == 1) {
+                free(sum);
                 Label *tmp = (struct Label *) malloc(sizeof(struct Label));
                 tmp->next = NULL;
                 tmp->value = malloc(size * sizeof(int));
@@ -386,6 +389,7 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
                   tmp->value = malloc(size * sizeof(int));
 
                   memcpy(tmp->value,sum,size*sizeof(int));
+                  free(sum);
 
 
                   int v_dominated = dominated(tmp->value, head, size);
@@ -460,6 +464,7 @@ ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
     int *negativevalue = neg(valor,size);
 
     memcpy(new->value,negativevalue,size*sizeof(int));
+    free(negativevalue);
     ptr->label = new;
 
     return S;
@@ -527,13 +532,13 @@ void printVector(int *T,int numberofelements){
 
 int *cpVec(int* V,int elements){
   if(V == NULL){
-
     return NULL;
 
   }
   int *vec;
   vec = (int*)malloc(sizeof(int)*elements);
   memcpy(vec, V,elements*sizeof(int));
+  free(V);
   return vec;
 }
 
@@ -554,6 +559,7 @@ int * addV(int *V, int a, int elements)
       int * p = (int*) malloc((elements+1)*sizeof(int));
       memcpy(p,V,elements*sizeof(int));
       p[elements]=a;
+      free(V);
       return p;
     }
 
@@ -578,9 +584,10 @@ void freeItemLabels(ItemLabels **res, int numberofitems){
 
   int i;
   for(i=0;i<numberofitems;i++){
+    printf("freeing node i: %d \n\n",i);
     freeItemLabel(res[i]);
-    free(res[i]);
   }
+  free(res);
 }
 
 void freeItemLabel(ItemLabels *item){
@@ -590,6 +597,7 @@ void freeItemLabel(ItemLabels *item){
 
   while(freed!=NULL){
     label = freed->label;
+    printf("With tag: %d\n\n",freed->tag);
     freeLabels(label);
     prev = freed;
     freed = freed->next;
@@ -604,6 +612,9 @@ void freeLabels(Label *label){
 
   while (freed != NULL)
     {
+      printf("With label: ");
+      printVector(freed->value,2);
+      printf("\n\n");
       free (freed->value);
       prev = freed;
       freed = freed->next;
@@ -646,4 +657,13 @@ double deg2rad(double deg) {
 
 double rad2deg(double rad) {
     return (rad * 180 / pi);
+}
+
+
+void freeValue(int **v, int r){
+  int i;
+  for(i=0;i<r;i++){
+    free(v[i]);
+  }
+  free(v);
 }

@@ -53,6 +53,7 @@ void freeItemLabels(ItemLabels **res, int numberofitems);
 void freeItemLabel(ItemLabels *item);
 void freeLabels(Label *label);
 int *setSum(int *v, int size);
+void freeValue(int **v, int r);
 
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

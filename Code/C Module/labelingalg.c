@@ -74,12 +74,15 @@ ItemLabels **run(ItemLabels **_S, int *_W, int **_v, int _numberofitems,int _cap
 
           }
         printf("\n\n");
+        free(T);
         T = cpVec(V, VCounter);
         TCounter = VCounter;
         VCounter = 0;
         V = NULL;
     }
 
+    free(T);
+    free(V);
     return S;
 
 }

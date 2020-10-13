@@ -65,6 +65,7 @@ int main(int argc, char **argv){
 
     S[0]->tag = 0;
     S[0]->label = NULL;
+    S[0]->next = NULL;
     S[1]->tag = 0;
     S[1]->label = NULL;
     S[2]->tag = 0;
@@ -86,8 +87,7 @@ int main(int argc, char **argv){
     tmp->label = NULL;
     tmp->next = NULL;
     result->next = tmp;
-    result = result->next;
-
+    result = result ->next;
 
     //S[2]
 
@@ -111,7 +111,7 @@ int main(int argc, char **argv){
     tmp->label = NULL;
     tmp->next = NULL;
     result->next = tmp;
-    result = result->next;
+    result = result ->next;
 
 
   //S[3]
@@ -150,7 +150,7 @@ int main(int argc, char **argv){
     tmp->label = NULL;
     tmp->next = NULL;
     result->next = tmp;
-    result = result->next;
+    result = result ->next;
 
 
     //S[4]
@@ -211,7 +211,6 @@ int main(int argc, char **argv){
     tmp->label = NULL;
     tmp->next = NULL;
     result->next = tmp;
-    result = result->next;
 
     //S[5]
 
@@ -270,18 +269,15 @@ int main(int argc, char **argv){
     tmp->label = NULL;
     tmp->next = NULL;
     result->next = tmp;
-    result = result->next;
+    result = result ->next;
 
   ItemLabels **res = run(S,W, v,numberofitems,capacity,size);
 
-  ItemLabels *final = res[5];
-
-  while(final->tag!=5){
-    final = final->next;
-  }
 
   freeItemLabels(res,numberofitems+1);
-
+  free(W);
+  freeValue(v,r);
 }
+
 
 
