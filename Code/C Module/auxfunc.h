@@ -54,7 +54,7 @@ void freeItemLabel(ItemLabels *item);
 void freeLabels(Label *label);
 int *setSum(int *v, int size);
 void freeValue(int **v, int r);
-
+ItemLabels *addNode(ItemLabels *S, int tag);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

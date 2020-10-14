@@ -15,6 +15,7 @@ ItemLabels *sumVectors(ItemLabels * _S , ItemLabels * source, int *v, int a, int
   ItemLabels * header = S;
 
   ItemLabels * src = source;
+  ItemLabels *prev;
 
   int j;
 
@@ -25,7 +26,17 @@ ItemLabels *sumVectors(ItemLabels * _S , ItemLabels * source, int *v, int a, int
         if(header->tag == a){
             break;
         }
+        if(header->tag > a){
+          header = addNode(prev,a);
+          break;
+        }
+
+        prev = header;
         header = header->next;
+    }
+
+    if(header == NULL){
+        header = addNode(prev,a);
     }
 
     //scan for S[j-1]^a-wj
@@ -93,13 +104,24 @@ ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
     ItemLabels *S = _S;
     ItemLabels *header = S;
     ItemLabels *sndHeader = S_2;
+    ItemLabels *prev;
 
     //scan for S[j]^a
     while(header!=NULL){
         if(header->tag == a){
             break;
         }
+
+        if(header->tag > a){
+          header = addNode(prev,a);
+          break;
+        }
+        prev = header;
         header = header->next;
+    }
+
+    if(header == NULL){
+       header = addNode(prev,a);
     }
 
     //scan for S[j-1]^a
@@ -183,7 +205,7 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
     ItemLabels *header = S;
     ItemLabels *sndHeader = S_2;
     ItemLabels *toadd = S_2;
-
+    ItemLabels *prev;
 
     //scan for S[j]^a
 
@@ -191,7 +213,17 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
         if(header->tag == a){
             break;
         }
+        if(header->tag > a){
+          header = addNode(prev,a);
+          break;
+        }
+
+        prev = header;
         header = header->next;
+    }
+
+    if(header == NULL){
+       header = addNode(prev,a);
     }
 
     //scan for S[j-1]^a
@@ -448,12 +480,25 @@ ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
     S->label = header;
 
 
+    ItemLabels *prev;
 
     while(ptr!=NULL){
         if(ptr->tag == w){
             break;
         }
+
+        else if(ptr->tag > w){
+          ptr = addNode(prev,w);
+          break;
+        }
+
+          prev = ptr;
         ptr = ptr->next;
+
+    }
+
+    if(ptr == NULL){
+       ptr = addNode(prev,w);
     }
 
     Label *new = (struct Label *) malloc(sizeof(struct Label));
@@ -623,6 +668,15 @@ void freeLabels(Label *label){
 }
 
 
+void freeValue(int **v, int r){
+  int i;
+  for(i=0;i<r;i++){
+    free(v[i]);
+  }
+  free(v);
+}
+
+
 
 
 double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
@@ -661,10 +715,13 @@ double rad2deg(double rad) {
 }
 
 
-void freeValue(int **v, int r){
-  int i;
-  for(i=0;i<r;i++){
-    free(v[i]);
-  }
-  free(v);
+
+ItemLabels *addNode(ItemLabels *S, int tag){
+    ItemLabels *tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+    tmp->tag = tag;
+    tmp->label = NULL;
+    tmp->next = S->next;
+    S->next  = tmp;
+    return tmp;
 }
+
