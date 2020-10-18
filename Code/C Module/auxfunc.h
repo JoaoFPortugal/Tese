@@ -5,6 +5,8 @@
 #ifndef C_MODULE_AUXFUNC_H
 #define C_MODULE_AUXFUNC_H
 #define pi 3.14159265358979323846
+#define EPS 0.000001
+
 #include <math.h>
 #include "auxfunc.h"
 #include <stdlib.h>
@@ -27,6 +29,27 @@ typedef struct Label{
     int *value;
     struct Label *next;
 }Label;
+
+
+typedef struct NoFlyZone{
+    double xBoundaries[2];
+    double yBoundaries[2];
+}NoFlyZone;
+
+
+typedef struct Point{
+    double xCoords;
+    double yCoords;
+}Point;
+
+
+typedef struct Equation{
+    double X[2];
+    double Y[2];
+    int m;
+    int b;
+    int y; //mx+b=y but if y=0 then x is a vertical line
+};
 
 
 
@@ -55,6 +78,10 @@ void freeLabels(Label *label);
 int *setSum(int *v, int size);
 void freeValue(int **v, int r);
 ItemLabels *addNode(ItemLabels *S, int tag);
+int inBoundary(NoFlyZone *nf, Point *p);
+int segmentCollision(Equation eq1, NoFlyZone nf);
+double max(double a, double b);
+double min(double a, double b);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

@@ -725,3 +725,97 @@ ItemLabels *addNode(ItemLabels *S, int tag){
     return tmp;
 }
 
+
+
+
+int inBoundary(NoFlyZone *nf, Point *p){
+    if(p == NULL || nf == NULL){
+        return 0;
+    }
+
+    int x = p->xCoords;
+    int y = p->yCoords;
+
+    if(x>=(nf->xBoundaries[0]) && x<=(nf->xBoundaries[1]) && y >= (nf->yBoundaries[0]) && y <= (nf->yBoundaries[1])){
+        return 1;
+    }
+
+    return 0 ;
+}
+
+
+
+int segmentCollision(Equation eq1, NoFlyZone nf){
+
+    Equation eq2 = buildEquation(nf);
+    double X1 = eq1->X[0];
+    double X2 = eq1->X[1];
+    double Y1 = eq1->Y[0];
+    double Y2 = eq1->Y[1];
+
+    double X3 = eq2->X[0]
+    double X4 = eq2->X[1];
+    double Y3 = eq2->Y[0];
+    double Y4 = eq2->Y[1];
+
+    if(max(X1,X2)< min(X3,X4)){
+        return 0;
+    }
+
+    double A1 = (Y1-Y2)/(X1-X2);
+    double A2 = (Y3-Y4)/(X3-X4);
+    double b1 = Y1-A1*X1;
+    double bb1 = Y2-A1*X2;
+    if(fabs(b1-bb1) > EPS){
+        return -1;
+    }
+
+    double b2 = Y3-A2*X3;
+    double bb2 = Y4-A2*X4;
+    if(fabs(b2-bb2) > EPS){
+        return -1;
+    }
+
+    if (fabs(A1-A2) < EPS){
+        return 0;
+    }
+
+    double Xa = (b2 - b1) / (A1 - A2);
+    double Ya = A1 * Xa + b1;
+    double yYa = A2 * Xa + b2;
+
+    if(fabs(Ya-yYa)>EPS){
+        return -1;
+    }
+
+    if( (Xa < max( min(X1,X2), min(X3,X4) )) ||
+        (Xa > min( max(X1,X2), max(X3,X4) ))) {
+        return 0;
+    }
+
+    free(eq2);
+    return 1;
+
+}
+
+
+
+double max(double a, double b){
+    if(a>=b){
+        return a;
+    }
+
+    else{
+        return b;
+    }
+}
+
+
+double min(double a, double b){
+    if(a<=b){
+        return a;
+    }
+    else{
+        return b;
+    }
+}
