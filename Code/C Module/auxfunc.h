@@ -49,7 +49,7 @@ typedef struct Equation{
     int m;
     int b;
     int y; //mx+b=y but if y=0 then x is a vertical line
-};
+}Equation;
 
 
 
@@ -79,7 +79,7 @@ int *setSum(int *v, int size);
 void freeValue(int **v, int r);
 ItemLabels *addNode(ItemLabels *S, int tag);
 int inBoundary(NoFlyZone *nf, Point *p);
-int segmentCollision(Equation eq1, NoFlyZone nf);
+int segmentCollision(Equation *eq1, Equation *eq2);
 double max(double a, double b);
 double min(double a, double b);
 

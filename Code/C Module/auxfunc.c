@@ -745,15 +745,14 @@ int inBoundary(NoFlyZone *nf, Point *p){
 
 
 
-int segmentCollision(Equation eq1, NoFlyZone nf){
+int segmentCollision(Equation *eq1, Equation *eq2){
 
-    Equation eq2 = buildEquation(nf);
     double X1 = eq1->X[0];
     double X2 = eq1->X[1];
     double Y1 = eq1->Y[0];
     double Y2 = eq1->Y[1];
 
-    double X3 = eq2->X[0]
+    double X3 = eq2->X[0];
     double X4 = eq2->X[1];
     double Y3 = eq2->Y[0];
     double Y4 = eq2->Y[1];
