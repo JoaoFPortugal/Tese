@@ -19,6 +19,8 @@
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 typedef struct ItemLabels{
+    double latitude;
+    double longitude;
     int tag;
     struct Label *label;
     struct ItemLabels *next;
@@ -43,13 +45,18 @@ typedef struct Point{
 }Point;
 
 
-typedef struct Equation{
+typedef struct LineSegment{
     double X[2];
     double Y[2];
-    int m;
-    int b;
-    int y; //mx+b=y but if y=0 then x is a vertical line
-}Equation;
+}LineSegment;
+
+
+typedef struct Circle{
+    double radius;
+    double xCenter;
+    double YCenter;
+
+}Circle;
 
 
 
@@ -79,7 +86,7 @@ int *setSum(int *v, int size);
 void freeValue(int **v, int r);
 ItemLabels *addNode(ItemLabels *S, int tag);
 int inBoundary(NoFlyZone *nf, Point *p);
-int segmentCollision(Equation *eq1, Equation *eq2);
+int segmentCollision(LineSegment *ls, Circle *circle );
 double max(double a, double b);
 double min(double a, double b);
 

@@ -745,56 +745,25 @@ int inBoundary(NoFlyZone *nf, Point *p){
 
 
 
-int segmentCollision(Equation *eq1, Equation *eq2){
+int segmentCollision(LineSegment *ls, Circle *circle){
+    double cx = circle->xCenter;
+    double cy = circle->YCenter;
 
-    double X1 = eq1->X[0];
-    double X2 = eq1->X[1];
-    double Y1 = eq1->Y[0];
-    double Y2 = eq1->Y[1];
+    double dx = ls->X[1]-ls->X[0];
+    double dy = ls->Y[1]-ls->Y[0];
 
-    double X3 = eq2->X[0];
-    double X4 = eq2->X[1];
-    double Y3 = eq2->Y[0];
-    double Y4 = eq2->Y[1];
+    A = dx * dx + dy * dy;
+    B = 2 * (dx * (ls->X[0]-cx) + dy * (ls->Y[0]-cy));
+    C = (ls->X[0] - cx) * (ls->X[0] - cx) + (ls->Y[0] - cy) * (ls->Y[0] - cy) - (circle->radius * circle->radius);
+    double det = B * B - 4 * A * C;
 
-    if(max(X1,X2)< min(X3,X4)){
+    if(A<=EPS || det < 0){
         return 0;
     }
 
-    double A1 = (Y1-Y2)/(X1-X2);
-    double A2 = (Y3-Y4)/(X3-X4);
-    double b1 = Y1-A1*X1;
-    double bb1 = Y2-A1*X2;
-    if(fabs(b1-bb1) > EPS){
-        return -1;
+    else{
+        return 1;
     }
-
-    double b2 = Y3-A2*X3;
-    double bb2 = Y4-A2*X4;
-    if(fabs(b2-bb2) > EPS){
-        return -1;
-    }
-
-    if (fabs(A1-A2) < EPS){
-        return 0;
-    }
-
-    double Xa = (b2 - b1) / (A1 - A2);
-    double Ya = A1 * Xa + b1;
-    double yYa = A2 * Xa + b2;
-
-    if(fabs(Ya-yYa)>EPS){
-        return -1;
-    }
-
-    if( (Xa < max( min(X1,X2), min(X3,X4) )) ||
-        (Xa > min( max(X1,X2), max(X3,X4) ))) {
-        return 0;
-    }
-
-    free(eq2);
-    return 1;
-
 }
 
 
@@ -817,4 +786,15 @@ double min(double a, double b){
     else{
         return b;
     }
+}
+
+double time(double distance, double speed) {             //speed in kts, distance in km
+    double time = distance * 3600 / (speed * 1.852);
+    return time;
+}
+
+
+
+double turntime(int currentHeading, int futureHeading, double speed){
+
 }
