@@ -8,7 +8,7 @@
 #include <math.h>
 #include "labelingalg.h"
 #include "auxfunc.h"
-
+#include "auxlabel.h"
 
 
 
