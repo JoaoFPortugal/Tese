@@ -281,18 +281,17 @@ int segmentCollision(LineSegment *ls, Circle *circle){
     double dx = ls->X[1]-ls->X[0];
     double dy = ls->Y[1]-ls->Y[0];
 
-    A = dx * dx + dy * dy;
-    B = 2 * (dx * (ls->X[0]-cx) + dy * (ls->Y[0]-cy));
-    C = (ls->X[0] - cx) * (ls->X[0] - cx) + (ls->Y[0] - cy) * (ls->Y[0] - cy) - (circle->radius * circle->radius);
+    double A = dx * dx + dy * dy;
+    double B = 2 * (dx * (ls->X[0]-cx) + dy * (ls->Y[0]-cy));
+    double C = (ls->X[0] - cx) * (ls->X[0] - cx) + (ls->Y[0] - cy) * (ls->Y[0] - cy) - (circle->radius * circle->radius);
     double det = B * B - 4 * A * C;
 
     if(A<=EPS || det < 0){
         return 0;
     }
 
-    else{
-        return 1;
-    }
+    return 1;
+
 }
 
 
@@ -324,7 +323,7 @@ double time(double distance, double speed) {             //speed in kts, distanc
 
 double shortestDistance(Point *point, LineSegment *ls){
     double A = point->xCoords - ls->X[0];
-    double B = point->YCoords - ls->Y[0];
+    double B = point->yCoords - ls->Y[0];
     double C = ls->X[1] - ls->X[0];
     double D = ls->Y[1] - ls->Y[0];
 
@@ -348,11 +347,11 @@ double shortestDistance(Point *point, LineSegment *ls){
 
     else{
         xx = ls->X[0] + param * C;
-        yy = y1 + param*D;
+        yy = ls->Y[0] + param*D;
     }
 
-    double dx = x - xx;
-    double dy = y - yy;
+    double dx = point->xCoords - xx;
+    double dy = point->yCoords - yy;
 
     double result = sqrt(dx * dx + dy * dy);
 
@@ -361,7 +360,7 @@ double shortestDistance(Point *point, LineSegment *ls){
 
 
 double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle){
-    double rateofturn = (1,091 * tan(maxBankAngle))/speed;
+    double rateofturn = (1.091 * tan(maxBankAngle))/speed;
 
     int turnangle;
     int diff;
