@@ -767,7 +767,6 @@ int segmentCollision(LineSegment *ls, Circle *circle){
 }
 
 
-
 double max(double a, double b){
     if(a>=b){
         return a;
@@ -794,7 +793,74 @@ double time(double distance, double speed) {             //speed in kts, distanc
 }
 
 
+double shortestDistance(Point *point, LineSegment *ls){
+    double A = point->xCoords - ls->X[0];
+    double B = point->YCoords - ls->Y[0];
+    double C = ls->X[1] - ls->X[0];
+    double D = ls->Y[1] - ls->Y[0];
 
-double turntime(int currentHeading, int futureHeading, double speed){
+    double dot = A * C + B*D;
+    double len_sq = C*C + D*D;
+    double param = -1;
+    if(len_sq != 0){
+        param = dot / len_sq;
+    }
 
+    double xx, yy;
+
+    if(param < 0){
+        xx = ls->X[0];
+        yy = ls->Y[0];
+    }
+    else if(param > 1){
+        xx = ls->X[1];
+        yy = ls->Y[1];
+    }
+
+    else{
+        xx = ls->X[0] + param * C;
+        yy = y1 + param*D;
+    }
+
+    double dx = x - xx;
+    double dy = y - yy;
+
+    double result = sqrt(dx * dx + dy * dy);
+
+    return result;
 }
+
+
+double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle){
+    double rateofturn = (1,091 * tan(maxBankAngle))/speed;
+
+    int turnangle;
+    int diff;
+
+    if(currentHeading>futureHeading){
+        diff = currentHeading - futureHeading;
+    }
+    else{
+        diff = futureHeading - currentHeading;
+    }
+
+    if(diff < 180){
+        turnangle = abs(currentHeading-futureHeading);
+    }
+
+    else{
+        if(currentHeading > futureHeading){
+            turnangle = (360-currentHeading) + futureHeading;
+        }
+        else{
+            turnangle = (360 -futureHeading) + currentHeading;
+        }
+    }
+
+    double time = turnangle / rateofturn;
+
+    return time;
+    
+}
+
+

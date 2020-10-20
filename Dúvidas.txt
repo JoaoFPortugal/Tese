@@ -1,0 +1,4 @@
+Criar o valor relativo para a funçao.
+
+Converter funçoes em restriçoes e o seu peso.
+

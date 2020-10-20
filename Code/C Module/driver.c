@@ -19,6 +19,7 @@ int main(int argc, char **argv){
     int capacity = 9;
     int size = 2;
 
+
     int *W = (int*) malloc(5*sizeof(int));
     W[0]=3;
     W[1]=2;
@@ -55,32 +56,13 @@ int main(int argc, char **argv){
 
 
     ItemLabels **S = malloc(sizeof(struct ItemLabels*)*(numberofitems+1));
-    S[0] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-    S[1] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-    S[2] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-    S[3] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-    S[4] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-    S[5] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
 
-
-    S[0]->tag = 0;
-    S[0]->label = NULL;
-    S[0]->next = NULL;
-    S[1]->tag = 0;
-    S[1]->label = NULL;
-    S[2]->tag = 0;
-    S[2]->label = NULL;
-    S[3]->tag = 0;
-    S[3]->label = NULL;
-    S[4]->tag = 0;
-    S[4]->label = NULL;
-    S[5]->tag = 0;
-    S[5]->label = NULL;
-
-
-  //S[1]
-
-
+    for(i=0;i<numberofitems+1;i++){
+        S[i] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+        S[i]->tag = 0;
+        S[i]->label = NULL;
+        S[i]->next = NULL;
+    }
 
 
   ItemLabels **res = run(S,W, v,numberofitems,capacity,size);
