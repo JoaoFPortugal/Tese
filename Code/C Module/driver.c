@@ -20,6 +20,8 @@ int main(int argc, char **argv){
     int numberofitems = 5;
     int capacity = 9;
     int size = 2;
+      int r = 5, c = 2, i;
+
 
 
     int *W = (int*) malloc(5*sizeof(int));
@@ -41,7 +43,7 @@ int main(int argc, char **argv){
     }
 
 
-    int r = 5, c = 2, i, j, count;
+
 
     int **v = (int **)malloc(r * sizeof(int *));
 
@@ -59,9 +61,6 @@ int main(int argc, char **argv){
     v[3][1]=6;
     v[4][0]=6;
     v[4][1]=9;
-
-
-    int **v = calculateValue(S)
 
   Items **res = run(S,W, v,numberofitems,capacity,size);
 
