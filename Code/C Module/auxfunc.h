@@ -72,6 +72,9 @@ int inBoundary(NoFlyZone *nf, Point *p);
 int segmentCollision(LineSegment *ls, Circle *circle );
 double max(double a, double b);
 double min(double a, double b);
+int dominatedNeg(int *dominated, int *v, int size);
+void printLabels(Label *label);
+
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

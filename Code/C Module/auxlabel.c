@@ -156,17 +156,11 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, int * _v, int s
             if (v_dominated != 1) {
 
                 if(head == NULL){
-                    printf("\nAdding vector to result\n");
-                    printVector(tmp->value,2);
-                    printf("\n");
                     result->label = tmp;
                     head = result->label;
                 }
 
                 else{
-                    printf("\nAdding vector to result\n");
-                    printVector(tmp->value,2);
-                    printf("\n");
                     head->next = tmp;
                     head = head->next;
                 }
@@ -201,17 +195,11 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, int * _v, int s
             if (v_dominated != 1) {
 
                 if(head == NULL){
-                    printf("\n Adding vector to result\n");
-                    printVector(tmp->value,2);
-                    printf("\n");
                     result->label = tmp;
                     head = result->label;
                 }
 
                 else{
-                    printf("\n Adding vector to result\n");
-                    printVector(tmp->value,2);
-                    printf("\n");
                     head->next = tmp;
                     head = head->next;
                 }
@@ -255,17 +243,11 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, int * _v, int s
                 if (v_dominated != 1) {
 
                     if(head == NULL){
-                        printf("\n Adding vector to result\n");
-                        printVector(tmp->value,2);
-                        printf("\n");
                         result->label = tmp;
                         head = result->label;
                     }
 
                     else{
-                        printf("\n Adding vector to result\n");
-                        printVector(tmp->value,2);
-                        printf("\n");
                         head->next = tmp;
                         head = head->next;
                     }
@@ -294,17 +276,11 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, int * _v, int s
                 if (v_dominated != 1) {
 
                     if(head == NULL){
-                        printf("\n Adding vector to result\n");
-                        printVector(tmp->value,2);
-                        printf("\n");
                         result->label = tmp;
                         head = result->label;
                     }
 
                     else{
-                        printf("\n Adding vector to result\n");
-                        printVector(tmp->value,2);
-                        printf("\n");
                         head->next = tmp;
                         head = head->next;
                     }
@@ -362,10 +338,6 @@ Items* copyVector(Items *_S, Items *S_2,int a, int size){
         sndHeader = sndHeader->next;
     }
 
-    printf("\n");
-    printf("Copying to label -> %d\n",header->tag);
-    printf("from label -> %d\n", sndHeader->tag);
-
 
     Label *tocopy = sndHeader->label;
     Label *newlabel = header->label;
@@ -378,10 +350,6 @@ Items* copyVector(Items *_S, Items *S_2,int a, int size){
         tmp->next = NULL;
         tmp->value = malloc(size * sizeof(int));
         memcpy(tmp->value,tocopy->value,size*sizeof(int));
-
-        printf("Copying Vector:\n");
-        printVector(tmp->value,size);
-        printf("\n");
 
         if(newlabel == NULL){
             header->label = tmp;
@@ -440,9 +408,6 @@ Items *sumVectors(Items * _S , Items * source, int *v, int a, int a_wj, int size
         src = src->next;
     }
 
-    printf("\n");
-    printf("Copying to label -> %d\n",header->tag);
-    printf("from label -> %d\n", src->tag);
 
     Label *origin = src->label;
     Label *result = header -> label;
@@ -463,10 +428,6 @@ Items *sumVectors(Items * _S , Items * source, int *v, int a, int a_wj, int size
             tmp->value[j] = (-v[j]) + origin->value[j];
         }
 
-
-        printf("Copying Vector:\n");
-        printVector(tmp->value,size);
-        printf("\n");
 
 
         if(result == NULL){
@@ -492,82 +453,121 @@ Items *sumVectors(Items * _S , Items * source, int *v, int a, int a_wj, int size
 Items *addResult(Items **res){
 
     Items *finalitem = res[6];
-    Items *current = res[5];
-    Label *currentlist = NULL;
+
+    Items *valuestoadd = res[5];
+
+    Label *currentfinalist = NULL;
 
 
-    while(current !=NULL) {
+    printf("BEGIN\n");
+    while(valuestoadd !=NULL) {
 
-        currentlist = iterateLabels(current,currentlist);
-        current = current ->next;
+        printf("Iterating through S[5] with tag %d\n", valuestoadd->tag);
+
+        currentfinalist = iterateLabels(valuestoadd,currentfinalist);
+
+        valuestoadd = valuestoadd ->next;
 
     }
 
-    finalitem->label = currentlist;
+    finalitem->label = currentfinalist;
     return res[6];
 }
 
 
-Label iterateLabels(Items *current, Label *currentList){
+Label *iterateLabels(Items *current, Label *_currentFinalList){
 
     Label *toAdd = current->label;
-    Label *currentFinalList = _currentList;
-    Label *F = NULL;
-    Label *headlist = NULL;
+    Label *currentFinalList = _currentFinalList;
+    Label *newFinalList = NULL;
 
-    int neverdominated = 1;
 
-    int value;
+    while(toAdd!=NULL){
+          newFinalList = iterateValues (toAdd,currentFinalList);
+          printf("interaction of tag %d\n",current->tag);
+          printf("Final list is\n");
+          printLabels(newFinalList);
+          printf("continue;\n");
+          toAdd = toAdd->next;
 
-    while(toAdd != NULL){
-
-        while(currentFinalList != NULL){
-            value = dominated(currentFinalList->value,toAdd,2);
-            if(value == 0){
-
-                Label *tmp = (struct Label *) malloc(sizeof(struct Label));
-                tmp->next = NULL;
-                tmp->value = malloc(size * sizeof(int));
-                memcpy(tmp->value,currentFinalList->value,2*sizeof(int));
-
-                if(F == NULL){
-                    F = tmp;
-                    headlist = tmp;
-                }
-                else{
-                    F->next = tmp;
-                    F = F->next;
-                }
-            }
-
-            value = dominated(toAdd->value,currentFinalList,2);
-
-            if(value == 1){
-                neverdominated = 0;
-            }
-            currentFinalList = currentFinalList->next;
-
-        }
-
-        if(neverdominated == 1){
-            Label *tmp = (struct Label *) malloc(sizeof(struct Label));
-            tmp->next = NULL;
-            tmp->value = malloc(size * sizeof(int));
-            memcpy(tmp->value,toAdd->value,2*sizeof(int));
-            if(F == NULL){
-                F = tmp;
-                headlist = tmp;
-            }
-            else{
-                F->next = tmp;
-                F = F->next;
-            }
-        }
-
-        toAdd = toAdd->next;
     }
 
-    return headlist;
+    return newFinalList;
+}
+
+
+Label *iterateValues(Label *_newValue, Label *_currentFinalList){
+
+  Label *newList = NULL;
+  Label *currentFinalList = _currentFinalList;
+  Label *newValue = _newValue;
+  Label *head;
+
+  int neverdominated = 1;
+
+  while(currentFinalList != NULL){
+
+    int *negv = neg(newValue->value,2);
+
+    int dominate = dominatedNeg(currentFinalList->value,negv,2);
+    if(dominate == 0){
+
+
+        Label *tmp = (struct Label *) malloc(sizeof(struct Label));
+        tmp->next = NULL;
+        tmp->value = malloc(2 * sizeof(int));
+        memcpy(tmp->value,currentFinalList->value,2*sizeof(int));
+
+        if(newList == NULL){
+            newList = tmp;
+            head = newList;
+
+        }
+        else{
+
+            newList->next = tmp;
+            newList = newList->next;
+
+        }
+
+    }
+
+
+    int *v = neg(newValue->value,2);
+
+    dominate = dominated(v,currentFinalList,2);
+
+    if(dominate == 1){
+      printf("Entro\n\n");
+      neverdominated = 0;
+    }
+    currentFinalList = currentFinalList->next;
+
+  }
+
+  if(neverdominated != 0){
+
+        Label *tmp = (struct Label *) malloc(sizeof(struct Label));
+        tmp->next = NULL;
+        tmp->value = malloc(2 * sizeof(int));
+        memcpy(tmp->value,newValue->value,2*sizeof(int));
+
+        //printVector(tmp->value,2);
+
+        if(newList == NULL){
+            newList = tmp;
+            head=newList;
+
+        }
+        else{
+
+            newList->next = tmp;
+
+        }
+
+  }
+
+  return head;
 }
 
 

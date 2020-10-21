@@ -31,7 +31,8 @@ Items * addLabels(Items *S, int * _v, Items *S_2, int a, int wj, int size);
 Items *compareLabels(Items *result, Items *Sj_1, Items *Sj_aw, int * v, int size);
 Items * copyVector(Items *S, Items *S_2,int a,int size);
 Items * sumVectors(Items *header , Items * source, int *v, int a, int a_wj, int size);
-
-
+Items *addResult(Items **res);
+Label *iterateLabels(Items *current, Label *_currentList);
+Label *iterateValues(Label *_newValue, Label *_currentFinalList);
 
 #endif //C_MODULE_AUXLABEL_H

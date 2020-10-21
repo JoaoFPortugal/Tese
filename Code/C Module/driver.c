@@ -35,7 +35,7 @@ int main(int argc, char **argv){
   
     Items **S = malloc(sizeof(struct Items*)*(numberofitems+2));
 
-    for(i=0;i<numberofitems+1;i++){
+    for(i=0;i<numberofitems+2;i++){
         S[i] = (struct Items *) malloc(sizeof(struct Items));
         S[i]->tag = 0;
         S[i]->label = NULL;
@@ -66,7 +66,8 @@ int main(int argc, char **argv){
 
   res[6] = addResult(res);
 
-  freeItems(res,numberofitems+1);
+  printVector(res[6]->label->value,2);
+  freeItems(res,numberofitems+2);
   free(W);
   freeValue(v,r);
 }

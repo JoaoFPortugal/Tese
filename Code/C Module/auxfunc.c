@@ -158,7 +158,6 @@ void freeItems(Items **res, int numberofitems){
 
   int i;
   for(i=0;i<numberofitems;i++){
-    printf("freeing node i: %d \n\n",i);
     freeItemLabel(res[i]);
   }
   free(res);
@@ -171,7 +170,6 @@ void freeItemLabel(Items *item){
 
   while(freed!=NULL){
     label = freed->label;
-    printf("With tag: %d\n\n",freed->tag);
     freeLabels(label);
     prev = freed;
     freed = freed->next;
@@ -186,9 +184,6 @@ void freeLabels(Label *label){
 
   while (freed != NULL)
     {
-      printf("With label: ");
-      printVector(freed->value,2);
-      printf("\n\n");
       free (freed->value);
       prev = freed;
       freed = freed->next;
@@ -391,3 +386,30 @@ double turntime(int currentHeading, int futureHeading, double speed, int maxBank
     
 }
 
+
+int dominatedNeg(int *dominated, int *v, int size){
+
+    int *dominator = v;
+
+    int i;
+    int x1;
+    int x2;
+    for(i=0;i<size;i++){
+        x1 = dominated[i];
+        x2 = dominator[i];
+
+        if(x1>x2){
+            return 0; //label 1 is non dominated
+        }
+    }
+    return 1; //label 1 is dominated;
+}
+
+
+void printLabels(Label *label){
+
+  while(label != NULL){
+    printVector(label->value,2);
+    label = label->next;
+  }
+}

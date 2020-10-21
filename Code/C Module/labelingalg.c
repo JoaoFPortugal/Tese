@@ -31,17 +31,14 @@ Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int _capacity, int
     T[0]=0;
     T[1]=W[0];
 
-    printf("BEGIN\n\n");
 
     for(j=2;j<n+1;j++) {
 
-      printf("j is: %d\n\n", j);
       int realj = j-1;
       w_j = W[realj];
 
         for (a = 0; a < capacity+1; a++) {
 
-            printf("a is: %d\n",a);
             if (insideArray(T, a, TCounter) == 1) {
 
                 V = addV(V, a, VCounter);
@@ -51,13 +48,11 @@ Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int _capacity, int
 
                 if (insideArray(T, (a - w_j),TCounter)) {
 
-                    printf("'a' and a-%d belong to T, comparing Labels\n",w_j);
 
                     S[j] = addLabels(S[j],v[realj],S[j-1],a,a-w_j,size); //error checks
 
                 } else {
 
-                    printf("only 'a' belongs to T\n");
                     S[j] = copyVector(S[j],S[j-1],a,size); //error checks
 
                 }
@@ -65,7 +60,6 @@ Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int _capacity, int
 
                 if (insideArray(T, (a - w_j),TCounter)) {
 
-                    printf("only a-wj belongs to T\n");
                     S[j] = sumVectors(S[j], S[j-1], v[realj], a ,(a-w_j),size); //error checks
                     V = addV(V, a, VCounter);
                     VCounter++;
@@ -73,7 +67,6 @@ Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int _capacity, int
             }
 
           }
-        printf("\n\n");
         free(T);
         T = cpVec(V, VCounter);
         TCounter = VCounter;

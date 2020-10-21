@@ -1,492 +1,111 @@
 BEGIN
-
-j is: 2
-
-a is: 0
-only 'a' belongs to T
-
-Copying to label -> 0
-from label -> 0
-Copying Vector:
+Iterating through S[5] with tag 0
+interaction of tag 0
+Final list is
 0 0 
-
-a is: 1
-a is: 2
-only a-wj belongs to T
-
-Copying to label -> 2
-from label -> 0
-Copying Vector:
+continue;
+Iterating through S[5] with tag 2
+interaction of tag 2
+Final list is
 -9 -2 
-
-a is: 3
-only 'a' belongs to T
-
-Copying to label -> 3
-from label -> 3
-Copying Vector:
--8 -3 
-
-a is: 4
-a is: 5
-only a-wj belongs to T
-
-Copying to label -> 5
-from label -> 3
-Copying Vector:
--17 -5 
-
-a is: 6
-a is: 7
-a is: 8
-a is: 9
-
-
-j is: 3
-
-a is: 0
-only 'a' belongs to T
-
-Copying to label -> 0
-from label -> 0
-Copying Vector:
-0 0 
-
-a is: 1
-a is: 2
-'a' and a-2 belong to T, comparing Labels
-HELLO!
-0 0 
-Inspecting labels
--9 -2 
-
-Non - Dominated
-
- Adding vector to result
--9 -2 
-
-Inspecting labels
+continue;
+interaction of tag 2
+Final list is
 -3 -10 
--9 -2 
-
-
-Non - Dominated
-
- Adding vector to result
--3 -10 
-
-a is: 3
-only 'a' belongs to T
-
-Copying to label -> 3
-from label -> 3
-Copying Vector:
+continue;
+Iterating through S[5] with tag 3
+interaction of tag 3
+Final list is
 -8 -3 
-
-a is: 4
-only a-wj belongs to T
-
-Copying to label -> 4
-from label -> 2
-Copying Vector:
--12 -12 
-
-a is: 5
-'a' and a-2 belong to T, comparing Labels
-HELLO!
--8 -3 
-Inspecting labels
--17 -5 
-
-Non - Dominated
-
- Adding vector to result
--17 -5 
-
-Inspecting labels
--11 -13 
--17 -5 
-
-
-Non - Dominated
-
- Adding vector to result
--11 -13 
-
-a is: 6
-a is: 7
-only a-wj belongs to T
-
-Copying to label -> 7
-from label -> 5
-Copying Vector:
--20 -15 
-
-a is: 8
-a is: 9
-
-
-j is: 4
-
-a is: 0
-only 'a' belongs to T
-
-Copying to label -> 0
-from label -> 0
-Copying Vector:
-0 0 
-
-a is: 1
-a is: 2
-only 'a' belongs to T
-
-Copying to label -> 2
-from label -> 2
-Copying Vector:
--9 -2 
-
-Copying Vector:
--3 -10 
-
-a is: 3
-only 'a' belongs to T
-
-Copying to label -> 3
-from label -> 3
-Copying Vector:
--8 -3 
-
-a is: 4
-'a' and a-4 belong to T, comparing Labels
-HELLO!
-0 0 
-Inspecting labels
--12 -12 
-
-Non - Dominated
-
- Adding vector to result
--12 -12 
-
-Inspecting labels
--7 -6 
--12 -12 
-
-
-Non - Dominated
-
- Adding vector to result
--7 -6 
-
-a is: 5
-only 'a' belongs to T
-
-Copying to label -> 5
-from label -> 5
-Copying Vector:
--17 -5 
-
-Copying Vector:
--11 -13 
-
-a is: 6
-only a-wj belongs to T
-
-Copying to label -> 6
-from label -> 2
-Copying Vector:
--16 -8 
-
-Copying Vector:
--10 -16 
-
-a is: 7
-'a' and a-4 belong to T, comparing Labels
-HELLO!
--8 -3 
-Inspecting labels
--20 -15 
-
-Non - Dominated
-
- Adding vector to result
--20 -15 
-
-Inspecting labels
--15 -9 
--20 -15 
-
-
-Non - Dominated
-
- Adding vector to result
--15 -9 
-
-a is: 8
-only a-wj belongs to T
-
-Copying to label -> 8
-from label -> 4
-Copying Vector:
--19 -18 
-
-a is: 9
-only a-wj belongs to T
-
-Copying to label -> 9
-from label -> 5
-Copying Vector:
--24 -11 
-
-Copying Vector:
--18 -19 
-
-
-
-j is: 5
-
-a is: 0
-only 'a' belongs to T
-
-Copying to label -> 0
-from label -> 0
-Copying Vector:
-0 0 
-
-a is: 1
-a is: 2
-only 'a' belongs to T
-
-Copying to label -> 2
-from label -> 2
-Copying Vector:
--9 -2 
-
-Copying Vector:
--3 -10 
-
-a is: 3
-'a' and a-3 belong to T, comparing Labels
-HELLO!
-0 0 
-Inspecting labels
--8 -3 
-
-Non - Dominated
-
- Adding vector to result
--8 -3 
-
-Inspecting labels
+continue;
+interaction of tag 3
+Final list is
 -6 -9 
--8 -3 
-
-
-Non - Dominated
-
- Adding vector to result
--6 -9 
-
-a is: 4
-only 'a' belongs to T
-
-Copying to label -> 4
-from label -> 4
-Copying Vector:
+continue;
+Iterating through S[5] with tag 4
+interaction of tag 4
+Final list is
 -12 -12 
-
-Copying Vector:
+continue;
+interaction of tag 4
+Final list is
 -7 -6 
-
-a is: 5
-'a' and a-3 belong to T, comparing Labels
-HELLO!
--9 -2 
-Inspecting labels
+continue;
+Iterating through S[5] with tag 5
+interaction of tag 5
+Final list is
 -17 -5 
-
-Non - Dominated
-
- Adding vector to result
--17 -5 
-
-Inspecting labels
+continue;
+interaction of tag 5
+Final list is
 -15 -11 
--17 -5 
-
-
-Non - Dominated
-
- Adding vector to result
--15 -11 
-
-Inspecting labels
+continue;
+interaction of tag 5
+Final list is
 -11 -13 
--15 -11 
-
-
-Non - Dominated
-
- Adding vector to result
--11 -13 
-
-Inspecting labels
+continue;
+interaction of tag 5
+Final list is
 -9 -19 
--11 -13 
-
-
-Non - Dominated
-
- Adding vector to result
--9 -19 
-
-a is: 6
-'a' and a-3 belong to T, comparing Labels
-HELLO!
--8 -3 
-Inspecting labels
+continue;
+Iterating through S[5] with tag 6
+interaction of tag 6
+Final list is
 -16 -8 
-
-Non - Dominated
-
- Adding vector to result
--16 -8 
-
-Inspecting labels
+continue;
+interaction of tag 6
+Final list is
 -14 -12 
--16 -8 
-
-
-Non - Dominated
-
- Adding vector to result
--14 -12 
-
-Inspecting labels
+continue;
+interaction of tag 6
+Final list is
 -10 -16 
--14 -12 
-
-
-Non - Dominated
-
- Adding vector to result
--10 -16 
-
-a is: 7
-'a' and a-3 belong to T, comparing Labels
-HELLO!
--12 -12 
-Inspecting labels
+continue;
+Iterating through S[5] with tag 7
+interaction of tag 7
+Final list is
 -20 -15 
-
-Non - Dominated
-
- Adding vector to result
--20 -15 
-
-Inspecting labels
+continue;
+interaction of tag 7
+Final list is
 -18 -21 
--20 -15 
-
-
-Non - Dominated
-
- Adding vector to result
--18 -21 
-
-Inspecting labels
+continue;
+interaction of tag 7
+Final list is
 -15 -9 
--18 -21 
-
-
-Non - Dominated
-
- Adding vector to result
--15 -9 
-
-Inspecting labels
+continue;
+interaction of tag 7
+Final list is
 -13 -15 
--15 -9 
-
-
-Non - Dominated
-
- Adding vector to result
--13 -15 
-
-a is: 8
-'a' and a-3 belong to T, comparing Labels
-HELLO!
--17 -5 
-Inspecting labels
+continue;
+Iterating through S[5] with tag 8
+interaction of tag 8
+Final list is
 -23 -14 
-
-Non - Dominated
-
- Adding vector to result
--23 -14 
-
-Inspecting labels
+continue;
+interaction of tag 8
+Final list is
 -19 -18 
--23 -14 
-
-
-Non - Dominated
-
- Adding vector to result
--19 -18 
-
-Inspecting labels
+continue;
+interaction of tag 8
+Final list is
 -17 -22 
--19 -18 
-
-
-Non - Dominated
-
- Adding vector to result
--17 -22 
-
-a is: 9
-'a' and a-3 belong to T, comparing Labels
-HELLO!
--16 -8 
-Inspecting labels
+continue;
+Iterating through S[5] with tag 9
+interaction of tag 9
+Final list is
 -24 -11 
-
-Non - Dominated
-
- Adding vector to result
--24 -11 
-
-Inspecting labels
+continue;
+interaction of tag 9
+Final list is
 -22 -17 
--24 -11 
-
-
-Non - Dominated
-
- Adding vector to result
--22 -17 
-
-Inspecting labels
+continue;
+interaction of tag 9
+Final list is
 -18 -19 
--22 -17 
-
-
-Non - Dominated
-
- Adding vector to result
--18 -19 
-
-Inspecting labels
+continue;
+interaction of tag 9
+Final list is
 -16 -25 
--18 -19 
-
-
-Non - Dominated
-
- Adding vector to result
+continue;
 -16 -25 
-
-
-
