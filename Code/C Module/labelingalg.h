@@ -8,7 +8,7 @@
 #include "auxlabel.h"
 
 
-ItemLabels **run(ItemLabels **_S, int *_W, int **_v, int _numberofitems,int capacity,int size);
+Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int capacity,int size);
 
 
 #endif // LABELINGALG_H_INCLUDED

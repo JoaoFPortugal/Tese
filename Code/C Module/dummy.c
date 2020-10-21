@@ -6,11 +6,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct ItemLabels{
+typedef struct Items{
     int tag;
     struct Label *label;
-    struct ItemLabels *next;
-}ItemLabels;
+    struct Items *next;
+}Items;
 
 
 typedef struct Label{
@@ -35,8 +35,8 @@ void printVector(int *T,int numberofelements){
   return;
 }
 
-ItemLabels *changeValue(ItemLabels *S, int a){
-  ItemLabels *test  = S->next;
+Items *changeValue(Items *S, int a){
+  Items *test  = S->next;
 
   test->tag = 1;
 
@@ -56,9 +56,9 @@ ItemLabels *changeValue(ItemLabels *S, int a){
 
 }
 
-ItemLabels *changeHeader(ItemLabels *_S){
+Items *changeHeader(Items *_S){
 
-  ItemLabels *S = _S;
+  Items *S = _S;
 
         int i[2];
         i[0]=2;
@@ -73,8 +73,8 @@ ItemLabels *changeHeader(ItemLabels *_S){
 }
 
 
-ItemLabels *tryValue(ItemLabels *S){
-  ItemLabels *header = S;
+Items *tryValue(Items *S){
+  Items *header = S;
 
   header = changeHeader(header);
 
@@ -85,13 +85,13 @@ ItemLabels *tryValue(ItemLabels *S){
 
 int main(int argc, char ** argv){
 
-  ItemLabels **S = (struct ItemLabels **) malloc(sizeof(struct ItemLabels *) * 6);
-  S[0] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-  S[1] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-  S[2] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-  S[3] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-  S[4] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-  S[5] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  Items **S = (struct Items **) malloc(sizeof(struct Items *) * 6);
+  S[0] = (struct Items *) malloc(sizeof(struct Items));
+  S[1] = (struct Items *) malloc(sizeof(struct Items));
+  S[2] = (struct Items *) malloc(sizeof(struct Items));
+  S[3] = (struct Items *) malloc(sizeof(struct Items));
+  S[4] = (struct Items *) malloc(sizeof(struct Items));
+  S[5] = (struct Items *) malloc(sizeof(struct Items));
 
 
 
@@ -101,8 +101,8 @@ int main(int argc, char ** argv){
   int i;
 
 
-  ItemLabels *result = S[1];
-  ItemLabels *tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  Items *result = S[1];
+  Items *tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 3;
   tmp->next = NULL;
   result->next = tmp;
@@ -112,20 +112,20 @@ int main(int argc, char ** argv){
   //S[2]
 
   result = S[2];
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 2;
   tmp->label = NULL;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 3;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 5;
   tmp->next = NULL;
   result->next = tmp;
@@ -135,31 +135,31 @@ int main(int argc, char ** argv){
   //S[3]
 
   result = S[3];
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 2;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 3;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 4;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag =5;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 7;
   tmp->next = NULL;
   result->next = tmp;
@@ -170,49 +170,49 @@ int main(int argc, char ** argv){
 
 
   result = S[4];
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 2;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 3;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 4;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag =5;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 6;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 7;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 8;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 9;
   tmp->next = NULL;
   result->next = tmp;
@@ -221,56 +221,56 @@ int main(int argc, char ** argv){
   //S[5]
 
   result = S[5];
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 2;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 3;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 4;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag =5;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 6;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 7;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 8;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
-  tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+  tmp = (struct Items *) malloc(sizeof(struct Items));
   tmp->tag = 9;
   tmp->next = NULL;
   result->next = tmp;
   result = result->next;
 
 
-  ItemLabels *res = tryValue(S[1]);
+  Items *res = tryValue(S[1]);
   printf("S[1] is:\n\n");
   printVector(res->label->value,2);
   return 1;

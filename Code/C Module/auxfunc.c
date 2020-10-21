@@ -154,7 +154,7 @@ int insideArray(int *T, int a, int size){
 
 
 
-void freeItemLabels(ItemLabels **res, int numberofitems){
+void freeItems(Items **res, int numberofitems){
 
   int i;
   for(i=0;i<numberofitems;i++){
@@ -164,9 +164,9 @@ void freeItemLabels(ItemLabels **res, int numberofitems){
   free(res);
 }
 
-void freeItemLabel(ItemLabels *item){
-  ItemLabels *freed = item;
-  ItemLabels *prev;
+void freeItemLabel(Items *item){
+  Items *freed = item;
+  Items *prev;
   Label *label;
 
   while(freed!=NULL){
@@ -245,8 +245,8 @@ double rad2deg(double rad) {
 
 
 
-ItemLabels *addNode(ItemLabels *S, int tag){
-    ItemLabels *tmp = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
+Items *addNode(Items *S, int tag){
+    Items *tmp = (struct Items *) malloc(sizeof(struct Items));
     tmp->tag = tag;
     tmp->label = NULL;
     tmp->next = S->next;

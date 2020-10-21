@@ -13,6 +13,8 @@
 
 
 
+
+
 int main(int argc, char **argv){
 
     int numberofitems = 5;
@@ -28,19 +30,23 @@ int main(int argc, char **argv){
     W[4]=3;
 
 
+  
+    Items **S = malloc(sizeof(struct Items*)*(numberofitems+1));
+
+    for(i=0;i<numberofitems+1;i++){
+        S[i] = (struct Items *) malloc(sizeof(struct Items));
+        S[i]->tag = 0;
+        S[i]->label = NULL;
+        S[i]->next = NULL;
+    }
+
+
     int r = 5, c = 2, i, j, count;
 
     int **v = (int **)malloc(r * sizeof(int *));
 
     for (i=0; i<r; i++) {
         v[i] = (int *) malloc(c * sizeof(int));
-    }
-
-    count = 0;
-    for (i = 0; i <  r; i++) {
-        for (j = 0; j < c; j++) {
-            v[i][j] = ++count;
-        }
     }
 
     v[0][0]=8;
@@ -55,20 +61,12 @@ int main(int argc, char **argv){
     v[4][1]=9;
 
 
-    ItemLabels **S = malloc(sizeof(struct ItemLabels*)*(numberofitems+1));
+    int **v = calculateValue(S)
 
-    for(i=0;i<numberofitems+1;i++){
-        S[i] = (struct ItemLabels *) malloc(sizeof(struct ItemLabels));
-        S[i]->tag = 0;
-        S[i]->label = NULL;
-        S[i]->next = NULL;
-    }
+  Items **res = run(S,W, v,numberofitems,capacity,size);
 
 
-  ItemLabels **res = run(S,W, v,numberofitems,capacity,size);
-
-
-  freeItemLabels(res,numberofitems+1);
+  freeItems(res,numberofitems+1);
   free(W);
   freeValue(v,r);
 }

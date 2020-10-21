@@ -9,9 +9,9 @@
 
 
 
-ItemLabels **run(ItemLabels **_S, int *_W, int **_v, int _numberofitems,int _capacity, int _size){
+Items **run(Items **_S, int *_W, int **_v, int _numberofitems,int _capacity, int _size){
 
-    ItemLabels (**S) = _S;
+    Items (**S) = _S;
     int (*W) = _W;
     int (**v) = _v;
     int *V = NULL;

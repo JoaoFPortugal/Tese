@@ -11,13 +11,13 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct ItemLabels{
+typedef struct Items{
     double latitude;
     double longitude;
     int tag;
     struct Label *label;
-    struct ItemLabels *next;
-}ItemLabels;
+    struct Items *next;
+}Items;
 
 
 typedef struct Label{
@@ -26,11 +26,11 @@ typedef struct Label{
 }Label;
 
 
-ItemLabels *initItems(ItemLabels *S, int w, int *v, int size);
-ItemLabels * addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, int size);
-ItemLabels *compareLabels(ItemLabels *result, ItemLabels *Sj_1, ItemLabels *Sj_aw, int * v, int size);
-ItemLabels * copyVector(ItemLabels *S, ItemLabels *S_2,int a,int size);
-ItemLabels * sumVectors(ItemLabels *header , ItemLabels * source, int *v, int a, int a_wj, int size);
+Items *initItems(Items *S, int w, int *v, int size);
+Items * addLabels(Items *S, int * _v, Items *S_2, int a, int wj, int size);
+Items *compareLabels(Items *result, Items *Sj_1, Items *Sj_aw, int * v, int size);
+Items * copyVector(Items *S, Items *S_2,int a,int size);
+Items * sumVectors(Items *header , Items * source, int *v, int a, int a_wj, int size);
 
 
 

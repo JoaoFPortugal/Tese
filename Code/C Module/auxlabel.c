@@ -11,10 +11,10 @@
 #include "auxfunc.h"
 
 
-ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
+Items *initItems(Items *_S, int w, int *valor, int size){
 
-    ItemLabels *S = _S;
-    ItemLabels *ptr = S;
+    Items *S = _S;
+    Items *ptr = S;
     int i;
     Label *header;
 
@@ -27,7 +27,7 @@ ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
     }
 
     S->label = header;
-    ItemLabels *prev;
+    Items *prev;
 
 
     while(ptr!=NULL){
@@ -65,12 +65,12 @@ ItemLabels *initItems(ItemLabels *_S, int w, int *valor, int size){
 
 
 
-ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, int size){
+Items *addLabels(Items *S, int * _v, Items *S_2, int a, int wj, int size){
 
-    ItemLabels *header = S;
-    ItemLabels *sndHeader = S_2;
-    ItemLabels *toadd = S_2;
-    ItemLabels *prev;
+    Items *header = S;
+    Items *sndHeader = S_2;
+    Items *toadd = S_2;
+    Items *prev;
 
     //scan for S[j]^a
 
@@ -118,9 +118,9 @@ ItemLabels *addLabels(ItemLabels *S, int * _v, ItemLabels *S_2, int a, int wj, i
 }
 
 
-ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj_aw, int * _v, int size){
+Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, int * _v, int size){
 
-    ItemLabels *result = _result;
+    Items *result = _result;
 
     int *v = _v;
 
@@ -326,14 +326,14 @@ ItemLabels * compareLabels(ItemLabels *_result, ItemLabels *Sj_1, ItemLabels *Sj
 
 
 
-ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
+Items* copyVector(Items *_S, Items *S_2,int a, int size){
 
 
 
-    ItemLabels *S = _S;
-    ItemLabels *header = S;
-    ItemLabels *sndHeader = S_2;
-    ItemLabels *prev;
+    Items *S = _S;
+    Items *header = S;
+    Items *sndHeader = S_2;
+    Items *prev;
 
     //scan for S[j]^a
     while(header!=NULL){
@@ -400,14 +400,14 @@ ItemLabels* copyVector(ItemLabels *_S, ItemLabels *S_2,int a, int size){
 }
 
 
-ItemLabels *sumVectors(ItemLabels * _S , ItemLabels * source, int *v, int a, int a_wj, int size){
+Items *sumVectors(Items * _S , Items * source, int *v, int a, int a_wj, int size){
 
-    ItemLabels *S = _S;
+    Items *S = _S;
 
-    ItemLabels * header = S;
+    Items * header = S;
 
-    ItemLabels * src = source;
-    ItemLabels *prev;
+    Items * src = source;
+    Items *prev;
 
     int j;
 
