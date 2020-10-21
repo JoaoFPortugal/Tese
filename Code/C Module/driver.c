@@ -33,7 +33,7 @@ int main(int argc, char **argv){
 
 
   
-    Items **S = malloc(sizeof(struct Items*)*(numberofitems+1));
+    Items **S = malloc(sizeof(struct Items*)*(numberofitems+2));
 
     for(i=0;i<numberofitems+1;i++){
         S[i] = (struct Items *) malloc(sizeof(struct Items));
@@ -64,6 +64,7 @@ int main(int argc, char **argv){
 
   Items **res = run(S,W, v,numberofitems,capacity,size);
 
+  res[6] = addResult(res);
 
   freeItems(res,numberofitems+1);
   free(W);

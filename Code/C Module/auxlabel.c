@@ -488,3 +488,86 @@ Items *sumVectors(Items * _S , Items * source, int *v, int a, int a_wj, int size
 }
 
 
+
+Items *addResult(Items **res){
+
+    Items *finalitem = res[6];
+    Items *current = res[5];
+    Label *currentlist = NULL;
+
+
+    while(current !=NULL) {
+
+        currentlist = iterateLabels(current,currentlist);
+        current = current ->next;
+
+    }
+
+    finalitem->label = currentlist;
+    return res[6];
+}
+
+
+Label iterateLabels(Items *current, Label *currentList){
+
+    Label *toAdd = current->label;
+    Label *currentFinalList = _currentList;
+    Label *F = NULL;
+    Label *headlist = NULL;
+
+    int neverdominated = 1;
+
+    int value;
+
+    while(toAdd != NULL){
+
+        while(currentFinalList != NULL){
+            value = dominated(currentFinalList->value,toAdd,2);
+            if(value == 0){
+
+                Label *tmp = (struct Label *) malloc(sizeof(struct Label));
+                tmp->next = NULL;
+                tmp->value = malloc(size * sizeof(int));
+                memcpy(tmp->value,currentFinalList->value,2*sizeof(int));
+
+                if(F == NULL){
+                    F = tmp;
+                    headlist = tmp;
+                }
+                else{
+                    F->next = tmp;
+                    F = F->next;
+                }
+            }
+
+            value = dominated(toAdd->value,currentFinalList,2);
+
+            if(value == 1){
+                neverdominated = 0;
+            }
+            currentFinalList = currentFinalList->next;
+
+        }
+
+        if(neverdominated == 1){
+            Label *tmp = (struct Label *) malloc(sizeof(struct Label));
+            tmp->next = NULL;
+            tmp->value = malloc(size * sizeof(int));
+            memcpy(tmp->value,toAdd->value,2*sizeof(int));
+            if(F == NULL){
+                F = tmp;
+                headlist = tmp;
+            }
+            else{
+                F->next = tmp;
+                F = F->next;
+            }
+        }
+
+        toAdd = toAdd->next;
+    }
+
+    return headlist;
+}
+
+
