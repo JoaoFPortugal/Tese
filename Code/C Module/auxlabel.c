@@ -479,20 +479,19 @@ Label *iterateLabels(Items *current, Label *_currentFinalList){
 
     Label *toAdd = current->label;
     Label *currentFinalList = _currentFinalList;
-    Label *newFinalList = NULL;
 
 
     while(toAdd!=NULL){
-          newFinalList = iterateValues (toAdd,currentFinalList);
+          currentFinalList = iterateValues (toAdd,currentFinalList);
           printf("interaction of tag %d\n",current->tag);
           printf("Final list is\n");
-          printLabels(newFinalList);
+          printLabels(currentFinalList);
           printf("continue;\n");
           toAdd = toAdd->next;
 
     }
 
-    return newFinalList;
+    return currentFinalList;
 }
 
 
