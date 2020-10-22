@@ -459,10 +459,8 @@ Items *addResult(Items **res){
     Label *currentfinalist = NULL;
 
 
-    printf("BEGIN\n");
     while(valuestoadd !=NULL) {
 
-        printf("Iterating through S[5] with tag %d\n", valuestoadd->tag);
 
         currentfinalist = iterateLabels(valuestoadd,currentfinalist);
 
@@ -483,12 +481,9 @@ Label *iterateLabels(Items *current, Label *_currentFinalList){
 
     while(toAdd!=NULL){
           currentFinalList = iterateValues (toAdd,currentFinalList);
-          printf("interaction of tag %d\n",current->tag);
-          printf("Final list is\n");
+          printf("Current finalList is: \n");
           printLabels(currentFinalList);
-          printf("continue;\n");
           toAdd = toAdd->next;
-
     }
 
     return currentFinalList;
@@ -501,6 +496,7 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
   Label *currentFinalList = _currentFinalList;
   Label *newValue = _newValue;
   Label *head;
+  Label *prev = currentFinalList;
 
   int neverdominated = 1;
 
@@ -508,7 +504,13 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 
     int *negv = neg(newValue->value,2);
 
-    int dominate = dominatedNeg(currentFinalList->value,negv,2);
+    int *negf = neg(currentFinalList->value,2);
+
+    int dominate = dominatedNeg(negf,negv,2);
+
+    free(negf);
+    free(negv);
+
     if(dominate == 0){
 
 
@@ -533,11 +535,20 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 
 
     int *v = neg(newValue->value,2);
+    int *neggg = neg(currentFinalList->value,2);
+    Label *negff = (struct Label *) malloc(sizeof(struct Label));
+    negff->next = NULL;
+    negff->value = malloc(2 * sizeof(int));
+    memcpy(negff->value,neggg,2*sizeof(int));
 
-    dominate = dominated(v,currentFinalList,2);
+    dominate = dominated(v,negff,2);
+
+    free(v);
+    free(neggg);
+    free(negff->value);
+    free(negff);
 
     if(dominate == 1){
-      printf("Entro\n\n");
       neverdominated = 0;
     }
     currentFinalList = currentFinalList->next;
@@ -551,7 +562,6 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
         tmp->value = malloc(2 * sizeof(int));
         memcpy(tmp->value,newValue->value,2*sizeof(int));
 
-        //printVector(tmp->value,2);
 
         if(newList == NULL){
             newList = tmp;
@@ -565,6 +575,11 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
         }
 
   }
+
+
+  freeLabels(prev);
+
+
 
   return head;
 }

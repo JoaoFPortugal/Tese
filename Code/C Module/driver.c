@@ -66,7 +66,6 @@ int main(int argc, char **argv){
 
   res[6] = addResult(res);
 
-  printVector(res[6]->label->value,2);
   freeItems(res,numberofitems+2);
   free(W);
   freeValue(v,r);
