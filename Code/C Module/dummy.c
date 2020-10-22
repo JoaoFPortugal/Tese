@@ -5,277 +5,137 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-typedef struct Items{
-    int tag;
-    struct Label *label;
-    struct Items *next;
-}Items;
+#define True 1
+#define False 0
 
 
-typedef struct Label{
-    int *value;
-    struct Label *next;
-}Label;
+
+public class findSubsetsThatSumToATarget {
+
+    private static HashSet<String> allSubsets = new HashSet<>();
+    private static final String token = " ";
+
+    /**
+     * The method for finding the subsets that sum to a target.
+     *
+     * @param input  The input array to be processed for subset with particular sum
+     * @param target The target sum we are looking for
+     * @param ramp   The Temporary String to be beefed up during recursive iterations(By default value an empty String)
+     * @param index  The index used to traverse the array during recursive calls
+     */
+
+    public static void findTargetSumSubsets(int[] input, int target, String ramp, int index) {
+
+        if(index > (input.length - 1)) {
+            if(getSum(ramp) == target) {
+                allSubsets.add(ramp);
+            }
+            return;
+        }
 
 
+        findTargetSumSubsets(input, target, ramp + input[index] + token, index + 1);
+        findTargetSumSubsets(input, target, ramp, index + 1);
+    }
+
+    /**
+     * A helper Method for calculating the sum from a string of integers
+     *
+     * @param intString the string subset
+     * @return the sum of the string subset
+     */
+    private static int getSum(String intString) {
+        int sum = 0;
+        StringTokenizer sTokens = new StringTokenizer(intString, token);
+        while (sTokens.hasMoreElements()) {
+            sum += Integer.parseInt((String) sTokens.nextElement());
+        }
+        return sum;
+    }
+
+    /**
+     * Cracking it down here : )
+     *
+     * @param args command line arguments.
+     */
+    public static void main(String[] args) {
+        int [] n =  {24, 1, 15, 3, 4, 15, 3};
+        int counter = 1;
+        FindSubsetsThatSumToATarget.findTargetSumSubsets(n, 25, "", 0);
+        for (String str: allSubsets) {
+            System.out.println(counter + ") " + str);
+            counter++;
+        }
+    }
+}
 
 
 void printVector(int *T,int numberofelements){
   if(T==NULL){
-      printf("Empty\n");
-      return;
-    }
+    printf("Empty\n");
+    return;
+  }
   int i;
 
   for(i=0;i<numberofelements;i++){
-      printf("%d ",T[i]);
-    }
+    printf("%d ",T[i]);
+  }
   printf("\n");
   return;
-}
-
-Items *changeValue(Items *S, int a){
-  Items *test  = S->next;
-
-  test->tag = 1;
-
-
-  Label *newlabel = (struct Label *) malloc(sizeof(struct Label));
-  newlabel->value = malloc(2 * sizeof(int));
-
-  int start1[2];
-  start1[0] = a;
-  start1[1] = 3;
-
-  memcpy(newlabel->value,start1,2*sizeof(int));
-
-  test->label = newlabel;
-  
-  return S;
-
-}
-
-Items *changeHeader(Items *_S){
-
-  Items *S = _S;
-
-        int i[2];
-        i[0]=2;
-        i[1]=88;
-
-        Label *tmp = (struct Label *) malloc(sizeof(struct Label));
-        tmp->next = NULL;
-        tmp->value = malloc(2 * sizeof(int));
-        memcpy(tmp->value,i,2*sizeof(int));
-        S->label = tmp;
-        return S;
-}
-
-
-Items *tryValue(Items *S){
-  Items *header = S;
-
-  header = changeHeader(header);
-
-  return S;
 }
 
 
 
 int main(int argc, char ** argv){
 
-  Items **S = (struct Items **) malloc(sizeof(struct Items *) * 6);
-  S[0] = (struct Items *) malloc(sizeof(struct Items));
-  S[1] = (struct Items *) malloc(sizeof(struct Items));
-  S[2] = (struct Items *) malloc(sizeof(struct Items));
-  S[3] = (struct Items *) malloc(sizeof(struct Items));
-  S[4] = (struct Items *) malloc(sizeof(struct Items));
-  S[5] = (struct Items *) malloc(sizeof(struct Items));
+    int r = 5, c = 2, i;
+
+    int **v = (int **)malloc(r * sizeof(int *));
+
+    for (i=0; i<r; i++) {
+        v[i] = (int *) malloc(c * sizeof(int));
+    }
+
+
+    v[0][0]=8;
+    v[0][1]=3;
+    v[1][0]=9;
+    v[1][1]=2;
+    v[2][0]=3;
+    v[2][1]=10;
+    v[3][0]=7;
+    v[3][1]=6;
+    v[4][0]=6;
+    v[4][1]=9;
+
+
+    int result[2];
+    result[0] = 16;
+    result[1] = 25;
+
+    int size = 5;
+
+    int *firstobjective = (int*)malloc(size * sizeof(int));
+    int *secondobjective = (int*)malloc(size * sizeof(int));
+    int *finalarray = (int*)malloc(size * sizeof(int));
+
+    for(i=0;i<size;i++){
+      firstobjective[i] = v[i][0];
+      secondobjective[i] = v[i][1];
+      finalarray[i] = 0;
+    }
+
+
+
+   int found = isSubsetSum(firstobjective,size,result[1],&finalarray);
+
+   printVector(finalarray,5);
 
 
 
 
-
-
-  int i;
-
-
-  Items *result = S[1];
-  Items *tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 3;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-
-  //S[2]
-
-  result = S[2];
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 2;
-  tmp->label = NULL;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 3;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 5;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-
-  //S[3]
-
-  result = S[3];
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 2;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 3;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 4;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag =5;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 7;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-
-  //S[4]
-
-
-  result = S[4];
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 2;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 3;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 4;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag =5;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 6;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 7;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 8;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 9;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  //S[5]
-
-  result = S[5];
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 2;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 3;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 4;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag =5;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 6;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 7;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 8;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-  tmp = (struct Items *) malloc(sizeof(struct Items));
-  tmp->tag = 9;
-  tmp->next = NULL;
-  result->next = tmp;
-  result = result->next;
-
-
-  Items *res = tryValue(S[1]);
-  printf("S[1] is:\n\n");
-  printVector(res->label->value,2);
   return 1;
 
 }
-
 
 
