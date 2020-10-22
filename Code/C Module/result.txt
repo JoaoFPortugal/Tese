@@ -1,111 +1,29 @@
-BEGIN
-Iterating through S[5] with tag 0
-interaction of tag 0
-Final list is
-0 0 
-continue;
-Iterating through S[5] with tag 2
-interaction of tag 2
-Final list is
--9 -2 
-continue;
-interaction of tag 2
-Final list is
--3 -10 
-continue;
-Iterating through S[5] with tag 3
-interaction of tag 3
-Final list is
--8 -3 
-continue;
-interaction of tag 3
-Final list is
--6 -9 
-continue;
-Iterating through S[5] with tag 4
-interaction of tag 4
-Final list is
--12 -12 
-continue;
-interaction of tag 4
-Final list is
--7 -6 
-continue;
-Iterating through S[5] with tag 5
-interaction of tag 5
-Final list is
--17 -5 
-continue;
-interaction of tag 5
-Final list is
--15 -11 
-continue;
-interaction of tag 5
-Final list is
--11 -13 
-continue;
-interaction of tag 5
-Final list is
--9 -19 
-continue;
-Iterating through S[5] with tag 6
-interaction of tag 6
-Final list is
--16 -8 
-continue;
-interaction of tag 6
-Final list is
--14 -12 
-continue;
-interaction of tag 6
-Final list is
--10 -16 
-continue;
-Iterating through S[5] with tag 7
-interaction of tag 7
-Final list is
--20 -15 
-continue;
-interaction of tag 7
-Final list is
+Sum is: 19
+And label is: 
 -18 -21 
-continue;
-interaction of tag 7
-Final list is
--15 -9 
-continue;
-interaction of tag 7
-Final list is
--13 -15 
-continue;
-Iterating through S[5] with tag 8
-interaction of tag 8
-Final list is
+END
+Sum is: 18
+And label is: 
 -23 -14 
-continue;
-interaction of tag 8
-Final list is
+END
+Sum is: 18
+And label is: 
 -19 -18 
-continue;
-interaction of tag 8
-Final list is
+END
+Sum is: 19
+And label is: 
 -17 -22 
-continue;
-Iterating through S[5] with tag 9
-interaction of tag 9
-Final list is
+END
+Sum is: 17
+And label is: 
 -24 -11 
-continue;
-interaction of tag 9
-Final list is
+END
+Sum is: 19
+And label is: 
 -22 -17 
-continue;
-interaction of tag 9
-Final list is
--18 -19 
-continue;
-interaction of tag 9
-Final list is
+END
+Sum is: 20
+And label is: 
 -16 -25 
-continue;
+END
 -16 -25 

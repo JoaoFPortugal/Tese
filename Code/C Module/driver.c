@@ -65,11 +65,17 @@ int main(int argc, char **argv){
   Items **res = run(S,W, v,numberofitems,capacity,size);
 
   res[6] = addResult(res);
+  int *bestlabel = pickBestLabel(res[6]->label);
+
+  printVector(bestlabel,2);
 
   freeItems(res,numberofitems+2);
   free(W);
   freeValue(v,r);
 }
+
+
+
 
 
 

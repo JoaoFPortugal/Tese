@@ -481,8 +481,6 @@ Label *iterateLabels(Items *current, Label *_currentFinalList){
 
     while(toAdd!=NULL){
           currentFinalList = iterateValues (toAdd,currentFinalList);
-          printf("Current finalList is: \n");
-          printLabels(currentFinalList);
           toAdd = toAdd->next;
     }
 

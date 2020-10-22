@@ -65,7 +65,7 @@ int * addV(int *V, int a, int elements);
 void freeItems(Items **res, int numberofitems);
 void freeItemLabel(Items *item);
 void freeLabels(Label *label);
-int *setSum(int *v, int size);
+int setSum(int *v);
 void freeValue(int **v, int r);
 Items *addNode(Items *S, int tag);
 int inBoundary(NoFlyZone *nf, Point *p);
@@ -74,7 +74,7 @@ double max(double a, double b);
 double min(double a, double b);
 int dominatedNeg(int *dominated, int *v, int size);
 void printLabels(Label *label);
-
+int *pickBestLabel(Label *label);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

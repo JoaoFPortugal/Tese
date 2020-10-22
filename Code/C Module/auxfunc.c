@@ -413,3 +413,49 @@ void printLabels(Label *label){
     label = label->next;
   }
 }
+
+
+int setSum(int *v){
+
+  int sum = 0.5*(-v[0]) + 0.5*(-v[1]);
+  printf("Sum is: %d\n",sum);
+  printf("And label is: \n");
+  printVector(v,2);
+  printf("END\n");
+  return sum;
+
+}
+
+
+int *pickBestLabel(Label *label){
+  int *v = NULL;
+  int currentSum;
+  int newsum = 0;
+  Label *head = label;
+  int *copy;
+
+  while(head != NULL){
+    copy = head->value;
+
+    if(v == NULL){
+      v = copy;
+      currentSum = setSum(v);
+    }
+    else{
+      newsum = setSum(copy);
+      if(newsum > currentSum){
+        v = copy;
+      }
+      else if (newsum == currentSum){
+        if(copy[1]>v[1]){
+          v = copy;
+        }
+      }
+    }
+
+    head = head->next;
+
+  }
+
+  return v;
+}
