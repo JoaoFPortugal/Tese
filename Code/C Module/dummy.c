@@ -10,10 +10,13 @@
 
 
 
-public class findSubsetsThatSumToATarget {
 
-    private static HashSet<String> allSubsets = new HashSet<>();
-    private static final String token = " ";
+typdef struct PossibleSolution {
+
+    int *v;
+    struct PossibleSolution *next;
+
+}PossibleSolution;
 
     /**
      * The method for finding the subsets that sum to a target.
@@ -24,50 +27,61 @@ public class findSubsetsThatSumToATarget {
      * @param index  The index used to traverse the array during recursive calls
      */
 
-    public static void findTargetSumSubsets(int[] input, int target, String ramp, int index) {
+    void findTargetSumSubsets(int *input, int target, int * _ramp, int index, int size,
+                              PossibleSolution ** _ps, int originalsize) {
 
-        if(index > (input.length - 1)) {
+        int *ramp = _ramp;
+
+        PossibleSolution *ps = * _ps;
+
+        if(index > (originalsize - 1)) {
+
             if(getSum(ramp) == target) {
-                allSubsets.add(ramp);
+
+                PossibleSolution *tmp = malloc(sizeof(struct PossibleSolution));
+                tmp->v = malloc(size * sizeof(int));
+                memcpy(tmp->v,ramp,size*sizeof(int));
+
+                free(ramp);
+
+                if(ps == NULL){
+                    ps = tmp;
+                }
+                else{
+                    ps->next = tmp;
+                    ps = ps->next;
+                }
             }
             return;
         }
 
+        int newsize = size+1;
+        int *newramp =  malloc(newsize * sizeof(int));
+        memcpy(newramp,ramp,sizeof(int)*size);
+        newramp[newsize-1]=input[index];
 
-        findTargetSumSubsets(input, target, ramp + input[index] + token, index + 1);
-        findTargetSumSubsets(input, target, ramp, index + 1);
+
+        findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize);
+        findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize);
     }
 
-    /**
-     * A helper Method for calculating the sum from a string of integers
-     *
-     * @param intString the string subset
-     * @return the sum of the string subset
-     */
-    private static int getSum(String intString) {
+
+    int getSum(int *v, int size) {
+        int i;
         int sum = 0;
-        StringTokenizer sTokens = new StringTokenizer(intString, token);
-        while (sTokens.hasMoreElements()) {
-            sum += Integer.parseInt((String) sTokens.nextElement());
+        for (i = 0; i < size; i++) {
+            sum+=v[i];
         }
         return sum;
     }
 
-    /**
-     * Cracking it down here : )
-     *
-     * @param args command line arguments.
-     */
     public static void main(String[] args) {
-        int [] n =  {24, 1, 15, 3, 4, 15, 3};
+        int [] n = {24, 1, 15, 3, 4, 15, 3};
         int counter = 1;
-        FindSubsetsThatSumToATarget.findTargetSumSubsets(n, 25, "", 0);
-        for (String str: allSubsets) {
-            System.out.println(counter + ") " + str);
-            counter++;
-        }
+
+        findTargetSumSubsets(n, 25, "", 0);
+
     }
-}
 
 
 void printVector(int *T,int numberofelements){

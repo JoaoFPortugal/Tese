@@ -69,6 +69,23 @@ int main(int argc, char **argv){
 
   printVector(bestlabel,2);
 
+
+  PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof struct(PossibleSolution));
+
+    int *firstobjective = (int*)malloc(size * sizeof(int));
+    int *secondobjective = (int*)malloc(size * sizeof(int));
+
+    for(i=0;i<size;i++){
+        firstobjective[i] = v[i][0];
+        secondobjective[i] = v[i][1];
+    }
+
+
+
+  findTargetSumSubsets(firstobjective, bestlabel[0], NULL,0, 0,
+   &ps, numberofitems);
+
+
   freeItems(res,numberofitems+2);
   free(W);
   freeValue(v,r);
