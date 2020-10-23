@@ -11,46 +11,54 @@
 
 
 
-typdef struct PossibleSolution {
+typedef struct PossibleSolution {
 
     int *v;
+    int size;
+    int *indexarray;
     struct PossibleSolution *next;
 
 }PossibleSolution;
 
-    /**
-     * The method for finding the subsets that sum to a target.
-     *
-     * @param input  The input array to be processed for subset with particular sum
-     * @param target The target sum we are looking for
-     * @param ramp   The Temporary String to be beefed up during recursive iterations(By default value an empty String)
-     * @param index  The index used to traverse the array during recursive calls
-     */
+int getSum(int *v, int size) {
+        int i;
+        int sum = 0;
+        for (i = 0; i < size; i++) {
+            sum+=v[i];
+        }
+        return sum;
+    }
 
-    void findTargetSumSubsets(int *input, int target, int * _ramp, int index, int size,
-                              PossibleSolution ** _ps, int originalsize) {
+
+
+void findTargetSumSubsets(int *input, int target, int * _ramp, int index, int size,
+                              PossibleSolution ** _ps, int originalsize, int * arrayofindexes) {
 
         int *ramp = _ramp;
 
         PossibleSolution *ps = * _ps;
+        PossibleSolution *head = *_ps;
 
         if(index > (originalsize - 1)) {
 
-            if(getSum(ramp) == target) {
+            if(getSum(ramp,size) == target) {
+                arrayofindexes[index] = 1;
 
                 PossibleSolution *tmp = malloc(sizeof(struct PossibleSolution));
                 tmp->v = malloc(size * sizeof(int));
+                tmp->indexarray = malloc(originalsize * sizeof(int));
+                memcpy(tmp->indexarray,arrayofindexes,originalsize * sizeof(int));
                 memcpy(tmp->v,ramp,size*sizeof(int));
+                tmp->size = size;
+                tmp->next = NULL;
 
                 free(ramp);
 
-                if(ps == NULL){
-                    ps = tmp;
+                while(head->next!=NULL){
+                  head = head->next;
                 }
-                else{
-                    ps->next = tmp;
-                    ps = ps->next;
-                }
+
+                head->next = tmp;
             }
             return;
         }
@@ -60,28 +68,14 @@ typdef struct PossibleSolution {
         memcpy(newramp,ramp,sizeof(int)*size);
         newramp[newsize-1]=input[index];
 
+        arrayofindexes[index] = 1;
+        findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize, arrayofindexes);
+        arrayofindexes[index] = 0;
 
-        findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize);
-        findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize);
+        findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize,arrayofindexes);
     }
 
 
-    int getSum(int *v, int size) {
-        int i;
-        int sum = 0;
-        for (i = 0; i < size; i++) {
-            sum+=v[i];
-        }
-        return sum;
-    }
-
-    public static void main(String[] args) {
-        int [] n = {24, 1, 15, 3, 4, 15, 3};
-        int counter = 1;
-
-        findTargetSumSubsets(n, 25, "", 0);
-
-    }
 
 
 void printVector(int *T,int numberofelements){
@@ -97,6 +91,28 @@ void printVector(int *T,int numberofelements){
   printf("\n");
   return;
 }
+
+void printPS(PossibleSolution *ps){
+
+
+  int i = 1;
+  while(ps!=NULL){
+
+
+    printf("Solution %d is ", i);
+
+
+    printVector(ps->v,ps->size);
+
+    printf("and its indexes are: ");
+    printVector(ps->indexarray,5);
+    i++;
+    ps = ps->next;
+  }
+}
+
+
+
 
 
 
@@ -131,21 +147,30 @@ int main(int argc, char ** argv){
 
     int *firstobjective = (int*)malloc(size * sizeof(int));
     int *secondobjective = (int*)malloc(size * sizeof(int));
-    int *finalarray = (int*)malloc(size * sizeof(int));
+    int *arrayindexes = malloc(size * sizeof(int));
+
 
     for(i=0;i<size;i++){
       firstobjective[i] = v[i][0];
       secondobjective[i] = v[i][1];
-      finalarray[i] = 0;
+      arrayindexes[i] = 0;
     }
 
+    arrayindexes[0] = 1;
+
+    PossibleSolution *ps = malloc(sizeof(struct PossibleSolution));
 
 
-   int found = isSubsetSum(firstobjective,size,result[1],&finalarray);
 
-   printVector(finalarray,5);
+  findTargetSumSubsets(firstobjective,16, NULL,0, 0,
+   &ps, size,arrayindexes);
 
 
+
+  PossibleSolution *prev = ps;
+  ps = ps->next;
+  free(prev);
+  printPS(ps);
 
 
   return 1;
