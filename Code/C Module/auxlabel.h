@@ -12,8 +12,7 @@
 #include <string.h>
 
 typedef struct Items{
-    double latitude;
-    double longitude;
+    struct Waypoint *waypoint;
     int tag;
     struct Label *label;
     struct Items *next;
@@ -35,6 +34,11 @@ typedef struct PossibleSolution {
 
 }PossibleSolution;
 
+typedef struct Waypoint {
+    double latitude;
+    double longitude;
+    double altitude;
+}Waypoint;
 
 
 Items *initItems(Items *S, int w, int *v, int size);

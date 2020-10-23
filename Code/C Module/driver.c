@@ -20,8 +20,7 @@ int main(int argc, char **argv){
     int numberofitems = 5;
     int capacity = 9;
     int size = 2;
-      int r = 5, c = 2, i;
-
+    int i;
 
 
     int *W = (int*) malloc(5*sizeof(int));
@@ -30,6 +29,7 @@ int main(int argc, char **argv){
     W[2]=2;
     W[3]=4;
     W[4]=3;
+
 
 
   
@@ -45,10 +45,10 @@ int main(int argc, char **argv){
 
 
 
-    int **v = (int **)malloc(r * sizeof(int *));
+    int **v = (int **)malloc(numberofitems * sizeof(int *));
 
-    for (i=0; i<r; i++) {
-        v[i] = (int *) malloc(c * sizeof(int));
+    for (i=0; i<numberofitems; i++) {
+        v[i] = (int *) malloc(2 * sizeof(int));
     }
 
     v[0][0]=8;
@@ -100,7 +100,7 @@ int main(int argc, char **argv){
   free(secondobjective);
   freeItems(res,numberofitems+2);
   free(W);
-  freeValue(v,r);
+  freeValue(v,numberofitems);
   freePS(ps);
 }
 
