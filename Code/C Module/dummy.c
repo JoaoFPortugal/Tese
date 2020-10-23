@@ -156,13 +156,12 @@ int main(int argc, char ** argv){
       arrayindexes[i] = 0;
     }
 
-    arrayindexes[0] = 1;
 
     PossibleSolution *ps = malloc(sizeof(struct PossibleSolution));
 
 
 
-  findTargetSumSubsets(firstobjective,16, NULL,0, 0,
+  findTargetSumSubsets(secondobjective,25, NULL,0, 0,
    &ps, size,arrayindexes);
 
 

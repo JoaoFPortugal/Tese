@@ -583,3 +583,48 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 }
 
 
+void findTargetSumSubsets(int *input, int target, int * _ramp, int index, int size,
+                              PossibleSolution ** _ps, int originalsize, int * arrayofindexes) {
+
+        int *ramp = _ramp;
+
+        PossibleSolution *ps = * _ps;
+        PossibleSolution *head = *_ps;
+
+        if(index > (originalsize - 1)) {
+
+            if(getSum(ramp,size) == target) {
+
+                PossibleSolution *tmp = malloc(sizeof(struct PossibleSolution));
+                tmp->v = malloc(size * sizeof(int));
+                tmp->indexarray = malloc(originalsize * sizeof(int));
+                memcpy(tmp->indexarray,arrayofindexes,originalsize * sizeof(int));
+                memcpy(tmp->v,ramp,size*sizeof(int));
+                tmp->size = size;
+                tmp->next = NULL;
+
+
+                while(head->next!=NULL){
+                  head = head->next;
+                }
+
+                head->next = tmp;
+            }
+            free(_ramp);
+            return;
+        }
+
+        int newsize = size+1;
+        int *newramp =  malloc(newsize * sizeof(int));
+        memcpy(newramp,ramp,sizeof(int)*size);
+        newramp[newsize-1]=input[index];
+
+        arrayofindexes[index] = 1;
+        findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize, arrayofindexes);
+        arrayofindexes[index] = 0;
+        findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize,arrayofindexes);
+
+}
+
+
+

@@ -70,27 +70,39 @@ int main(int argc, char **argv){
   printVector(bestlabel,2);
 
 
-  PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof struct(PossibleSolution));
+  PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof (struct PossibleSolution));
+  ps->next = NULL;
 
-    int *firstobjective = (int*)malloc(size * sizeof(int));
-    int *secondobjective = (int*)malloc(size * sizeof(int));
 
-    for(i=0;i<size;i++){
+    int *firstobjective = (int*)malloc(numberofitems * sizeof(int));
+    int *secondobjective = (int*)malloc(numberofitems * sizeof(int));
+    int *indexarray = (int*)malloc(numberofitems *sizeof(int));
+
+
+    for(i=0;i<numberofitems;i++){
         firstobjective[i] = v[i][0];
         secondobjective[i] = v[i][1];
+        indexarray[i] = 0;
     }
 
 
 
-  findTargetSumSubsets(firstobjective, bestlabel[0], NULL,0, 0,
-   &ps, numberofitems);
+  findTargetSumSubsets(secondobjective, -bestlabel[1], NULL,0, 0,
+   &ps, numberofitems,indexarray);
 
+  PossibleSolution *prev = ps;
+  ps = ps->next;
+  free(prev);
+  printPS(ps);
 
+  free(indexarray);
+  free(firstobjective);
+  free(secondobjective);
   freeItems(res,numberofitems+2);
   free(W);
   freeValue(v,r);
+  freePS(ps);
 }
-
 
 
 

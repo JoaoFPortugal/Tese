@@ -418,10 +418,6 @@ void printLabels(Label *label){
 int setSum(int *v){
 
   int sum = 0.5*(-v[0]) + 0.5*(-v[1]);
-  printf("Sum is: %d\n",sum);
-  printf("And label is: \n");
-  printVector(v,2);
-  printf("END\n");
   return sum;
 
 }
@@ -459,3 +455,47 @@ int *pickBestLabel(Label *label){
 
   return v;
 }
+
+
+int getSum(int *v, int size) {
+        int i;
+        int sum = 0;
+        for (i = 0; i < size; i++) {
+            sum+=v[i];
+        }
+        return sum;
+}
+
+
+void printPS(PossibleSolution *ps){
+
+
+  int i = 1;
+  while(ps!=NULL){
+
+
+    printf("Solution %d is ", i);
+
+    printVector(ps->v,ps->size);
+
+    printf("and its indexes are: ");
+    printVector(ps->indexarray,5);
+    i++;
+    ps = ps->next;
+  }
+}
+
+void freePS(PossibleSolution *ps){
+  PossibleSolution *prev;
+  while(ps != NULL){
+    free(ps->indexarray);
+    free(ps->v);
+    prev = ps;
+    ps = ps->next;
+    free(prev);
+
+  }
+}
+
+
+

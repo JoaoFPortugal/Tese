@@ -75,6 +75,9 @@ double min(double a, double b);
 int dominatedNeg(int *dominated, int *v, int size);
 void printLabels(Label *label);
 int *pickBestLabel(Label *label);
+int getSum(int *v, int size);
+void printPS(PossibleSolution *ps);
+void freePS(PossibleSolution *ps);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H
