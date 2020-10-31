@@ -24,7 +24,6 @@ Items ** initS(int numberofitems){
         S[i]->lastitem = -1;
         S[i]->label = NULL;
         S[i]->next = NULL;
-        S[i]->visited = 0;
     }
     return S;
 }
@@ -464,6 +463,7 @@ double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint *
     }
     int lastwaypoint = header->lastitem;
     Waypoint *origin;
+
     if(lastwaypoint == -1){
         origin = start;
     }
@@ -486,8 +486,6 @@ int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listO
     while(header!=NULL) {
 
         int lastwaypoint = header->lastitem;
-
-        printf("Last waypoint is %d\n", lastwaypoint);
 
         Waypoint *origin;
 

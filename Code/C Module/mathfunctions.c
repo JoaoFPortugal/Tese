@@ -15,7 +15,7 @@
 
 
 double fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane){
-    double dist = distance(a->latitude,a->latitude,b->latitude,b->longitude,'M');
+    double dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
     double time = dist / plane->speed;
     double fuelconsump = plane->consumptionRate;
     return time*fuelconsump;
@@ -33,8 +33,9 @@ double rad2deg(double rad) {
 }
 
 double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+
     double theta, dist;
-    if ((lat1 == lat2) && (lon1 == lon2)) {
+    if ((fabs(lat1-lat2)<EPS) && (fabs(lon1-lon2)<EPS)) {
         return 0;
     }
     else {

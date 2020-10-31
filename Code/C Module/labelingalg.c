@@ -39,14 +39,11 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
     T[0]=0;
     T[1]=round(fuelconsumption(start,listOfWaypoints[0],plane)*10);
 
-    printf("Lets begin, T is:\n");
-    printIntVector(T,TCounter);
 
 
     for(j=2;j<n+1;j++) {
 
         int realj = j-1;
-        printf("\n\nBeginning case j: %d\n\n",j);
 
 
         arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S[j-1],listOfWaypoints,start,plane,&arrayofweightssize);
@@ -57,9 +54,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
             w_j = arrayofweights[av];
 
             for (a = 0; a < capacity + 1; a++) {
-
-                printf("a is %d\n", a);
-                printf("And w_j is %d\n", w_j);
 
                 if (insideArray(T, a, TCounter) == 1 && !(insideArray(V,a,VCounter))) {
 
@@ -78,11 +72,9 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j,
                                                                listOfWaypoints, start, plane);
 
-                            printf("Comparing labels from S[%d]^0 with labels in S[%d]^%d, adding them onto S[%d]\n",j-1,j-1,a-w_j,j);
                             S[j] = addLabels(S[j], v[realj], S[j - 1], a, a - w_j, size, j);
 
                         } else if (flag1 == 0 && flag2 == -1) {
-                            printf("For fuckssake\n");
                             S[j] = copyVector(S[j], S[j - 1], a, size); //error checks
                         } else if (flag1 == -1 && flag2 == 0) {
 
@@ -94,7 +86,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                     } else {
 
-                        printf("Copying labels from S[%d] to S[%d] with tag %d\n",j-1,j,a);
                         S[j] = copyVector(S[j], S[j - 1], a, size); //error checks
 
                     }
@@ -103,7 +94,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                     if (insideArray(T, (a - w_j), TCounter) && !(insideArray(V,a,VCounter))) {
 
 
-                        int flag = checkRestrictions(listOfWaypoints[j], S[j - 1], a - w_j, listOfRestrictions,
+                        int flag = checkRestrictions(listOfWaypoints[realj], S[j - 1], a - w_j, listOfRestrictions,
                                                      listOfWaypoints, start);
 
                         if (flag == 0) {
@@ -111,7 +102,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j, listOfWaypoints,
                                                                start, plane);
 
-                            printf("Summing vectors S[%d] with tag %d, from S[%d]^%d\n",j,a,j-1,a-w_j);
                             S[j] = sumVectors(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
                             V = addV(V, a, &VCounter);
 
