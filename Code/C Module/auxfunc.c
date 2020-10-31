@@ -138,7 +138,7 @@ double *labelsum(double  *src1, double  *src2, int len){
 }
 
 
-int *cpVec(int* V,int elements){
+int *copyArray(int* V,int elements){
   if(V == NULL){
     return NULL;
 

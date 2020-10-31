@@ -75,18 +75,18 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                             S[j] = addLabels(S[j], v[realj], S[j - 1], a, a - w_j, size, j);
 
                         } else if (flag1 == 0 && flag2 == -1) {
-                            S[j] = copyVector(S[j], S[j - 1], a, size); //error checks
+                            S[j] = copyItems(S[j], S[j - 1], a, size); //error checks
                         } else if (flag1 == -1 && flag2 == 0) {
 
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j,
                                                                listOfWaypoints, start, plane);
-                            S[j] = sumVectors(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
+                            S[j] = sumItems(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
                         }
 
 
                     } else {
 
-                        S[j] = copyVector(S[j], S[j - 1], a, size); //error checks
+                        S[j] = copyItems(S[j], S[j - 1], a, size); //error checks
 
                     }
                 } else {
@@ -102,7 +102,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j, listOfWaypoints,
                                                                start, plane);
 
-                            S[j] = sumVectors(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
+                            S[j] = sumItems(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
                             V = addV(V, a, &VCounter);
 
                         }
@@ -117,7 +117,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
         free(arrayofweights);
 
         free(T);
-        T = cpVec(V, VCounter);
+        T = copyArray(V, VCounter);
         TCounter = VCounter;
         VCounter = 0;
         V = NULL;

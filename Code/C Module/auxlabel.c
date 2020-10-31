@@ -314,7 +314,7 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
 
 
 
-Items* copyVector(Items *_S, Items *S_2,int a, int size){
+Items* copyItems(Items *_S, Items *S_2,int a, int size){
 
 
 
@@ -385,7 +385,7 @@ Items* copyVector(Items *_S, Items *S_2,int a, int size){
 }
 
 
-Items *sumVectors(Items * _S , Items * source, double *v, int a, int a_wj, int size, int jindex){
+Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int size, int jindex){
 
     Items *S = _S;
 

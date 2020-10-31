@@ -28,7 +28,7 @@ int lexmin(double *label1, double *label2, int size);
 double *labelsum(double  *src1, double  *src2, int len);
 int dominated(double *label1, Label  *label2, int size);
 double *neg(double* src, int size);
-int *cpVec(int* V,int elements);
+int *copyArray(int* V,int elements);
 int * addV(int *V, int a, int *elements);
 double setSum(double *v);
 void freeValue(double **v, int r);
