@@ -18,7 +18,7 @@
 int main(int argc, char **argv){
 
     int numberofitems = 6;
-    int capacity = 500;
+    int capacity = 150;
     int size = 2;
     int i;
 
@@ -51,6 +51,7 @@ int main(int argc, char **argv){
     Waypoint **list = initWaypoints(numberofitems,start,destination);
     mergeSort(&list,0,numberofitems-2);
 
+    list[numberofitems-1] = destination;
 
     double **v = (double **)malloc(numberofitems * sizeof(double *));
 
@@ -68,8 +69,8 @@ int main(int argc, char **argv){
 
     Items **res = run(S,v,numberofitems,capacity,size,list,listOfRestrictions,start,plane);
 
-   /* printItems(res[5]);
-    res[6] = addResult(res);
+    printItems(res[5]);
+    /*res[6] = addResult(res);
 
     printf("Labels are\n");
     printLabels(res[6]->label);

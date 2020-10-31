@@ -1,7568 +1,4716 @@
+first w is 20
 Lets begin, T is:
 0 20 
-Beggining case j: 2
 
+
+Beginning case j: 2
+
+Last waypoint is -1
+Last waypoint is 1
 a is 0
-And T is: 
-0 20 
 And w_j is 23
-Entering first condition and adding V
-Empty
-0 
+Copying labels from S[1] to S[2] with tag 0
+Looking for S[j-1] with tag 0
 a is 1
-And T is: 
-0 20 
+And w_j is 23
 a is 2
-And T is: 
-0 20 
+And w_j is 23
+a is 3
+And w_j is 23
+a is 4
+And w_j is 23
+a is 5
+And w_j is 23
+a is 6
+And w_j is 23
+a is 7
+And w_j is 23
+a is 8
+And w_j is 23
+a is 9
+And w_j is 23
+a is 10
+And w_j is 23
+a is 11
+And w_j is 23
+a is 12
+And w_j is 23
+a is 13
+And w_j is 23
+a is 14
+And w_j is 23
+a is 15
+And w_j is 23
+a is 16
+And w_j is 23
+a is 17
+And w_j is 23
+a is 18
+And w_j is 23
+a is 19
+And w_j is 23
+a is 20
+And w_j is 23
+Copying labels from S[1] to S[2] with tag 20
+Looking for S[j-1] with tag 20
+a is 21
+And w_j is 23
+a is 22
+And w_j is 23
+a is 23
+And w_j is 23
+Summing vectors S[2] with tag 23, from S[1]^0
+Copying to last item 2
+a is 24
+And w_j is 23
+a is 25
+And w_j is 23
+a is 26
+And w_j is 23
+a is 27
+And w_j is 23
+a is 28
+And w_j is 23
+a is 29
+And w_j is 23
+a is 30
+And w_j is 23
+a is 31
+And w_j is 23
+a is 32
+And w_j is 23
+a is 33
+And w_j is 23
+a is 34
+And w_j is 23
+a is 35
+And w_j is 23
+a is 36
+And w_j is 23
+a is 37
+And w_j is 23
+a is 38
+And w_j is 23
+a is 39
+And w_j is 23
+a is 40
+And w_j is 23
+a is 41
+And w_j is 23
+a is 42
+And w_j is 23
+a is 43
+And w_j is 23
+Summing vectors S[2] with tag 43, from S[1]^20
+Copying to last item 2
+a is 44
+And w_j is 23
+a is 45
+And w_j is 23
+a is 46
+And w_j is 23
+a is 47
+And w_j is 23
+a is 48
+And w_j is 23
+a is 49
+And w_j is 23
+a is 50
+And w_j is 23
+a is 51
+And w_j is 23
+a is 52
+And w_j is 23
+a is 53
+And w_j is 23
+a is 54
+And w_j is 23
+a is 55
+And w_j is 23
+a is 56
+And w_j is 23
+a is 57
+And w_j is 23
+a is 58
+And w_j is 23
+a is 59
+And w_j is 23
+a is 60
+And w_j is 23
+a is 61
+And w_j is 23
+a is 62
+And w_j is 23
+a is 63
+And w_j is 23
+a is 64
+And w_j is 23
+a is 65
+And w_j is 23
+a is 66
+And w_j is 23
+a is 67
+And w_j is 23
+a is 68
+And w_j is 23
+a is 69
+And w_j is 23
+a is 70
+And w_j is 23
+a is 71
+And w_j is 23
+a is 72
+And w_j is 23
+a is 73
+And w_j is 23
+a is 74
+And w_j is 23
+a is 75
+And w_j is 23
+a is 76
+And w_j is 23
+a is 77
+And w_j is 23
+a is 78
+And w_j is 23
+a is 79
+And w_j is 23
+a is 80
+And w_j is 23
+a is 81
+And w_j is 23
+a is 82
+And w_j is 23
+a is 83
+And w_j is 23
+a is 84
+And w_j is 23
+a is 85
+And w_j is 23
+a is 86
+And w_j is 23
+a is 87
+And w_j is 23
+a is 88
+And w_j is 23
+a is 89
+And w_j is 23
+a is 90
+And w_j is 23
+a is 91
+And w_j is 23
+a is 92
+And w_j is 23
+a is 93
+And w_j is 23
+a is 94
+And w_j is 23
+a is 95
+And w_j is 23
+a is 96
+And w_j is 23
+a is 97
+And w_j is 23
+a is 98
+And w_j is 23
+a is 99
+And w_j is 23
+a is 100
+And w_j is 23
+a is 101
+And w_j is 23
+a is 102
+And w_j is 23
+a is 103
+And w_j is 23
+a is 104
+And w_j is 23
+a is 105
+And w_j is 23
+a is 106
+And w_j is 23
+a is 107
+And w_j is 23
+a is 108
+And w_j is 23
+a is 109
+And w_j is 23
+a is 110
+And w_j is 23
+a is 111
+And w_j is 23
+a is 112
+And w_j is 23
+a is 113
+And w_j is 23
+a is 114
+And w_j is 23
+a is 115
+And w_j is 23
+a is 116
+And w_j is 23
+a is 117
+And w_j is 23
+a is 118
+And w_j is 23
+a is 119
+And w_j is 23
+a is 120
+And w_j is 23
+a is 121
+And w_j is 23
+a is 122
+And w_j is 23
+a is 123
+And w_j is 23
+a is 124
+And w_j is 23
+a is 125
+And w_j is 23
+a is 126
+And w_j is 23
+a is 127
+And w_j is 23
+a is 128
+And w_j is 23
+a is 129
+And w_j is 23
+a is 130
+And w_j is 23
+a is 131
+And w_j is 23
+a is 132
+And w_j is 23
+a is 133
+And w_j is 23
+a is 134
+And w_j is 23
+a is 135
+And w_j is 23
+a is 136
+And w_j is 23
+a is 137
+And w_j is 23
+a is 138
+And w_j is 23
+a is 139
+And w_j is 23
+a is 140
+And w_j is 23
+a is 141
+And w_j is 23
+a is 142
+And w_j is 23
+a is 143
+And w_j is 23
+a is 144
+And w_j is 23
+a is 145
+And w_j is 23
+a is 146
+And w_j is 23
+a is 147
+And w_j is 23
+a is 148
+And w_j is 23
+a is 149
+And w_j is 23
+a is 150
+And w_j is 23
+a is 0
+And w_j is 18
+a is 1
+And w_j is 18
+a is 2
 And w_j is 18
 a is 3
-And T is: 
-0 20 
+And w_j is 18
 a is 4
-And T is: 
-0 20 
+And w_j is 18
 a is 5
-And T is: 
-0 20 
+And w_j is 18
 a is 6
-And T is: 
-0 20 
+And w_j is 18
 a is 7
-And T is: 
-0 20 
+And w_j is 18
 a is 8
-And T is: 
-0 20 
+And w_j is 18
 a is 9
-And T is: 
-0 20 
+And w_j is 18
 a is 10
-And T is: 
-0 20 
+And w_j is 18
 a is 11
-And T is: 
-0 20 
+And w_j is 18
 a is 12
-And T is: 
-0 20 
+And w_j is 18
 a is 13
-And T is: 
-0 20 
+And w_j is 18
 a is 14
-And T is: 
-0 20 
+And w_j is 18
 a is 15
-And T is: 
-0 20 
+And w_j is 18
 a is 16
-And T is: 
-0 20 
+And w_j is 18
 a is 17
-And T is: 
-0 20 
+And w_j is 18
 a is 18
-And T is: 
-0 20 
+And w_j is 18
+Summing vectors S[2] with tag 18, from S[1]^0
+Copying to last item 2
 a is 19
-And T is: 
-0 20 
+And w_j is 18
 a is 20
-And T is: 
-0 20 
+And w_j is 18
 a is 21
-And T is: 
-0 20 
+And w_j is 18
 a is 22
-And T is: 
-0 20 
+And w_j is 18
 a is 23
-And T is: 
-0 20 
+And w_j is 18
 a is 24
-And T is: 
-0 20 
+And w_j is 18
 a is 25
-And T is: 
-0 20 
+And w_j is 18
 a is 26
-And T is: 
-0 20 
+And w_j is 18
 a is 27
-And T is: 
-0 20 
+And w_j is 18
 a is 28
-And T is: 
-0 20 
+And w_j is 18
 a is 29
-And T is: 
-0 20 
+And w_j is 18
 a is 30
-And T is: 
-0 20 
+And w_j is 18
 a is 31
-And T is: 
-0 20 
+And w_j is 18
 a is 32
-And T is: 
-0 20 
+And w_j is 18
 a is 33
-And T is: 
-0 20 
+And w_j is 18
 a is 34
-And T is: 
-0 20 
+And w_j is 18
 a is 35
-And T is: 
-0 20 
+And w_j is 18
 a is 36
-And T is: 
-0 20 
+And w_j is 18
 a is 37
-And T is: 
-0 20 
+And w_j is 18
 a is 38
-And T is: 
-0 20 
+And w_j is 18
+Summing vectors S[2] with tag 38, from S[1]^20
+Copying to last item 2
 a is 39
-And T is: 
-0 20 
+And w_j is 18
 a is 40
-And T is: 
-0 20 
+And w_j is 18
 a is 41
-And T is: 
-0 20 
+And w_j is 18
 a is 42
-And T is: 
-0 20 
+And w_j is 18
 a is 43
-And T is: 
-0 20 
+And w_j is 18
 a is 44
-And T is: 
-0 20 
+And w_j is 18
 a is 45
-And T is: 
-0 20 
+And w_j is 18
 a is 46
-And T is: 
-0 20 
+And w_j is 18
 a is 47
-And T is: 
-0 20 
+And w_j is 18
 a is 48
-And T is: 
-0 20 
+And w_j is 18
 a is 49
-And T is: 
-0 20 
+And w_j is 18
 a is 50
-And T is: 
-0 20 
+And w_j is 18
 a is 51
-And T is: 
-0 20 
+And w_j is 18
 a is 52
-And T is: 
-0 20 
+And w_j is 18
 a is 53
-And T is: 
-0 20 
+And w_j is 18
 a is 54
-And T is: 
-0 20 
+And w_j is 18
 a is 55
-And T is: 
-0 20 
+And w_j is 18
 a is 56
-And T is: 
-0 20 
+And w_j is 18
 a is 57
-And T is: 
-0 20 
+And w_j is 18
 a is 58
-And T is: 
-0 20 
+And w_j is 18
 a is 59
-And T is: 
-0 20 
+And w_j is 18
 a is 60
-And T is: 
-0 20 
+And w_j is 18
 a is 61
-And T is: 
-0 20 
+And w_j is 18
 a is 62
-And T is: 
-0 20 
+And w_j is 18
 a is 63
-And T is: 
-0 20 
+And w_j is 18
 a is 64
-And T is: 
-0 20 
+And w_j is 18
 a is 65
-And T is: 
-0 20 
+And w_j is 18
 a is 66
-And T is: 
-0 20 
+And w_j is 18
 a is 67
-And T is: 
-0 20 
+And w_j is 18
 a is 68
-And T is: 
-0 20 
+And w_j is 18
 a is 69
-And T is: 
-0 20 
+And w_j is 18
 a is 70
-And T is: 
-0 20 
+And w_j is 18
 a is 71
-And T is: 
-0 20 
+And w_j is 18
 a is 72
-And T is: 
-0 20 
+And w_j is 18
 a is 73
-And T is: 
-0 20 
+And w_j is 18
 a is 74
-And T is: 
-0 20 
+And w_j is 18
 a is 75
-And T is: 
-0 20 
+And w_j is 18
 a is 76
-And T is: 
-0 20 
+And w_j is 18
 a is 77
-And T is: 
-0 20 
+And w_j is 18
 a is 78
-And T is: 
-0 20 
+And w_j is 18
 a is 79
-And T is: 
-0 20 
+And w_j is 18
 a is 80
-And T is: 
-0 20 
+And w_j is 18
 a is 81
-And T is: 
-0 20 
+And w_j is 18
 a is 82
-And T is: 
-0 20 
+And w_j is 18
 a is 83
-And T is: 
-0 20 
+And w_j is 18
 a is 84
-And T is: 
-0 20 
+And w_j is 18
 a is 85
-And T is: 
-0 20 
+And w_j is 18
 a is 86
-And T is: 
-0 20 
+And w_j is 18
 a is 87
-And T is: 
-0 20 
+And w_j is 18
 a is 88
-And T is: 
-0 20 
+And w_j is 18
 a is 89
-And T is: 
-0 20 
+And w_j is 18
 a is 90
-And T is: 
-0 20 
+And w_j is 18
 a is 91
-And T is: 
-0 20 
+And w_j is 18
 a is 92
-And T is: 
-0 20 
+And w_j is 18
 a is 93
-And T is: 
-0 20 
+And w_j is 18
 a is 94
-And T is: 
-0 20 
+And w_j is 18
 a is 95
-And T is: 
-0 20 
+And w_j is 18
 a is 96
-And T is: 
-0 20 
+And w_j is 18
 a is 97
-And T is: 
-0 20 
+And w_j is 18
 a is 98
-And T is: 
-0 20 
+And w_j is 18
 a is 99
-And T is: 
-0 20 
+And w_j is 18
 a is 100
-And T is: 
-0 20 
+And w_j is 18
 a is 101
-And T is: 
-0 20 
+And w_j is 18
 a is 102
-And T is: 
-0 20 
+And w_j is 18
 a is 103
-And T is: 
-0 20 
+And w_j is 18
 a is 104
-And T is: 
-0 20 
+And w_j is 18
 a is 105
-And T is: 
-0 20 
+And w_j is 18
 a is 106
-And T is: 
-0 20 
+And w_j is 18
 a is 107
-And T is: 
-0 20 
+And w_j is 18
 a is 108
-And T is: 
-0 20 
+And w_j is 18
 a is 109
-And T is: 
-0 20 
+And w_j is 18
 a is 110
-And T is: 
-0 20 
+And w_j is 18
 a is 111
-And T is: 
-0 20 
+And w_j is 18
 a is 112
-And T is: 
-0 20 
+And w_j is 18
 a is 113
-And T is: 
-0 20 
+And w_j is 18
 a is 114
-And T is: 
-0 20 
+And w_j is 18
 a is 115
-And T is: 
-0 20 
+And w_j is 18
 a is 116
-And T is: 
-0 20 
+And w_j is 18
 a is 117
-And T is: 
-0 20 
+And w_j is 18
 a is 118
-And T is: 
-0 20 
+And w_j is 18
 a is 119
-And T is: 
-0 20 
+And w_j is 18
 a is 120
-And T is: 
-0 20 
+And w_j is 18
 a is 121
-And T is: 
-0 20 
+And w_j is 18
 a is 122
-And T is: 
-0 20 
+And w_j is 18
 a is 123
-And T is: 
-0 20 
+And w_j is 18
 a is 124
-And T is: 
-0 20 
+And w_j is 18
 a is 125
-And T is: 
-0 20 
+And w_j is 18
 a is 126
-And T is: 
-0 20 
+And w_j is 18
 a is 127
-And T is: 
-0 20 
+And w_j is 18
 a is 128
-And T is: 
-0 20 
+And w_j is 18
 a is 129
-And T is: 
-0 20 
+And w_j is 18
 a is 130
-And T is: 
-0 20 
+And w_j is 18
 a is 131
-And T is: 
-0 20 
+And w_j is 18
 a is 132
-And T is: 
-0 20 
+And w_j is 18
 a is 133
-And T is: 
-0 20 
+And w_j is 18
 a is 134
-And T is: 
-0 20 
+And w_j is 18
 a is 135
-And T is: 
-0 20 
+And w_j is 18
 a is 136
-And T is: 
-0 20 
+And w_j is 18
 a is 137
-And T is: 
-0 20 
+And w_j is 18
 a is 138
-And T is: 
-0 20 
+And w_j is 18
 a is 139
-And T is: 
-0 20 
+And w_j is 18
 a is 140
-And T is: 
-0 20 
+And w_j is 18
 a is 141
-And T is: 
-0 20 
+And w_j is 18
 a is 142
-And T is: 
-0 20 
+And w_j is 18
 a is 143
-And T is: 
-0 20 
+And w_j is 18
 a is 144
-And T is: 
-0 20 
+And w_j is 18
 a is 145
-And T is: 
-0 20 
+And w_j is 18
 a is 146
-And T is: 
-0 20 
+And w_j is 18
 a is 147
-And T is: 
-0 20 
+And w_j is 18
 a is 148
-And T is: 
-0 20 
+And w_j is 18
 a is 149
-And T is: 
-0 20 
+And w_j is 18
 a is 150
-And T is: 
-0 20 
-a is 151
-And T is: 
-0 20 
-a is 152
-And T is: 
-0 20 
-a is 153
-And T is: 
-0 20 
-a is 154
-And T is: 
-0 20 
-a is 155
-And T is: 
-0 20 
-a is 156
-And T is: 
-0 20 
-a is 157
-And T is: 
-0 20 
-a is 158
-And T is: 
-0 20 
-a is 159
-And T is: 
-0 20 
-a is 160
-And T is: 
-0 20 
-a is 161
-And T is: 
-0 20 
-a is 162
-And T is: 
-0 20 
-a is 163
-And T is: 
-0 20 
-a is 164
-And T is: 
-0 20 
-a is 165
-And T is: 
-0 20 
-a is 166
-And T is: 
-0 20 
-a is 167
-And T is: 
-0 20 
-a is 168
-And T is: 
-0 20 
-a is 169
-And T is: 
-0 20 
-a is 170
-And T is: 
-0 20 
-a is 171
-And T is: 
-0 20 
-a is 172
-And T is: 
-0 20 
-a is 173
-And T is: 
-0 20 
-a is 174
-And T is: 
-0 20 
-a is 175
-And T is: 
-0 20 
-a is 176
-And T is: 
-0 20 
-a is 177
-And T is: 
-0 20 
-a is 178
-And T is: 
-0 20 
-a is 179
-And T is: 
-0 20 
-a is 180
-And T is: 
-0 20 
-a is 181
-And T is: 
-0 20 
-a is 182
-And T is: 
-0 20 
-a is 183
-And T is: 
-0 20 
-a is 184
-And T is: 
-0 20 
-a is 185
-And T is: 
-0 20 
-a is 186
-And T is: 
-0 20 
-a is 187
-And T is: 
-0 20 
-a is 188
-And T is: 
-0 20 
-a is 189
-And T is: 
-0 20 
-a is 190
-And T is: 
-0 20 
-a is 191
-And T is: 
-0 20 
-a is 192
-And T is: 
-0 20 
-a is 193
-And T is: 
-0 20 
-a is 194
-And T is: 
-0 20 
-a is 195
-And T is: 
-0 20 
-a is 196
-And T is: 
-0 20 
-a is 197
-And T is: 
-0 20 
-a is 198
-And T is: 
-0 20 
-a is 199
-And T is: 
-0 20 
-a is 200
-And T is: 
-0 20 
-a is 201
-And T is: 
-0 20 
-a is 202
-And T is: 
-0 20 
-a is 203
-And T is: 
-0 20 
-a is 204
-And T is: 
-0 20 
-a is 205
-And T is: 
-0 20 
-a is 206
-And T is: 
-0 20 
-a is 207
-And T is: 
-0 20 
-a is 208
-And T is: 
-0 20 
-a is 209
-And T is: 
-0 20 
-a is 210
-And T is: 
-0 20 
-a is 211
-And T is: 
-0 20 
-a is 212
-And T is: 
-0 20 
-a is 213
-And T is: 
-0 20 
-a is 214
-And T is: 
-0 20 
-a is 215
-And T is: 
-0 20 
-a is 216
-And T is: 
-0 20 
-a is 217
-And T is: 
-0 20 
-a is 218
-And T is: 
-0 20 
-a is 219
-And T is: 
-0 20 
-a is 220
-And T is: 
-0 20 
-a is 221
-And T is: 
-0 20 
-a is 222
-And T is: 
-0 20 
-a is 223
-And T is: 
-0 20 
-a is 224
-And T is: 
-0 20 
-a is 225
-And T is: 
-0 20 
-a is 226
-And T is: 
-0 20 
-a is 227
-And T is: 
-0 20 
-a is 228
-And T is: 
-0 20 
-a is 229
-And T is: 
-0 20 
-a is 230
-And T is: 
-0 20 
-a is 231
-And T is: 
-0 20 
-a is 232
-And T is: 
-0 20 
-a is 233
-And T is: 
-0 20 
-a is 234
-And T is: 
-0 20 
-a is 235
-And T is: 
-0 20 
-a is 236
-And T is: 
-0 20 
-a is 237
-And T is: 
-0 20 
-a is 238
-And T is: 
-0 20 
-a is 239
-And T is: 
-0 20 
-a is 240
-And T is: 
-0 20 
-a is 241
-And T is: 
-0 20 
-a is 242
-And T is: 
-0 20 
-a is 243
-And T is: 
-0 20 
-a is 244
-And T is: 
-0 20 
-a is 245
-And T is: 
-0 20 
-a is 246
-And T is: 
-0 20 
-a is 247
-And T is: 
-0 20 
-a is 248
-And T is: 
-0 20 
-a is 249
-And T is: 
-0 20 
-a is 250
-And T is: 
-0 20 
-a is 251
-And T is: 
-0 20 
-a is 252
-And T is: 
-0 20 
-a is 253
-And T is: 
-0 20 
-a is 254
-And T is: 
-0 20 
-a is 255
-And T is: 
-0 20 
-a is 256
-And T is: 
-0 20 
-a is 257
-And T is: 
-0 20 
-a is 258
-And T is: 
-0 20 
-a is 259
-And T is: 
-0 20 
-a is 260
-And T is: 
-0 20 
-a is 261
-And T is: 
-0 20 
-a is 262
-And T is: 
-0 20 
-a is 263
-And T is: 
-0 20 
-a is 264
-And T is: 
-0 20 
-a is 265
-And T is: 
-0 20 
-a is 266
-And T is: 
-0 20 
-a is 267
-And T is: 
-0 20 
-a is 268
-And T is: 
-0 20 
-a is 269
-And T is: 
-0 20 
-a is 270
-And T is: 
-0 20 
-a is 271
-And T is: 
-0 20 
-a is 272
-And T is: 
-0 20 
-a is 273
-And T is: 
-0 20 
-a is 274
-And T is: 
-0 20 
-a is 275
-And T is: 
-0 20 
-a is 276
-And T is: 
-0 20 
-a is 277
-And T is: 
-0 20 
-a is 278
-And T is: 
-0 20 
-a is 279
-And T is: 
-0 20 
-a is 280
-And T is: 
-0 20 
-a is 281
-And T is: 
-0 20 
-a is 282
-And T is: 
-0 20 
-a is 283
-And T is: 
-0 20 
-a is 284
-And T is: 
-0 20 
-a is 285
-And T is: 
-0 20 
-a is 286
-And T is: 
-0 20 
-a is 287
-And T is: 
-0 20 
-a is 288
-And T is: 
-0 20 
-a is 289
-And T is: 
-0 20 
-a is 290
-And T is: 
-0 20 
-a is 291
-And T is: 
-0 20 
-a is 292
-And T is: 
-0 20 
-a is 293
-And T is: 
-0 20 
-a is 294
-And T is: 
-0 20 
-a is 295
-And T is: 
-0 20 
-a is 296
-And T is: 
-0 20 
-a is 297
-And T is: 
-0 20 
-a is 298
-And T is: 
-0 20 
-a is 299
-And T is: 
-0 20 
-a is 300
-And T is: 
-0 20 
-a is 301
-And T is: 
-0 20 
-a is 302
-And T is: 
-0 20 
-a is 303
-And T is: 
-0 20 
-a is 304
-And T is: 
-0 20 
-a is 305
-And T is: 
-0 20 
-a is 306
-And T is: 
-0 20 
-a is 307
-And T is: 
-0 20 
-a is 308
-And T is: 
-0 20 
-a is 309
-And T is: 
-0 20 
-a is 310
-And T is: 
-0 20 
-a is 311
-And T is: 
-0 20 
-a is 312
-And T is: 
-0 20 
-a is 313
-And T is: 
-0 20 
-a is 314
-And T is: 
-0 20 
-a is 315
-And T is: 
-0 20 
-a is 316
-And T is: 
-0 20 
-a is 317
-And T is: 
-0 20 
-a is 318
-And T is: 
-0 20 
-a is 319
-And T is: 
-0 20 
-a is 320
-And T is: 
-0 20 
-a is 321
-And T is: 
-0 20 
-a is 322
-And T is: 
-0 20 
-a is 323
-And T is: 
-0 20 
-a is 324
-And T is: 
-0 20 
-a is 325
-And T is: 
-0 20 
-a is 326
-And T is: 
-0 20 
-a is 327
-And T is: 
-0 20 
-a is 328
-And T is: 
-0 20 
-a is 329
-And T is: 
-0 20 
-a is 330
-And T is: 
-0 20 
-a is 331
-And T is: 
-0 20 
-a is 332
-And T is: 
-0 20 
-a is 333
-And T is: 
-0 20 
-a is 334
-And T is: 
-0 20 
-a is 335
-And T is: 
-0 20 
-a is 336
-And T is: 
-0 20 
-a is 337
-And T is: 
-0 20 
-a is 338
-And T is: 
-0 20 
-a is 339
-And T is: 
-0 20 
-a is 340
-And T is: 
-0 20 
-a is 341
-And T is: 
-0 20 
-a is 342
-And T is: 
-0 20 
-a is 343
-And T is: 
-0 20 
-a is 344
-And T is: 
-0 20 
-a is 345
-And T is: 
-0 20 
-a is 346
-And T is: 
-0 20 
-a is 347
-And T is: 
-0 20 
-a is 348
-And T is: 
-0 20 
-a is 349
-And T is: 
-0 20 
-a is 350
-And T is: 
-0 20 
-a is 351
-And T is: 
-0 20 
-a is 352
-And T is: 
-0 20 
-a is 353
-And T is: 
-0 20 
-a is 354
-And T is: 
-0 20 
-a is 355
-And T is: 
-0 20 
-a is 356
-And T is: 
-0 20 
-a is 357
-And T is: 
-0 20 
-a is 358
-And T is: 
-0 20 
-a is 359
-And T is: 
-0 20 
-a is 360
-And T is: 
-0 20 
-a is 361
-And T is: 
-0 20 
-a is 362
-And T is: 
-0 20 
-a is 363
-And T is: 
-0 20 
-a is 364
-And T is: 
-0 20 
-a is 365
-And T is: 
-0 20 
-a is 366
-And T is: 
-0 20 
-a is 367
-And T is: 
-0 20 
-a is 368
-And T is: 
-0 20 
-a is 369
-And T is: 
-0 20 
-a is 370
-And T is: 
-0 20 
-a is 371
-And T is: 
-0 20 
-a is 372
-And T is: 
-0 20 
-a is 373
-And T is: 
-0 20 
-a is 374
-And T is: 
-0 20 
-a is 375
-And T is: 
-0 20 
-a is 376
-And T is: 
-0 20 
-a is 377
-And T is: 
-0 20 
-a is 378
-And T is: 
-0 20 
-a is 379
-And T is: 
-0 20 
-a is 380
-And T is: 
-0 20 
-a is 381
-And T is: 
-0 20 
-a is 382
-And T is: 
-0 20 
-a is 383
-And T is: 
-0 20 
-a is 384
-And T is: 
-0 20 
-a is 385
-And T is: 
-0 20 
-a is 386
-And T is: 
-0 20 
-a is 387
-And T is: 
-0 20 
-a is 388
-And T is: 
-0 20 
-a is 389
-And T is: 
-0 20 
-a is 390
-And T is: 
-0 20 
-a is 391
-And T is: 
-0 20 
-a is 392
-And T is: 
-0 20 
-a is 393
-And T is: 
-0 20 
-a is 394
-And T is: 
-0 20 
-a is 395
-And T is: 
-0 20 
-a is 396
-And T is: 
-0 20 
-a is 397
-And T is: 
-0 20 
-a is 398
-And T is: 
-0 20 
-a is 399
-And T is: 
-0 20 
-a is 400
-And T is: 
-0 20 
-a is 401
-And T is: 
-0 20 
-a is 402
-And T is: 
-0 20 
-a is 403
-And T is: 
-0 20 
-a is 404
-And T is: 
-0 20 
-a is 405
-And T is: 
-0 20 
-a is 406
-And T is: 
-0 20 
-a is 407
-And T is: 
-0 20 
-a is 408
-And T is: 
-0 20 
-a is 409
-And T is: 
-0 20 
-a is 410
-And T is: 
-0 20 
-a is 411
-And T is: 
-0 20 
-a is 412
-And T is: 
-0 20 
-a is 413
-And T is: 
-0 20 
-a is 414
-And T is: 
-0 20 
-a is 415
-And T is: 
-0 20 
-a is 416
-And T is: 
-0 20 
-a is 417
-And T is: 
-0 20 
-a is 418
-And T is: 
-0 20 
-a is 419
-And T is: 
-0 20 
-a is 420
-And T is: 
-0 20 
-a is 421
-And T is: 
-0 20 
-a is 422
-And T is: 
-0 20 
-a is 423
-And T is: 
-0 20 
-a is 424
-And T is: 
-0 20 
-a is 425
-And T is: 
-0 20 
-a is 426
-And T is: 
-0 20 
-a is 427
-And T is: 
-0 20 
-a is 428
-And T is: 
-0 20 
-a is 429
-And T is: 
-0 20 
-a is 430
-And T is: 
-0 20 
-a is 431
-And T is: 
-0 20 
-a is 432
-And T is: 
-0 20 
-a is 433
-And T is: 
-0 20 
-a is 434
-And T is: 
-0 20 
-a is 435
-And T is: 
-0 20 
-a is 436
-And T is: 
-0 20 
-a is 437
-And T is: 
-0 20 
-a is 438
-And T is: 
-0 20 
-a is 439
-And T is: 
-0 20 
-a is 440
-And T is: 
-0 20 
-a is 441
-And T is: 
-0 20 
-a is 442
-And T is: 
-0 20 
-a is 443
-And T is: 
-0 20 
-a is 444
-And T is: 
-0 20 
-a is 445
-And T is: 
-0 20 
-a is 446
-And T is: 
-0 20 
-a is 447
-And T is: 
-0 20 
-a is 448
-And T is: 
-0 20 
-a is 449
-And T is: 
-0 20 
-a is 450
-And T is: 
-0 20 
-a is 451
-And T is: 
-0 20 
-a is 452
-And T is: 
-0 20 
-a is 453
-And T is: 
-0 20 
-a is 454
-And T is: 
-0 20 
-a is 455
-And T is: 
-0 20 
-a is 456
-And T is: 
-0 20 
-a is 457
-And T is: 
-0 20 
-a is 458
-And T is: 
-0 20 
-a is 459
-And T is: 
-0 20 
-a is 460
-And T is: 
-0 20 
-a is 461
-And T is: 
-0 20 
-a is 462
-And T is: 
-0 20 
-a is 463
-And T is: 
-0 20 
-a is 464
-And T is: 
-0 20 
-a is 465
-And T is: 
-0 20 
-a is 466
-And T is: 
-0 20 
-a is 467
-And T is: 
-0 20 
-a is 468
-And T is: 
-0 20 
-a is 469
-And T is: 
-0 20 
-a is 470
-And T is: 
-0 20 
-a is 471
-And T is: 
-0 20 
-a is 472
-And T is: 
-0 20 
-a is 473
-And T is: 
-0 20 
-a is 474
-And T is: 
-0 20 
-a is 475
-And T is: 
-0 20 
-a is 476
-And T is: 
-0 20 
-a is 477
-And T is: 
-0 20 
-a is 478
-And T is: 
-0 20 
-a is 479
-And T is: 
-0 20 
-a is 480
-And T is: 
-0 20 
-a is 481
-And T is: 
-0 20 
-a is 482
-And T is: 
-0 20 
-a is 483
-And T is: 
-0 20 
-a is 484
-And T is: 
-0 20 
-a is 485
-And T is: 
-0 20 
-a is 486
-And T is: 
-0 20 
-a is 487
-And T is: 
-0 20 
-a is 488
-And T is: 
-0 20 
-a is 489
-And T is: 
-0 20 
-a is 490
-And T is: 
-0 20 
-a is 491
-And T is: 
-0 20 
-a is 492
-And T is: 
-0 20 
-a is 493
-And T is: 
-0 20 
-a is 494
-And T is: 
-0 20 
-a is 495
-And T is: 
-0 20 
-a is 496
-And T is: 
-0 20 
-a is 497
-And T is: 
-0 20 
-a is 498
-And T is: 
-0 20 
-a is 499
-And T is: 
-0 20 
-a is 500
-And T is: 
-0 20 
-T was:
-0 20 
-now T is
-0 
-Beggining case j: 3
+And w_j is 18
 
+
+Beginning case j: 3
+
+Last waypoint is -1
+Last waypoint is 2
+Last waypoint is 1
+Last waypoint is 2
+Last waypoint is 2
+Last waypoint is 2
 a is 0
-And T is: 
-0 
 And w_j is 12
-Entering first condition and adding V
-Empty
-0 
+Copying labels from S[2] to S[3] with tag 0
+Looking for S[j-1] with tag 0
 a is 1
-And T is: 
-0 
+And w_j is 12
 a is 2
-And T is: 
-0 
+And w_j is 12
 a is 3
-And T is: 
-0 
+And w_j is 12
 a is 4
-And T is: 
-0 
+And w_j is 12
 a is 5
-And T is: 
-0 
+And w_j is 12
 a is 6
-And T is: 
-0 
+And w_j is 12
 a is 7
-And T is: 
-0 
+And w_j is 12
 a is 8
-And T is: 
-0 
+And w_j is 12
 a is 9
-And T is: 
-0 
+And w_j is 12
 a is 10
-And T is: 
-0 
+And w_j is 12
 a is 11
-And T is: 
-0 
+And w_j is 12
 a is 12
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 12, from S[2]^0
+Copying to last item 3
 a is 13
-And T is: 
-0 
+And w_j is 12
 a is 14
-And T is: 
-0 
+And w_j is 12
 a is 15
-And T is: 
-0 
+And w_j is 12
 a is 16
-And T is: 
-0 
+And w_j is 12
 a is 17
-And T is: 
-0 
+And w_j is 12
 a is 18
-And T is: 
-0 
+And w_j is 12
+Copying labels from S[2] to S[3] with tag 18
+Looking for S[j-1] with tag 18
 a is 19
-And T is: 
-0 
+And w_j is 12
 a is 20
-And T is: 
-0 
+And w_j is 12
+Copying labels from S[2] to S[3] with tag 20
+Looking for S[j-1] with tag 20
 a is 21
-And T is: 
-0 
+And w_j is 12
 a is 22
-And T is: 
-0 
+And w_j is 12
 a is 23
-And T is: 
-0 
+And w_j is 12
+Copying labels from S[2] to S[3] with tag 23
+Looking for S[j-1] with tag 23
 a is 24
-And T is: 
-0 
+And w_j is 12
 a is 25
-And T is: 
-0 
+And w_j is 12
 a is 26
-And T is: 
-0 
+And w_j is 12
 a is 27
-And T is: 
-0 
+And w_j is 12
 a is 28
-And T is: 
-0 
+And w_j is 12
 a is 29
-And T is: 
-0 
+And w_j is 12
 a is 30
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 30, from S[2]^18
+Copying to last item 3
 a is 31
-And T is: 
-0 
+And w_j is 12
 a is 32
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 32, from S[2]^20
+Copying to last item 3
 a is 33
-And T is: 
-0 
+And w_j is 12
 a is 34
-And T is: 
-0 
+And w_j is 12
 a is 35
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 35, from S[2]^23
+Copying to last item 3
 a is 36
-And T is: 
-0 
+And w_j is 12
 a is 37
-And T is: 
-0 
+And w_j is 12
 a is 38
-And T is: 
-0 
+And w_j is 12
+Copying labels from S[2] to S[3] with tag 38
+Looking for S[j-1] with tag 38
 a is 39
-And T is: 
-0 
+And w_j is 12
 a is 40
-And T is: 
-0 
+And w_j is 12
 a is 41
-And T is: 
-0 
+And w_j is 12
 a is 42
-And T is: 
-0 
+And w_j is 12
 a is 43
-And T is: 
-0 
+And w_j is 12
+Copying labels from S[2] to S[3] with tag 43
+Looking for S[j-1] with tag 43
 a is 44
-And T is: 
-0 
+And w_j is 12
 a is 45
-And T is: 
-0 
+And w_j is 12
 a is 46
-And T is: 
-0 
+And w_j is 12
 a is 47
-And T is: 
-0 
+And w_j is 12
 a is 48
-And T is: 
-0 
+And w_j is 12
 a is 49
-And T is: 
-0 
+And w_j is 12
 a is 50
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 50, from S[2]^38
+Copying to last item 3
 a is 51
-And T is: 
-0 
+And w_j is 12
 a is 52
-And T is: 
-0 
+And w_j is 12
 a is 53
-And T is: 
-0 
+And w_j is 12
 a is 54
-And T is: 
-0 
+And w_j is 12
 a is 55
-And T is: 
-0 
+And w_j is 12
+Summing vectors S[3] with tag 55, from S[2]^43
+Copying to last item 3
 a is 56
-And T is: 
-0 
+And w_j is 12
 a is 57
-And T is: 
-0 
+And w_j is 12
 a is 58
-And T is: 
-0 
+And w_j is 12
 a is 59
-And T is: 
-0 
+And w_j is 12
 a is 60
-And T is: 
-0 
+And w_j is 12
 a is 61
-And T is: 
-0 
+And w_j is 12
 a is 62
-And T is: 
-0 
+And w_j is 12
 a is 63
-And T is: 
-0 
+And w_j is 12
 a is 64
-And T is: 
-0 
+And w_j is 12
 a is 65
-And T is: 
-0 
+And w_j is 12
 a is 66
-And T is: 
-0 
+And w_j is 12
 a is 67
-And T is: 
-0 
+And w_j is 12
 a is 68
-And T is: 
-0 
+And w_j is 12
 a is 69
-And T is: 
-0 
+And w_j is 12
 a is 70
-And T is: 
-0 
+And w_j is 12
 a is 71
-And T is: 
-0 
+And w_j is 12
 a is 72
-And T is: 
-0 
+And w_j is 12
 a is 73
-And T is: 
-0 
+And w_j is 12
 a is 74
-And T is: 
-0 
+And w_j is 12
 a is 75
-And T is: 
-0 
+And w_j is 12
 a is 76
-And T is: 
-0 
+And w_j is 12
 a is 77
-And T is: 
-0 
+And w_j is 12
 a is 78
-And T is: 
-0 
+And w_j is 12
 a is 79
-And T is: 
-0 
+And w_j is 12
 a is 80
-And T is: 
-0 
+And w_j is 12
 a is 81
-And T is: 
-0 
+And w_j is 12
 a is 82
-And T is: 
-0 
+And w_j is 12
 a is 83
-And T is: 
-0 
+And w_j is 12
 a is 84
-And T is: 
-0 
+And w_j is 12
 a is 85
-And T is: 
-0 
+And w_j is 12
 a is 86
-And T is: 
-0 
+And w_j is 12
 a is 87
-And T is: 
-0 
+And w_j is 12
 a is 88
-And T is: 
-0 
+And w_j is 12
 a is 89
-And T is: 
-0 
+And w_j is 12
 a is 90
-And T is: 
-0 
+And w_j is 12
 a is 91
-And T is: 
-0 
+And w_j is 12
 a is 92
-And T is: 
-0 
+And w_j is 12
 a is 93
-And T is: 
-0 
+And w_j is 12
 a is 94
-And T is: 
-0 
+And w_j is 12
 a is 95
-And T is: 
-0 
+And w_j is 12
 a is 96
-And T is: 
-0 
+And w_j is 12
 a is 97
-And T is: 
-0 
+And w_j is 12
 a is 98
-And T is: 
-0 
+And w_j is 12
 a is 99
-And T is: 
-0 
+And w_j is 12
 a is 100
-And T is: 
-0 
+And w_j is 12
 a is 101
-And T is: 
-0 
+And w_j is 12
 a is 102
-And T is: 
-0 
+And w_j is 12
 a is 103
-And T is: 
-0 
+And w_j is 12
 a is 104
-And T is: 
-0 
+And w_j is 12
 a is 105
-And T is: 
-0 
+And w_j is 12
 a is 106
-And T is: 
-0 
+And w_j is 12
 a is 107
-And T is: 
-0 
+And w_j is 12
 a is 108
-And T is: 
-0 
+And w_j is 12
 a is 109
-And T is: 
-0 
+And w_j is 12
 a is 110
-And T is: 
-0 
+And w_j is 12
 a is 111
-And T is: 
-0 
+And w_j is 12
 a is 112
-And T is: 
-0 
+And w_j is 12
 a is 113
-And T is: 
-0 
+And w_j is 12
 a is 114
-And T is: 
-0 
+And w_j is 12
 a is 115
-And T is: 
-0 
+And w_j is 12
 a is 116
-And T is: 
-0 
+And w_j is 12
 a is 117
-And T is: 
-0 
+And w_j is 12
 a is 118
-And T is: 
-0 
+And w_j is 12
 a is 119
-And T is: 
-0 
+And w_j is 12
 a is 120
-And T is: 
-0 
+And w_j is 12
 a is 121
-And T is: 
-0 
+And w_j is 12
 a is 122
-And T is: 
-0 
+And w_j is 12
 a is 123
-And T is: 
-0 
+And w_j is 12
 a is 124
-And T is: 
-0 
+And w_j is 12
 a is 125
-And T is: 
-0 
+And w_j is 12
 a is 126
-And T is: 
-0 
+And w_j is 12
 a is 127
-And T is: 
-0 
+And w_j is 12
 a is 128
-And T is: 
-0 
+And w_j is 12
 a is 129
-And T is: 
-0 
+And w_j is 12
 a is 130
-And T is: 
-0 
+And w_j is 12
 a is 131
-And T is: 
-0 
+And w_j is 12
 a is 132
-And T is: 
-0 
+And w_j is 12
 a is 133
-And T is: 
-0 
+And w_j is 12
 a is 134
-And T is: 
-0 
+And w_j is 12
 a is 135
-And T is: 
-0 
+And w_j is 12
 a is 136
-And T is: 
-0 
+And w_j is 12
 a is 137
-And T is: 
-0 
+And w_j is 12
 a is 138
-And T is: 
-0 
+And w_j is 12
 a is 139
-And T is: 
-0 
+And w_j is 12
 a is 140
-And T is: 
-0 
+And w_j is 12
 a is 141
-And T is: 
-0 
+And w_j is 12
 a is 142
-And T is: 
-0 
+And w_j is 12
 a is 143
-And T is: 
-0 
+And w_j is 12
 a is 144
-And T is: 
-0 
+And w_j is 12
 a is 145
-And T is: 
-0 
+And w_j is 12
 a is 146
-And T is: 
-0 
+And w_j is 12
 a is 147
-And T is: 
-0 
+And w_j is 12
 a is 148
-And T is: 
-0 
+And w_j is 12
 a is 149
-And T is: 
-0 
+And w_j is 12
 a is 150
-And T is: 
-0 
-a is 151
-And T is: 
-0 
-a is 152
-And T is: 
-0 
-a is 153
-And T is: 
-0 
-a is 154
-And T is: 
-0 
-a is 155
-And T is: 
-0 
-a is 156
-And T is: 
-0 
-a is 157
-And T is: 
-0 
-a is 158
-And T is: 
-0 
-a is 159
-And T is: 
-0 
-a is 160
-And T is: 
-0 
-a is 161
-And T is: 
-0 
-a is 162
-And T is: 
-0 
-a is 163
-And T is: 
-0 
-a is 164
-And T is: 
-0 
-a is 165
-And T is: 
-0 
-a is 166
-And T is: 
-0 
-a is 167
-And T is: 
-0 
-a is 168
-And T is: 
-0 
-a is 169
-And T is: 
-0 
-a is 170
-And T is: 
-0 
-a is 171
-And T is: 
-0 
-a is 172
-And T is: 
-0 
-a is 173
-And T is: 
-0 
-a is 174
-And T is: 
-0 
-a is 175
-And T is: 
-0 
-a is 176
-And T is: 
-0 
-a is 177
-And T is: 
-0 
-a is 178
-And T is: 
-0 
-a is 179
-And T is: 
-0 
-a is 180
-And T is: 
-0 
-a is 181
-And T is: 
-0 
-a is 182
-And T is: 
-0 
-a is 183
-And T is: 
-0 
-a is 184
-And T is: 
-0 
-a is 185
-And T is: 
-0 
-a is 186
-And T is: 
-0 
-a is 187
-And T is: 
-0 
-a is 188
-And T is: 
-0 
-a is 189
-And T is: 
-0 
-a is 190
-And T is: 
-0 
-a is 191
-And T is: 
-0 
-a is 192
-And T is: 
-0 
-a is 193
-And T is: 
-0 
-a is 194
-And T is: 
-0 
-a is 195
-And T is: 
-0 
-a is 196
-And T is: 
-0 
-a is 197
-And T is: 
-0 
-a is 198
-And T is: 
-0 
-a is 199
-And T is: 
-0 
-a is 200
-And T is: 
-0 
-a is 201
-And T is: 
-0 
-a is 202
-And T is: 
-0 
-a is 203
-And T is: 
-0 
-a is 204
-And T is: 
-0 
-a is 205
-And T is: 
-0 
-a is 206
-And T is: 
-0 
-a is 207
-And T is: 
-0 
-a is 208
-And T is: 
-0 
-a is 209
-And T is: 
-0 
-a is 210
-And T is: 
-0 
-a is 211
-And T is: 
-0 
-a is 212
-And T is: 
-0 
-a is 213
-And T is: 
-0 
-a is 214
-And T is: 
-0 
-a is 215
-And T is: 
-0 
-a is 216
-And T is: 
-0 
-a is 217
-And T is: 
-0 
-a is 218
-And T is: 
-0 
-a is 219
-And T is: 
-0 
-a is 220
-And T is: 
-0 
-a is 221
-And T is: 
-0 
-a is 222
-And T is: 
-0 
-a is 223
-And T is: 
-0 
-a is 224
-And T is: 
-0 
-a is 225
-And T is: 
-0 
-a is 226
-And T is: 
-0 
-a is 227
-And T is: 
-0 
-a is 228
-And T is: 
-0 
-a is 229
-And T is: 
-0 
-a is 230
-And T is: 
-0 
-a is 231
-And T is: 
-0 
-a is 232
-And T is: 
-0 
-a is 233
-And T is: 
-0 
-a is 234
-And T is: 
-0 
-a is 235
-And T is: 
-0 
-a is 236
-And T is: 
-0 
-a is 237
-And T is: 
-0 
-a is 238
-And T is: 
-0 
-a is 239
-And T is: 
-0 
-a is 240
-And T is: 
-0 
-a is 241
-And T is: 
-0 
-a is 242
-And T is: 
-0 
-a is 243
-And T is: 
-0 
-a is 244
-And T is: 
-0 
-a is 245
-And T is: 
-0 
-a is 246
-And T is: 
-0 
-a is 247
-And T is: 
-0 
-a is 248
-And T is: 
-0 
-a is 249
-And T is: 
-0 
-a is 250
-And T is: 
-0 
-a is 251
-And T is: 
-0 
-a is 252
-And T is: 
-0 
-a is 253
-And T is: 
-0 
-a is 254
-And T is: 
-0 
-a is 255
-And T is: 
-0 
-a is 256
-And T is: 
-0 
-a is 257
-And T is: 
-0 
-a is 258
-And T is: 
-0 
-a is 259
-And T is: 
-0 
-a is 260
-And T is: 
-0 
-a is 261
-And T is: 
-0 
-a is 262
-And T is: 
-0 
-a is 263
-And T is: 
-0 
-a is 264
-And T is: 
-0 
-a is 265
-And T is: 
-0 
-a is 266
-And T is: 
-0 
-a is 267
-And T is: 
-0 
-a is 268
-And T is: 
-0 
-a is 269
-And T is: 
-0 
-a is 270
-And T is: 
-0 
-a is 271
-And T is: 
-0 
-a is 272
-And T is: 
-0 
-a is 273
-And T is: 
-0 
-a is 274
-And T is: 
-0 
-a is 275
-And T is: 
-0 
-a is 276
-And T is: 
-0 
-a is 277
-And T is: 
-0 
-a is 278
-And T is: 
-0 
-a is 279
-And T is: 
-0 
-a is 280
-And T is: 
-0 
-a is 281
-And T is: 
-0 
-a is 282
-And T is: 
-0 
-a is 283
-And T is: 
-0 
-a is 284
-And T is: 
-0 
-a is 285
-And T is: 
-0 
-a is 286
-And T is: 
-0 
-a is 287
-And T is: 
-0 
-a is 288
-And T is: 
-0 
-a is 289
-And T is: 
-0 
-a is 290
-And T is: 
-0 
-a is 291
-And T is: 
-0 
-a is 292
-And T is: 
-0 
-a is 293
-And T is: 
-0 
-a is 294
-And T is: 
-0 
-a is 295
-And T is: 
-0 
-a is 296
-And T is: 
-0 
-a is 297
-And T is: 
-0 
-a is 298
-And T is: 
-0 
-a is 299
-And T is: 
-0 
-a is 300
-And T is: 
-0 
-a is 301
-And T is: 
-0 
-a is 302
-And T is: 
-0 
-a is 303
-And T is: 
-0 
-a is 304
-And T is: 
-0 
-a is 305
-And T is: 
-0 
-a is 306
-And T is: 
-0 
-a is 307
-And T is: 
-0 
-a is 308
-And T is: 
-0 
-a is 309
-And T is: 
-0 
-a is 310
-And T is: 
-0 
-a is 311
-And T is: 
-0 
-a is 312
-And T is: 
-0 
-a is 313
-And T is: 
-0 
-a is 314
-And T is: 
-0 
-a is 315
-And T is: 
-0 
-a is 316
-And T is: 
-0 
-a is 317
-And T is: 
-0 
-a is 318
-And T is: 
-0 
-a is 319
-And T is: 
-0 
-a is 320
-And T is: 
-0 
-a is 321
-And T is: 
-0 
-a is 322
-And T is: 
-0 
-a is 323
-And T is: 
-0 
-a is 324
-And T is: 
-0 
-a is 325
-And T is: 
-0 
-a is 326
-And T is: 
-0 
-a is 327
-And T is: 
-0 
-a is 328
-And T is: 
-0 
-a is 329
-And T is: 
-0 
-a is 330
-And T is: 
-0 
-a is 331
-And T is: 
-0 
-a is 332
-And T is: 
-0 
-a is 333
-And T is: 
-0 
-a is 334
-And T is: 
-0 
-a is 335
-And T is: 
-0 
-a is 336
-And T is: 
-0 
-a is 337
-And T is: 
-0 
-a is 338
-And T is: 
-0 
-a is 339
-And T is: 
-0 
-a is 340
-And T is: 
-0 
-a is 341
-And T is: 
-0 
-a is 342
-And T is: 
-0 
-a is 343
-And T is: 
-0 
-a is 344
-And T is: 
-0 
-a is 345
-And T is: 
-0 
-a is 346
-And T is: 
-0 
-a is 347
-And T is: 
-0 
-a is 348
-And T is: 
-0 
-a is 349
-And T is: 
-0 
-a is 350
-And T is: 
-0 
-a is 351
-And T is: 
-0 
-a is 352
-And T is: 
-0 
-a is 353
-And T is: 
-0 
-a is 354
-And T is: 
-0 
-a is 355
-And T is: 
-0 
-a is 356
-And T is: 
-0 
-a is 357
-And T is: 
-0 
-a is 358
-And T is: 
-0 
-a is 359
-And T is: 
-0 
-a is 360
-And T is: 
-0 
-a is 361
-And T is: 
-0 
-a is 362
-And T is: 
-0 
-a is 363
-And T is: 
-0 
-a is 364
-And T is: 
-0 
-a is 365
-And T is: 
-0 
-a is 366
-And T is: 
-0 
-a is 367
-And T is: 
-0 
-a is 368
-And T is: 
-0 
-a is 369
-And T is: 
-0 
-a is 370
-And T is: 
-0 
-a is 371
-And T is: 
-0 
-a is 372
-And T is: 
-0 
-a is 373
-And T is: 
-0 
-a is 374
-And T is: 
-0 
-a is 375
-And T is: 
-0 
-a is 376
-And T is: 
-0 
-a is 377
-And T is: 
-0 
-a is 378
-And T is: 
-0 
-a is 379
-And T is: 
-0 
-a is 380
-And T is: 
-0 
-a is 381
-And T is: 
-0 
-a is 382
-And T is: 
-0 
-a is 383
-And T is: 
-0 
-a is 384
-And T is: 
-0 
-a is 385
-And T is: 
-0 
-a is 386
-And T is: 
-0 
-a is 387
-And T is: 
-0 
-a is 388
-And T is: 
-0 
-a is 389
-And T is: 
-0 
-a is 390
-And T is: 
-0 
-a is 391
-And T is: 
-0 
-a is 392
-And T is: 
-0 
-a is 393
-And T is: 
-0 
-a is 394
-And T is: 
-0 
-a is 395
-And T is: 
-0 
-a is 396
-And T is: 
-0 
-a is 397
-And T is: 
-0 
-a is 398
-And T is: 
-0 
-a is 399
-And T is: 
-0 
-a is 400
-And T is: 
-0 
-a is 401
-And T is: 
-0 
-a is 402
-And T is: 
-0 
-a is 403
-And T is: 
-0 
-a is 404
-And T is: 
-0 
-a is 405
-And T is: 
-0 
-a is 406
-And T is: 
-0 
-a is 407
-And T is: 
-0 
-a is 408
-And T is: 
-0 
-a is 409
-And T is: 
-0 
-a is 410
-And T is: 
-0 
-a is 411
-And T is: 
-0 
-a is 412
-And T is: 
-0 
-a is 413
-And T is: 
-0 
-a is 414
-And T is: 
-0 
-a is 415
-And T is: 
-0 
-a is 416
-And T is: 
-0 
-a is 417
-And T is: 
-0 
-a is 418
-And T is: 
-0 
-a is 419
-And T is: 
-0 
-a is 420
-And T is: 
-0 
-a is 421
-And T is: 
-0 
-a is 422
-And T is: 
-0 
-a is 423
-And T is: 
-0 
-a is 424
-And T is: 
-0 
-a is 425
-And T is: 
-0 
-a is 426
-And T is: 
-0 
-a is 427
-And T is: 
-0 
-a is 428
-And T is: 
-0 
-a is 429
-And T is: 
-0 
-a is 430
-And T is: 
-0 
-a is 431
-And T is: 
-0 
-a is 432
-And T is: 
-0 
-a is 433
-And T is: 
-0 
-a is 434
-And T is: 
-0 
-a is 435
-And T is: 
-0 
-a is 436
-And T is: 
-0 
-a is 437
-And T is: 
-0 
-a is 438
-And T is: 
-0 
-a is 439
-And T is: 
-0 
-a is 440
-And T is: 
-0 
-a is 441
-And T is: 
-0 
-a is 442
-And T is: 
-0 
-a is 443
-And T is: 
-0 
-a is 444
-And T is: 
-0 
-a is 445
-And T is: 
-0 
-a is 446
-And T is: 
-0 
-a is 447
-And T is: 
-0 
-a is 448
-And T is: 
-0 
-a is 449
-And T is: 
-0 
-a is 450
-And T is: 
-0 
-a is 451
-And T is: 
-0 
-a is 452
-And T is: 
-0 
-a is 453
-And T is: 
-0 
-a is 454
-And T is: 
-0 
-a is 455
-And T is: 
-0 
-a is 456
-And T is: 
-0 
-a is 457
-And T is: 
-0 
-a is 458
-And T is: 
-0 
-a is 459
-And T is: 
-0 
-a is 460
-And T is: 
-0 
-a is 461
-And T is: 
-0 
-a is 462
-And T is: 
-0 
-a is 463
-And T is: 
-0 
-a is 464
-And T is: 
-0 
-a is 465
-And T is: 
-0 
-a is 466
-And T is: 
-0 
-a is 467
-And T is: 
-0 
-a is 468
-And T is: 
-0 
-a is 469
-And T is: 
-0 
-a is 470
-And T is: 
-0 
-a is 471
-And T is: 
-0 
-a is 472
-And T is: 
-0 
-a is 473
-And T is: 
-0 
-a is 474
-And T is: 
-0 
-a is 475
-And T is: 
-0 
-a is 476
-And T is: 
-0 
-a is 477
-And T is: 
-0 
-a is 478
-And T is: 
-0 
-a is 479
-And T is: 
-0 
-a is 480
-And T is: 
-0 
-a is 481
-And T is: 
-0 
-a is 482
-And T is: 
-0 
-a is 483
-And T is: 
-0 
-a is 484
-And T is: 
-0 
-a is 485
-And T is: 
-0 
-a is 486
-And T is: 
-0 
-a is 487
-And T is: 
-0 
-a is 488
-And T is: 
-0 
-a is 489
-And T is: 
-0 
-a is 490
-And T is: 
-0 
-a is 491
-And T is: 
-0 
-a is 492
-And T is: 
-0 
-a is 493
-And T is: 
-0 
-a is 494
-And T is: 
-0 
-a is 495
-And T is: 
-0 
-a is 496
-And T is: 
-0 
-a is 497
-And T is: 
-0 
-a is 498
-And T is: 
-0 
-a is 499
-And T is: 
-0 
-a is 500
-And T is: 
-0 
-T was:
-0 
-now T is
-0 
-Beggining case j: 4
-
+And w_j is 12
 a is 0
-And T is: 
-0 
+And w_j is 9
+a is 1
+And w_j is 9
+a is 2
+And w_j is 9
+a is 3
+And w_j is 9
+a is 4
+And w_j is 9
+a is 5
+And w_j is 9
+a is 6
+And w_j is 9
+a is 7
+And w_j is 9
+a is 8
+And w_j is 9
+a is 9
+And w_j is 9
+Summing vectors S[3] with tag 9, from S[2]^0
+Copying to last item 3
+a is 10
+And w_j is 9
+a is 11
+And w_j is 9
+a is 12
+And w_j is 9
+a is 13
+And w_j is 9
+a is 14
+And w_j is 9
+a is 15
+And w_j is 9
+a is 16
+And w_j is 9
+a is 17
+And w_j is 9
+a is 18
+And w_j is 9
+a is 19
+And w_j is 9
+a is 20
+And w_j is 9
+a is 21
+And w_j is 9
+a is 22
+And w_j is 9
+a is 23
+And w_j is 9
+a is 24
+And w_j is 9
+a is 25
+And w_j is 9
+a is 26
+And w_j is 9
+a is 27
+And w_j is 9
+Summing vectors S[3] with tag 27, from S[2]^18
+Copying to last item 3
+a is 28
+And w_j is 9
+a is 29
+And w_j is 9
+Summing vectors S[3] with tag 29, from S[2]^20
+Copying to last item 3
+a is 30
+And w_j is 9
+a is 31
+And w_j is 9
+a is 32
+And w_j is 9
+a is 33
+And w_j is 9
+a is 34
+And w_j is 9
+a is 35
+And w_j is 9
+a is 36
+And w_j is 9
+a is 37
+And w_j is 9
+a is 38
+And w_j is 9
+a is 39
+And w_j is 9
+a is 40
+And w_j is 9
+a is 41
+And w_j is 9
+a is 42
+And w_j is 9
+a is 43
+And w_j is 9
+a is 44
+And w_j is 9
+a is 45
+And w_j is 9
+a is 46
+And w_j is 9
+a is 47
+And w_j is 9
+Summing vectors S[3] with tag 47, from S[2]^38
+Copying to last item 3
+a is 48
+And w_j is 9
+a is 49
+And w_j is 9
+a is 50
+And w_j is 9
+a is 51
+And w_j is 9
+a is 52
+And w_j is 9
+Summing vectors S[3] with tag 52, from S[2]^43
+Copying to last item 3
+a is 53
+And w_j is 9
+a is 54
+And w_j is 9
+a is 55
+And w_j is 9
+a is 56
+And w_j is 9
+a is 57
+And w_j is 9
+a is 58
+And w_j is 9
+a is 59
+And w_j is 9
+a is 60
+And w_j is 9
+a is 61
+And w_j is 9
+a is 62
+And w_j is 9
+a is 63
+And w_j is 9
+a is 64
+And w_j is 9
+a is 65
+And w_j is 9
+a is 66
+And w_j is 9
+a is 67
+And w_j is 9
+a is 68
+And w_j is 9
+a is 69
+And w_j is 9
+a is 70
+And w_j is 9
+a is 71
+And w_j is 9
+a is 72
+And w_j is 9
+a is 73
+And w_j is 9
+a is 74
+And w_j is 9
+a is 75
+And w_j is 9
+a is 76
+And w_j is 9
+a is 77
+And w_j is 9
+a is 78
+And w_j is 9
+a is 79
+And w_j is 9
+a is 80
+And w_j is 9
+a is 81
+And w_j is 9
+a is 82
+And w_j is 9
+a is 83
+And w_j is 9
+a is 84
+And w_j is 9
+a is 85
+And w_j is 9
+a is 86
+And w_j is 9
+a is 87
+And w_j is 9
+a is 88
+And w_j is 9
+a is 89
+And w_j is 9
+a is 90
+And w_j is 9
+a is 91
+And w_j is 9
+a is 92
+And w_j is 9
+a is 93
+And w_j is 9
+a is 94
+And w_j is 9
+a is 95
+And w_j is 9
+a is 96
+And w_j is 9
+a is 97
+And w_j is 9
+a is 98
+And w_j is 9
+a is 99
+And w_j is 9
+a is 100
+And w_j is 9
+a is 101
+And w_j is 9
+a is 102
+And w_j is 9
+a is 103
+And w_j is 9
+a is 104
+And w_j is 9
+a is 105
+And w_j is 9
+a is 106
+And w_j is 9
+a is 107
+And w_j is 9
+a is 108
+And w_j is 9
+a is 109
+And w_j is 9
+a is 110
+And w_j is 9
+a is 111
+And w_j is 9
+a is 112
+And w_j is 9
+a is 113
+And w_j is 9
+a is 114
+And w_j is 9
+a is 115
+And w_j is 9
+a is 116
+And w_j is 9
+a is 117
+And w_j is 9
+a is 118
+And w_j is 9
+a is 119
+And w_j is 9
+a is 120
+And w_j is 9
+a is 121
+And w_j is 9
+a is 122
+And w_j is 9
+a is 123
+And w_j is 9
+a is 124
+And w_j is 9
+a is 125
+And w_j is 9
+a is 126
+And w_j is 9
+a is 127
+And w_j is 9
+a is 128
+And w_j is 9
+a is 129
+And w_j is 9
+a is 130
+And w_j is 9
+a is 131
+And w_j is 9
+a is 132
+And w_j is 9
+a is 133
+And w_j is 9
+a is 134
+And w_j is 9
+a is 135
+And w_j is 9
+a is 136
+And w_j is 9
+a is 137
+And w_j is 9
+a is 138
+And w_j is 9
+a is 139
+And w_j is 9
+a is 140
+And w_j is 9
+a is 141
+And w_j is 9
+a is 142
+And w_j is 9
+a is 143
+And w_j is 9
+a is 144
+And w_j is 9
+a is 145
+And w_j is 9
+a is 146
+And w_j is 9
+a is 147
+And w_j is 9
+a is 148
+And w_j is 9
+a is 149
+And w_j is 9
+a is 150
+And w_j is 9
+
+
+Beginning case j: 4
+
+Last waypoint is -1
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 2
+Last waypoint is 1
+Last waypoint is 2
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 2
+Last waypoint is 2
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+a is 0
 And w_j is 17
-Entering first condition and adding V
-Empty
-0 
+Copying labels from S[3] to S[4] with tag 0
+Looking for S[j-1] with tag 0
 a is 1
-And T is: 
-0 
+And w_j is 17
 a is 2
-And T is: 
-0 
+And w_j is 17
 a is 3
-And T is: 
-0 
+And w_j is 17
 a is 4
-And T is: 
-0 
+And w_j is 17
 a is 5
-And T is: 
-0 
+And w_j is 17
 a is 6
-And T is: 
-0 
+And w_j is 17
 a is 7
-And T is: 
-0 
+And w_j is 17
 a is 8
-And T is: 
-0 
+And w_j is 17
 a is 9
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 9
+Looking for S[j-1] with tag 9
 a is 10
-And T is: 
-0 
+And w_j is 17
 a is 11
-And T is: 
-0 
+And w_j is 17
 a is 12
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 12
+Looking for S[j-1] with tag 12
 a is 13
-And T is: 
-0 
+And w_j is 17
 a is 14
-And T is: 
-0 
+And w_j is 17
 a is 15
-And T is: 
-0 
+And w_j is 17
 a is 16
-And T is: 
-0 
+And w_j is 17
 a is 17
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 17, from S[3]^0
+Copying to last item 4
 a is 18
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 18
+Looking for S[j-1] with tag 18
 a is 19
-And T is: 
-0 
+And w_j is 17
 a is 20
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 20
+Looking for S[j-1] with tag 20
 a is 21
-And T is: 
-0 
+And w_j is 17
 a is 22
-And T is: 
-0 
+And w_j is 17
 a is 23
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 23
+Looking for S[j-1] with tag 23
 a is 24
-And T is: 
-0 
+And w_j is 17
 a is 25
-And T is: 
-0 
+And w_j is 17
 a is 26
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 26, from S[3]^9
+Copying to last item 4
 a is 27
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 27
+Looking for S[j-1] with tag 27
 a is 28
-And T is: 
-0 
+And w_j is 17
 a is 29
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 29
+Looking for S[j-1] with tag 29
 a is 30
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 30
+Looking for S[j-1] with tag 30
 a is 31
-And T is: 
-0 
+And w_j is 17
 a is 32
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 32
+Looking for S[j-1] with tag 32
 a is 33
-And T is: 
-0 
+And w_j is 17
 a is 34
-And T is: 
-0 
+And w_j is 17
 a is 35
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 35
+Looking for S[j-1] with tag 35
 a is 36
-And T is: 
-0 
+And w_j is 17
 a is 37
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 37, from S[3]^20
+Copying to last item 4
 a is 38
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 38
+Looking for S[j-1] with tag 38
 a is 39
-And T is: 
-0 
+And w_j is 17
 a is 40
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 40, from S[3]^23
+Copying to last item 4
 a is 41
-And T is: 
-0 
+And w_j is 17
 a is 42
-And T is: 
-0 
+And w_j is 17
 a is 43
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 43
+Looking for S[j-1] with tag 43
 a is 44
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 44, from S[3]^27
+Copying to last item 4
 a is 45
-And T is: 
-0 
+And w_j is 17
 a is 46
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 46, from S[3]^29
+Copying to last item 4
 a is 47
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 47
+Looking for S[j-1] with tag 47
 a is 48
-And T is: 
-0 
+And w_j is 17
 a is 49
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 49, from S[3]^32
+Copying to last item 4
 a is 50
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 50
+Looking for S[j-1] with tag 50
 a is 51
-And T is: 
-0 
+And w_j is 17
 a is 52
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 52
+Looking for S[j-1] with tag 52
 a is 53
-And T is: 
-0 
+And w_j is 17
 a is 54
-And T is: 
-0 
+And w_j is 17
 a is 55
-And T is: 
-0 
+And w_j is 17
+Copying labels from S[3] to S[4] with tag 55
+Looking for S[j-1] with tag 55
 a is 56
-And T is: 
-0 
+And w_j is 17
 a is 57
-And T is: 
-0 
+And w_j is 17
 a is 58
-And T is: 
-0 
+And w_j is 17
 a is 59
-And T is: 
-0 
+And w_j is 17
 a is 60
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 60, from S[3]^43
+Copying to last item 4
 a is 61
-And T is: 
-0 
+And w_j is 17
 a is 62
-And T is: 
-0 
+And w_j is 17
 a is 63
-And T is: 
-0 
+And w_j is 17
 a is 64
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 64, from S[3]^47
+Copying to last item 4
 a is 65
-And T is: 
-0 
+And w_j is 17
 a is 66
-And T is: 
-0 
+And w_j is 17
 a is 67
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 67, from S[3]^50
+Copying to last item 4
 a is 68
-And T is: 
-0 
+And w_j is 17
 a is 69
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 69, from S[3]^52
+Copying to last item 4
 a is 70
-And T is: 
-0 
+And w_j is 17
 a is 71
-And T is: 
-0 
+And w_j is 17
 a is 72
-And T is: 
-0 
+And w_j is 17
+Summing vectors S[4] with tag 72, from S[3]^55
+Copying to last item 4
 a is 73
-And T is: 
-0 
+And w_j is 17
 a is 74
-And T is: 
-0 
+And w_j is 17
 a is 75
-And T is: 
-0 
+And w_j is 17
 a is 76
-And T is: 
-0 
+And w_j is 17
 a is 77
-And T is: 
-0 
+And w_j is 17
 a is 78
-And T is: 
-0 
+And w_j is 17
 a is 79
-And T is: 
-0 
+And w_j is 17
 a is 80
-And T is: 
-0 
+And w_j is 17
 a is 81
-And T is: 
-0 
+And w_j is 17
 a is 82
-And T is: 
-0 
+And w_j is 17
 a is 83
-And T is: 
-0 
+And w_j is 17
 a is 84
-And T is: 
-0 
+And w_j is 17
 a is 85
-And T is: 
-0 
+And w_j is 17
 a is 86
-And T is: 
-0 
+And w_j is 17
 a is 87
-And T is: 
-0 
+And w_j is 17
 a is 88
-And T is: 
-0 
+And w_j is 17
 a is 89
-And T is: 
-0 
+And w_j is 17
 a is 90
-And T is: 
-0 
+And w_j is 17
 a is 91
-And T is: 
-0 
+And w_j is 17
 a is 92
-And T is: 
-0 
+And w_j is 17
 a is 93
-And T is: 
-0 
+And w_j is 17
 a is 94
-And T is: 
-0 
+And w_j is 17
 a is 95
-And T is: 
-0 
+And w_j is 17
 a is 96
-And T is: 
-0 
+And w_j is 17
 a is 97
-And T is: 
-0 
+And w_j is 17
 a is 98
-And T is: 
-0 
+And w_j is 17
 a is 99
-And T is: 
-0 
+And w_j is 17
 a is 100
-And T is: 
-0 
+And w_j is 17
 a is 101
-And T is: 
-0 
+And w_j is 17
 a is 102
-And T is: 
-0 
+And w_j is 17
 a is 103
-And T is: 
-0 
+And w_j is 17
 a is 104
-And T is: 
-0 
+And w_j is 17
 a is 105
-And T is: 
-0 
+And w_j is 17
 a is 106
-And T is: 
-0 
+And w_j is 17
 a is 107
-And T is: 
-0 
+And w_j is 17
 a is 108
-And T is: 
-0 
+And w_j is 17
 a is 109
-And T is: 
-0 
+And w_j is 17
 a is 110
-And T is: 
-0 
+And w_j is 17
 a is 111
-And T is: 
-0 
+And w_j is 17
 a is 112
-And T is: 
-0 
+And w_j is 17
 a is 113
-And T is: 
-0 
+And w_j is 17
 a is 114
-And T is: 
-0 
+And w_j is 17
 a is 115
-And T is: 
-0 
+And w_j is 17
 a is 116
-And T is: 
-0 
+And w_j is 17
 a is 117
-And T is: 
-0 
+And w_j is 17
 a is 118
-And T is: 
-0 
+And w_j is 17
 a is 119
-And T is: 
-0 
+And w_j is 17
 a is 120
-And T is: 
-0 
+And w_j is 17
 a is 121
-And T is: 
-0 
+And w_j is 17
 a is 122
-And T is: 
-0 
+And w_j is 17
 a is 123
-And T is: 
-0 
+And w_j is 17
 a is 124
-And T is: 
-0 
+And w_j is 17
 a is 125
-And T is: 
-0 
+And w_j is 17
 a is 126
-And T is: 
-0 
+And w_j is 17
 a is 127
-And T is: 
-0 
+And w_j is 17
 a is 128
-And T is: 
-0 
+And w_j is 17
 a is 129
-And T is: 
-0 
+And w_j is 17
 a is 130
-And T is: 
-0 
+And w_j is 17
 a is 131
-And T is: 
-0 
+And w_j is 17
 a is 132
-And T is: 
-0 
+And w_j is 17
 a is 133
-And T is: 
-0 
+And w_j is 17
 a is 134
-And T is: 
-0 
+And w_j is 17
 a is 135
-And T is: 
-0 
+And w_j is 17
 a is 136
-And T is: 
-0 
+And w_j is 17
 a is 137
-And T is: 
-0 
+And w_j is 17
 a is 138
-And T is: 
-0 
+And w_j is 17
 a is 139
-And T is: 
-0 
+And w_j is 17
 a is 140
-And T is: 
-0 
+And w_j is 17
 a is 141
-And T is: 
-0 
+And w_j is 17
 a is 142
-And T is: 
-0 
+And w_j is 17
 a is 143
-And T is: 
-0 
+And w_j is 17
 a is 144
-And T is: 
-0 
+And w_j is 17
 a is 145
-And T is: 
-0 
+And w_j is 17
 a is 146
-And T is: 
-0 
+And w_j is 17
 a is 147
-And T is: 
-0 
+And w_j is 17
 a is 148
-And T is: 
-0 
+And w_j is 17
 a is 149
-And T is: 
-0 
+And w_j is 17
 a is 150
-And T is: 
-0 
-a is 151
-And T is: 
-0 
-a is 152
-And T is: 
-0 
-a is 153
-And T is: 
-0 
-a is 154
-And T is: 
-0 
-a is 155
-And T is: 
-0 
-a is 156
-And T is: 
-0 
-a is 157
-And T is: 
-0 
-a is 158
-And T is: 
-0 
-a is 159
-And T is: 
-0 
-a is 160
-And T is: 
-0 
-a is 161
-And T is: 
-0 
-a is 162
-And T is: 
-0 
-a is 163
-And T is: 
-0 
-a is 164
-And T is: 
-0 
-a is 165
-And T is: 
-0 
-a is 166
-And T is: 
-0 
-a is 167
-And T is: 
-0 
-a is 168
-And T is: 
-0 
-a is 169
-And T is: 
-0 
-a is 170
-And T is: 
-0 
-a is 171
-And T is: 
-0 
-a is 172
-And T is: 
-0 
-a is 173
-And T is: 
-0 
-a is 174
-And T is: 
-0 
-a is 175
-And T is: 
-0 
-a is 176
-And T is: 
-0 
-a is 177
-And T is: 
-0 
-a is 178
-And T is: 
-0 
-a is 179
-And T is: 
-0 
-a is 180
-And T is: 
-0 
-a is 181
-And T is: 
-0 
-a is 182
-And T is: 
-0 
-a is 183
-And T is: 
-0 
-a is 184
-And T is: 
-0 
-a is 185
-And T is: 
-0 
-a is 186
-And T is: 
-0 
-a is 187
-And T is: 
-0 
-a is 188
-And T is: 
-0 
-a is 189
-And T is: 
-0 
-a is 190
-And T is: 
-0 
-a is 191
-And T is: 
-0 
-a is 192
-And T is: 
-0 
-a is 193
-And T is: 
-0 
-a is 194
-And T is: 
-0 
-a is 195
-And T is: 
-0 
-a is 196
-And T is: 
-0 
-a is 197
-And T is: 
-0 
-a is 198
-And T is: 
-0 
-a is 199
-And T is: 
-0 
-a is 200
-And T is: 
-0 
-a is 201
-And T is: 
-0 
-a is 202
-And T is: 
-0 
-a is 203
-And T is: 
-0 
-a is 204
-And T is: 
-0 
-a is 205
-And T is: 
-0 
-a is 206
-And T is: 
-0 
-a is 207
-And T is: 
-0 
-a is 208
-And T is: 
-0 
-a is 209
-And T is: 
-0 
-a is 210
-And T is: 
-0 
-a is 211
-And T is: 
-0 
-a is 212
-And T is: 
-0 
-a is 213
-And T is: 
-0 
-a is 214
-And T is: 
-0 
-a is 215
-And T is: 
-0 
-a is 216
-And T is: 
-0 
-a is 217
-And T is: 
-0 
-a is 218
-And T is: 
-0 
-a is 219
-And T is: 
-0 
-a is 220
-And T is: 
-0 
-a is 221
-And T is: 
-0 
-a is 222
-And T is: 
-0 
-a is 223
-And T is: 
-0 
-a is 224
-And T is: 
-0 
-a is 225
-And T is: 
-0 
-a is 226
-And T is: 
-0 
-a is 227
-And T is: 
-0 
-a is 228
-And T is: 
-0 
-a is 229
-And T is: 
-0 
-a is 230
-And T is: 
-0 
-a is 231
-And T is: 
-0 
-a is 232
-And T is: 
-0 
-a is 233
-And T is: 
-0 
-a is 234
-And T is: 
-0 
-a is 235
-And T is: 
-0 
-a is 236
-And T is: 
-0 
-a is 237
-And T is: 
-0 
-a is 238
-And T is: 
-0 
-a is 239
-And T is: 
-0 
-a is 240
-And T is: 
-0 
-a is 241
-And T is: 
-0 
-a is 242
-And T is: 
-0 
-a is 243
-And T is: 
-0 
-a is 244
-And T is: 
-0 
-a is 245
-And T is: 
-0 
-a is 246
-And T is: 
-0 
-a is 247
-And T is: 
-0 
-a is 248
-And T is: 
-0 
-a is 249
-And T is: 
-0 
-a is 250
-And T is: 
-0 
-a is 251
-And T is: 
-0 
-a is 252
-And T is: 
-0 
-a is 253
-And T is: 
-0 
-a is 254
-And T is: 
-0 
-a is 255
-And T is: 
-0 
-a is 256
-And T is: 
-0 
-a is 257
-And T is: 
-0 
-a is 258
-And T is: 
-0 
-a is 259
-And T is: 
-0 
-a is 260
-And T is: 
-0 
-a is 261
-And T is: 
-0 
-a is 262
-And T is: 
-0 
-a is 263
-And T is: 
-0 
-a is 264
-And T is: 
-0 
-a is 265
-And T is: 
-0 
-a is 266
-And T is: 
-0 
-a is 267
-And T is: 
-0 
-a is 268
-And T is: 
-0 
-a is 269
-And T is: 
-0 
-a is 270
-And T is: 
-0 
-a is 271
-And T is: 
-0 
-a is 272
-And T is: 
-0 
-a is 273
-And T is: 
-0 
-a is 274
-And T is: 
-0 
-a is 275
-And T is: 
-0 
-a is 276
-And T is: 
-0 
-a is 277
-And T is: 
-0 
-a is 278
-And T is: 
-0 
-a is 279
-And T is: 
-0 
-a is 280
-And T is: 
-0 
-a is 281
-And T is: 
-0 
-a is 282
-And T is: 
-0 
-a is 283
-And T is: 
-0 
-a is 284
-And T is: 
-0 
-a is 285
-And T is: 
-0 
-a is 286
-And T is: 
-0 
-a is 287
-And T is: 
-0 
-a is 288
-And T is: 
-0 
-a is 289
-And T is: 
-0 
-a is 290
-And T is: 
-0 
-a is 291
-And T is: 
-0 
-a is 292
-And T is: 
-0 
-a is 293
-And T is: 
-0 
-a is 294
-And T is: 
-0 
-a is 295
-And T is: 
-0 
-a is 296
-And T is: 
-0 
-a is 297
-And T is: 
-0 
-a is 298
-And T is: 
-0 
-a is 299
-And T is: 
-0 
-a is 300
-And T is: 
-0 
-a is 301
-And T is: 
-0 
-a is 302
-And T is: 
-0 
-a is 303
-And T is: 
-0 
-a is 304
-And T is: 
-0 
-a is 305
-And T is: 
-0 
-a is 306
-And T is: 
-0 
-a is 307
-And T is: 
-0 
-a is 308
-And T is: 
-0 
-a is 309
-And T is: 
-0 
-a is 310
-And T is: 
-0 
-a is 311
-And T is: 
-0 
-a is 312
-And T is: 
-0 
-a is 313
-And T is: 
-0 
-a is 314
-And T is: 
-0 
-a is 315
-And T is: 
-0 
-a is 316
-And T is: 
-0 
-a is 317
-And T is: 
-0 
-a is 318
-And T is: 
-0 
-a is 319
-And T is: 
-0 
-a is 320
-And T is: 
-0 
-a is 321
-And T is: 
-0 
-a is 322
-And T is: 
-0 
-a is 323
-And T is: 
-0 
-a is 324
-And T is: 
-0 
-a is 325
-And T is: 
-0 
-a is 326
-And T is: 
-0 
-a is 327
-And T is: 
-0 
-a is 328
-And T is: 
-0 
-a is 329
-And T is: 
-0 
-a is 330
-And T is: 
-0 
-a is 331
-And T is: 
-0 
-a is 332
-And T is: 
-0 
-a is 333
-And T is: 
-0 
-a is 334
-And T is: 
-0 
-a is 335
-And T is: 
-0 
-a is 336
-And T is: 
-0 
-a is 337
-And T is: 
-0 
-a is 338
-And T is: 
-0 
-a is 339
-And T is: 
-0 
-a is 340
-And T is: 
-0 
-a is 341
-And T is: 
-0 
-a is 342
-And T is: 
-0 
-a is 343
-And T is: 
-0 
-a is 344
-And T is: 
-0 
-a is 345
-And T is: 
-0 
-a is 346
-And T is: 
-0 
-a is 347
-And T is: 
-0 
-a is 348
-And T is: 
-0 
-a is 349
-And T is: 
-0 
-a is 350
-And T is: 
-0 
-a is 351
-And T is: 
-0 
-a is 352
-And T is: 
-0 
-a is 353
-And T is: 
-0 
-a is 354
-And T is: 
-0 
-a is 355
-And T is: 
-0 
-a is 356
-And T is: 
-0 
-a is 357
-And T is: 
-0 
-a is 358
-And T is: 
-0 
-a is 359
-And T is: 
-0 
-a is 360
-And T is: 
-0 
-a is 361
-And T is: 
-0 
-a is 362
-And T is: 
-0 
-a is 363
-And T is: 
-0 
-a is 364
-And T is: 
-0 
-a is 365
-And T is: 
-0 
-a is 366
-And T is: 
-0 
-a is 367
-And T is: 
-0 
-a is 368
-And T is: 
-0 
-a is 369
-And T is: 
-0 
-a is 370
-And T is: 
-0 
-a is 371
-And T is: 
-0 
-a is 372
-And T is: 
-0 
-a is 373
-And T is: 
-0 
-a is 374
-And T is: 
-0 
-a is 375
-And T is: 
-0 
-a is 376
-And T is: 
-0 
-a is 377
-And T is: 
-0 
-a is 378
-And T is: 
-0 
-a is 379
-And T is: 
-0 
-a is 380
-And T is: 
-0 
-a is 381
-And T is: 
-0 
-a is 382
-And T is: 
-0 
-a is 383
-And T is: 
-0 
-a is 384
-And T is: 
-0 
-a is 385
-And T is: 
-0 
-a is 386
-And T is: 
-0 
-a is 387
-And T is: 
-0 
-a is 388
-And T is: 
-0 
-a is 389
-And T is: 
-0 
-a is 390
-And T is: 
-0 
-a is 391
-And T is: 
-0 
-a is 392
-And T is: 
-0 
-a is 393
-And T is: 
-0 
-a is 394
-And T is: 
-0 
-a is 395
-And T is: 
-0 
-a is 396
-And T is: 
-0 
-a is 397
-And T is: 
-0 
-a is 398
-And T is: 
-0 
-a is 399
-And T is: 
-0 
-a is 400
-And T is: 
-0 
-a is 401
-And T is: 
-0 
-a is 402
-And T is: 
-0 
-a is 403
-And T is: 
-0 
-a is 404
-And T is: 
-0 
-a is 405
-And T is: 
-0 
-a is 406
-And T is: 
-0 
-a is 407
-And T is: 
-0 
-a is 408
-And T is: 
-0 
-a is 409
-And T is: 
-0 
-a is 410
-And T is: 
-0 
-a is 411
-And T is: 
-0 
-a is 412
-And T is: 
-0 
-a is 413
-And T is: 
-0 
-a is 414
-And T is: 
-0 
-a is 415
-And T is: 
-0 
-a is 416
-And T is: 
-0 
-a is 417
-And T is: 
-0 
-a is 418
-And T is: 
-0 
-a is 419
-And T is: 
-0 
-a is 420
-And T is: 
-0 
-a is 421
-And T is: 
-0 
-a is 422
-And T is: 
-0 
-a is 423
-And T is: 
-0 
-a is 424
-And T is: 
-0 
-a is 425
-And T is: 
-0 
-a is 426
-And T is: 
-0 
-a is 427
-And T is: 
-0 
-a is 428
-And T is: 
-0 
-a is 429
-And T is: 
-0 
-a is 430
-And T is: 
-0 
-a is 431
-And T is: 
-0 
-a is 432
-And T is: 
-0 
-a is 433
-And T is: 
-0 
-a is 434
-And T is: 
-0 
-a is 435
-And T is: 
-0 
-a is 436
-And T is: 
-0 
-a is 437
-And T is: 
-0 
-a is 438
-And T is: 
-0 
-a is 439
-And T is: 
-0 
-a is 440
-And T is: 
-0 
-a is 441
-And T is: 
-0 
-a is 442
-And T is: 
-0 
-a is 443
-And T is: 
-0 
-a is 444
-And T is: 
-0 
-a is 445
-And T is: 
-0 
-a is 446
-And T is: 
-0 
-a is 447
-And T is: 
-0 
-a is 448
-And T is: 
-0 
-a is 449
-And T is: 
-0 
-a is 450
-And T is: 
-0 
-a is 451
-And T is: 
-0 
-a is 452
-And T is: 
-0 
-a is 453
-And T is: 
-0 
-a is 454
-And T is: 
-0 
-a is 455
-And T is: 
-0 
-a is 456
-And T is: 
-0 
-a is 457
-And T is: 
-0 
-a is 458
-And T is: 
-0 
-a is 459
-And T is: 
-0 
-a is 460
-And T is: 
-0 
-a is 461
-And T is: 
-0 
-a is 462
-And T is: 
-0 
-a is 463
-And T is: 
-0 
-a is 464
-And T is: 
-0 
-a is 465
-And T is: 
-0 
-a is 466
-And T is: 
-0 
-a is 467
-And T is: 
-0 
-a is 468
-And T is: 
-0 
-a is 469
-And T is: 
-0 
-a is 470
-And T is: 
-0 
-a is 471
-And T is: 
-0 
-a is 472
-And T is: 
-0 
-a is 473
-And T is: 
-0 
-a is 474
-And T is: 
-0 
-a is 475
-And T is: 
-0 
-a is 476
-And T is: 
-0 
-a is 477
-And T is: 
-0 
-a is 478
-And T is: 
-0 
-a is 479
-And T is: 
-0 
-a is 480
-And T is: 
-0 
-a is 481
-And T is: 
-0 
-a is 482
-And T is: 
-0 
-a is 483
-And T is: 
-0 
-a is 484
-And T is: 
-0 
-a is 485
-And T is: 
-0 
-a is 486
-And T is: 
-0 
-a is 487
-And T is: 
-0 
-a is 488
-And T is: 
-0 
-a is 489
-And T is: 
-0 
-a is 490
-And T is: 
-0 
-a is 491
-And T is: 
-0 
-a is 492
-And T is: 
-0 
-a is 493
-And T is: 
-0 
-a is 494
-And T is: 
-0 
-a is 495
-And T is: 
-0 
-a is 496
-And T is: 
-0 
-a is 497
-And T is: 
-0 
-a is 498
-And T is: 
-0 
-a is 499
-And T is: 
-0 
-a is 500
-And T is: 
-0 
-T was:
-0 
-now T is
-0 
-Beggining case j: 5
-
+And w_j is 17
 a is 0
-And T is: 
-0 
-And w_j is 0
-Entering first condition and adding V
-Empty
-0 
+And w_j is 23
 a is 1
-And T is: 
-0 
+And w_j is 23
 a is 2
-And T is: 
-0 
+And w_j is 23
 a is 3
-And T is: 
-0 
+And w_j is 23
 a is 4
-And T is: 
-0 
+And w_j is 23
 a is 5
-And T is: 
-0 
+And w_j is 23
 a is 6
-And T is: 
-0 
+And w_j is 23
 a is 7
-And T is: 
-0 
+And w_j is 23
 a is 8
-And T is: 
-0 
+And w_j is 23
 a is 9
-And T is: 
-0 
+And w_j is 23
 a is 10
-And T is: 
-0 
+And w_j is 23
 a is 11
-And T is: 
-0 
+And w_j is 23
 a is 12
-And T is: 
-0 
+And w_j is 23
 a is 13
-And T is: 
-0 
+And w_j is 23
 a is 14
-And T is: 
-0 
+And w_j is 23
 a is 15
-And T is: 
-0 
+And w_j is 23
 a is 16
-And T is: 
-0 
+And w_j is 23
 a is 17
-And T is: 
-0 
+And w_j is 23
 a is 18
-And T is: 
-0 
+And w_j is 23
 a is 19
-And T is: 
-0 
+And w_j is 23
 a is 20
-And T is: 
-0 
+And w_j is 23
 a is 21
-And T is: 
-0 
+And w_j is 23
 a is 22
-And T is: 
-0 
+And w_j is 23
 a is 23
-And T is: 
-0 
+And w_j is 23
 a is 24
-And T is: 
-0 
+And w_j is 23
 a is 25
-And T is: 
-0 
+And w_j is 23
 a is 26
-And T is: 
-0 
+And w_j is 23
 a is 27
-And T is: 
-0 
+And w_j is 23
 a is 28
-And T is: 
-0 
+And w_j is 23
 a is 29
-And T is: 
-0 
+And w_j is 23
 a is 30
-And T is: 
-0 
+And w_j is 23
 a is 31
-And T is: 
-0 
+And w_j is 23
 a is 32
-And T is: 
-0 
+And w_j is 23
 a is 33
-And T is: 
-0 
+And w_j is 23
 a is 34
-And T is: 
-0 
+And w_j is 23
 a is 35
-And T is: 
-0 
+And w_j is 23
 a is 36
-And T is: 
-0 
+And w_j is 23
 a is 37
-And T is: 
-0 
+And w_j is 23
 a is 38
-And T is: 
-0 
+And w_j is 23
 a is 39
-And T is: 
-0 
+And w_j is 23
 a is 40
-And T is: 
-0 
+And w_j is 23
 a is 41
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 41, from S[3]^18
+Copying to last item 4
 a is 42
-And T is: 
-0 
+And w_j is 23
 a is 43
-And T is: 
-0 
+And w_j is 23
 a is 44
-And T is: 
-0 
+And w_j is 23
 a is 45
-And T is: 
-0 
+And w_j is 23
 a is 46
-And T is: 
-0 
+And w_j is 23
 a is 47
-And T is: 
-0 
+And w_j is 23
 a is 48
-And T is: 
-0 
+And w_j is 23
 a is 49
-And T is: 
-0 
+And w_j is 23
 a is 50
-And T is: 
-0 
+And w_j is 23
 a is 51
-And T is: 
-0 
+And w_j is 23
 a is 52
-And T is: 
-0 
+And w_j is 23
 a is 53
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 53, from S[3]^30
+Copying to last item 4
 a is 54
-And T is: 
-0 
+And w_j is 23
 a is 55
-And T is: 
-0 
+And w_j is 23
 a is 56
-And T is: 
-0 
+And w_j is 23
 a is 57
-And T is: 
-0 
+And w_j is 23
 a is 58
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 58, from S[3]^35
+Copying to last item 4
 a is 59
-And T is: 
-0 
+And w_j is 23
 a is 60
-And T is: 
-0 
+And w_j is 23
 a is 61
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 61, from S[3]^38
+Copying to last item 4
 a is 62
-And T is: 
-0 
+And w_j is 23
 a is 63
-And T is: 
-0 
+And w_j is 23
 a is 64
-And T is: 
-0 
+And w_j is 23
 a is 65
-And T is: 
-0 
+And w_j is 23
 a is 66
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 66, from S[3]^43
+Copying to last item 4
 a is 67
-And T is: 
-0 
+And w_j is 23
 a is 68
-And T is: 
-0 
+And w_j is 23
 a is 69
-And T is: 
-0 
+And w_j is 23
 a is 70
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 70, from S[3]^47
+Copying to last item 4
 a is 71
-And T is: 
-0 
+And w_j is 23
 a is 72
-And T is: 
-0 
+And w_j is 23
 a is 73
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 73, from S[3]^50
+Copying to last item 4
 a is 74
-And T is: 
-0 
+And w_j is 23
 a is 75
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 75, from S[3]^52
+Copying to last item 4
 a is 76
-And T is: 
-0 
+And w_j is 23
 a is 77
-And T is: 
-0 
+And w_j is 23
 a is 78
-And T is: 
-0 
+And w_j is 23
+Summing vectors S[4] with tag 78, from S[3]^55
+Copying to last item 4
 a is 79
-And T is: 
-0 
+And w_j is 23
 a is 80
-And T is: 
-0 
+And w_j is 23
 a is 81
-And T is: 
-0 
+And w_j is 23
 a is 82
-And T is: 
-0 
+And w_j is 23
 a is 83
-And T is: 
-0 
+And w_j is 23
 a is 84
-And T is: 
-0 
+And w_j is 23
 a is 85
-And T is: 
-0 
+And w_j is 23
 a is 86
-And T is: 
-0 
+And w_j is 23
 a is 87
-And T is: 
-0 
+And w_j is 23
 a is 88
-And T is: 
-0 
+And w_j is 23
 a is 89
-And T is: 
-0 
+And w_j is 23
 a is 90
-And T is: 
-0 
+And w_j is 23
 a is 91
-And T is: 
-0 
+And w_j is 23
 a is 92
-And T is: 
-0 
+And w_j is 23
 a is 93
-And T is: 
-0 
+And w_j is 23
 a is 94
-And T is: 
-0 
+And w_j is 23
 a is 95
-And T is: 
-0 
+And w_j is 23
 a is 96
-And T is: 
-0 
+And w_j is 23
 a is 97
-And T is: 
-0 
+And w_j is 23
 a is 98
-And T is: 
-0 
+And w_j is 23
 a is 99
-And T is: 
-0 
+And w_j is 23
 a is 100
-And T is: 
-0 
+And w_j is 23
 a is 101
-And T is: 
-0 
+And w_j is 23
 a is 102
-And T is: 
-0 
+And w_j is 23
 a is 103
-And T is: 
-0 
+And w_j is 23
 a is 104
-And T is: 
-0 
+And w_j is 23
 a is 105
-And T is: 
-0 
+And w_j is 23
 a is 106
-And T is: 
-0 
+And w_j is 23
 a is 107
-And T is: 
-0 
+And w_j is 23
 a is 108
-And T is: 
-0 
+And w_j is 23
 a is 109
-And T is: 
-0 
+And w_j is 23
 a is 110
-And T is: 
-0 
+And w_j is 23
 a is 111
-And T is: 
-0 
+And w_j is 23
 a is 112
-And T is: 
-0 
+And w_j is 23
 a is 113
-And T is: 
-0 
+And w_j is 23
 a is 114
-And T is: 
-0 
+And w_j is 23
 a is 115
-And T is: 
-0 
+And w_j is 23
 a is 116
-And T is: 
-0 
+And w_j is 23
 a is 117
-And T is: 
-0 
+And w_j is 23
 a is 118
-And T is: 
-0 
+And w_j is 23
 a is 119
-And T is: 
-0 
+And w_j is 23
 a is 120
-And T is: 
-0 
+And w_j is 23
 a is 121
-And T is: 
-0 
+And w_j is 23
 a is 122
-And T is: 
-0 
+And w_j is 23
 a is 123
-And T is: 
-0 
+And w_j is 23
 a is 124
-And T is: 
-0 
+And w_j is 23
 a is 125
-And T is: 
-0 
+And w_j is 23
 a is 126
-And T is: 
-0 
+And w_j is 23
 a is 127
-And T is: 
-0 
+And w_j is 23
 a is 128
-And T is: 
-0 
+And w_j is 23
 a is 129
-And T is: 
-0 
+And w_j is 23
 a is 130
-And T is: 
-0 
+And w_j is 23
 a is 131
-And T is: 
-0 
+And w_j is 23
 a is 132
-And T is: 
-0 
+And w_j is 23
 a is 133
-And T is: 
-0 
+And w_j is 23
 a is 134
-And T is: 
-0 
+And w_j is 23
 a is 135
-And T is: 
-0 
+And w_j is 23
 a is 136
-And T is: 
-0 
+And w_j is 23
 a is 137
-And T is: 
-0 
+And w_j is 23
 a is 138
-And T is: 
-0 
+And w_j is 23
 a is 139
-And T is: 
-0 
+And w_j is 23
 a is 140
-And T is: 
-0 
+And w_j is 23
 a is 141
-And T is: 
-0 
+And w_j is 23
 a is 142
-And T is: 
-0 
+And w_j is 23
 a is 143
-And T is: 
-0 
+And w_j is 23
 a is 144
-And T is: 
-0 
+And w_j is 23
 a is 145
-And T is: 
-0 
+And w_j is 23
 a is 146
-And T is: 
-0 
+And w_j is 23
 a is 147
-And T is: 
-0 
+And w_j is 23
 a is 148
-And T is: 
-0 
+And w_j is 23
 a is 149
-And T is: 
-0 
+And w_j is 23
 a is 150
-And T is: 
-0 
-a is 151
-And T is: 
-0 
-a is 152
-And T is: 
-0 
-a is 153
-And T is: 
-0 
-a is 154
-And T is: 
-0 
-a is 155
-And T is: 
-0 
-a is 156
-And T is: 
-0 
-a is 157
-And T is: 
-0 
-a is 158
-And T is: 
-0 
-a is 159
-And T is: 
-0 
-a is 160
-And T is: 
-0 
-a is 161
-And T is: 
-0 
-a is 162
-And T is: 
-0 
-a is 163
-And T is: 
-0 
-a is 164
-And T is: 
-0 
-a is 165
-And T is: 
-0 
-a is 166
-And T is: 
-0 
-a is 167
-And T is: 
-0 
-a is 168
-And T is: 
-0 
-a is 169
-And T is: 
-0 
-a is 170
-And T is: 
-0 
-a is 171
-And T is: 
-0 
-a is 172
-And T is: 
-0 
-a is 173
-And T is: 
-0 
-a is 174
-And T is: 
-0 
-a is 175
-And T is: 
-0 
-a is 176
-And T is: 
-0 
-a is 177
-And T is: 
-0 
-a is 178
-And T is: 
-0 
-a is 179
-And T is: 
-0 
-a is 180
-And T is: 
-0 
-a is 181
-And T is: 
-0 
-a is 182
-And T is: 
-0 
-a is 183
-And T is: 
-0 
-a is 184
-And T is: 
-0 
-a is 185
-And T is: 
-0 
-a is 186
-And T is: 
-0 
-a is 187
-And T is: 
-0 
-a is 188
-And T is: 
-0 
-a is 189
-And T is: 
-0 
-a is 190
-And T is: 
-0 
-a is 191
-And T is: 
-0 
-a is 192
-And T is: 
-0 
-a is 193
-And T is: 
-0 
-a is 194
-And T is: 
-0 
-a is 195
-And T is: 
-0 
-a is 196
-And T is: 
-0 
-a is 197
-And T is: 
-0 
-a is 198
-And T is: 
-0 
-a is 199
-And T is: 
-0 
-a is 200
-And T is: 
-0 
-a is 201
-And T is: 
-0 
-a is 202
-And T is: 
-0 
-a is 203
-And T is: 
-0 
-a is 204
-And T is: 
-0 
-a is 205
-And T is: 
-0 
-a is 206
-And T is: 
-0 
-a is 207
-And T is: 
-0 
-a is 208
-And T is: 
-0 
-a is 209
-And T is: 
-0 
-a is 210
-And T is: 
-0 
-a is 211
-And T is: 
-0 
-a is 212
-And T is: 
-0 
-a is 213
-And T is: 
-0 
-a is 214
-And T is: 
-0 
-a is 215
-And T is: 
-0 
-a is 216
-And T is: 
-0 
-a is 217
-And T is: 
-0 
-a is 218
-And T is: 
-0 
-a is 219
-And T is: 
-0 
-a is 220
-And T is: 
-0 
-a is 221
-And T is: 
-0 
-a is 222
-And T is: 
-0 
-a is 223
-And T is: 
-0 
-a is 224
-And T is: 
-0 
-a is 225
-And T is: 
-0 
-a is 226
-And T is: 
-0 
-a is 227
-And T is: 
-0 
-a is 228
-And T is: 
-0 
-a is 229
-And T is: 
-0 
-a is 230
-And T is: 
-0 
-a is 231
-And T is: 
-0 
-a is 232
-And T is: 
-0 
-a is 233
-And T is: 
-0 
-a is 234
-And T is: 
-0 
-a is 235
-And T is: 
-0 
-a is 236
-And T is: 
-0 
-a is 237
-And T is: 
-0 
-a is 238
-And T is: 
-0 
-a is 239
-And T is: 
-0 
-a is 240
-And T is: 
-0 
-a is 241
-And T is: 
-0 
-a is 242
-And T is: 
-0 
-a is 243
-And T is: 
-0 
-a is 244
-And T is: 
-0 
-a is 245
-And T is: 
-0 
-a is 246
-And T is: 
-0 
-a is 247
-And T is: 
-0 
-a is 248
-And T is: 
-0 
-a is 249
-And T is: 
-0 
-a is 250
-And T is: 
-0 
-a is 251
-And T is: 
-0 
-a is 252
-And T is: 
-0 
-a is 253
-And T is: 
-0 
-a is 254
-And T is: 
-0 
-a is 255
-And T is: 
-0 
-a is 256
-And T is: 
-0 
-a is 257
-And T is: 
-0 
-a is 258
-And T is: 
-0 
-a is 259
-And T is: 
-0 
-a is 260
-And T is: 
-0 
-a is 261
-And T is: 
-0 
-a is 262
-And T is: 
-0 
-a is 263
-And T is: 
-0 
-a is 264
-And T is: 
-0 
-a is 265
-And T is: 
-0 
-a is 266
-And T is: 
-0 
-a is 267
-And T is: 
-0 
-a is 268
-And T is: 
-0 
-a is 269
-And T is: 
-0 
-a is 270
-And T is: 
-0 
-a is 271
-And T is: 
-0 
-a is 272
-And T is: 
-0 
-a is 273
-And T is: 
-0 
-a is 274
-And T is: 
-0 
-a is 275
-And T is: 
-0 
-a is 276
-And T is: 
-0 
-a is 277
-And T is: 
-0 
-a is 278
-And T is: 
-0 
-a is 279
-And T is: 
-0 
-a is 280
-And T is: 
-0 
-a is 281
-And T is: 
-0 
-a is 282
-And T is: 
-0 
-a is 283
-And T is: 
-0 
-a is 284
-And T is: 
-0 
-a is 285
-And T is: 
-0 
-a is 286
-And T is: 
-0 
-a is 287
-And T is: 
-0 
-a is 288
-And T is: 
-0 
-a is 289
-And T is: 
-0 
-a is 290
-And T is: 
-0 
-a is 291
-And T is: 
-0 
-a is 292
-And T is: 
-0 
-a is 293
-And T is: 
-0 
-a is 294
-And T is: 
-0 
-a is 295
-And T is: 
-0 
-a is 296
-And T is: 
-0 
-a is 297
-And T is: 
-0 
-a is 298
-And T is: 
-0 
-a is 299
-And T is: 
-0 
-a is 300
-And T is: 
-0 
-a is 301
-And T is: 
-0 
-a is 302
-And T is: 
-0 
-a is 303
-And T is: 
-0 
-a is 304
-And T is: 
-0 
-a is 305
-And T is: 
-0 
-a is 306
-And T is: 
-0 
-a is 307
-And T is: 
-0 
-a is 308
-And T is: 
-0 
-a is 309
-And T is: 
-0 
-a is 310
-And T is: 
-0 
-a is 311
-And T is: 
-0 
-a is 312
-And T is: 
-0 
-a is 313
-And T is: 
-0 
-a is 314
-And T is: 
-0 
-a is 315
-And T is: 
-0 
-a is 316
-And T is: 
-0 
-a is 317
-And T is: 
-0 
-a is 318
-And T is: 
-0 
-a is 319
-And T is: 
-0 
-a is 320
-And T is: 
-0 
-a is 321
-And T is: 
-0 
-a is 322
-And T is: 
-0 
-a is 323
-And T is: 
-0 
-a is 324
-And T is: 
-0 
-a is 325
-And T is: 
-0 
-a is 326
-And T is: 
-0 
-a is 327
-And T is: 
-0 
-a is 328
-And T is: 
-0 
-a is 329
-And T is: 
-0 
-a is 330
-And T is: 
-0 
-a is 331
-And T is: 
-0 
-a is 332
-And T is: 
-0 
-a is 333
-And T is: 
-0 
-a is 334
-And T is: 
-0 
-a is 335
-And T is: 
-0 
-a is 336
-And T is: 
-0 
-a is 337
-And T is: 
-0 
-a is 338
-And T is: 
-0 
-a is 339
-And T is: 
-0 
-a is 340
-And T is: 
-0 
-a is 341
-And T is: 
-0 
-a is 342
-And T is: 
-0 
-a is 343
-And T is: 
-0 
-a is 344
-And T is: 
-0 
-a is 345
-And T is: 
-0 
-a is 346
-And T is: 
-0 
-a is 347
-And T is: 
-0 
-a is 348
-And T is: 
-0 
-a is 349
-And T is: 
-0 
-a is 350
-And T is: 
-0 
-a is 351
-And T is: 
-0 
-a is 352
-And T is: 
-0 
-a is 353
-And T is: 
-0 
-a is 354
-And T is: 
-0 
-a is 355
-And T is: 
-0 
-a is 356
-And T is: 
-0 
-a is 357
-And T is: 
-0 
-a is 358
-And T is: 
-0 
-a is 359
-And T is: 
-0 
-a is 360
-And T is: 
-0 
-a is 361
-And T is: 
-0 
-a is 362
-And T is: 
-0 
-a is 363
-And T is: 
-0 
-a is 364
-And T is: 
-0 
-a is 365
-And T is: 
-0 
-a is 366
-And T is: 
-0 
-a is 367
-And T is: 
-0 
-a is 368
-And T is: 
-0 
-a is 369
-And T is: 
-0 
-a is 370
-And T is: 
-0 
-a is 371
-And T is: 
-0 
-a is 372
-And T is: 
-0 
-a is 373
-And T is: 
-0 
-a is 374
-And T is: 
-0 
-a is 375
-And T is: 
-0 
-a is 376
-And T is: 
-0 
-a is 377
-And T is: 
-0 
-a is 378
-And T is: 
-0 
-a is 379
-And T is: 
-0 
-a is 380
-And T is: 
-0 
-a is 381
-And T is: 
-0 
-a is 382
-And T is: 
-0 
-a is 383
-And T is: 
-0 
-a is 384
-And T is: 
-0 
-a is 385
-And T is: 
-0 
-a is 386
-And T is: 
-0 
-a is 387
-And T is: 
-0 
-a is 388
-And T is: 
-0 
-a is 389
-And T is: 
-0 
-a is 390
-And T is: 
-0 
-a is 391
-And T is: 
-0 
-a is 392
-And T is: 
-0 
-a is 393
-And T is: 
-0 
-a is 394
-And T is: 
-0 
-a is 395
-And T is: 
-0 
-a is 396
-And T is: 
-0 
-a is 397
-And T is: 
-0 
-a is 398
-And T is: 
-0 
-a is 399
-And T is: 
-0 
-a is 400
-And T is: 
-0 
-a is 401
-And T is: 
-0 
-a is 402
-And T is: 
-0 
-a is 403
-And T is: 
-0 
-a is 404
-And T is: 
-0 
-a is 405
-And T is: 
-0 
-a is 406
-And T is: 
-0 
-a is 407
-And T is: 
-0 
-a is 408
-And T is: 
-0 
-a is 409
-And T is: 
-0 
-a is 410
-And T is: 
-0 
-a is 411
-And T is: 
-0 
-a is 412
-And T is: 
-0 
-a is 413
-And T is: 
-0 
-a is 414
-And T is: 
-0 
-a is 415
-And T is: 
-0 
-a is 416
-And T is: 
-0 
-a is 417
-And T is: 
-0 
-a is 418
-And T is: 
-0 
-a is 419
-And T is: 
-0 
-a is 420
-And T is: 
-0 
-a is 421
-And T is: 
-0 
-a is 422
-And T is: 
-0 
-a is 423
-And T is: 
-0 
-a is 424
-And T is: 
-0 
-a is 425
-And T is: 
-0 
-a is 426
-And T is: 
-0 
-a is 427
-And T is: 
-0 
-a is 428
-And T is: 
-0 
-a is 429
-And T is: 
-0 
-a is 430
-And T is: 
-0 
-a is 431
-And T is: 
-0 
-a is 432
-And T is: 
-0 
-a is 433
-And T is: 
-0 
-a is 434
-And T is: 
-0 
-a is 435
-And T is: 
-0 
-a is 436
-And T is: 
-0 
-a is 437
-And T is: 
-0 
-a is 438
-And T is: 
-0 
-a is 439
-And T is: 
-0 
-a is 440
-And T is: 
-0 
-a is 441
-And T is: 
-0 
-a is 442
-And T is: 
-0 
-a is 443
-And T is: 
-0 
-a is 444
-And T is: 
-0 
-a is 445
-And T is: 
-0 
-a is 446
-And T is: 
-0 
-a is 447
-And T is: 
-0 
-a is 448
-And T is: 
-0 
-a is 449
-And T is: 
-0 
-a is 450
-And T is: 
-0 
-a is 451
-And T is: 
-0 
-a is 452
-And T is: 
-0 
-a is 453
-And T is: 
-0 
-a is 454
-And T is: 
-0 
-a is 455
-And T is: 
-0 
-a is 456
-And T is: 
-0 
-a is 457
-And T is: 
-0 
-a is 458
-And T is: 
-0 
-a is 459
-And T is: 
-0 
-a is 460
-And T is: 
-0 
-a is 461
-And T is: 
-0 
-a is 462
-And T is: 
-0 
-a is 463
-And T is: 
-0 
-a is 464
-And T is: 
-0 
-a is 465
-And T is: 
-0 
-a is 466
-And T is: 
-0 
-a is 467
-And T is: 
-0 
-a is 468
-And T is: 
-0 
-a is 469
-And T is: 
-0 
-a is 470
-And T is: 
-0 
-a is 471
-And T is: 
-0 
-a is 472
-And T is: 
-0 
-a is 473
-And T is: 
-0 
-a is 474
-And T is: 
-0 
-a is 475
-And T is: 
-0 
-a is 476
-And T is: 
-0 
-a is 477
-And T is: 
-0 
-a is 478
-And T is: 
-0 
-a is 479
-And T is: 
-0 
-a is 480
-And T is: 
-0 
-a is 481
-And T is: 
-0 
-a is 482
-And T is: 
-0 
-a is 483
-And T is: 
-0 
-a is 484
-And T is: 
-0 
-a is 485
-And T is: 
-0 
-a is 486
-And T is: 
-0 
-a is 487
-And T is: 
-0 
-a is 488
-And T is: 
-0 
-a is 489
-And T is: 
-0 
-a is 490
-And T is: 
-0 
-a is 491
-And T is: 
-0 
-a is 492
-And T is: 
-0 
-a is 493
-And T is: 
-0 
-a is 494
-And T is: 
-0 
-a is 495
-And T is: 
-0 
-a is 496
-And T is: 
-0 
-a is 497
-And T is: 
-0 
-a is 498
-And T is: 
-0 
-a is 499
-And T is: 
-0 
-a is 500
-And T is: 
-0 
-T was:
-0 
-now T is
-0 
-Beggining case j: 6
-
+And w_j is 23
 a is 0
-And T is: 
-0 
 And w_j is 18
-Entering first condition and adding V
-Empty
-0 
 a is 1
-And T is: 
-0 
+And w_j is 18
 a is 2
-And T is: 
-0 
+And w_j is 18
 a is 3
-And T is: 
-0 
+And w_j is 18
 a is 4
-And T is: 
-0 
+And w_j is 18
 a is 5
-And T is: 
-0 
+And w_j is 18
 a is 6
-And T is: 
-0 
+And w_j is 18
 a is 7
-And T is: 
-0 
+And w_j is 18
 a is 8
-And T is: 
-0 
+And w_j is 18
 a is 9
-And T is: 
-0 
+And w_j is 18
 a is 10
-And T is: 
-0 
+And w_j is 18
 a is 11
-And T is: 
-0 
+And w_j is 18
 a is 12
-And T is: 
-0 
+And w_j is 18
 a is 13
-And T is: 
-0 
+And w_j is 18
 a is 14
-And T is: 
-0 
+And w_j is 18
 a is 15
-And T is: 
-0 
+And w_j is 18
 a is 16
-And T is: 
-0 
+And w_j is 18
 a is 17
-And T is: 
-0 
+And w_j is 18
 a is 18
-And T is: 
-0 
+And w_j is 18
 a is 19
-And T is: 
-0 
+And w_j is 18
 a is 20
-And T is: 
-0 
+And w_j is 18
 a is 21
-And T is: 
-0 
+And w_j is 18
 a is 22
-And T is: 
-0 
+And w_j is 18
 a is 23
-And T is: 
-0 
+And w_j is 18
 a is 24
-And T is: 
-0 
+And w_j is 18
 a is 25
-And T is: 
-0 
+And w_j is 18
 a is 26
-And T is: 
-0 
+And w_j is 18
 a is 27
-And T is: 
-0 
+And w_j is 18
 a is 28
-And T is: 
-0 
+And w_j is 18
 a is 29
-And T is: 
-0 
+And w_j is 18
 a is 30
-And T is: 
-0 
+And w_j is 18
 a is 31
-And T is: 
-0 
+And w_j is 18
 a is 32
-And T is: 
-0 
+And w_j is 18
 a is 33
-And T is: 
-0 
+And w_j is 18
 a is 34
-And T is: 
-0 
+And w_j is 18
 a is 35
-And T is: 
-0 
+And w_j is 18
 a is 36
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 36, from S[3]^18
+Copying to last item 4
 a is 37
-And T is: 
-0 
+And w_j is 18
 a is 38
-And T is: 
-0 
+And w_j is 18
 a is 39
-And T is: 
-0 
+And w_j is 18
 a is 40
-And T is: 
-0 
+And w_j is 18
 a is 41
-And T is: 
-0 
+And w_j is 18
 a is 42
-And T is: 
-0 
+And w_j is 18
 a is 43
-And T is: 
-0 
+And w_j is 18
 a is 44
-And T is: 
-0 
+And w_j is 18
 a is 45
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 45, from S[3]^27
+Copying to last item 4
 a is 46
-And T is: 
-0 
+And w_j is 18
 a is 47
-And T is: 
-0 
+And w_j is 18
 a is 48
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 48, from S[3]^30
+Copying to last item 4
 a is 49
-And T is: 
-0 
+And w_j is 18
 a is 50
-And T is: 
-0 
+And w_j is 18
 a is 51
-And T is: 
-0 
+And w_j is 18
 a is 52
-And T is: 
-0 
+And w_j is 18
 a is 53
-And T is: 
-0 
+And w_j is 18
 a is 54
-And T is: 
-0 
+And w_j is 18
 a is 55
-And T is: 
-0 
+And w_j is 18
 a is 56
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 56, from S[3]^38
+Copying to last item 4
 a is 57
-And T is: 
-0 
+And w_j is 18
 a is 58
-And T is: 
-0 
+And w_j is 18
 a is 59
-And T is: 
-0 
+And w_j is 18
 a is 60
-And T is: 
-0 
+And w_j is 18
 a is 61
-And T is: 
-0 
+And w_j is 18
 a is 62
-And T is: 
-0 
+And w_j is 18
 a is 63
-And T is: 
-0 
+And w_j is 18
 a is 64
-And T is: 
-0 
+And w_j is 18
 a is 65
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 65, from S[3]^47
+Copying to last item 4
 a is 66
-And T is: 
-0 
+And w_j is 18
 a is 67
-And T is: 
-0 
+And w_j is 18
 a is 68
-And T is: 
-0 
+And w_j is 18
+Summing vectors S[4] with tag 68, from S[3]^50
+Copying to last item 4
 a is 69
-And T is: 
-0 
+And w_j is 18
 a is 70
-And T is: 
-0 
+And w_j is 18
 a is 71
-And T is: 
-0 
+And w_j is 18
 a is 72
-And T is: 
-0 
+And w_j is 18
 a is 73
-And T is: 
-0 
+And w_j is 18
 a is 74
-And T is: 
-0 
+And w_j is 18
 a is 75
-And T is: 
-0 
+And w_j is 18
 a is 76
-And T is: 
-0 
+And w_j is 18
 a is 77
-And T is: 
-0 
+And w_j is 18
 a is 78
-And T is: 
-0 
+And w_j is 18
 a is 79
-And T is: 
-0 
+And w_j is 18
 a is 80
-And T is: 
-0 
+And w_j is 18
 a is 81
-And T is: 
-0 
+And w_j is 18
 a is 82
-And T is: 
-0 
+And w_j is 18
 a is 83
-And T is: 
-0 
+And w_j is 18
 a is 84
-And T is: 
-0 
+And w_j is 18
 a is 85
-And T is: 
-0 
+And w_j is 18
 a is 86
-And T is: 
-0 
+And w_j is 18
 a is 87
-And T is: 
-0 
+And w_j is 18
 a is 88
-And T is: 
-0 
+And w_j is 18
 a is 89
-And T is: 
-0 
+And w_j is 18
 a is 90
-And T is: 
-0 
+And w_j is 18
 a is 91
-And T is: 
-0 
+And w_j is 18
 a is 92
-And T is: 
-0 
+And w_j is 18
 a is 93
-And T is: 
-0 
+And w_j is 18
 a is 94
-And T is: 
-0 
+And w_j is 18
 a is 95
-And T is: 
-0 
+And w_j is 18
 a is 96
-And T is: 
-0 
+And w_j is 18
 a is 97
-And T is: 
-0 
+And w_j is 18
 a is 98
-And T is: 
-0 
+And w_j is 18
 a is 99
-And T is: 
-0 
+And w_j is 18
 a is 100
-And T is: 
-0 
+And w_j is 18
 a is 101
-And T is: 
-0 
+And w_j is 18
 a is 102
-And T is: 
-0 
+And w_j is 18
 a is 103
-And T is: 
-0 
+And w_j is 18
 a is 104
-And T is: 
-0 
+And w_j is 18
 a is 105
-And T is: 
-0 
+And w_j is 18
 a is 106
-And T is: 
-0 
+And w_j is 18
 a is 107
-And T is: 
-0 
+And w_j is 18
 a is 108
-And T is: 
-0 
+And w_j is 18
 a is 109
-And T is: 
-0 
+And w_j is 18
 a is 110
-And T is: 
-0 
+And w_j is 18
 a is 111
-And T is: 
-0 
+And w_j is 18
 a is 112
-And T is: 
-0 
+And w_j is 18
 a is 113
-And T is: 
-0 
+And w_j is 18
 a is 114
-And T is: 
-0 
+And w_j is 18
 a is 115
-And T is: 
-0 
+And w_j is 18
 a is 116
-And T is: 
-0 
+And w_j is 18
 a is 117
-And T is: 
-0 
+And w_j is 18
 a is 118
-And T is: 
-0 
+And w_j is 18
 a is 119
-And T is: 
-0 
+And w_j is 18
 a is 120
-And T is: 
-0 
+And w_j is 18
 a is 121
-And T is: 
-0 
+And w_j is 18
 a is 122
-And T is: 
-0 
+And w_j is 18
 a is 123
-And T is: 
-0 
+And w_j is 18
 a is 124
-And T is: 
-0 
+And w_j is 18
 a is 125
-And T is: 
-0 
+And w_j is 18
 a is 126
-And T is: 
-0 
+And w_j is 18
 a is 127
-And T is: 
-0 
+And w_j is 18
 a is 128
-And T is: 
-0 
+And w_j is 18
 a is 129
-And T is: 
-0 
+And w_j is 18
 a is 130
-And T is: 
-0 
+And w_j is 18
 a is 131
-And T is: 
-0 
+And w_j is 18
 a is 132
-And T is: 
-0 
+And w_j is 18
 a is 133
-And T is: 
-0 
+And w_j is 18
 a is 134
-And T is: 
-0 
+And w_j is 18
 a is 135
-And T is: 
-0 
+And w_j is 18
 a is 136
-And T is: 
-0 
+And w_j is 18
 a is 137
-And T is: 
-0 
+And w_j is 18
 a is 138
-And T is: 
-0 
+And w_j is 18
 a is 139
-And T is: 
-0 
+And w_j is 18
 a is 140
-And T is: 
-0 
+And w_j is 18
 a is 141
-And T is: 
-0 
+And w_j is 18
 a is 142
-And T is: 
-0 
+And w_j is 18
 a is 143
-And T is: 
-0 
+And w_j is 18
 a is 144
-And T is: 
-0 
+And w_j is 18
 a is 145
-And T is: 
-0 
+And w_j is 18
 a is 146
-And T is: 
-0 
+And w_j is 18
 a is 147
-And T is: 
-0 
+And w_j is 18
 a is 148
-And T is: 
-0 
+And w_j is 18
 a is 149
-And T is: 
-0 
+And w_j is 18
 a is 150
-And T is: 
-0 
-a is 151
-And T is: 
-0 
-a is 152
-And T is: 
-0 
-a is 153
-And T is: 
-0 
-a is 154
-And T is: 
-0 
-a is 155
-And T is: 
-0 
-a is 156
-And T is: 
-0 
-a is 157
-And T is: 
-0 
-a is 158
-And T is: 
-0 
-a is 159
-And T is: 
-0 
-a is 160
-And T is: 
-0 
-a is 161
-And T is: 
-0 
-a is 162
-And T is: 
-0 
-a is 163
-And T is: 
-0 
-a is 164
-And T is: 
-0 
-a is 165
-And T is: 
-0 
-a is 166
-And T is: 
-0 
-a is 167
-And T is: 
-0 
-a is 168
-And T is: 
-0 
-a is 169
-And T is: 
-0 
-a is 170
-And T is: 
-0 
-a is 171
-And T is: 
-0 
-a is 172
-And T is: 
-0 
-a is 173
-And T is: 
-0 
-a is 174
-And T is: 
-0 
-a is 175
-And T is: 
-0 
-a is 176
-And T is: 
-0 
-a is 177
-And T is: 
-0 
-a is 178
-And T is: 
-0 
-a is 179
-And T is: 
-0 
-a is 180
-And T is: 
-0 
-a is 181
-And T is: 
-0 
-a is 182
-And T is: 
-0 
-a is 183
-And T is: 
-0 
-a is 184
-And T is: 
-0 
-a is 185
-And T is: 
-0 
-a is 186
-And T is: 
-0 
-a is 187
-And T is: 
-0 
-a is 188
-And T is: 
-0 
-a is 189
-And T is: 
-0 
-a is 190
-And T is: 
-0 
-a is 191
-And T is: 
-0 
-a is 192
-And T is: 
-0 
-a is 193
-And T is: 
-0 
-a is 194
-And T is: 
-0 
-a is 195
-And T is: 
-0 
-a is 196
-And T is: 
-0 
-a is 197
-And T is: 
-0 
-a is 198
-And T is: 
-0 
-a is 199
-And T is: 
-0 
-a is 200
-And T is: 
-0 
-a is 201
-And T is: 
-0 
-a is 202
-And T is: 
-0 
-a is 203
-And T is: 
-0 
-a is 204
-And T is: 
-0 
-a is 205
-And T is: 
-0 
-a is 206
-And T is: 
-0 
-a is 207
-And T is: 
-0 
-a is 208
-And T is: 
-0 
-a is 209
-And T is: 
-0 
-a is 210
-And T is: 
-0 
-a is 211
-And T is: 
-0 
-a is 212
-And T is: 
-0 
-a is 213
-And T is: 
-0 
-a is 214
-And T is: 
-0 
-a is 215
-And T is: 
-0 
-a is 216
-And T is: 
-0 
-a is 217
-And T is: 
-0 
-a is 218
-And T is: 
-0 
-a is 219
-And T is: 
-0 
-a is 220
-And T is: 
-0 
-a is 221
-And T is: 
-0 
-a is 222
-And T is: 
-0 
-a is 223
-And T is: 
-0 
-a is 224
-And T is: 
-0 
-a is 225
-And T is: 
-0 
-a is 226
-And T is: 
-0 
-a is 227
-And T is: 
-0 
-a is 228
-And T is: 
-0 
-a is 229
-And T is: 
-0 
-a is 230
-And T is: 
-0 
-a is 231
-And T is: 
-0 
-a is 232
-And T is: 
-0 
-a is 233
-And T is: 
-0 
-a is 234
-And T is: 
-0 
-a is 235
-And T is: 
-0 
-a is 236
-And T is: 
-0 
-a is 237
-And T is: 
-0 
-a is 238
-And T is: 
-0 
-a is 239
-And T is: 
-0 
-a is 240
-And T is: 
-0 
-a is 241
-And T is: 
-0 
-a is 242
-And T is: 
-0 
-a is 243
-And T is: 
-0 
-a is 244
-And T is: 
-0 
-a is 245
-And T is: 
-0 
-a is 246
-And T is: 
-0 
-a is 247
-And T is: 
-0 
-a is 248
-And T is: 
-0 
-a is 249
-And T is: 
-0 
-a is 250
-And T is: 
-0 
-a is 251
-And T is: 
-0 
-a is 252
-And T is: 
-0 
-a is 253
-And T is: 
-0 
-a is 254
-And T is: 
-0 
-a is 255
-And T is: 
-0 
-a is 256
-And T is: 
-0 
-a is 257
-And T is: 
-0 
-a is 258
-And T is: 
-0 
-a is 259
-And T is: 
-0 
-a is 260
-And T is: 
-0 
-a is 261
-And T is: 
-0 
-a is 262
-And T is: 
-0 
-a is 263
-And T is: 
-0 
-a is 264
-And T is: 
-0 
-a is 265
-And T is: 
-0 
-a is 266
-And T is: 
-0 
-a is 267
-And T is: 
-0 
-a is 268
-And T is: 
-0 
-a is 269
-And T is: 
-0 
-a is 270
-And T is: 
-0 
-a is 271
-And T is: 
-0 
-a is 272
-And T is: 
-0 
-a is 273
-And T is: 
-0 
-a is 274
-And T is: 
-0 
-a is 275
-And T is: 
-0 
-a is 276
-And T is: 
-0 
-a is 277
-And T is: 
-0 
-a is 278
-And T is: 
-0 
-a is 279
-And T is: 
-0 
-a is 280
-And T is: 
-0 
-a is 281
-And T is: 
-0 
-a is 282
-And T is: 
-0 
-a is 283
-And T is: 
-0 
-a is 284
-And T is: 
-0 
-a is 285
-And T is: 
-0 
-a is 286
-And T is: 
-0 
-a is 287
-And T is: 
-0 
-a is 288
-And T is: 
-0 
-a is 289
-And T is: 
-0 
-a is 290
-And T is: 
-0 
-a is 291
-And T is: 
-0 
-a is 292
-And T is: 
-0 
-a is 293
-And T is: 
-0 
-a is 294
-And T is: 
-0 
-a is 295
-And T is: 
-0 
-a is 296
-And T is: 
-0 
-a is 297
-And T is: 
-0 
-a is 298
-And T is: 
-0 
-a is 299
-And T is: 
-0 
-a is 300
-And T is: 
-0 
-a is 301
-And T is: 
-0 
-a is 302
-And T is: 
-0 
-a is 303
-And T is: 
-0 
-a is 304
-And T is: 
-0 
-a is 305
-And T is: 
-0 
-a is 306
-And T is: 
-0 
-a is 307
-And T is: 
-0 
-a is 308
-And T is: 
-0 
-a is 309
-And T is: 
-0 
-a is 310
-And T is: 
-0 
-a is 311
-And T is: 
-0 
-a is 312
-And T is: 
-0 
-a is 313
-And T is: 
-0 
-a is 314
-And T is: 
-0 
-a is 315
-And T is: 
-0 
-a is 316
-And T is: 
-0 
-a is 317
-And T is: 
-0 
-a is 318
-And T is: 
-0 
-a is 319
-And T is: 
-0 
-a is 320
-And T is: 
-0 
-a is 321
-And T is: 
-0 
-a is 322
-And T is: 
-0 
-a is 323
-And T is: 
-0 
-a is 324
-And T is: 
-0 
-a is 325
-And T is: 
-0 
-a is 326
-And T is: 
-0 
-a is 327
-And T is: 
-0 
-a is 328
-And T is: 
-0 
-a is 329
-And T is: 
-0 
-a is 330
-And T is: 
-0 
-a is 331
-And T is: 
-0 
-a is 332
-And T is: 
-0 
-a is 333
-And T is: 
-0 
-a is 334
-And T is: 
-0 
-a is 335
-And T is: 
-0 
-a is 336
-And T is: 
-0 
-a is 337
-And T is: 
-0 
-a is 338
-And T is: 
-0 
-a is 339
-And T is: 
-0 
-a is 340
-And T is: 
-0 
-a is 341
-And T is: 
-0 
-a is 342
-And T is: 
-0 
-a is 343
-And T is: 
-0 
-a is 344
-And T is: 
-0 
-a is 345
-And T is: 
-0 
-a is 346
-And T is: 
-0 
-a is 347
-And T is: 
-0 
-a is 348
-And T is: 
-0 
-a is 349
-And T is: 
-0 
-a is 350
-And T is: 
-0 
-a is 351
-And T is: 
-0 
-a is 352
-And T is: 
-0 
-a is 353
-And T is: 
-0 
-a is 354
-And T is: 
-0 
-a is 355
-And T is: 
-0 
-a is 356
-And T is: 
-0 
-a is 357
-And T is: 
-0 
-a is 358
-And T is: 
-0 
-a is 359
-And T is: 
-0 
-a is 360
-And T is: 
-0 
-a is 361
-And T is: 
-0 
-a is 362
-And T is: 
-0 
-a is 363
-And T is: 
-0 
-a is 364
-And T is: 
-0 
-a is 365
-And T is: 
-0 
-a is 366
-And T is: 
-0 
-a is 367
-And T is: 
-0 
-a is 368
-And T is: 
-0 
-a is 369
-And T is: 
-0 
-a is 370
-And T is: 
-0 
-a is 371
-And T is: 
-0 
-a is 372
-And T is: 
-0 
-a is 373
-And T is: 
-0 
-a is 374
-And T is: 
-0 
-a is 375
-And T is: 
-0 
-a is 376
-And T is: 
-0 
-a is 377
-And T is: 
-0 
-a is 378
-And T is: 
-0 
-a is 379
-And T is: 
-0 
-a is 380
-And T is: 
-0 
-a is 381
-And T is: 
-0 
-a is 382
-And T is: 
-0 
-a is 383
-And T is: 
-0 
-a is 384
-And T is: 
-0 
-a is 385
-And T is: 
-0 
-a is 386
-And T is: 
-0 
-a is 387
-And T is: 
-0 
-a is 388
-And T is: 
-0 
-a is 389
-And T is: 
-0 
-a is 390
-And T is: 
-0 
-a is 391
-And T is: 
-0 
-a is 392
-And T is: 
-0 
-a is 393
-And T is: 
-0 
-a is 394
-And T is: 
-0 
-a is 395
-And T is: 
-0 
-a is 396
-And T is: 
-0 
-a is 397
-And T is: 
-0 
-a is 398
-And T is: 
-0 
-a is 399
-And T is: 
-0 
-a is 400
-And T is: 
-0 
-a is 401
-And T is: 
-0 
-a is 402
-And T is: 
-0 
-a is 403
-And T is: 
-0 
-a is 404
-And T is: 
-0 
-a is 405
-And T is: 
-0 
-a is 406
-And T is: 
-0 
-a is 407
-And T is: 
-0 
-a is 408
-And T is: 
-0 
-a is 409
-And T is: 
-0 
-a is 410
-And T is: 
-0 
-a is 411
-And T is: 
-0 
-a is 412
-And T is: 
-0 
-a is 413
-And T is: 
-0 
-a is 414
-And T is: 
-0 
-a is 415
-And T is: 
-0 
-a is 416
-And T is: 
-0 
-a is 417
-And T is: 
-0 
-a is 418
-And T is: 
-0 
-a is 419
-And T is: 
-0 
-a is 420
-And T is: 
-0 
-a is 421
-And T is: 
-0 
-a is 422
-And T is: 
-0 
-a is 423
-And T is: 
-0 
-a is 424
-And T is: 
-0 
-a is 425
-And T is: 
-0 
-a is 426
-And T is: 
-0 
-a is 427
-And T is: 
-0 
-a is 428
-And T is: 
-0 
-a is 429
-And T is: 
-0 
-a is 430
-And T is: 
-0 
-a is 431
-And T is: 
-0 
-a is 432
-And T is: 
-0 
-a is 433
-And T is: 
-0 
-a is 434
-And T is: 
-0 
-a is 435
-And T is: 
-0 
-a is 436
-And T is: 
-0 
-a is 437
-And T is: 
-0 
-a is 438
-And T is: 
-0 
-a is 439
-And T is: 
-0 
-a is 440
-And T is: 
-0 
-a is 441
-And T is: 
-0 
-a is 442
-And T is: 
-0 
-a is 443
-And T is: 
-0 
-a is 444
-And T is: 
-0 
-a is 445
-And T is: 
-0 
-a is 446
-And T is: 
-0 
-a is 447
-And T is: 
-0 
-a is 448
-And T is: 
-0 
-a is 449
-And T is: 
-0 
-a is 450
-And T is: 
-0 
-a is 451
-And T is: 
-0 
-a is 452
-And T is: 
-0 
-a is 453
-And T is: 
-0 
-a is 454
-And T is: 
-0 
-a is 455
-And T is: 
-0 
-a is 456
-And T is: 
-0 
-a is 457
-And T is: 
-0 
-a is 458
-And T is: 
-0 
-a is 459
-And T is: 
-0 
-a is 460
-And T is: 
-0 
-a is 461
-And T is: 
-0 
-a is 462
-And T is: 
-0 
-a is 463
-And T is: 
-0 
-a is 464
-And T is: 
-0 
-a is 465
-And T is: 
-0 
-a is 466
-And T is: 
-0 
-a is 467
-And T is: 
-0 
-a is 468
-And T is: 
-0 
-a is 469
-And T is: 
-0 
-a is 470
-And T is: 
-0 
-a is 471
-And T is: 
-0 
-a is 472
-And T is: 
-0 
-a is 473
-And T is: 
-0 
-a is 474
-And T is: 
-0 
-a is 475
-And T is: 
-0 
-a is 476
-And T is: 
-0 
-a is 477
-And T is: 
-0 
-a is 478
-And T is: 
-0 
-a is 479
-And T is: 
-0 
-a is 480
-And T is: 
-0 
-a is 481
-And T is: 
-0 
-a is 482
-And T is: 
-0 
-a is 483
-And T is: 
-0 
-a is 484
-And T is: 
-0 
-a is 485
-And T is: 
-0 
-a is 486
-And T is: 
-0 
-a is 487
-And T is: 
-0 
-a is 488
-And T is: 
-0 
-a is 489
-And T is: 
-0 
-a is 490
-And T is: 
-0 
-a is 491
-And T is: 
-0 
-a is 492
-And T is: 
-0 
-a is 493
-And T is: 
-0 
-a is 494
-And T is: 
-0 
-a is 495
-And T is: 
-0 
-a is 496
-And T is: 
-0 
-a is 497
-And T is: 
-0 
-a is 498
-And T is: 
-0 
-a is 499
-And T is: 
-0 
-a is 500
-And T is: 
-0 
-T was:
-0 
-now T is
-0 
+And w_j is 18
+
+
+Beginning case j: 5
+
+Last waypoint is -1
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 2
+Last waypoint is 1
+Last waypoint is 2
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 2
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 2
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+a is 0
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 0
+Looking for S[j-1] with tag 0
+a is 1
+And w_j is 0
+a is 2
+And w_j is 0
+a is 3
+And w_j is 0
+a is 4
+And w_j is 0
+a is 5
+And w_j is 0
+a is 6
+And w_j is 0
+a is 7
+And w_j is 0
+a is 8
+And w_j is 0
+a is 9
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 9
+Looking for S[j-1] with tag 9
+a is 10
+And w_j is 0
+a is 11
+And w_j is 0
+a is 12
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 12
+Looking for S[j-1] with tag 12
+a is 13
+And w_j is 0
+a is 14
+And w_j is 0
+a is 15
+And w_j is 0
+a is 16
+And w_j is 0
+a is 17
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 17
+Looking for S[j-1] with tag 17
+a is 18
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 18
+Looking for S[j-1] with tag 18
+a is 19
+And w_j is 0
+a is 20
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 20
+Looking for S[j-1] with tag 20
+a is 21
+And w_j is 0
+a is 22
+And w_j is 0
+a is 23
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 23
+Looking for S[j-1] with tag 23
+a is 24
+And w_j is 0
+a is 25
+And w_j is 0
+a is 26
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 26
+Looking for S[j-1] with tag 26
+a is 27
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 27
+Looking for S[j-1] with tag 27
+a is 28
+And w_j is 0
+a is 29
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 29
+Looking for S[j-1] with tag 29
+a is 30
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 30
+Looking for S[j-1] with tag 30
+a is 31
+And w_j is 0
+a is 32
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 32
+Looking for S[j-1] with tag 32
+a is 33
+And w_j is 0
+a is 34
+And w_j is 0
+a is 35
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 35
+Looking for S[j-1] with tag 35
+a is 36
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 36
+Looking for S[j-1] with tag 36
+a is 37
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 37
+Looking for S[j-1] with tag 37
+a is 38
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 38
+Looking for S[j-1] with tag 38
+a is 39
+And w_j is 0
+a is 40
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 40
+Looking for S[j-1] with tag 40
+a is 41
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 41
+Looking for S[j-1] with tag 41
+a is 42
+And w_j is 0
+a is 43
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 43
+Looking for S[j-1] with tag 43
+a is 44
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 44
+Looking for S[j-1] with tag 44
+a is 45
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 45
+Looking for S[j-1] with tag 45
+a is 46
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 46
+Looking for S[j-1] with tag 46
+a is 47
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 47
+Looking for S[j-1] with tag 47
+a is 48
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 48
+Looking for S[j-1] with tag 48
+a is 49
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 49
+Looking for S[j-1] with tag 49
+a is 50
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 50
+Looking for S[j-1] with tag 50
+a is 51
+And w_j is 0
+a is 52
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 52
+Looking for S[j-1] with tag 52
+a is 53
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 53
+Looking for S[j-1] with tag 53
+a is 54
+And w_j is 0
+a is 55
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 55
+Looking for S[j-1] with tag 55
+a is 56
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 56
+Looking for S[j-1] with tag 56
+a is 57
+And w_j is 0
+a is 58
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 58
+Looking for S[j-1] with tag 58
+a is 59
+And w_j is 0
+a is 60
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 60
+Looking for S[j-1] with tag 60
+a is 61
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 61
+Looking for S[j-1] with tag 61
+a is 62
+And w_j is 0
+a is 63
+And w_j is 0
+a is 64
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 64
+Looking for S[j-1] with tag 64
+a is 65
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 65
+Looking for S[j-1] with tag 65
+a is 66
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 66
+Looking for S[j-1] with tag 66
+a is 67
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 67
+Looking for S[j-1] with tag 67
+a is 68
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 68
+Looking for S[j-1] with tag 68
+a is 69
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 69
+Looking for S[j-1] with tag 69
+a is 70
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 70
+Looking for S[j-1] with tag 70
+a is 71
+And w_j is 0
+a is 72
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 72
+Looking for S[j-1] with tag 72
+a is 73
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 73
+Looking for S[j-1] with tag 73
+a is 74
+And w_j is 0
+a is 75
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 75
+Looking for S[j-1] with tag 75
+a is 76
+And w_j is 0
+a is 77
+And w_j is 0
+a is 78
+And w_j is 0
+Copying labels from S[4] to S[5] with tag 78
+Looking for S[j-1] with tag 78
+a is 79
+And w_j is 0
+a is 80
+And w_j is 0
+a is 81
+And w_j is 0
+a is 82
+And w_j is 0
+a is 83
+And w_j is 0
+a is 84
+And w_j is 0
+a is 85
+And w_j is 0
+a is 86
+And w_j is 0
+a is 87
+And w_j is 0
+a is 88
+And w_j is 0
+a is 89
+And w_j is 0
+a is 90
+And w_j is 0
+a is 91
+And w_j is 0
+a is 92
+And w_j is 0
+a is 93
+And w_j is 0
+a is 94
+And w_j is 0
+a is 95
+And w_j is 0
+a is 96
+And w_j is 0
+a is 97
+And w_j is 0
+a is 98
+And w_j is 0
+a is 99
+And w_j is 0
+a is 100
+And w_j is 0
+a is 101
+And w_j is 0
+a is 102
+And w_j is 0
+a is 103
+And w_j is 0
+a is 104
+And w_j is 0
+a is 105
+And w_j is 0
+a is 106
+And w_j is 0
+a is 107
+And w_j is 0
+a is 108
+And w_j is 0
+a is 109
+And w_j is 0
+a is 110
+And w_j is 0
+a is 111
+And w_j is 0
+a is 112
+And w_j is 0
+a is 113
+And w_j is 0
+a is 114
+And w_j is 0
+a is 115
+And w_j is 0
+a is 116
+And w_j is 0
+a is 117
+And w_j is 0
+a is 118
+And w_j is 0
+a is 119
+And w_j is 0
+a is 120
+And w_j is 0
+a is 121
+And w_j is 0
+a is 122
+And w_j is 0
+a is 123
+And w_j is 0
+a is 124
+And w_j is 0
+a is 125
+And w_j is 0
+a is 126
+And w_j is 0
+a is 127
+And w_j is 0
+a is 128
+And w_j is 0
+a is 129
+And w_j is 0
+a is 130
+And w_j is 0
+a is 131
+And w_j is 0
+a is 132
+And w_j is 0
+a is 133
+And w_j is 0
+a is 134
+And w_j is 0
+a is 135
+And w_j is 0
+a is 136
+And w_j is 0
+a is 137
+And w_j is 0
+a is 138
+And w_j is 0
+a is 139
+And w_j is 0
+a is 140
+And w_j is 0
+a is 141
+And w_j is 0
+a is 142
+And w_j is 0
+a is 143
+And w_j is 0
+a is 144
+And w_j is 0
+a is 145
+And w_j is 0
+a is 146
+And w_j is 0
+a is 147
+And w_j is 0
+a is 148
+And w_j is 0
+a is 149
+And w_j is 0
+a is 150
+And w_j is 0
+a is 0
+And w_j is 17
+a is 1
+And w_j is 17
+a is 2
+And w_j is 17
+a is 3
+And w_j is 17
+a is 4
+And w_j is 17
+a is 5
+And w_j is 17
+a is 6
+And w_j is 17
+a is 7
+And w_j is 17
+a is 8
+And w_j is 17
+a is 9
+And w_j is 17
+a is 10
+And w_j is 17
+a is 11
+And w_j is 17
+a is 12
+And w_j is 17
+a is 13
+And w_j is 17
+a is 14
+And w_j is 17
+a is 15
+And w_j is 17
+a is 16
+And w_j is 17
+a is 17
+And w_j is 17
+a is 18
+And w_j is 17
+a is 19
+And w_j is 17
+a is 20
+And w_j is 17
+a is 21
+And w_j is 17
+a is 22
+And w_j is 17
+a is 23
+And w_j is 17
+a is 24
+And w_j is 17
+a is 25
+And w_j is 17
+a is 26
+And w_j is 17
+a is 27
+And w_j is 17
+a is 28
+And w_j is 17
+a is 29
+And w_j is 17
+a is 30
+And w_j is 17
+a is 31
+And w_j is 17
+a is 32
+And w_j is 17
+a is 33
+And w_j is 17
+a is 34
+And w_j is 17
+Summing vectors S[5] with tag 34, from S[4]^17
+Copying to last item 5
+a is 35
+And w_j is 17
+a is 36
+And w_j is 17
+a is 37
+And w_j is 17
+a is 38
+And w_j is 17
+a is 39
+And w_j is 17
+a is 40
+And w_j is 17
+a is 41
+And w_j is 17
+a is 42
+And w_j is 17
+a is 43
+And w_j is 17
+a is 44
+And w_j is 17
+a is 45
+And w_j is 17
+a is 46
+And w_j is 17
+a is 47
+And w_j is 17
+a is 48
+And w_j is 17
+a is 49
+And w_j is 17
+a is 50
+And w_j is 17
+a is 51
+And w_j is 17
+a is 52
+And w_j is 17
+a is 53
+And w_j is 17
+a is 54
+And w_j is 17
+Summing vectors S[5] with tag 54, from S[4]^37
+Copying to last item 5
+a is 55
+And w_j is 17
+a is 56
+And w_j is 17
+a is 57
+And w_j is 17
+Summing vectors S[5] with tag 57, from S[4]^40
+Copying to last item 5
+a is 58
+And w_j is 17
+a is 59
+And w_j is 17
+a is 60
+And w_j is 17
+a is 61
+And w_j is 17
+a is 62
+And w_j is 17
+Summing vectors S[5] with tag 62, from S[4]^45
+Copying to last item 5
+a is 63
+And w_j is 17
+Summing vectors S[5] with tag 63, from S[4]^46
+Copying to last item 5
+a is 64
+And w_j is 17
+a is 65
+And w_j is 17
+a is 66
+And w_j is 17
+a is 67
+And w_j is 17
+a is 68
+And w_j is 17
+a is 69
+And w_j is 17
+a is 70
+And w_j is 17
+a is 71
+And w_j is 17
+a is 72
+And w_j is 17
+a is 73
+And w_j is 17
+a is 74
+And w_j is 17
+a is 75
+And w_j is 17
+a is 76
+And w_j is 17
+a is 77
+And w_j is 17
+Summing vectors S[5] with tag 77, from S[4]^60
+Copying to last item 5
+a is 78
+And w_j is 17
+a is 79
+And w_j is 17
+a is 80
+And w_j is 17
+a is 81
+And w_j is 17
+Summing vectors S[5] with tag 81, from S[4]^64
+Copying to last item 5
+a is 82
+And w_j is 17
+Summing vectors S[5] with tag 82, from S[4]^65
+Copying to last item 5
+a is 83
+And w_j is 17
+Summing vectors S[5] with tag 83, from S[4]^66
+Copying to last item 5
+a is 84
+And w_j is 17
+Summing vectors S[5] with tag 84, from S[4]^67
+Copying to last item 5
+a is 85
+And w_j is 17
+Summing vectors S[5] with tag 85, from S[4]^68
+Copying to last item 5
+a is 86
+And w_j is 17
+Summing vectors S[5] with tag 86, from S[4]^69
+Copying to last item 5
+a is 87
+And w_j is 17
+Summing vectors S[5] with tag 87, from S[4]^70
+Copying to last item 5
+a is 88
+And w_j is 17
+a is 89
+And w_j is 17
+Summing vectors S[5] with tag 89, from S[4]^72
+Copying to last item 5
+a is 90
+And w_j is 17
+Summing vectors S[5] with tag 90, from S[4]^73
+Copying to last item 5
+a is 91
+And w_j is 17
+a is 92
+And w_j is 17
+Summing vectors S[5] with tag 92, from S[4]^75
+Copying to last item 5
+a is 93
+And w_j is 17
+a is 94
+And w_j is 17
+a is 95
+And w_j is 17
+Summing vectors S[5] with tag 95, from S[4]^78
+Copying to last item 5
+a is 96
+And w_j is 17
+a is 97
+And w_j is 17
+a is 98
+And w_j is 17
+a is 99
+And w_j is 17
+a is 100
+And w_j is 17
+a is 101
+And w_j is 17
+a is 102
+And w_j is 17
+a is 103
+And w_j is 17
+a is 104
+And w_j is 17
+a is 105
+And w_j is 17
+a is 106
+And w_j is 17
+a is 107
+And w_j is 17
+a is 108
+And w_j is 17
+a is 109
+And w_j is 17
+a is 110
+And w_j is 17
+a is 111
+And w_j is 17
+a is 112
+And w_j is 17
+a is 113
+And w_j is 17
+a is 114
+And w_j is 17
+a is 115
+And w_j is 17
+a is 116
+And w_j is 17
+a is 117
+And w_j is 17
+a is 118
+And w_j is 17
+a is 119
+And w_j is 17
+a is 120
+And w_j is 17
+a is 121
+And w_j is 17
+a is 122
+And w_j is 17
+a is 123
+And w_j is 17
+a is 124
+And w_j is 17
+a is 125
+And w_j is 17
+a is 126
+And w_j is 17
+a is 127
+And w_j is 17
+a is 128
+And w_j is 17
+a is 129
+And w_j is 17
+a is 130
+And w_j is 17
+a is 131
+And w_j is 17
+a is 132
+And w_j is 17
+a is 133
+And w_j is 17
+a is 134
+And w_j is 17
+a is 135
+And w_j is 17
+a is 136
+And w_j is 17
+a is 137
+And w_j is 17
+a is 138
+And w_j is 17
+a is 139
+And w_j is 17
+a is 140
+And w_j is 17
+a is 141
+And w_j is 17
+a is 142
+And w_j is 17
+a is 143
+And w_j is 17
+a is 144
+And w_j is 17
+a is 145
+And w_j is 17
+a is 146
+And w_j is 17
+a is 147
+And w_j is 17
+a is 148
+And w_j is 17
+a is 149
+And w_j is 17
+a is 150
+And w_j is 17
+a is 0
+And w_j is 6
+a is 1
+And w_j is 6
+a is 2
+And w_j is 6
+a is 3
+And w_j is 6
+a is 4
+And w_j is 6
+a is 5
+And w_j is 6
+a is 6
+And w_j is 6
+Summing vectors S[5] with tag 6, from S[4]^0
+Copying to last item 5
+a is 7
+And w_j is 6
+a is 8
+And w_j is 6
+a is 9
+And w_j is 6
+a is 10
+And w_j is 6
+a is 11
+And w_j is 6
+a is 12
+And w_j is 6
+a is 13
+And w_j is 6
+a is 14
+And w_j is 6
+a is 15
+And w_j is 6
+Summing vectors S[5] with tag 15, from S[4]^9
+Copying to last item 5
+a is 16
+And w_j is 6
+a is 17
+And w_j is 6
+a is 18
+And w_j is 6
+a is 19
+And w_j is 6
+a is 20
+And w_j is 6
+a is 21
+And w_j is 6
+a is 22
+And w_j is 6
+a is 23
+And w_j is 6
+a is 24
+And w_j is 6
+Summing vectors S[5] with tag 24, from S[4]^18
+Copying to last item 5
+a is 25
+And w_j is 6
+a is 26
+And w_j is 6
+a is 27
+And w_j is 6
+a is 28
+And w_j is 6
+a is 29
+And w_j is 6
+a is 30
+And w_j is 6
+a is 31
+And w_j is 6
+a is 32
+And w_j is 6
+a is 33
+And w_j is 6
+Summing vectors S[5] with tag 33, from S[4]^27
+Copying to last item 5
+a is 34
+And w_j is 6
+a is 35
+And w_j is 6
+a is 36
+And w_j is 6
+a is 37
+And w_j is 6
+a is 38
+And w_j is 6
+a is 39
+And w_j is 6
+a is 40
+And w_j is 6
+a is 41
+And w_j is 6
+a is 42
+And w_j is 6
+Summing vectors S[5] with tag 42, from S[4]^36
+Copying to last item 5
+a is 43
+And w_j is 6
+a is 44
+And w_j is 6
+a is 45
+And w_j is 6
+a is 46
+And w_j is 6
+a is 47
+And w_j is 6
+a is 48
+And w_j is 6
+a is 49
+And w_j is 6
+a is 50
+And w_j is 6
+a is 51
+And w_j is 6
+Summing vectors S[5] with tag 51, from S[4]^45
+Copying to last item 5
+a is 52
+And w_j is 6
+a is 53
+And w_j is 6
+a is 54
+And w_j is 6
+a is 55
+And w_j is 6
+a is 56
+And w_j is 6
+a is 57
+And w_j is 6
+a is 58
+And w_j is 6
+a is 59
+And w_j is 6
+Summing vectors S[5] with tag 59, from S[4]^53
+Copying to last item 5
+a is 60
+And w_j is 6
+a is 61
+And w_j is 6
+a is 62
+And w_j is 6
+a is 63
+And w_j is 6
+a is 64
+And w_j is 6
+a is 65
+And w_j is 6
+a is 66
+And w_j is 6
+a is 67
+And w_j is 6
+a is 68
+And w_j is 6
+a is 69
+And w_j is 6
+a is 70
+And w_j is 6
+a is 71
+And w_j is 6
+Summing vectors S[5] with tag 71, from S[4]^65
+Copying to last item 5
+a is 72
+And w_j is 6
+a is 73
+And w_j is 6
+a is 74
+And w_j is 6
+Summing vectors S[5] with tag 74, from S[4]^68
+Copying to last item 5
+a is 75
+And w_j is 6
+a is 76
+And w_j is 6
+Summing vectors S[5] with tag 76, from S[4]^70
+Copying to last item 5
+a is 77
+And w_j is 6
+a is 78
+And w_j is 6
+a is 79
+And w_j is 6
+Summing vectors S[5] with tag 79, from S[4]^73
+Copying to last item 5
+a is 80
+And w_j is 6
+a is 81
+And w_j is 6
+a is 82
+And w_j is 6
+a is 83
+And w_j is 6
+a is 84
+And w_j is 6
+a is 85
+And w_j is 6
+a is 86
+And w_j is 6
+a is 87
+And w_j is 6
+a is 88
+And w_j is 6
+a is 89
+And w_j is 6
+a is 90
+And w_j is 6
+a is 91
+And w_j is 6
+a is 92
+And w_j is 6
+a is 93
+And w_j is 6
+a is 94
+And w_j is 6
+a is 95
+And w_j is 6
+a is 96
+And w_j is 6
+a is 97
+And w_j is 6
+a is 98
+And w_j is 6
+a is 99
+And w_j is 6
+a is 100
+And w_j is 6
+a is 101
+And w_j is 6
+a is 102
+And w_j is 6
+a is 103
+And w_j is 6
+a is 104
+And w_j is 6
+a is 105
+And w_j is 6
+a is 106
+And w_j is 6
+a is 107
+And w_j is 6
+a is 108
+And w_j is 6
+a is 109
+And w_j is 6
+a is 110
+And w_j is 6
+a is 111
+And w_j is 6
+a is 112
+And w_j is 6
+a is 113
+And w_j is 6
+a is 114
+And w_j is 6
+a is 115
+And w_j is 6
+a is 116
+And w_j is 6
+a is 117
+And w_j is 6
+a is 118
+And w_j is 6
+a is 119
+And w_j is 6
+a is 120
+And w_j is 6
+a is 121
+And w_j is 6
+a is 122
+And w_j is 6
+a is 123
+And w_j is 6
+a is 124
+And w_j is 6
+a is 125
+And w_j is 6
+a is 126
+And w_j is 6
+a is 127
+And w_j is 6
+a is 128
+And w_j is 6
+a is 129
+And w_j is 6
+a is 130
+And w_j is 6
+a is 131
+And w_j is 6
+a is 132
+And w_j is 6
+a is 133
+And w_j is 6
+a is 134
+And w_j is 6
+a is 135
+And w_j is 6
+a is 136
+And w_j is 6
+a is 137
+And w_j is 6
+a is 138
+And w_j is 6
+a is 139
+And w_j is 6
+a is 140
+And w_j is 6
+a is 141
+And w_j is 6
+a is 142
+And w_j is 6
+a is 143
+And w_j is 6
+a is 144
+And w_j is 6
+a is 145
+And w_j is 6
+a is 146
+And w_j is 6
+a is 147
+And w_j is 6
+a is 148
+And w_j is 6
+a is 149
+And w_j is 6
+a is 150
+And w_j is 6
+
+
+Beginning case j: 6
+
+Last waypoint is -1
+Last waypoint is 5
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 2
+Last waypoint is 1
+Last waypoint is 2
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 3
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 2
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 2
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 3
+Last waypoint is 5
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 3
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 4
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+Last waypoint is 5
+a is 0
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 0
+Looking for S[j-1] with tag 0
+a is 1
+And w_j is 18
+a is 2
+And w_j is 18
+a is 3
+And w_j is 18
+a is 4
+And w_j is 18
+a is 5
+And w_j is 18
+a is 6
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 6
+Looking for S[j-1] with tag 6
+a is 7
+And w_j is 18
+a is 8
+And w_j is 18
+a is 9
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 9
+Looking for S[j-1] with tag 9
+a is 10
+And w_j is 18
+a is 11
+And w_j is 18
+a is 12
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 12
+Looking for S[j-1] with tag 12
+a is 13
+And w_j is 18
+a is 14
+And w_j is 18
+a is 15
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 15
+Looking for S[j-1] with tag 15
+a is 16
+And w_j is 18
+a is 17
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 17
+Looking for S[j-1] with tag 17
+a is 18
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 18
+Looking for S[j-1] with tag 18
+a is 19
+And w_j is 18
+a is 20
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 20
+Looking for S[j-1] with tag 20
+a is 21
+And w_j is 18
+a is 22
+And w_j is 18
+a is 23
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 23
+Looking for S[j-1] with tag 23
+a is 24
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 24
+Looking for S[j-1] with tag 24
+a is 25
+And w_j is 18
+a is 26
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 26
+Looking for S[j-1] with tag 26
+a is 27
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 27
+Looking for S[j-1] with tag 27
+a is 28
+And w_j is 18
+a is 29
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 29
+Looking for S[j-1] with tag 29
+a is 30
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 30
+Looking for S[j-1] with tag 30
+a is 31
+And w_j is 18
+a is 32
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 32
+Looking for S[j-1] with tag 32
+a is 33
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 33
+Looking for S[j-1] with tag 33
+a is 34
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 34
+Looking for S[j-1] with tag 34
+a is 35
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 35
+Looking for S[j-1] with tag 35
+a is 36
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 36
+Looking for S[j-1] with tag 36
+a is 37
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 37
+Looking for S[j-1] with tag 37
+a is 38
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 38
+Looking for S[j-1] with tag 38
+a is 39
+And w_j is 18
+a is 40
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 40
+Looking for S[j-1] with tag 40
+a is 41
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 41
+Looking for S[j-1] with tag 41
+a is 42
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 42
+Looking for S[j-1] with tag 42
+a is 43
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 43
+Looking for S[j-1] with tag 43
+a is 44
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 44
+Looking for S[j-1] with tag 44
+a is 45
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 45
+Looking for S[j-1] with tag 45
+a is 46
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 46
+Looking for S[j-1] with tag 46
+a is 47
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 47
+Looking for S[j-1] with tag 47
+a is 48
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 48
+Looking for S[j-1] with tag 48
+a is 49
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 49
+Looking for S[j-1] with tag 49
+a is 50
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 50
+Looking for S[j-1] with tag 50
+a is 51
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 51
+Looking for S[j-1] with tag 51
+a is 52
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 52
+Looking for S[j-1] with tag 52
+a is 53
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 53
+Looking for S[j-1] with tag 53
+a is 54
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 54
+Looking for S[j-1] with tag 54
+a is 55
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 55
+Looking for S[j-1] with tag 55
+a is 56
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 56
+Looking for S[j-1] with tag 56
+a is 57
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 57
+Looking for S[j-1] with tag 57
+a is 58
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 58
+Looking for S[j-1] with tag 58
+a is 59
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 59
+Looking for S[j-1] with tag 59
+a is 60
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 60
+Looking for S[j-1] with tag 60
+a is 61
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 61
+Looking for S[j-1] with tag 61
+a is 62
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 62
+Looking for S[j-1] with tag 62
+a is 63
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 63
+Looking for S[j-1] with tag 63
+a is 64
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 64
+Looking for S[j-1] with tag 64
+a is 65
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 65
+Looking for S[j-1] with tag 65
+a is 66
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 66
+Looking for S[j-1] with tag 66
+a is 67
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 67
+Looking for S[j-1] with tag 67
+a is 68
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 68
+Looking for S[j-1] with tag 68
+a is 69
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 69
+Looking for S[j-1] with tag 69
+a is 70
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 70
+Looking for S[j-1] with tag 70
+a is 71
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 71
+Looking for S[j-1] with tag 71
+a is 72
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 72
+Looking for S[j-1] with tag 72
+a is 73
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 73
+Looking for S[j-1] with tag 73
+a is 74
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 74
+Looking for S[j-1] with tag 74
+a is 75
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 75
+Looking for S[j-1] with tag 75
+a is 76
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 76
+Looking for S[j-1] with tag 76
+a is 77
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 77
+Looking for S[j-1] with tag 77
+a is 78
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 78
+Looking for S[j-1] with tag 78
+a is 79
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 79
+Looking for S[j-1] with tag 79
+a is 80
+And w_j is 18
+Summing vectors S[6] with tag 80, from S[5]^62
+Copying to last item 6
+a is 81
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 81
+Looking for S[j-1] with tag 81
+a is 82
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 82
+Looking for S[j-1] with tag 82
+a is 83
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 83
+Looking for S[j-1] with tag 83
+a is 84
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 84
+Looking for S[j-1] with tag 84
+a is 85
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 85
+Looking for S[j-1] with tag 85
+a is 86
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 86
+Looking for S[j-1] with tag 86
+a is 87
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 87
+Looking for S[j-1] with tag 87
+a is 88
+And w_j is 18
+Summing vectors S[6] with tag 88, from S[5]^70
+Copying to last item 6
+a is 89
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 89
+Looking for S[j-1] with tag 89
+a is 90
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 90
+Looking for S[j-1] with tag 90
+a is 91
+And w_j is 18
+Summing vectors S[6] with tag 91, from S[5]^73
+Copying to last item 6
+a is 92
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 92
+Looking for S[j-1] with tag 92
+a is 93
+And w_j is 18
+Summing vectors S[6] with tag 93, from S[5]^75
+Copying to last item 6
+a is 94
+And w_j is 18
+Summing vectors S[6] with tag 94, from S[5]^76
+Copying to last item 6
+a is 95
+And w_j is 18
+Copying labels from S[5] to S[6] with tag 95
+Looking for S[j-1] with tag 95
+a is 96
+And w_j is 18
+Summing vectors S[6] with tag 96, from S[5]^78
+Copying to last item 6
+a is 97
+And w_j is 18
+Summing vectors S[6] with tag 97, from S[5]^79
+Copying to last item 6
+a is 98
+And w_j is 18
+a is 99
+And w_j is 18
+Summing vectors S[6] with tag 99, from S[5]^81
+Copying to last item 6
+a is 100
+And w_j is 18
+Summing vectors S[6] with tag 100, from S[5]^82
+Copying to last item 6
+a is 101
+And w_j is 18
+Summing vectors S[6] with tag 101, from S[5]^83
+Copying to last item 6
+a is 102
+And w_j is 18
+Summing vectors S[6] with tag 102, from S[5]^84
+Copying to last item 6
+a is 103
+And w_j is 18
+Summing vectors S[6] with tag 103, from S[5]^85
+Copying to last item 6
+a is 104
+And w_j is 18
+Summing vectors S[6] with tag 104, from S[5]^86
+Copying to last item 6
+a is 105
+And w_j is 18
+Summing vectors S[6] with tag 105, from S[5]^87
+Copying to last item 6
+a is 106
+And w_j is 18
+a is 107
+And w_j is 18
+Summing vectors S[6] with tag 107, from S[5]^89
+Copying to last item 6
+a is 108
+And w_j is 18
+Summing vectors S[6] with tag 108, from S[5]^90
+Copying to last item 6
+a is 109
+And w_j is 18
+a is 110
+And w_j is 18
+Summing vectors S[6] with tag 110, from S[5]^92
+Copying to last item 6
+a is 111
+And w_j is 18
+a is 112
+And w_j is 18
+a is 113
+And w_j is 18
+Summing vectors S[6] with tag 113, from S[5]^95
+Copying to last item 6
+a is 114
+And w_j is 18
+a is 115
+And w_j is 18
+a is 116
+And w_j is 18
+a is 117
+And w_j is 18
+a is 118
+And w_j is 18
+a is 119
+And w_j is 18
+a is 120
+And w_j is 18
+a is 121
+And w_j is 18
+a is 122
+And w_j is 18
+a is 123
+And w_j is 18
+a is 124
+And w_j is 18
+a is 125
+And w_j is 18
+a is 126
+And w_j is 18
+a is 127
+And w_j is 18
+a is 128
+And w_j is 18
+a is 129
+And w_j is 18
+a is 130
+And w_j is 18
+a is 131
+And w_j is 18
+a is 132
+And w_j is 18
+a is 133
+And w_j is 18
+a is 134
+And w_j is 18
+a is 135
+And w_j is 18
+a is 136
+And w_j is 18
+a is 137
+And w_j is 18
+a is 138
+And w_j is 18
+a is 139
+And w_j is 18
+a is 140
+And w_j is 18
+a is 141
+And w_j is 18
+a is 142
+And w_j is 18
+a is 143
+And w_j is 18
+a is 144
+And w_j is 18
+a is 145
+And w_j is 18
+a is 146
+And w_j is 18
+a is 147
+And w_j is 18
+a is 148
+And w_j is 18
+a is 149
+And w_j is 18
+a is 150
+And w_j is 18
+a is 0
+And w_j is 28
+a is 1
+And w_j is 28
+a is 2
+And w_j is 28
+a is 3
+And w_j is 28
+a is 4
+And w_j is 28
+a is 5
+And w_j is 28
+a is 6
+And w_j is 28
+a is 7
+And w_j is 28
+a is 8
+And w_j is 28
+a is 9
+And w_j is 28
+a is 10
+And w_j is 28
+a is 11
+And w_j is 28
+a is 12
+And w_j is 28
+a is 13
+And w_j is 28
+a is 14
+And w_j is 28
+a is 15
+And w_j is 28
+a is 16
+And w_j is 28
+a is 17
+And w_j is 28
+a is 18
+And w_j is 28
+a is 19
+And w_j is 28
+a is 20
+And w_j is 28
+a is 21
+And w_j is 28
+a is 22
+And w_j is 28
+a is 23
+And w_j is 28
+a is 24
+And w_j is 28
+a is 25
+And w_j is 28
+a is 26
+And w_j is 28
+a is 27
+And w_j is 28
+a is 28
+And w_j is 28
+Summing vectors S[6] with tag 28, from S[5]^0
+Copying to last item 6
+a is 29
+And w_j is 28
+a is 30
+And w_j is 28
+a is 31
+And w_j is 28
+a is 32
+And w_j is 28
+a is 33
+And w_j is 28
+a is 34
+And w_j is 28
+a is 35
+And w_j is 28
+a is 36
+And w_j is 28
+a is 37
+And w_j is 28
+a is 38
+And w_j is 28
+a is 39
+And w_j is 28
+a is 40
+And w_j is 28
+a is 41
+And w_j is 28
+a is 42
+And w_j is 28
+a is 43
+And w_j is 28
+a is 44
+And w_j is 28
+a is 45
+And w_j is 28
+a is 46
+And w_j is 28
+a is 47
+And w_j is 28
+a is 48
+And w_j is 28
+a is 49
+And w_j is 28
+a is 50
+And w_j is 28
+a is 51
+And w_j is 28
+a is 52
+And w_j is 28
+a is 53
+And w_j is 28
+a is 54
+And w_j is 28
+a is 55
+And w_j is 28
+a is 56
+And w_j is 28
+a is 57
+And w_j is 28
+a is 58
+And w_j is 28
+a is 59
+And w_j is 28
+a is 60
+And w_j is 28
+a is 61
+And w_j is 28
+a is 62
+And w_j is 28
+a is 63
+And w_j is 28
+a is 64
+And w_j is 28
+a is 65
+And w_j is 28
+a is 66
+And w_j is 28
+a is 67
+And w_j is 28
+a is 68
+And w_j is 28
+a is 69
+And w_j is 28
+a is 70
+And w_j is 28
+a is 71
+And w_j is 28
+a is 72
+And w_j is 28
+a is 73
+And w_j is 28
+a is 74
+And w_j is 28
+a is 75
+And w_j is 28
+a is 76
+And w_j is 28
+a is 77
+And w_j is 28
+a is 78
+And w_j is 28
+a is 79
+And w_j is 28
+a is 80
+And w_j is 28
+a is 81
+And w_j is 28
+a is 82
+And w_j is 28
+a is 83
+And w_j is 28
+a is 84
+And w_j is 28
+a is 85
+And w_j is 28
+a is 86
+And w_j is 28
+a is 87
+And w_j is 28
+a is 88
+And w_j is 28
+a is 89
+And w_j is 28
+a is 90
+And w_j is 28
+a is 91
+And w_j is 28
+a is 92
+And w_j is 28
+a is 93
+And w_j is 28
+a is 94
+And w_j is 28
+a is 95
+And w_j is 28
+a is 96
+And w_j is 28
+a is 97
+And w_j is 28
+a is 98
+And w_j is 28
+Summing vectors S[6] with tag 98, from S[5]^70
+Copying to last item 6
+a is 99
+And w_j is 28
+a is 100
+And w_j is 28
+a is 101
+And w_j is 28
+a is 102
+And w_j is 28
+a is 103
+And w_j is 28
+a is 104
+And w_j is 28
+a is 105
+And w_j is 28
+a is 106
+And w_j is 28
+Summing vectors S[6] with tag 106, from S[5]^78
+Copying to last item 6
+a is 107
+And w_j is 28
+a is 108
+And w_j is 28
+a is 109
+And w_j is 28
+Summing vectors S[6] with tag 109, from S[5]^81
+Copying to last item 6
+a is 110
+And w_j is 28
+a is 111
+And w_j is 28
+Summing vectors S[6] with tag 111, from S[5]^83
+Copying to last item 6
+a is 112
+And w_j is 28
+Summing vectors S[6] with tag 112, from S[5]^84
+Copying to last item 6
+a is 113
+And w_j is 28
+a is 114
+And w_j is 28
+Summing vectors S[6] with tag 114, from S[5]^86
+Copying to last item 6
+a is 115
+And w_j is 28
+Summing vectors S[6] with tag 115, from S[5]^87
+Copying to last item 6
+a is 116
+And w_j is 28
+a is 117
+And w_j is 28
+Summing vectors S[6] with tag 117, from S[5]^89
+Copying to last item 6
+a is 118
+And w_j is 28
+Summing vectors S[6] with tag 118, from S[5]^90
+Copying to last item 6
+a is 119
+And w_j is 28
+a is 120
+And w_j is 28
+Summing vectors S[6] with tag 120, from S[5]^92
+Copying to last item 6
+a is 121
+And w_j is 28
+a is 122
+And w_j is 28
+a is 123
+And w_j is 28
+Summing vectors S[6] with tag 123, from S[5]^95
+Copying to last item 6
+a is 124
+And w_j is 28
+a is 125
+And w_j is 28
+a is 126
+And w_j is 28
+a is 127
+And w_j is 28
+a is 128
+And w_j is 28
+a is 129
+And w_j is 28
+a is 130
+And w_j is 28
+a is 131
+And w_j is 28
+a is 132
+And w_j is 28
+a is 133
+And w_j is 28
+a is 134
+And w_j is 28
+a is 135
+And w_j is 28
+a is 136
+And w_j is 28
+a is 137
+And w_j is 28
+a is 138
+And w_j is 28
+a is 139
+And w_j is 28
+a is 140
+And w_j is 28
+a is 141
+And w_j is 28
+a is 142
+And w_j is 28
+a is 143
+And w_j is 28
+a is 144
+And w_j is 28
+a is 145
+And w_j is 28
+a is 146
+And w_j is 28
+a is 147
+And w_j is 28
+a is 148
+And w_j is 28
+a is 149
+And w_j is 28
+a is 150
+And w_j is 28
+a is 0
+And w_j is 20
+a is 1
+And w_j is 20
+a is 2
+And w_j is 20
+a is 3
+And w_j is 20
+a is 4
+And w_j is 20
+a is 5
+And w_j is 20
+a is 6
+And w_j is 20
+a is 7
+And w_j is 20
+a is 8
+And w_j is 20
+a is 9
+And w_j is 20
+a is 10
+And w_j is 20
+a is 11
+And w_j is 20
+a is 12
+And w_j is 20
+a is 13
+And w_j is 20
+a is 14
+And w_j is 20
+a is 15
+And w_j is 20
+a is 16
+And w_j is 20
+a is 17
+And w_j is 20
+a is 18
+And w_j is 20
+a is 19
+And w_j is 20
+a is 20
+And w_j is 20
+a is 21
+And w_j is 20
+a is 22
+And w_j is 20
+a is 23
+And w_j is 20
+a is 24
+And w_j is 20
+a is 25
+And w_j is 20
+a is 26
+And w_j is 20
+a is 27
+And w_j is 20
+a is 28
+And w_j is 20
+a is 29
+And w_j is 20
+a is 30
+And w_j is 20
+a is 31
+And w_j is 20
+a is 32
+And w_j is 20
+a is 33
+And w_j is 20
+a is 34
+And w_j is 20
+a is 35
+And w_j is 20
+a is 36
+And w_j is 20
+a is 37
+And w_j is 20
+a is 38
+And w_j is 20
+a is 39
+And w_j is 20
+a is 40
+And w_j is 20
+a is 41
+And w_j is 20
+a is 42
+And w_j is 20
+a is 43
+And w_j is 20
+a is 44
+And w_j is 20
+a is 45
+And w_j is 20
+a is 46
+And w_j is 20
+a is 47
+And w_j is 20
+a is 48
+And w_j is 20
+a is 49
+And w_j is 20
+a is 50
+And w_j is 20
+a is 51
+And w_j is 20
+a is 52
+And w_j is 20
+a is 53
+And w_j is 20
+a is 54
+And w_j is 20
+a is 55
+And w_j is 20
+a is 56
+And w_j is 20
+a is 57
+And w_j is 20
+a is 58
+And w_j is 20
+a is 59
+And w_j is 20
+a is 60
+And w_j is 20
+a is 61
+And w_j is 20
+a is 62
+And w_j is 20
+a is 63
+And w_j is 20
+a is 64
+And w_j is 20
+a is 65
+And w_j is 20
+a is 66
+And w_j is 20
+a is 67
+And w_j is 20
+a is 68
+And w_j is 20
+a is 69
+And w_j is 20
+a is 70
+And w_j is 20
+a is 71
+And w_j is 20
+a is 72
+And w_j is 20
+a is 73
+And w_j is 20
+a is 74
+And w_j is 20
+a is 75
+And w_j is 20
+a is 76
+And w_j is 20
+a is 77
+And w_j is 20
+a is 78
+And w_j is 20
+a is 79
+And w_j is 20
+a is 80
+And w_j is 20
+a is 81
+And w_j is 20
+a is 82
+And w_j is 20
+a is 83
+And w_j is 20
+a is 84
+And w_j is 20
+a is 85
+And w_j is 20
+a is 86
+And w_j is 20
+a is 87
+And w_j is 20
+a is 88
+And w_j is 20
+a is 89
+And w_j is 20
+a is 90
+And w_j is 20
+a is 91
+And w_j is 20
+a is 92
+And w_j is 20
+a is 93
+And w_j is 20
+a is 94
+And w_j is 20
+a is 95
+And w_j is 20
+a is 96
+And w_j is 20
+a is 97
+And w_j is 20
+a is 98
+And w_j is 20
+a is 99
+And w_j is 20
+a is 100
+And w_j is 20
+a is 101
+And w_j is 20
+a is 102
+And w_j is 20
+a is 103
+And w_j is 20
+a is 104
+And w_j is 20
+a is 105
+And w_j is 20
+a is 106
+And w_j is 20
+a is 107
+And w_j is 20
+a is 108
+And w_j is 20
+a is 109
+And w_j is 20
+a is 110
+And w_j is 20
+a is 111
+And w_j is 20
+a is 112
+And w_j is 20
+a is 113
+And w_j is 20
+a is 114
+And w_j is 20
+a is 115
+And w_j is 20
+a is 116
+And w_j is 20
+a is 117
+And w_j is 20
+a is 118
+And w_j is 20
+a is 119
+And w_j is 20
+a is 120
+And w_j is 20
+a is 121
+And w_j is 20
+a is 122
+And w_j is 20
+a is 123
+And w_j is 20
+a is 124
+And w_j is 20
+a is 125
+And w_j is 20
+a is 126
+And w_j is 20
+a is 127
+And w_j is 20
+a is 128
+And w_j is 20
+a is 129
+And w_j is 20
+a is 130
+And w_j is 20
+a is 131
+And w_j is 20
+a is 132
+And w_j is 20
+a is 133
+And w_j is 20
+a is 134
+And w_j is 20
+a is 135
+And w_j is 20
+a is 136
+And w_j is 20
+a is 137
+And w_j is 20
+a is 138
+And w_j is 20
+a is 139
+And w_j is 20
+a is 140
+And w_j is 20
+a is 141
+And w_j is 20
+a is 142
+And w_j is 20
+a is 143
+And w_j is 20
+a is 144
+And w_j is 20
+a is 145
+And w_j is 20
+a is 146
+And w_j is 20
+a is 147
+And w_j is 20
+a is 148
+And w_j is 20
+a is 149
+And w_j is 20
+a is 150
+And w_j is 20
+Item labels with tag 0 are: 
+0.000000 0.000000 
+Item labels with tag 6 are: 
+-108.465229 0.000000 
+Item labels with tag 9 are: 
+-184.390889 1.184400 
+Item labels with tag 12 are: 
+-184.390889 1.184400 
+Item labels with tag 15 are: 
+-292.856118 2.853920 
+Item labels with tag 17 are: 
+-119.311752 1.669520 
+Item labels with tag 18 are: 
+-292.856118 2.290982 
+Item labels with tag 20 are: 
+-97.618706 -2.004152 
+Item labels with tag 23 are: 
+-292.856118 2.290982 
+Item labels with tag 24 are: 
+-401.321347 3.960502 
+Item labels with tag 26 are: 
+-303.702641 3.530126 
+Item labels with tag 27 are: 
+-477.247007 3.463853 
+Item labels with tag 29 are: 
+-282.009595 -1.122673 
+Item labels with tag 30 are: 
+-477.247007 3.463853 
+Item labels with tag 32 are: 
+-282.009595 -1.122673 
+Item labels with tag 33 are: 
+-585.712236 5.133373 
+Item labels with tag 34 are: 
+-227.776981 3.339040 
+Item labels with tag 35 are: 
+-477.247007 3.463853 
+Item labels with tag 36 are: 
+-412.167870 4.636708 
+Item labels with tag 37 are: 
+-216.930458 -0.249151 
+Item labels with tag 38 are: 
+-390.474824 -0.249151 
+Item labels with tag 40 are: 
+-412.167870 4.636708 
+Item labels with tag 41 are: 
+-412.167870 4.636708 
+Item labels with tag 42 are: 
+-520.633099 6.306228 
+Item labels with tag 43 are: 
+-390.474824 -0.249151 
+Item labels with tag 44 are: 
+-596.558759 5.809579 
+Item labels with tag 45 are: 
+-596.558759 5.809579 
+Item labels with tag 46 are: 
+-401.321347 1.223053 
+Item labels with tag 47 are: 
+-574.865713 0.923720 
+Item labels with tag 48 are: 
+-596.558759 5.809579 
+Item labels with tag 49 are: 
+-401.321347 1.223053 
+Item labels with tag 50 are: 
+-574.865713 0.923720 
+Item labels with tag 51 are: 
+-705.023988 7.479099 
+Item labels with tag 52 are: 
+-574.865713 0.923720 
+Item labels with tag 53 are: 
+-596.558759 5.809579 
+Item labels with tag 54 are: 
+-325.395687 1.420369 
+Item labels with tag 55 are: 
+-574.865713 0.923720 
+Item labels with tag 56 are: 
+-509.786576 2.096575 
+Item labels with tag 57 are: 
+-520.633099 6.306228 
+Item labels with tag 58 are: 
+-596.558759 5.809579 
+Item labels with tag 59 are: 
+-705.023988 7.479099 
+Item labels with tag 60 are: 
+-509.786576 2.096575 
+Item labels with tag 61 are: 
+-509.786576 2.096575 
+Item labels with tag 62 are: 
+-705.023988 7.479099 
+Item labels with tag 63 are: 
+-509.786576 2.892573 
+Item labels with tag 64 are: 
+-694.177465 3.269446 
+Item labels with tag 65 are: 
+-694.177465 3.269446 
+Item labels with tag 66 are: 
+-509.786576 2.096575 
+Item labels with tag 67 are: 
+-694.177465 3.269446 
+Item labels with tag 68 are: 
+-694.177465 3.269446 
+Item labels with tag 69 are: 
+-694.177465 3.269446 
+Item labels with tag 70 are: 
+-694.177465 3.269446 
+Item labels with tag 71 are: 
+-802.642694 4.938966 
+Item labels with tag 72 are: 
+-694.177465 3.269446 
+Item labels with tag 73 are: 
+-694.177465 3.269446 
+Item labels with tag 74 are: 
+-802.642694 4.938966 
+Item labels with tag 75 are: 
+-694.177465 3.269446 
+Item labels with tag 76 are: 
+-802.642694 4.938966 
+Item labels with tag 77 are: 
+-618.251805 3.766095 
+Item labels with tag 78 are: 
+-694.177465 3.269446 
+Item labels with tag 79 are: 
+-802.642694 4.938966 
+Item labels with tag 81 are: 
+-802.642694 4.938966 
+Item labels with tag 82 are: 
+-802.642694 4.938966 
+Item labels with tag 83 are: 
+-618.251805 3.766095 
+Item labels with tag 84 are: 
+-802.642694 4.938966 
+Item labels with tag 85 are: 
+-802.642694 4.938966 
+Item labels with tag 86 are: 
+-802.642694 4.938966 
+Item labels with tag 87 are: 
+-802.642694 4.938966 
+Item labels with tag 89 are: 
+-802.642694 4.938966 
+Item labels with tag 90 are: 
+-802.642694 4.938966 
+Item labels with tag 92 are: 
+-802.642694 4.938966 
+Item labels with tag 95 are: 
+-802.642694 4.938966 

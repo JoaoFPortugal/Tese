@@ -24,6 +24,7 @@ Items ** initS(int numberofitems){
         S[i]->lastitem = -1;
         S[i]->label = NULL;
         S[i]->next = NULL;
+        S[i]->visited = 0;
     }
     return S;
 }
@@ -143,6 +144,7 @@ int *cpVec(int* V,int elements){
     return NULL;
 
   }
+
   int *vec;
   vec = (int*)malloc(sizeof(int)*elements);
   memcpy(vec, V,elements*sizeof(int));
@@ -151,24 +153,34 @@ int *cpVec(int* V,int elements){
 }
 
 
-int * addV(int *V, int a, int elements)
+int * addV(int *V, int a, int *_elements)
 {
+
+    int elements = *_elements;
   int *p;
 
   if (V == NULL)
     {
       p = (int *) malloc (sizeof (int));
       p[0] = a;
+      *_elements = 1;
       return p;
     }
 
   else
     {
-      int * p = (int*) malloc((elements+1)*sizeof(int));
-      memcpy(p,V,elements*sizeof(int));
-      p[elements]=a;
-      free(V);
-      return p;
+
+        if(insideArray(V,a,elements)){
+            return V;
+        }
+
+        int * p = (int*) malloc((elements+1)*sizeof(int));
+        memcpy(p,V,elements*sizeof(int));
+        p[elements]=a;
+        free(V);
+        ++*_elements;
+
+        return p;
     }
 
 }
@@ -467,8 +479,7 @@ double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint *
 
 int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int *_arrayweightsize){
 
-    int arrayweightsize = *arrayweightsize;
-
+    int arrayweightsize = 0;
     int *newarrayofweights = NULL;
 
     Items *header = S;
@@ -476,13 +487,18 @@ int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listO
 
         int lastwaypoint = header->lastitem;
 
+        printf("Last waypoint is %d\n", lastwaypoint);
+
         Waypoint *origin;
+
         if (lastwaypoint == -1) {
             origin = start;
+
         } else {
 
             origin = listOfWaypoints[lastwaypoint - 1];
         }
+
         double newvalue = fuelconsumption(origin, destination, plane);
 
         int finalvalue = round(newvalue * 10);
@@ -490,16 +506,19 @@ int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listO
         if (newarrayofweights == NULL) {
             newarrayofweights = malloc(sizeof(int));
             arrayweightsize = 1;
+            newarrayofweights[arrayweightsize - 1] = finalvalue;
+
         } else {
-            if (!insideArray(newarrayofweights, finalvalue)) {
+            if (!(insideArray(newarrayofweights, finalvalue,arrayweightsize))) {
                 arrayweightsize++;
-                newarrayofweights = realloc(sizeof(int) * arrayweightsize);
+                newarrayofweights =  realloc(newarrayofweights,sizeof(int) * arrayweightsize);
                 newarrayofweights[arrayweightsize - 1] = finalvalue;
             }
         }
         header = header->next;
     }
 
+    *_arrayweightsize = arrayweightsize;
 
     return newarrayofweights;
 }

@@ -13,6 +13,7 @@ typedef struct Items{
     int tag;
     int lastitem;
     int lastheading;
+    int visited;
     struct Label *label;
     struct Items *next;
 }Items;

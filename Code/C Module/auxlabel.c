@@ -26,11 +26,14 @@ Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *
     }
 
     S->lastitem = -1;
+    S->visited = 1;
 
     S->label = header;
     Items *prev;
 
-    double w = fuelconsumption(start,destination,plane);
+    int w = round(fuelconsumption(start,destination,plane)*10);
+    printf("first w is %d\n",w);
+
 
     while(ptr!=NULL){
         if(ptr->tag == w){
@@ -50,6 +53,9 @@ Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *
     if(ptr == NULL){
         ptr = addNode(prev,w);
     }
+
+    ptr->lastitem = 1;
+    ptr->visited = 1;
 
     Label *new = (struct Label *) malloc(sizeof(struct Label));
 
@@ -97,6 +103,8 @@ Items *addLabels(Items *S, double * _v, Items *S_2, int a, int wj, int size, int
     }
 
     header->lastitem = j;
+
+    header->visited = 1;
 
     //scan for S[j-1]^a
 
@@ -339,6 +347,8 @@ Items* copyVector(Items *_S, Items *S_2,int a, int size){
 
     //scan for S[j-1]^a
 
+    printf("Looking for S[j-1] with tag %d\n",a);
+
     while(sndHeader!=NULL){
         if(sndHeader->tag == a){
             break;
@@ -347,7 +357,9 @@ Items* copyVector(Items *_S, Items *S_2,int a, int size){
     }
 
 
+
     header->lastitem = sndHeader->lastitem;
+
 
     Label *tocopy = sndHeader->label;
     Label *newlabel = header->label;
@@ -419,6 +431,9 @@ Items *sumVectors(Items * _S , Items * source, double *v, int a, int a_wj, int s
         }
         src = src->next;
     }
+
+
+    header->visited = 1;
 
     printf("Copying to last item %d\n",jindex);
 
