@@ -20,7 +20,7 @@ Items * addLabels(Items *S, double * _v, Items *S_2, int a, int wj, int size, in
 Items *compareLabels(Items *result, Items *Sj_1, Items *Sj_aw, double * v, int size);
 Items * copyItems(Items *S, Items *S_2,int a,int size);
 Items * sumItems(Items *header , Items * source, double *v, int a, int a_wj, int size, int j);
-Items *addResult(Items **res);
+Items *addResult(Items **res, int numberofitems);
 Label *iterateLabels(Items *current, Label *_currentList);
 Label *iterateValues(Label *_newValue, Label *_currentFinalList);
 void findTargetSumSubsets(double *input, double target, double * _ramp, int index, int size, PossibleSolution ** _ps, int originalsize, int * arrayofindexes);

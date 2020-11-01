@@ -36,7 +36,6 @@ Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destinati
 
     for (i=0; i<numberofitems; i++) {
         list[i] = malloc(sizeof(struct Waypoint));
-
     }
 
     list[0]->latitude = 6;
@@ -214,6 +213,8 @@ int dominatedNeg(double *dominated, double *v, int size){
 
     double *dominator = v;
 
+
+
     int i;
     double x1;
     double x2;
@@ -224,6 +225,10 @@ int dominatedNeg(double *dominated, double *v, int size){
         if(x1>x2){
             return 0; //label 1 is non dominated
         }
+    }
+
+    if(fabs(dominated[0]-dominator[0])<EPS && fabs(dominated[1]-dominator[1]) < EPS){
+        return 0;
     }
     return 1; //label 1 is dominated;
 }
@@ -472,7 +477,6 @@ double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint *
     }
 
     double newvalue = fuelconsumption(origin,destination,plane);
-
     return -newvalue;
 }
 
@@ -583,9 +587,11 @@ void freeWaypoints(Waypoint ** list, int numberofitems){
     int i;
 
     for(i=0;i<numberofitems;i++){
-        free(list[i]);
-    }
 
+
+        free(list[i]);
+
+    }
     free(list);
 }
 
@@ -659,6 +665,7 @@ void printItems(Items *S){
     while(S!=NULL){
         printf("Item labels with tag %d are: \n",S->tag);
         printLabels(S->label);
+        printf("And last item was: %d\n", S->lastitem);
         S = S->next;
     }
 }

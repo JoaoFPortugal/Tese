@@ -59,9 +59,10 @@ Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *
     new->value = malloc(size * sizeof(double));
     new->next = NULL;
 
-    valor[1] = fuelconsumption(start,destination,plane);
+    valor[1] = -fuelconsumption(start,destination,plane);
 
     double *negativevalue = neg(valor,size);
+
 
     memcpy(new->value,negativevalue,size*sizeof(double));
     free(negativevalue);
@@ -471,24 +472,28 @@ Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int siz
 
 
 
-Items *addResult(Items **res){
+Items *addResult(Items **res, int numberofitems){
 
-    Items *finalitem = res[6];
+    Items *finalitem = res[numberofitems+1];
 
-    Items *valuestoadd = res[5];
+    Items *valuestoadd = res[numberofitems];
 
     Label *currentfinalist = NULL;
 
 
     while(valuestoadd !=NULL) {
 
-        currentfinalist = iterateLabels(valuestoadd,currentfinalist);
+        if(valuestoadd->lastitem == numberofitems){
+            currentfinalist = iterateLabels(valuestoadd,currentfinalist);
+        }
+
         valuestoadd = valuestoadd ->next;
 
     }
 
     finalitem->label = currentfinalist;
-    return res[6];
+
+    return res[numberofitems+1];
 }
 
 
@@ -515,9 +520,12 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
   Label *head;
   Label *prev = currentFinalList;
 
+
   int neverdominated = 1;
 
+
   while(currentFinalList != NULL){
+
 
     double *negv = neg(newValue->value,2);
 
@@ -528,26 +536,23 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
     free(negf);
     free(negv);
 
-    if(dominate == 0){
 
+    if(dominate == 0) {
 
         Label *tmp = (struct Label *) malloc(sizeof(struct Label));
         tmp->next = NULL;
         tmp->value = malloc(2 * sizeof(double));
-        memcpy(tmp->value,currentFinalList->value,2*sizeof(double));
+        memcpy(tmp->value, currentFinalList->value, 2 * sizeof(double));
 
-        if(newList == NULL){
+        if (newList == NULL) {
             newList = tmp;
             head = newList;
 
-        }
-        else{
+        } else {
 
             newList->next = tmp;
-            newList = newList->next;
-
+            newList = tmp;
         }
-
     }
 
 
@@ -565,12 +570,14 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
     free(negff->value);
     free(negff);
 
+
     if(dominate == 1){
       neverdominated = 0;
     }
     currentFinalList = currentFinalList->next;
 
   }
+
 
   if(neverdominated != 0){
 
@@ -588,15 +595,12 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
         else{
 
             newList->next = tmp;
-
+            newList = tmp;
         }
 
   }
 
-
   freeLabels(prev);
-
-
 
   return head;
 }

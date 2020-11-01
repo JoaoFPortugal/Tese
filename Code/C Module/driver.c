@@ -45,6 +45,7 @@ int main(int argc, char **argv){
     destination->latitude = 7;
     destination->longitude = 1;
 
+
     PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof (struct PossibleSolution));
     ps->next = NULL;
 
@@ -62,39 +63,48 @@ int main(int argc, char **argv){
 
 
     for(i=0;i<numberofitems;i++){
-        v[i][0] = -calculateValue(list[i],start,destination);
+        v[i][0] = calculateValue(list[i],start,destination);
     }
+
 
 
 
     Items **res = run(S,v,numberofitems,capacity,size,list,listOfRestrictions,start,plane);
 
-    printItems(res[5]);
-    /*res[6] = addResult(res);
+
+    printf("Last item in S[%d]^0 is %d\n", numberofitems,S[numberofitems]->lastitem);
+
+   res[numberofitems+1] = addResult(res,numberofitems);
 
     printf("Labels are\n");
-    printLabels(res[6]->label);
-    printf("End\n");
-    double *bestlabel = pickBestLabel(res[6]->label);
+    printLabels(res[numberofitems+1]->label);
 
 
+    double *bestlabel = res[numberofitems+1]->label->next->value;
 
 
 
     for(i=0;i<numberofitems;i++){
+        printf("first objective is gonna be %f\n",v[i][0]);
         firstobjective[i] = v[i][0];
         indexarray[i] = 0;
     }
 
 
 
+
     findTargetSumSubsets(firstobjective, -bestlabel[0], NULL,0, 0,
         &ps, numberofitems,indexarray);
+
+
+
 
     PossibleSolution *prev = ps;
     ps = ps->next;
     free(prev);
+    printPS(ps);
 
+/*
     SecondObjective *secondObjective = secondobjective(ps,numberofitems,list,start,plane);
 
     int *finalSolution = findSecondSolution(ps,secondObjective,-bestlabel[1], numberofitems);
@@ -109,18 +119,16 @@ int main(int argc, char **argv){
           printf("%f %f\n", head[i]->latitude,head[i]->longitude);
       }
   }
-
-
+*/
   free(indexarray);
   free(firstobjective);
   free(start);
-  free(destination);
   freeItems(res,numberofitems+2);
   freeWaypoints(list, numberofitems);
   freeValue(v,numberofitems);
   freePS(ps);
   free(plane);
-*/
+
 }
 
 
