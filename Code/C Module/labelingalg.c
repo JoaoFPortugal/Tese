@@ -40,22 +40,24 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
     T[1]=round(fuelconsumption(start,listOfWaypoints[0],plane)*10);
 
 
-
     for(j=2;j<n+1;j++) {
 
         int realj = j-1;
 
+
         arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S[j-1],listOfWaypoints,start,plane,&arrayofweightssize);
 
 
-        for(av = 0; av<arrayofweightssize;av++) {
 
-            w_j = arrayofweights[av];
 
             for (a = 0; a < capacity + 1; a++) {
 
+                for(av = 0; av<arrayofweightssize;av++) {
 
-                if (insideArray(T, a, TCounter) == 1 && !(insideArray(V,a,VCounter))) {
+                    w_j = arrayofweights[av];
+
+
+                if (insideArray(T, a, TCounter) == 1 && insideArray(V,a,VCounter) == 0) {
 
 
 
@@ -67,6 +69,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                         int flag2 = checkRestrictions(listOfWaypoints[realj], S[j - 1], a - w_j, listOfRestrictions,
                                                       listOfWaypoints, start);
 
+
                         if (flag1 == 0 && flag2 == 0) {
 
 
@@ -74,6 +77,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j,
                                                                listOfWaypoints, start, plane);
+
 
                             S[j] = addLabels(S[j], v[realj], S[j - 1], a, a - w_j, size, j);
 
@@ -88,6 +92,8 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j,
                                                                listOfWaypoints, start, plane);
+
+
                             S[j] = sumItems(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
                             V = addV(V, a, &VCounter);
 
@@ -95,15 +101,14 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
 
                     } else {
-
                         V = addV(V, a, &VCounter);
+
                         S[j] = copyItems(S[j], S[j - 1], a, size); //error checks
 
                     }
                 } else {
 
-                    if (insideArray(T, (a - w_j), TCounter) && !(insideArray(V,a,VCounter))) {
-
+                    if (insideArray(T, (a - w_j), TCounter) && insideArray(V,a,VCounter) == 0) {
 
                         int flag = checkRestrictions(listOfWaypoints[realj], S[j - 1], a - w_j, listOfRestrictions,
                                                      listOfWaypoints, start);
@@ -112,6 +117,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j, listOfWaypoints,
                                                                start, plane);
+
 
 
                             S[j] = sumItems(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
@@ -123,16 +129,20 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                 }
 
             }
+
         }
+
+
 
         arrayofweightssize = 0;
         free(arrayofweights);
-
         free(T);
         T = copyArray(V, VCounter);
         TCounter = VCounter;
         VCounter = 0;
         V = NULL;
+
+
     }
 
     free(T);

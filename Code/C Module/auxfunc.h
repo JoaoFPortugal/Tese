@@ -43,7 +43,7 @@ int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listO
 void printItems(Items *S);
 void printLabels(Label *label);
 void printVector(double *T, int elements);
-void printPS(PossibleSolution *ps);
+void printPS(PossibleSolution *ps,int numberofitems);
 void printWaypoints(Waypoint **list,int numberofitems);
 void printIntVector(int *v, int size);
 void freePS(PossibleSolution *ps);

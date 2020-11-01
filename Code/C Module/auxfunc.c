@@ -324,8 +324,6 @@ int *findSecondSolution(PossibleSolution *ps, SecondObjective *secondobjective, 
             sum = sum + indexofarrays[i]*secondobjectivevalue[i];
         }
 
-        printf("Sum is %f and target is %f\n",sum,target);
-
 
         if(fabs(sum-target) < EPS ){
             return indexofarrays;
@@ -610,7 +608,7 @@ void printVector(double *T,int numberofelements){
     return;
 }
 
-void printPS(PossibleSolution *ps){
+void printPS(PossibleSolution *ps, int numberofitems){
 
 
     int i = 1;
@@ -622,7 +620,7 @@ void printPS(PossibleSolution *ps){
         printVector(ps->v,ps->size);
 
         printf("and its indexes are: ");
-        printIntVector(ps->indexarray,5);
+        printIntVector(ps->indexarray,numberofitems);
         i++;
         ps = ps->next;
     }

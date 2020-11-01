@@ -18,7 +18,7 @@
 int main(int argc, char **argv){
 
     int numberofitems = 6;
-    int capacity = 150;
+    int capacity = 50;
     int size = 2;
     int i;
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv){
 
     Airplane *plane = malloc(sizeof(struct Airplane));
     plane->consumptionRate = 2;
-    plane->fuelQuantity = 50;
+    plane->fuelQuantity = 500;
     plane->speed = 350;
     plane->weight = 9207;
 
@@ -72,23 +72,20 @@ int main(int argc, char **argv){
     Items **res = run(S,v,numberofitems,capacity,size,list,listOfRestrictions,start,plane);
 
 
-    printf("Last item in S[%d]^0 is %d\n", numberofitems,S[numberofitems]->lastitem);
 
    res[numberofitems+1] = addResult(res,numberofitems);
 
-    printf("Labels are\n");
-    printLabels(res[numberofitems+1]->label);
 
-
-    double *bestlabel = res[numberofitems+1]->label->next->value;
-
+    double *bestlabel = res[numberofitems+1]->label->value;
 
 
     for(i=0;i<numberofitems;i++){
-        printf("first objective is gonna be %f\n",v[i][0]);
+      //  printf("first objective is gonna be %f\n",v[i][0]);
         firstobjective[i] = v[i][0];
         indexarray[i] = 0;
     }
+
+
 
 
 
@@ -102,24 +99,24 @@ int main(int argc, char **argv){
     PossibleSolution *prev = ps;
     ps = ps->next;
     free(prev);
-    printPS(ps);
 
-/*
     SecondObjective *secondObjective = secondobjective(ps,numberofitems,list,start,plane);
 
     int *finalSolution = findSecondSolution(ps,secondObjective,-bestlabel[1], numberofitems);
 
 
-    i=0;
     Waypoint **head = list;
 
+    printf("%f %f\n", start->latitude,start->longitude);
 
     for(i=0;i<numberofitems;i++){
-      if(finalSolution[i] == 1){
+
+
+        if(finalSolution[i] == 1){
           printf("%f %f\n", head[i]->latitude,head[i]->longitude);
       }
   }
-*/
+
   free(indexarray);
   free(firstobjective);
   free(start);
