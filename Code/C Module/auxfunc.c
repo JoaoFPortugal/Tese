@@ -44,22 +44,34 @@ Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destinati
         list[i] = malloc(sizeof(struct Waypoint));
     }
 
+    // A
+
     list[0]->latitude = 6;
     list[0]->longitude = 12;
     list[0]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[0]->latitude,list[0]->longitude,'K');
+
+
+    // B
 
     list[1]->latitude = 9;
     list[1]->longitude = 12;
     list[1]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[1]->latitude,list[1]->longitude,'K');
 
+
+    // C
+
     list[2]->latitude = 10;
     list[2]->longitude = 8;
     list[2]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[2]->latitude,list[2]->longitude,'K');
+
+    // D
 
     list[3]->latitude = 10;
     list[3]->longitude = 4;
     list[3]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[3]->latitude,list[3]->longitude,'K');
 
+
+    // E
 
     list[4]->latitude = 4;
     list[4]->longitude = 6;

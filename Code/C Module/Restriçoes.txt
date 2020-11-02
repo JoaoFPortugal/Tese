@@ -1,0 +1,57 @@
+Equaçao do circulo para impedir start ao destino (cancela B a E, A ao destino):
+
+x : 5.5
+y : 7.73
+r: 1
+
+
+
+Equaçao do circulo para impedir start ao destino (cancela A ao destino):
+
+x : 6.2
+y : 4.6
+r: 0.5
+
+Equaçao do circulo para impedir start a A:
+
+x: 5.58
+y: 11.15
+r = 0.5
+
+Equaçao do circulo para impedir start a B:
+
+x: 6.72
+y: 10.86
+r = 0.5
+
+
+Equaçao do circulo para impedir start a E:
+
+x: 4.5
+y: 8
+r = 0.5
+
+
+Equaçao do circulo para impedir A a B:
+
+x: 7.43
+y: 12
+r = 0.5
+
+Equaçao do circulo para impedir B a C:
+
+x: 9.46
+y: 10.15
+r = 1
+
+
+Equaçao do circulo para impedir start a D, D a E, e A,B,C a Destino:
+
+x: 8.28
+y: 6.06
+r = 2
+
+
+
+
+
