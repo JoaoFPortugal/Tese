@@ -32,7 +32,6 @@ int main(int argc, char **argv){
     plane->speed = 350;
     plane->weight = 9207;
 
-    Restriction *listOfRestrictions = NULL;
 
     Items **S = initS(numberofitems);
 
@@ -50,6 +49,9 @@ int main(int argc, char **argv){
     ps->next = NULL;
 
     Waypoint **list = initWaypoints(numberofitems,start,destination);
+    Restriction *listOfRestrictions = createRestrictions();
+
+
     mergeSort(&list,0,numberofitems-2);
 
     list[numberofitems-1] = destination;

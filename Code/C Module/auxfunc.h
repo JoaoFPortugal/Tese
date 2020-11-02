@@ -21,25 +21,30 @@
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::  Function prototypes                                           :*/
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-Items ** initS();
+
+Items ** initS(int numberofitems);
 Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destination);
-int insideArray(int *T, int a, int size);
-int lexmin(double *label1, double *label2, int size);
-double *labelsum(double  *src1, double  *src2, int len);
-int dominated(double *label1, Label  *label2, int size);
-double *neg(double* src, int size);
-int *copyArray(int* V,int elements);
-int * addV(int *V, int a, int *elements);
-double setSum(double *v);
-void freeValue(double **v, int r);
-Items *addNode(Items *S, int tag);
-int dominatedNeg(double *dominated, double *v, int size);
-double *pickBestLabel(Label *label);
-double getSum(double *v, int size);
-int *findSecondSolution(struct PossibleSolution *ps, SecondObjective *secondobjective, double target, int size);
+Restriction *createRestrictions();
 double calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination);
 double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane);
 int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int *_arrayweightsize);
+double *pickBestLabel(Label *label);
+int *findSecondSolution(struct PossibleSolution *ps, SecondObjective *secondobjective, double target, int size);
+void mergeSort(Waypoint ***_arr, int l, int r);
+void merge(Waypoint ***_arr, int l, int m, int r);
+int *copyArray(int* V,int elements);
+int * addV(int *V, int a, int *elements);
+int insideArray(int *T, int a, int size);
+Items *addNode(Items *S, int tag);
+int dominated(double *label1, Label  *label2, int size);
+double *labelsum(double  *src1, double  *src2, int len);
+int dominatedNeg(double *dominated, double *v, int size);
+double setSum(double *v);
+double getSum(double *v, int size);
+int calculateHeading(Waypoint *start, Waypoint *destination);
+double *neg(double* src, int size);
+int lexmin(double *label1, double *label2, int size);
+void freeValue(double **v, int r);
 void printItems(Items *S);
 void printLabels(Label *label);
 void printVector(double *T, int elements);
@@ -51,8 +56,6 @@ void freeItems(Items **res, int numberofitems);
 void freeItemLabel(Items *item);
 void freeLabels(Label *label);
 void freeWaypoints(Waypoint ** list, int numberofitems);
-void mergeSort(Waypoint ***_arr, int l, int r);
-void merge(Waypoint ***_arr, int l, int m, int r);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

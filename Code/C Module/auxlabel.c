@@ -652,6 +652,64 @@ void findTargetSumSubsets(double *input, double target, double * _ramp, int inde
 
 
 
+
+SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoint **list, Waypoint *start,Airplane *plane){
+    int prev = -1;
+    SecondObjective *secondObj = NULL;
+    SecondObjective *header = NULL;
+    Waypoint *prevWaypoint;
+    int i;
+
+    while(ps != NULL){
+
+        int *indexarray = ps->indexarray;
+
+        double *arrayofvalues = malloc(sizeof(double)*numberofitems);
+
+        for(i=0;i<numberofitems;i++){
+            if(prev == -1){
+                prevWaypoint = start;
+                prev = 0;
+            }
+
+            if(indexarray[i] == 1){
+                arrayofvalues[i] = -fuelconsumption(prevWaypoint,list[i],plane);
+                prevWaypoint = list[i];
+            }
+            else{
+                arrayofvalues[i] = 0;
+            }
+        }
+        prev = -1;
+
+        if(secondObj == NULL){
+
+            header = malloc(sizeof(struct SecondObjective));
+            header->objetivevalue = malloc(sizeof(double)*numberofitems);
+            header->next = NULL;
+            memcpy(header->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            secondObj = header;
+
+        }
+
+        else{
+
+            SecondObjective *tmp = malloc(sizeof(struct SecondObjective));
+            tmp->objetivevalue = malloc(sizeof(double)*numberofitems);
+            memcpy(tmp->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            header->next = tmp;
+            header = header->next;
+        }
+
+        ps = ps->next;
+
+    }
+
+    return secondObj;
+}
+
+
+
 int checkRestrictions(Waypoint *newItem, Items *S, int a, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start){
     Items *header = S;
     while(header!=NULL){
@@ -717,64 +775,5 @@ int intersectsRestriction(Waypoint *a, Waypoint *b, Restriction *res){
 int breaksRestriction(Waypoint *a,Waypoint *b, Restriction *res){
     return 0;
 }
-
-
-
-
-SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoint **list, Waypoint *start,Airplane *plane){
-    int prev = -1;
-    SecondObjective *secondObj = NULL;
-    SecondObjective *header = NULL;
-    Waypoint *prevWaypoint;
-    int i;
-
-    while(ps != NULL){
-
-        int *indexarray = ps->indexarray;
-
-        double *arrayofvalues = malloc(sizeof(double)*numberofitems);
-
-        for(i=0;i<numberofitems;i++){
-            if(prev == -1){
-                prevWaypoint = start;
-                prev = 0;
-            }
-
-            if(indexarray[i] == 1){
-                arrayofvalues[i] = -fuelconsumption(prevWaypoint,list[i],plane);
-                prevWaypoint = list[i];
-            }
-            else{
-                arrayofvalues[i] = 0;
-            }
-        }
-        prev = -1;
-
-        if(secondObj == NULL){
-
-            header = malloc(sizeof(struct SecondObjective));
-            header->objetivevalue = malloc(sizeof(double)*numberofitems);
-            header->next = NULL;
-            memcpy(header->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
-            secondObj = header;
-
-        }
-
-        else{
-
-            SecondObjective *tmp = malloc(sizeof(struct SecondObjective));
-            tmp->objetivevalue = malloc(sizeof(double)*numberofitems);
-            memcpy(tmp->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
-            header->next = tmp;
-            header = header->next;
-        }
-
-        ps = ps->next;
-
-    }
-
-    return secondObj;
-}
-
 
 

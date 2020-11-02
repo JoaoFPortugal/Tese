@@ -24,10 +24,10 @@ Items *addResult(Items **res, int numberofitems);
 Label *iterateLabels(Items *current, Label *_currentList);
 Label *iterateValues(Label *_newValue, Label *_currentFinalList);
 void findTargetSumSubsets(double *input, double target, double * _ramp, int index, int size, PossibleSolution ** _ps, int originalsize, int * arrayofindexes);
+SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoint **list, Waypoint *start,Airplane *plane);
 int checkRestrictions(Waypoint *newItem, Items *S, int a, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start);
 int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list);
 int intersectsRestriction(Waypoint *a, Waypoint *b, Restriction *res);
 int breaksRestriction(Waypoint *a,Waypoint *b, Restriction *res);
-SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoint **list, Waypoint *start,Airplane *plane);
 
 #endif //C_MODULE_AUXLABEL_H
