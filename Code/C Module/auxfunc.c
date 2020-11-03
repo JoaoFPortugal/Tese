@@ -42,6 +42,7 @@ Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destinati
 
     for (i=0; i<numberofitems; i++) {
         list[i] = malloc(sizeof(struct Waypoint));
+        list[i]->altitude = 20000;
     }
 
     // A

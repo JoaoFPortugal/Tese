@@ -58,6 +58,20 @@ double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
     }
 }
 
+
+double distanceinRads(double latitudeA, double longitudeA, double latitudeB, double longitudeB){
+    double R = 6371000;
+    double d = acos(sin(latitudeA)*sin(latitudeB) + cos(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA))*R;
+    return d;
+}
+
+
+double bear(double latitudeA, double longitudeA, double latitudeB, double longitudeB){
+    double b = atan2(sin(longitudeB-longitudeA)*cos(latitudeB),cos(latitudeA)*sin(latitudeB) - sin(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA));
+    return b;
+}
+
+
 int inBoundary(NoFlyZone *nf, Waypoint *p){
     if(p == NULL || nf == NULL){
         return 0;
@@ -122,6 +136,9 @@ double time(double distance, double speed) {             //speed in kts, distanc
 
 
 double distancePointToSegment(Waypoint *point, LineSegment *ls){
+
+
+
     double A = point->latitude - ls->X[0];
     double B = point->longitude - ls->Y[0];
     double C = ls->X[1] - ls->X[0];
