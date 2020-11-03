@@ -614,8 +614,9 @@ void findTargetSumSubsets(double *input, double target, double * _ramp, int inde
         PossibleSolution *ps = * _ps;
         PossibleSolution *head = *_ps;
 
-        if(index > (originalsize - 1)) {
 
+
+        if(index > (originalsize - 1)) {
 
             if(fabs(getSum(ramp,size)-target)<EPS) {
 

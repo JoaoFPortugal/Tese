@@ -10,45 +10,30 @@
 
 
 
-void printVector(int *T,int numberofelements){
-  if(T==NULL){
-    printf("Empty\n");
-    return;
-  }
-  int i;
+static uint32_t
+hash6432shift(uint64_t key) {
 
-  for(i=0;i<numberofelements;i++){
-    printf("%d ",T[i]);
-  }
-  printf("\n");
-  return;
+    key = (~key) + (key << 18);
+    key = key ^ (key >> 31);
+    key = (key + (key << 2)) + (key << 4);
+    key = key ^ (key >> 11);
+    key = key + (key << 6);
+    key = key ^ (key >> 22);
+
+    return (uint32_t) key;
 }
 
 
+
+
+
+
+
+
+
+
+
 int main(int argc, char ** argv){
-
-    int r = 5, c = 2, i;
-
-    int **v = (int **)malloc(r * sizeof(int *));
-
-    for (i=0; i<r; i++) {
-        v[i] = (int *) malloc(c * sizeof(int));
-    }
-
-
-    v[0][0]=8;
-    v[0][1]=3;
-    v[1][0]=9;
-    v[1][1]=2;
-    v[2][0]=3;
-    v[2][1]=10;
-    v[3][0]=7;
-    v[3][1]=6;
-    v[4][0]=6;
-    v[4][1]=9;
-
-
-
 
 
 

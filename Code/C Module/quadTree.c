@@ -146,7 +146,6 @@ int build_quadtree(const Stock *stocks, size_t stocks_size, QuadT tree)
   }
 
 
-
   size_t find_highest_element_in_qtree(const QuadT tree,
      const Stock * stocks, size_t stocks_size)
   {

@@ -118,8 +118,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                             v[realj][1] = calculateWeightValue(listOfWaypoints[realj], S[j - 1], a - w_j, listOfWaypoints,
                                                                start, plane);
 
-
-
                             S[j] = sumItems(S[j], S[j - 1], v[realj], a, (a - w_j), size, j); //error checks
                             V = addV(V, a, &VCounter);
 

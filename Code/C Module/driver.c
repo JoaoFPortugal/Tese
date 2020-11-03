@@ -91,7 +91,6 @@ int main(int argc, char **argv){
 
 
 
-
     findTargetSumSubsets(firstobjective, -bestlabel[0], NULL,0, 0,
         &ps, numberofitems,indexarray);
 
