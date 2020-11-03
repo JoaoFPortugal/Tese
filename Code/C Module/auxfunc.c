@@ -88,7 +88,7 @@ Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destinati
 
 
 
-Restriction *createRestrictions{
+Restriction *createRestrictions(){
     return NULL;
 }
 

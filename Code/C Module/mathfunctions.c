@@ -59,6 +59,7 @@ double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
 }
 
 
+
 double distanceinRads(double latitudeA, double longitudeA, double latitudeB, double longitudeB){
     double R = 6371000;
     double d = acos(sin(latitudeA)*sin(latitudeB) + cos(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA))*R;
@@ -136,41 +137,42 @@ double time(double distance, double speed) {             //speed in kts, distanc
 
 
 double distancePointToSegment(Waypoint *point, LineSegment *ls){
+    double R = 637100;
+
+    double lat1 = deg2rad(ls->X[0]);
+    double lat2 = deg2rad(ls->X[1]);
+    double lat3 = deg2rad(point->latitude);
+    double lon1 = deg2rad(ls->Y[0]);
+    double lon2 = deg2rad(ls->Y[1]);
+    double lon3 = deg2rad(point->longitude);
 
 
+    double bear12 = bear(lat1,lon1,lat2,lon2);
+    double bear13 = bear(lat1,lon1,lat3,lon3);
 
-    double A = point->latitude - ls->X[0];
-    double B = point->longitude - ls->Y[0];
-    double C = ls->X[1] - ls->X[0];
-    double D = ls->Y[1] - ls->Y[0];
+    double dis13 = distanceinRads(lat1,lon1,lat3,lon3);
+    double diff = fabs(bear13-bear12);
 
-    double dot = A * C + B*D;
-    double len_sq = C*C + D*D;
-    double param = -1;
-    if(len_sq != 0){
-        param = dot / len_sq;
+    double result;
+
+
+    if(diff > M_PI){
+        diff = 2*pi - diff;
     }
-
-    double xx, yy;
-
-    if(param < 0){
-        xx = ls->X[0];
-        yy = ls->Y[0];
+    if(diff>(M_PI_2)){
+        result = dis13;
     }
-    else if(param > 1){
-        xx = ls->X[1];
-        yy = ls->Y[1];
-    }
-
     else{
-        xx = ls->X[0] + param * C;
-        yy = ls->Y[0] + param * D;
+        double dxt = asin(sin(dis13/R)*sin(bear13-bear12))*R;
+        double dis12 = distanceinRads(lat1,lon1,lat2,lon2);
+        double dis14 = acos(cos(dis13/R) / cos(dxt/R)) * R;
+        if(dis14/dis12){
+            result = distanceinRads(lat2,lon2,lat3,lon3);
+        }
+        else{
+            result = fabs(dxt);
+        }
     }
-
-    double dx = point->latitude - xx;
-    double dy = point->longitude - yy;
-
-    double result = sqrt(dx * dx + dy * dy);
 
     return result;
 }
