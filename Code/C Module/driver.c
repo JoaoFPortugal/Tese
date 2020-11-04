@@ -12,7 +12,10 @@
 #include "mathfunctions.h"
 
 
-
+void digestline(){
+    scanf("%*[^\n]");
+    scanf("%*1[\n]");
+}
 
 
 int main(int argc, char **argv){
@@ -22,11 +25,9 @@ int main(int argc, char **argv){
     int size = 2;
     int i;
     double latitude,longitude,altitude;
-    double radius;
     double *firstobjective = (double*)malloc(numberofitems * sizeof(double));
     int *indexarray = (int*)malloc(numberofitems *sizeof(int));
     int numberofwaypoints;
-    int type;
 
 
 
@@ -44,6 +45,7 @@ int main(int argc, char **argv){
 
 
     scanf("%lf %lf %lf",&latitude,&longitude,&altitude);
+    digestline();
     start->latitude = latitude;
     start->longitude = longitude;
     start->altitude = altitude;
@@ -68,36 +70,40 @@ int main(int argc, char **argv){
 
 
     Restriction *listofRestrictions = NULL;
+    Restriction *headOfRestrictions = NULL;
+
     i=0;
+    int type = 0;
 
-    double xCenter, yCenter, zCenter;
+    double xCenter, yCenter, zCenter, radius;
 
-    while(i!= numberofrestrictions){
+    while(i<numberofrestrictions){
+
         scanf("%d",&type);
+
         if(type == 0){
-            Sphere *sphere = malloc(sizeof(struct Sphere));
-            scanf("%lf %lf %lf %lf",&xCenter,&yCenter,&zCenter,&radius);
-
-            sphere->xCenter = xCenter;
-            sphere->yCenter = yCenter;
-            sphere->zCenter = zCenter;
-            sphere->radius = radius;
-
-
             if(listofRestrictions == NULL){
                 listofRestrictions = malloc(sizeof(struct Restriction));
                 listofRestrictions->type = 0;
-                listofRestrictions->sphere = sphere;
+                listofRestrictions->sphere =  malloc(sizeof(struct Sphere));
+                scanf("%lf %lf %lf %lf",&xCenter,&yCenter,&zCenter,&radius);
+                listofRestrictions->sphere->xCenter = xCenter;
+                listofRestrictions->sphere->yCenter = yCenter;
+                listofRestrictions->sphere->zCenter = zCenter;
+                listofRestrictions->sphere->radius = radius;
                 listofRestrictions->next = NULL;
+                headOfRestrictions = listofRestrictions;
             }
             else{
                 Restriction *tmp = malloc(sizeof(struct Restriction));
                 tmp->type = 0;
-                tmp->sphere = sphere;
+                tmp->sphere = malloc(sizeof(struct Sphere));
+                scanf("%lf %lf %lf %lf",&tmp->sphere->xCenter,&tmp->sphere->yCenter,&tmp->sphere->zCenter,&tmp->sphere->radius);
                 listofRestrictions->next = tmp;
                 listofRestrictions = listofRestrictions->next;
             }
         }
+
         i++;
     }
 
@@ -127,12 +133,17 @@ int main(int argc, char **argv){
 
 
 
-    Items **res = run(S,v,numberofitems,capacity,size,list,listofRestrictions,start,plane);
+    Items **res = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane);
 
 
 
    res[numberofitems+1] = addResult(res,numberofitems);
 
+
+   if(res[numberofitems+1]->label == NULL){
+       printf("Empty Solution\n");
+       return 1;
+   }
 
     double *bestlabel = res[numberofitems+1]->label->value;
 
