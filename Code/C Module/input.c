@@ -49,12 +49,26 @@ int main(int argc, char **argv) {
     scanf("%d",&numberofrestrictions);
 
 
+    Restriction *res = NULL;
     i=0;
     while(i!= numberofrestrictions){
         scanf("%d",&type);
         if(type == 0){
-            scanf("%lf %lf %lf",&latitude,&longitude,&radius);
-            printf("%f %f %f\n",latitude,longitude,radius);
+            Sphere *sphere = malloc(sizeof(struct Sphere));
+            scanf("%lf %lf %lf",sphere->xCenter,sphere->yCenter,sphere->zCenter,sphere->radius);
+            if(res == NULL){
+                res = malloc(sizeof(struct Restriction));
+                res->type = 0;
+                res->sphere = sphere;
+                res->next = NULL;
+            }
+            else{
+                tmp = malloc(sizeof(struct Restriction));
+                tmp->type = 0;
+                tmp->sphere = sphere;
+                res->next = tmp;
+                res = res->next;
+            }
         }
         i++;
     }

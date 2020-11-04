@@ -73,7 +73,7 @@ typedef struct Waypoint{
 typedef struct Restriction{
     int type;
     Equation *equation;
-    Sphere *cirle;
+    Sphere *sphere;
     NoFlyZone *noFlyZone;
     struct Restriction *next;
 
