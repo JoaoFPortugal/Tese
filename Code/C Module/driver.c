@@ -21,9 +21,13 @@ int main(int argc, char **argv){
     int capacity = 50;
     int size = 2;
     int i;
-
+    double latitude,longitude,altitude;
+    double radius;
     double *firstobjective = (double*)malloc(numberofitems * sizeof(double));
     int *indexarray = (int*)malloc(numberofitems *sizeof(int));
+    int numberofwaypoints;
+    int type;
+
 
 
     Airplane *plane = malloc(sizeof(struct Airplane));
@@ -38,18 +42,70 @@ int main(int argc, char **argv){
     Waypoint *start = malloc(sizeof(struct Waypoint));
     Waypoint *destination = malloc(sizeof(struct Waypoint));
 
+
+    scanf("%lf %lf %lf",&latitude,&longitude,&altitude);
+    start->latitude = latitude;
+    start->longitude = longitude;
+    start->altitude = altitude;
+
     start->latitude = 5;
     start->longitude = 10;
 
-    destination->latitude = 7;
-    destination->longitude = 1;
+
+    scanf("%d",&numberofwaypoints);
+
+    i=0;
+    while(i!=numberofwaypoints){
+        printf("hello\n");
+        i++;
+    }
+
+
+    scanf("%lf %lf %lf\n",&destination->latitude,&destination->longitude,&destination->altitude);
+
+    int numberofrestrictions;
+    scanf("%d",&numberofrestrictions);
+
+
+    Restriction *listofRestrictions = NULL;
+    i=0;
+
+    double xCenter, yCenter, zCenter;
+
+    while(i!= numberofrestrictions){
+        scanf("%d",&type);
+        if(type == 0){
+            Sphere *sphere = malloc(sizeof(struct Sphere));
+            scanf("%lf %lf %lf %lf",&xCenter,&yCenter,&zCenter,&radius);
+
+            sphere->xCenter = xCenter;
+            sphere->yCenter = yCenter;
+            sphere->zCenter = zCenter;
+            sphere->radius = radius;
+
+
+            if(listofRestrictions == NULL){
+                listofRestrictions = malloc(sizeof(struct Restriction));
+                listofRestrictions->type = 0;
+                listofRestrictions->sphere = sphere;
+                listofRestrictions->next = NULL;
+            }
+            else{
+                Restriction *tmp = malloc(sizeof(struct Restriction));
+                tmp->type = 0;
+                tmp->sphere = sphere;
+                listofRestrictions->next = tmp;
+                listofRestrictions = listofRestrictions->next;
+            }
+        }
+        i++;
+    }
 
 
     PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof (struct PossibleSolution));
     ps->next = NULL;
 
     Waypoint **list = initWaypoints(numberofitems,start,destination);
-    Restriction *listOfRestrictions = createRestrictions();
 
 
     mergeSort(&list,0,numberofitems-2);
@@ -71,7 +127,7 @@ int main(int argc, char **argv){
 
 
 
-    Items **res = run(S,v,numberofitems,capacity,size,list,listOfRestrictions,start,plane);
+    Items **res = run(S,v,numberofitems,capacity,size,list,listofRestrictions,start,plane);
 
 
 
