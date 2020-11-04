@@ -766,8 +766,8 @@ int intersectsRestriction(Waypoint *a, Waypoint *b, Restriction *res){
     ls->X[1] = b->latitude;
     ls->Y[1] = b->longitude;
 
-    Circle *circle = res->cirle;
-    int flag = restrictionCircleCollision(ls,circle);
+    Sphere *circle = res->cirle;
+    int flag = restrictionSphereCollision(ls,circle);
     free(ls);
     return flag;
 }

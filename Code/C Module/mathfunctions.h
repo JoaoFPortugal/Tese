@@ -21,7 +21,7 @@ double deg2rad(double deg);
 double rad2deg(double rad);
 double distance(double lat1, double lon1, double lat2, double lon2, char unit);
 int inBoundary(NoFlyZone *nf, Waypoint *p);
-int restrictionCircleCollision(LineSegment *ls, Circle *circle);
+int restrictionSphereCollision(LineSegment *ls, Sphere *circle);
 double max(double a, double b);
 double min(double a, double b);
 double time(double distance, double speed);

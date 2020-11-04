@@ -89,21 +89,65 @@ int inBoundary(NoFlyZone *nf, Waypoint *p){
 }
 
 
-int restrictionCircleCollision(LineSegment *ls, Circle *circle){
-    double cx = circle->xCenter;
-    double cy = circle->YCenter;
+//Ponto 1 = A = X[0] Y[0] Z[0]
 
-    double dx = ls->X[1]-ls->X[0];
-    double dy = ls->Y[1]-ls->Y[0];
+//Ponto 2 = B = X[1] Y[1] Z[1]
 
-    double A = dx * dx + dy * dy;
-    double B = 2 * (dx * (ls->X[0]-cx) + dy * (ls->Y[0]-cy));
-    double C = (ls->X[0] - cx) * (ls->X[0] - cx) + (ls->Y[0] - cy) * (ls->Y[0] - cy) - (circle->radius * circle->radius);
-    double det = B * B - 4 * A * C;
+//Ponto 3 = C = circleX circleY
 
-    if(A<=EPS || det < 0){
-        return 0;
-    }
+
+int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
+
+    R = 6371;
+
+    double xA = R * cos(ls->X[0]) * cos(ls->Y[0]);
+    double yA = R * cos(ls->X[0]) * sin(ls->Y[0]);
+    double zA = R * sin(ls->X[0]) + ls->Z[0];
+
+    double xB = R * cos(ls->X[1]) * cos(ls->Y[1]);
+    double yB = R * cos(ls->X[1]) * sin(ls->Y[1]);
+    double zB = R * sin(ls->X[1]) + ls->Z[0];
+
+    double xC = R * cos(sphere->xCenter) * cos(sphere->YCenter);
+    double yC = R * cos(sphere->xCenter) * sin(sphere->YCenter);
+    double zC = R * sin(sphere->XCenter) + sphere->ZCenter;
+
+
+    double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
+    double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
+    double NC = sqrt(xC,2) + pow(yC,2) + pow(zC,2));
+
+    //calculating c
+    //PI(A,B) = N(A)*N(B) * cos(Y)
+    double PI =xA*xB + yA*yB + zA*zB;
+    double c = PI / (NA*NB);
+
+    //calculating b
+    //PI(A,C) = N(A)*N(C) * cos(B)
+
+    PI = xA*xC + yA*yC + zA*zC;
+    double b = PI / (NA*NC);
+
+    //calculating a
+    //PI(B,C) = N(B)*N(C) * cos(a)
+
+    PI = xB*xC + yB*yC + zB*zC;
+    double a = PI / (NB*NC);
+
+    double up = cos(a) - cos(b)*cos(c);
+    double down = sin(b) * sin(c);
+    double alpha = acos(up/down);
+
+    up = cos(b) - cos(a)*cos(c);
+    down = sin(a) * sin(c);
+    double beta = acos(up/down);
+
+    up = cos(c) - cos(a)*cos(b);
+    down = sin(a) * sin(b);
+    double gamma = acos(up/down);
+
+
+
 
     return 1;
 

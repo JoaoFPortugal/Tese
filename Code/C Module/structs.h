@@ -44,15 +44,16 @@ typedef struct NoFlyZone{
 typedef struct LineSegment{
     double X[2];
     double Y[2];
+    double Z[2];
 }LineSegment;
 
-
-typedef struct Circle{
+typedef struct Sphere{
     double radius;
     double xCenter;
     double YCenter;
+    double ZCenter;
 
-}Circle;
+}Sphere;
 
 
 typedef struct Equation{
@@ -72,7 +73,7 @@ typedef struct Waypoint{
 typedef struct Restriction{
     int type;
     Equation *equation;
-    Circle *cirle;
+    Sphere *cirle;
     NoFlyZone *noFlyZone;
     struct Restriction *next;
 
