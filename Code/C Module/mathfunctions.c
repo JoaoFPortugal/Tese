@@ -101,7 +101,7 @@ int inBoundary(NoFlyZone *nf, Waypoint *p){
 
 int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
-    R = 6371;
+    double R = 6371;
 
     double xA = R * cos(ls->X[0]) * cos(ls->Y[0]);
     double yA = R * cos(ls->X[0]) * sin(ls->Y[0]);
@@ -111,14 +111,13 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
     double yB = R * cos(ls->X[1]) * sin(ls->Y[1]);
     double zB = (R+ls->Z[1] * 0.0003048) * sin(ls->X[1]);
 
-    double xC = R * cos(sphere->xCenter) * cos(sphere->YCenter);
-    double yC = R * cos(sphere->xCenter) * sin(sphere->YCenter);
-    double zC = (R+sphere->ZCenter * 0.0003048) * sin(sphere->XCenter);
+    double xC = R * cos(sphere->xCenter) * cos(sphere->yCenter);
+    double yC = R * cos(sphere->xCenter) * sin(sphere->yCenter);
+    double zC = (R+sphere->zCenter * 0.0003048) * sin(sphere->xCenter);
 
 
     double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
     double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
-    double NC = sqrt(xC,2) + pow(yC,2) + pow(zC,2));
 
 
     double crossproductX = yA*zB - zA * yB;

@@ -50,8 +50,8 @@ typedef struct LineSegment{
 typedef struct Sphere{
     double radius;
     double xCenter;
-    double YCenter;
-    double ZCenter;
+    double yCenter;
+    double zCenter;
 
 }Sphere;
 

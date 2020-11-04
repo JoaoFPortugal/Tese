@@ -768,8 +768,8 @@ int intersectsRestriction(Waypoint *a, Waypoint *b, Restriction *res){
     ls->Z[0] = a->altitude;
     ls->Z[1] = b->altitude;
 
-    Sphere *circle = res->cirle;
-    int flag = restrictionSphereCollision(ls,circle);
+    Sphere *sphere = res->sphere;
+    int flag = restrictionSphereCollision(ls,sphere);
     free(ls);
     return flag;
 }
