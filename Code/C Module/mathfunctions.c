@@ -103,17 +103,17 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
     double R = 6371;
 
-    double xA = R * cos(ls->X[0]) * cos(ls->Y[0]);
-    double yA = R * cos(ls->X[0]) * sin(ls->Y[0]);
-    double zA = (R+ls->Z[0] * 0.0003048) * sin(ls->X[0]);
+    double xA = (R+ ls->Z[0] * 0.0003048) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
+    double yA = (R+ ls->Z[0] * 0.0003048)  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
+    double zA = (R+ ls->Z[0] * 0.0003048) * sin(deg2rad(ls->X[0]));
 
-    double xB = R * cos(ls->X[1]) * cos(ls->Y[1]);
-    double yB = R * cos(ls->X[1]) * sin(ls->Y[1]);
-    double zB = (R+ls->Z[1] * 0.0003048) * sin(ls->X[1]);
+    double xB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
+    double yB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
+    double zB = (R + ls->Z[1] * 0.0003048) * sin(deg2rad(ls->X[1]));
 
-    double xC = R * cos(sphere->xCenter) * cos(sphere->yCenter);
-    double yC = R * cos(sphere->xCenter) * sin(sphere->yCenter);
-    double zC = (R+sphere->zCenter * 0.0003048) * sin(sphere->xCenter);
+    double xC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
+    double yC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
+    double zC = (R + sphere->zCenter * 0.0003048) * sin(deg2rad(sphere->xCenter));
 
 
     double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
@@ -131,10 +131,11 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
     double distance = normalX * xC + normalY * yC + normalZ * zC;
 
-    if(distance > sphere->radius){
+    if(fabs(distance) > sphere->radius){
         return 0;
     }
 
+    return 1;
     return 1;
 }
 
