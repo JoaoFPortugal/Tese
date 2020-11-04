@@ -105,58 +105,38 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
     double xA = R * cos(ls->X[0]) * cos(ls->Y[0]);
     double yA = R * cos(ls->X[0]) * sin(ls->Y[0]);
-    double zA = R * sin(ls->X[0]) + ls->Z[0] * 0.0003048;
+    double zA = (R+ls->Z[0] * 0.0003048) * sin(ls->X[0]);
 
     double xB = R * cos(ls->X[1]) * cos(ls->Y[1]);
     double yB = R * cos(ls->X[1]) * sin(ls->Y[1]);
-    double zB = R * sin(ls->X[1]) + ls->Z[0] * 0.0003048;
+    double zB = (R+ls->Z[1] * 0.0003048) * sin(ls->X[1]);
 
     double xC = R * cos(sphere->xCenter) * cos(sphere->YCenter);
     double yC = R * cos(sphere->xCenter) * sin(sphere->YCenter);
-    double zC = R * sin(sphere->XCenter) + sphere->ZCenter * 0.0003048;
+    double zC = (R+sphere->ZCenter * 0.0003048) * sin(sphere->XCenter);
 
 
     double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
     double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
     double NC = sqrt(xC,2) + pow(yC,2) + pow(zC,2));
 
-    //calculating c
-    //PI(A,B) = N(A)*N(B) * cos(Y)
-    double PI =xA*xB + yA*yB + zA*zB;
-    double c = PI / (NA*NB);
 
-    //calculating b
-    //PI(A,C) = N(A)*N(C) * cos(B)
-
-    PI = xA*xC + yA*yC + zA*zC;
-    double b = PI / (NA*NC);
-
-    //calculating a
-    //PI(B,C) = N(B)*N(C) * cos(a)
-
-    PI = xB*xC + yB*yC + zB*zC;
-    double a = PI / (NB*NC);
-
-    double up = cos(a) - cos(b)*cos(c);
-    double down = sin(b) * sin(c);
-    double alpha = acos(up/down);
-
-    up = cos(b) - cos(a)*cos(c);
-    down = sin(a) * sin(c);
-    double beta = acos(up/down);
-
-    up = cos(c) - cos(a)*cos(b);
-    down = sin(a) * sin(b);
-    double gamma = acos(up/down);
+    double crossproductX = yA*zB - zA * yB;
+    double crossproductY = zA*xB - xA*zB;
+    double crossproductZ = xA*yB - yA*xB;
 
 
+    double normalX = crossproductX / (NA*NB);
+    double normalY = crossproductY / (NA*NB);
+    double normalZ = crossproductZ / (NA*NB);
 
+    double distance = normalX * xC + normalY * yC + normalZ * zC;
 
-
-
+    if(distance > sphere->radius){
+        return 0;
+    }
 
     return 1;
-
 }
 
 
