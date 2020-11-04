@@ -47,9 +47,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
         arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S[j-1],listOfWaypoints,start,plane,&arrayofweightssize);
 
-
-
-
             for (a = 0; a < capacity + 1; a++) {
 
                 for(av = 0; av<arrayofweightssize;av++) {

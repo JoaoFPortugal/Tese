@@ -16,7 +16,10 @@
 
 double fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane){
     double dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
-    double time = dist / plane->speed;
+
+    double dz = fabs(a->altitude-b->altitude);
+    double finaldist = sqrt(pow(dist,2)+pow(dz,2));
+    double time = finaldist / (plane->speed*1.852);
     double fuelconsump = plane->consumptionRate;
     return time*fuelconsump;
 }
@@ -102,15 +105,15 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
     double xA = R * cos(ls->X[0]) * cos(ls->Y[0]);
     double yA = R * cos(ls->X[0]) * sin(ls->Y[0]);
-    double zA = R * sin(ls->X[0]) + ls->Z[0];
+    double zA = R * sin(ls->X[0]) + ls->Z[0] * 0.0003048;
 
     double xB = R * cos(ls->X[1]) * cos(ls->Y[1]);
     double yB = R * cos(ls->X[1]) * sin(ls->Y[1]);
-    double zB = R * sin(ls->X[1]) + ls->Z[0];
+    double zB = R * sin(ls->X[1]) + ls->Z[0] * 0.0003048;
 
     double xC = R * cos(sphere->xCenter) * cos(sphere->YCenter);
     double yC = R * cos(sphere->xCenter) * sin(sphere->YCenter);
-    double zC = R * sin(sphere->XCenter) + sphere->ZCenter;
+    double zC = R * sin(sphere->XCenter) + sphere->ZCenter * 0.0003048;
 
 
     double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
@@ -149,6 +152,9 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
 
 
+
+
+
     return 1;
 
 }
@@ -181,7 +187,7 @@ double time(double distance, double speed) {             //speed in kts, distanc
 
 
 double distancePointToSegment(Waypoint *point, LineSegment *ls){
-    double R = 637100;
+    double R = 6371;
 
     double lat1 = deg2rad(ls->X[0]);
     double lat2 = deg2rad(ls->X[1]);
@@ -218,8 +224,25 @@ double distancePointToSegment(Waypoint *point, LineSegment *ls){
         }
     }
 
-    return result;
+    double dz = fabs(ls->Z[0]-ls->Z[1]);
+    double finalresult;
+
+    if(dz < EPS){
+
+        double ddz = fabs(ls->Z[0]-point->altitude);
+        finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
+
+    }
+    else{
+        double ddz = max(ls->Z[1],ls->Z[0]) + dz;
+        finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
+
+    }
+    return finalresult;
+
 }
+
+
 
 double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle){
     double rateofturn = (1.091 * tan(maxBankAngle))/speed;

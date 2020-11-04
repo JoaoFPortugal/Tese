@@ -101,10 +101,10 @@ double calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination
     lineSegment->X[1] = destination->latitude;
     lineSegment->Y[0] = start ->longitude;
     lineSegment->Y[1] = destination -> longitude;
-
+    lineSegment->Z[0] = start->altitude;
+    lineSegment->Z[1] = destination->altitude;
 
     double distance = distancePointToSegment(waypoint, lineSegment) * 100;
-
     free(lineSegment);
     return -distance;
 
