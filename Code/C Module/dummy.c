@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #define True 1
 #define False 0
 
@@ -30,9 +31,10 @@ uint32_t hash6432shift(uint64_t key) {
 }
 
 
- Items ** hinsert(Item **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
+ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
 
     //concatenation
+
 
      uint64_t tmp;
      tmp = j;
@@ -74,6 +76,7 @@ uint32_t hash6432shift(uint64_t key) {
 
     (*htn) ++;
 
+
     return ht;
 }
 
@@ -88,12 +91,14 @@ Items * hfind(Items **ht, uint32_t *htsz, uint32_t j, uint32_t a) {
 
     uint32_t i = hash6432shift(tmp) % (*htsz);
 
+    while (ht[i] != NULL) {
 
-    while (ht[i] != NULL)
-        if (j == ht[i]->j && j == ht[i]->a)
-            return ht[i];
-        else
-            i = (i+1) % (*htsz);
+    if (j == ht[i]->j && a == ht[i]->a) {
+        return ht[i];
+    } else {
+        i = (i + 1) % (*htsz);
+    }
+}
 
     return NULL;
 }
@@ -107,22 +112,18 @@ int main(int argc, char ** argv){
     int capacity = 500;
     int numberofitems = 10;
 
-    int size = capacity * numberofitems;
-    int currentsize = 0;
+    uint32_t size = capacity * numberofitems;
+    uint32_t currentsize = 0;
 
     Items **hashtable = malloc(sizeof(Items*)*size);
-
-
-
-   hfind(uint32_t *ht, uint32_t *htsz, struct edge * elst,
-                   uint32_t x, uint32_t y)
 
     int a = 5;
     int j = 6;
 
     hashtable = hinsert(hashtable,&size,&currentsize,j,a);
 
-    Items *Sja = hfind(hashtable,size,a,j);
+    Items *Sja = hfind(hashtable,&size,j,a);
+
 
     printf("Found item and j a is %d %d\n", Sja->j,Sja->a);
 
