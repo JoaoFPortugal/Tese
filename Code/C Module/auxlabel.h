@@ -24,7 +24,7 @@ Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32
 Items *compareLabels(Items *result, Items *Sj_1, Items *Sj_aw, double * v, int size);
 Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *currentsize);
 Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32_t *htsize, uint32_t *currentsize);
-Items *addResult(Items **res, int numberofitems);
+Items *addResult(Items **res, int numberofitems, int capacity, uint32_t *htsize);
 Label *iterateLabels(Items *current, Label *_currentList);
 Label *iterateValues(Label *_newValue, Label *_currentFinalList);
 void findTargetSumSubsets(double *input, double target, double * _ramp, int index, int size, PossibleSolution ** _ps, int originalsize, int * arrayofindexes);

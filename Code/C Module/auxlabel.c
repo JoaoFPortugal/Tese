@@ -106,7 +106,7 @@ Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSi
     Items **S = malloc(sizeof(struct Items*)* (*sizeOfHashtable));
 
 
-    for(i=1; i < numberofitems + 2; i++){
+    for(i=1; i < numberofitems + 1; i++){
         S = hinsert(S,sizeOfHashtable,currentSize,i,0);
     }
 
@@ -531,33 +531,38 @@ Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32
     return S;
 }
 
-/*
 
-Items *addResult(Items **res, int numberofitems){
+
+Items *addResult(Items **res, int numberofitems, int capacity, uint32_t *htsize){
 
     Items *finalitem = res[numberofitems+1];
 
-    Items *valuestoadd = res[numberofitems];
+    finalitem = hfind(res,htsize,numberofitems+1,0);
+
+
+    Items *valuestoadd;
 
     Label *currentfinalist = NULL;
 
+    int a;
 
-    while(valuestoadd !=NULL) {
+    for(a=0;a<capacity+1; a++){
 
+        valuestoadd = hfind(res,htsize,numberofitems,a);
+        if(valuestoadd == NULL){
+            continue;
+        }
         if(valuestoadd->lastitem == numberofitems){
             currentfinalist = iterateLabels(valuestoadd,currentfinalist);
         }
-
-        valuestoadd = valuestoadd ->next;
-
     }
 
     finalitem->label = currentfinalist;
 
-    return res[numberofitems+1];
+    return finalitem;
 }
 
-*/
+
 
 Label *iterateLabels(Items *current, Label *_currentFinalList){
 

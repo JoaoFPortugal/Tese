@@ -128,7 +128,7 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
     int a;
     Items *header;
 
-   for(a = 0; a<capacity;a++){
+   for(a = 0; a<capacity+1;a++){
 
        header = hfind(S,htsize,j,a);
        if(header == NULL){

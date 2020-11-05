@@ -144,18 +144,18 @@ int main(int argc, char **argv){
 
     Items **res = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
 
-
-/*
-
-   res[numberofitems+1] = addResult(res,numberofitems);
+    S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0);
 
 
-   if(res[numberofitems+1]->label == NULL){
+    Items *finalItem = addResult(res,numberofitems,capacity,&sizeOfHashtable);
+
+
+   if(finalItem->label == NULL){
        printf("Empty Solution\n");
        return 1;
    }
 
-    double *bestlabel = res[numberofitems+1]->label->value;
+    double *bestlabel = finalItem->label->value;
 
 
     for(i=0;i<numberofitems;i++){
@@ -188,8 +188,6 @@ int main(int argc, char **argv){
     printf("%f %f\n", start->latitude,start->longitude);
 
     for(i=0;i<numberofitems;i++){
-
-
         if(finalSolution[i] == 1){
           printf("%f %f\n", head[i]->latitude,head[i]->longitude);
       }
@@ -198,12 +196,12 @@ int main(int argc, char **argv){
   free(indexarray);
   free(firstobjective);
   free(start);
-  freeItems(res,numberofitems+2);
+ // freeItems(res,numberofitems+2);
   freeWaypoints(list, numberofitems);
   freeValue(v,numberofitems);
   freePS(ps);
   free(plane);
-  */
+
 }
 
 
