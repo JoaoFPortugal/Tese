@@ -127,6 +127,7 @@ int main(int argc, char ** argv){
 
     printf("Found item and j a is %d %d\n", Sja->j,Sja->a);
 
+    printf("Hello!");
     return 1;
 
 }
