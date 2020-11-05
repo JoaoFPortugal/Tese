@@ -213,9 +213,8 @@ double distancePointToSegment(Waypoint *point, LineSegment *ls){
 
     }
     else{
-        double ddz = max(ls->Z[1],ls->Z[0]) + dz;
+        double ddz = (ls->Z[0]+ls->Z[1])/2;
         finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
-
     }
     return finalresult;
 
