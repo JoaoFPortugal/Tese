@@ -9,23 +9,27 @@
 #include "auxfunc.h"
 #include <math.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 #include "structs.h"
 #include "mathfunctions.h"
 
-
-Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane);
-Items * addLabels(Items *S, double * _v, Items *S_2, int a, int wj, int size, int j);
+Items * hfind(Items **ht, uint32_t *htsz, uint32_t j, uint32_t a);
+Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a);
+uint32_t hash6432shift(uint64_t key);
+Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSize);
+Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane, uint32_t *htsize, uint32_t *currentsize);
+Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32_t *htsize, uint32_t *currentsize);
 Items *compareLabels(Items *result, Items *Sj_1, Items *Sj_aw, double * v, int size);
-Items * copyItems(Items *S, Items *S_2,int a,int size);
-Items * sumItems(Items *header , Items * source, double *v, int a, int a_wj, int size, int j);
+Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *currentsize);
+Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32_t *htsize, uint32_t *currentsize);
 Items *addResult(Items **res, int numberofitems);
 Label *iterateLabels(Items *current, Label *_currentList);
 Label *iterateValues(Label *_newValue, Label *_currentFinalList);
 void findTargetSumSubsets(double *input, double target, double * _ramp, int index, int size, PossibleSolution ** _ps, int originalsize, int * arrayofindexes);
 SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoint **list, Waypoint *start,Airplane *plane);
-int checkRestrictions(Waypoint *newItem, Items *S, int a, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start);
+int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start, uint32_t *htsize);
 int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list);
 int intersectsRestriction(Waypoint *a, Waypoint *b, Restriction *res);
 int breaksRestriction(Waypoint *a,Waypoint *b, Restriction *res);

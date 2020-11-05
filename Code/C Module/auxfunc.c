@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 #include <limits.h>
 #include "auxfunc.h"
 #include "auxlabel.h"
@@ -19,20 +20,7 @@
 
 *******************************/
 
-Items ** initS(int numberofitems){
 
-    int i;
-    Items **S = malloc(sizeof(struct Items*)*(numberofitems+2));
-
-    for(i=0;i<numberofitems+2;i++){
-        S[i] = (struct Items *) malloc(sizeof(struct Items));
-        S[i]->tag = 0;
-        S[i]->lastitem = -1;
-        S[i]->label = NULL;
-        S[i]->next = NULL;
-    }
-    return S;
-}
 
 Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destination){
 
@@ -111,14 +99,12 @@ double calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination
 }
 
 
-double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane){
-    Items *header = S;
-    while(header!=NULL){
-        if(header->tag == a_w_j ){
-            break;
-        }
-        header = header->next;
-    }
+double calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane,uint32_t *htsize){
+
+    Items *header;
+
+    header = hfind(S,htsize,j,a_w_j);
+
     int lastwaypoint = header->lastitem;
     Waypoint *origin;
 
@@ -134,13 +120,20 @@ double calculateWeightValue(Waypoint *destination, Items *S,int a_w_j,Waypoint *
 }
 
 
-int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int *_arrayweightsize){
+int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int j, int capacity, int *_arrayweightsize, uint32_t *htsize){
 
     int arrayweightsize = 0;
     int *newarrayofweights = NULL;
 
-    Items *header = S;
-    while(header!=NULL) {
+    int a;
+    Items *header;
+
+   for(a = 0; a<capacity;a++){
+
+       header = hfind(S,htsize,j,a);
+       if(header == NULL){
+           continue;
+       }
 
         int lastwaypoint = header->lastitem;
 
@@ -170,7 +163,6 @@ int* calculateWeightRestriction(Waypoint *destination, Items *S,Waypoint **listO
                 newarrayofweights[arrayweightsize - 1] = finalvalue;
             }
         }
-        header = header->next;
     }
 
     *_arrayweightsize = arrayweightsize;
@@ -405,15 +397,6 @@ int insideArray(int *T, int a, int size){
 }
 
 
-Items *addNode(Items *S, int tag){
-    Items *tmp = (struct Items *) malloc(sizeof(struct Items));
-    tmp->tag = tag;
-    tmp->label = NULL;
-    tmp->next = S->next;
-    S->next  = tmp;
-    return tmp;
-}
-
 
 
 
@@ -557,13 +540,14 @@ int lexmin(double *label1, double *label2, int size){
         Free functions
 
 *******************************/
-void freeItems(Items **res, int numberofitems){
+/*void freeItems(Items **res, int numberofitems){
     int i;
     for(i=0;i<numberofitems;i++){
         freeItemLabel(res[i]);
     }
     free(res);
 }
+
 
 void freeItemLabel(Items *item){
     Items *freed = item;
@@ -577,7 +561,7 @@ void freeItemLabel(Items *item){
         freed = freed->next;
         free(prev);
     }
-}
+}*/
 
 
 void freeLabels(Label *label){
@@ -692,6 +676,7 @@ void printIntVector(int *v, int size){
     return;
 }
 
+
 void printLabels(Label *label){
 
     while(label != NULL){
@@ -700,7 +685,7 @@ void printLabels(Label *label){
     }
 }
 
-
+/*
 void printItems(Items *S){
     while(S!=NULL){
         printf("Item labels with tag %d are: \n",S->tag);
@@ -709,7 +694,7 @@ void printItems(Items *S){
         S = S->next;
     }
 }
-
+*/
 
 
 

@@ -7,16 +7,129 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 #include "mathfunctions.h"
 
-Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane){
 
-    Items *S = _S;
-    Items *ptr = S;
+uint32_t hash6432shift(uint64_t key) {
+
+    key = (~key) + (key << 18);
+    key = key ^ (key >> 31);
+    key = (key + (key << 2)) + (key << 4);
+    key = key ^ (key >> 11);
+    key = key + (key << 6);
+    key = key ^ (key >> 22);
+
+    return (uint32_t) key;
+}
+
+
+Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
+
+    //concatenation
+
+
+    uint64_t tmp;
+    tmp = j;
+    tmp <<= 32;
+    tmp |= a;
+
+
+    if (*htn > ((*htsz) >> 1)) {
+
+        (*htsz) <<= 1; // multiplicar por 2
+
+        Items** ht_old = ht;
+
+        ht = malloc(sizeof(Items*) * (*htsz));
+
+        *htn = 0;
+
+        uint32_t k;
+        for (k = 0; k < ((*htsz) >> 1); k++)
+            if (ht_old[k] != NULL)
+                ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a);
+
+        free(ht_old);
+    }
+
+
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+
+    while (ht[i] != NULL) {
+        i = (i + 1) % (*htsz);
+    }
+
+
+    ht[i] = malloc(sizeof(Items));
+    ht[i]->j = j;
+    ht[i]->a = a;
+    ht[i]->lastitem = -1;
+    ht[i]->label = NULL;
+
+    (*htn) ++;
+
+
+    return ht;
+}
+
+
+
+Items * hfind(Items **ht, uint32_t *htsz, uint32_t j, uint32_t a) {
+
+    uint64_t tmp;
+    tmp = j;
+    tmp <<= 32;
+    tmp |= a;
+
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+
+    while (ht[i] != NULL) {
+
+        if (j == ht[i]->j && a == ht[i]->a) {
+            return ht[i];
+        } else {
+            i = (i + 1) % (*htsz);
+        }
+    }
+
+    return NULL;
+}
+
+
+
+Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSize){
+
     int i;
-    Label *header;
 
+    Items **S = malloc(sizeof(struct Items*)* (*sizeOfHashtable));
+
+
+    for(i=1; i < numberofitems + 2; i++){
+        S = hinsert(S,sizeOfHashtable,currentSize,i,0);
+    }
+
+
+    return S;
+}
+
+
+
+Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane, uint32_t *htsize, uint32_t *currentsize){
+
+    Items **S = _S;
+
+    Items *S_0 = hfind(S,htsize,1,0);
+
+    if(S_0 == NULL){
+        S = hinsert(S,htsize,currentsize,1,0);
+        S_0 = hfind(S,htsize,1,0);
+    }
+
+    int i;
+
+    Label *header;
     header = (struct Label *) malloc(sizeof(struct Label));
     header->next = NULL;
     header->value = malloc(size * sizeof(double));
@@ -25,31 +138,21 @@ Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *
         header->value[i]=0;
     }
 
-    S->lastitem = -1;
+    S_0->lastitem = -1;
 
-    S->label = header;
-    Items *prev;
+    S_0->label = header;
 
     int w = round(fuelconsumption(start,destination,plane)*10);
 
 
-    while(ptr!=NULL){
-        if(ptr->tag == w){
-            break;
-        }
 
-        else if(ptr->tag > w){
-            ptr = addNode(prev,w);
-            break;
-        }
 
-        prev = ptr;
-        ptr = ptr->next;
-
-    }
+    Items *ptr = hfind(S,htsize,1,w);
 
     if(ptr == NULL){
-        ptr = addNode(prev,w);
+        S = hinsert(S,htsize,currentsize,1,w);
+        ptr = hfind(S,htsize,1,w);
+
     }
 
     ptr->lastitem = 1;
@@ -69,57 +172,44 @@ Items *initItems(Items *_S, double *valor, int size, Waypoint *start, Waypoint *
     ptr->label = new;
     ptr->lastitem = 1;
 
+
     return S;
 }
 
 
 
-Items *addLabels(Items *S, double * _v, Items *S_2, int a, int wj, int size, int j){
+Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32_t *htsize, uint32_t *currentsize){
 
-    Items *header = S;
-    Items *sndHeader = S_2;
-    Items *toadd = S_2;
-    Items *prev;
+
+    Items *header;    //header = S[j]^a
 
     //scan for S[j]^a
 
-    while(header!=NULL){
-        if(header->tag == a){
-            break;
-        }
-        if(header->tag > a){
-            header = addNode(prev,a);
-            break;
-        }
 
-        prev = header;
-        header = header->next;
-    }
+
+    header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        header = addNode(prev,a);
+        S = hinsert(S,htsize,currentsize,j,a);
+        header = hfind(S,htsize,j,a);
     }
 
     header->lastitem = j;
 
 
+
+
+    Items *sndHeader; //sndheader = S[j-1]^a
+    Items *toadd;    //toadd = S[j-1]^(a-wj)
+
+
     //scan for S[j-1]^a
 
-    while(sndHeader!=NULL){
-        if(sndHeader->tag == a){
-            break;
-        }
-        sndHeader = sndHeader->next;
-    }
+    sndHeader = hfind(S,htsize,j-1,a);
 
     //scan for S[j-1]^(a-wj)
 
-    while(toadd!=NULL){
-        if(toadd->tag == wj){
-            break;
-        }
-        toadd = toadd->next;
-    }
+    toadd = hfind(S,htsize,j-1,wj);
 
 
     //compare labels between S[j-1]^a e S[j-1]^a-wj + v[j] to add to S[j]
@@ -315,43 +405,25 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
 
 
 
-Items* copyItems(Items *_S, Items *S_2,int a, int size){
+Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *currentsize){
 
 
 
-    Items *S = _S;
-    Items *header = S;
-    Items *sndHeader = S_2;
-    Items *prev;
+    Items **S = _S;
 
-    //scan for S[j]^a
-    while(header!=NULL){
-        if(header->tag == a){
-            break;
-        }
+    Items *header ; // header = S[j]^a
 
-        if(header->tag > a){
-            header = addNode(prev,a);
-            break;
-        }
-        prev = header;
-        header = header->next;
-    }
+    header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        header = addNode(prev,a);
+        S = hinsert(S,htsize,currentsize,j,a);
+        header = hfind(S,htsize,j,a);
     }
+
 
     //scan for S[j-1]^a
 
-
-    while(sndHeader!=NULL){
-        if(sndHeader->tag == a){
-            break;
-        }
-        sndHeader = sndHeader->next;
-    }
-
+    Items *sndHeader = hfind(S,htsize,j-1,a); //sndHeader = S[j-1]^a
 
 
     header->lastitem = sndHeader->lastitem;
@@ -382,53 +454,40 @@ Items* copyItems(Items *_S, Items *S_2,int a, int size){
         tocopy = tocopy->next;
     }
 
-    return _S;
+    return S;
 }
 
 
-Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int size, int jindex){
 
-    Items *S = _S;
 
-    Items * header = S;
 
-    Items * src = source;
-    Items *prev;
+Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32_t *htsize, uint32_t *currentsize){
 
-    int j;
+    Items **S = _S;
+
+    Items * header;  // header = S[j^a]
+
+
+    header = hfind(S,htsize,j,a);
+
+    if(header == NULL){
+        S = hinsert(S,htsize,currentsize,j,a);
+        header = hfind(S,htsize,j,a);
+    }
+
 
 
     //scan for S[j]^a
 
-    while(header!=NULL){
-        if(header->tag == a){
-            break;
-        }
-        if(header->tag > a){
-            header = addNode(prev,a);
-            break;
-        }
 
-        prev = header;
-        header = header->next;
-    }
+    header->lastitem = j;
 
-    if(header == NULL){
-        header = addNode(prev,a);
-    }
 
-    header->lastitem = jindex;
 
     //scan for S[j-1]^a-wj
 
-    while(src!=NULL){
-        if(src->tag == a_wj){
-            break;
-        }
-        src = src->next;
-    }
-
-
+    Items * src;
+    src = hfind(S,htsize,j-1,a_wj);
 
 
     Label *origin = src->label;
@@ -439,6 +498,8 @@ Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int siz
 
     //copy label S[j-1]^a + v[j]
 
+    int x;
+
     while(origin!=NULL){
 
         Label *tmp = (struct Label *) malloc(sizeof(struct Label));
@@ -446,8 +507,8 @@ Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int siz
         tmp->value = malloc(size * sizeof(double));
 
 
-        for(j=0;j<size;j++){
-            tmp->value[j] = (-v[j]) + origin->value[j];
+        for(x=0;x<size;x++){
+            tmp->value[x] = (-v[x]) + origin->value[x];
         }
 
 
@@ -470,7 +531,7 @@ Items *sumItems(Items * _S , Items * source, double *v, int a, int a_wj, int siz
     return S;
 }
 
-
+/*
 
 Items *addResult(Items **res, int numberofitems){
 
@@ -496,6 +557,7 @@ Items *addResult(Items **res, int numberofitems){
     return res[numberofitems+1];
 }
 
+*/
 
 Label *iterateLabels(Items *current, Label *_currentFinalList){
 
@@ -711,17 +773,17 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
 
 
 
-int checkRestrictions(Waypoint *newItem, Items *S, int a, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start){
-    Items *header = S;
-    while(header!=NULL){
-        if(header->tag ==a){
-            break;
-        }
-        header = header->next;
-    }
+int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start, uint32_t *htsize){
+
+
+    Items *header;
+
+    header = hfind(S,htsize,j,a);
+
     if(header == NULL){
         return -1;
     }
+
 
     int lastWaypoint = header->lastitem;
     int flag;

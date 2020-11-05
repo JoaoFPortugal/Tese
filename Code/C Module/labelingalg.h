@@ -8,7 +8,7 @@
 #include "auxlabel.h"
 #include "mathfunctions.h"
 
-Items **run(Items **_S, double **_v, int _numberofitems,int capacity,int size, Waypoint **list, Restriction *_res, Waypoint *start, Airplane *plane);
+Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size, Waypoint **_list, Restriction *_res, Waypoint *_start, Airplane *_plane, uint32_t *htsize, uint32_t *currentsize);
 
 
 #endif // LABELINGALG_H_INCLUDED

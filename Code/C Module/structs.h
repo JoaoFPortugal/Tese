@@ -10,11 +10,10 @@
 
 
 typedef struct Items{
-    int tag;
+    int a;
+    int j;
     int lastitem;
-    int lastheading;
     struct Label *label;
-    struct Items *next;
 }Items;
 
 

@@ -10,12 +10,6 @@
 #define False 0
 
 
-typedef struct Items{
-    int a;
-    int j;
-    int lastitem;
-    struct Label *label;
-}Items;
 
 
 uint32_t hash6432shift(uint64_t key) {
@@ -127,7 +121,6 @@ int main(int argc, char ** argv){
 
     printf("Found item and j a is %d %d\n", Sja->j,Sja->a);
 
-    printf("Hello!");
     return 1;
 
 }

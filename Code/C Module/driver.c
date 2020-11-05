@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdint.h>
 #include "labelingalg.h"
 #include "auxfunc.h"
 #include "auxlabel.h"
@@ -30,6 +31,11 @@ int main(int argc, char **argv){
     int numberofwaypoints;
 
 
+    uint32_t sizeOfHashtable = numberofitems * capacity;
+    uint32_t currentSizeOfHashtable = 0;
+
+
+
 
     Airplane *plane = malloc(sizeof(struct Airplane));
     plane->consumptionRate = 2;
@@ -38,7 +44,10 @@ int main(int argc, char **argv){
     plane->weight = 9207;
 
 
-    Items **S = initS(numberofitems);
+
+    Items **S = initS(numberofitems,&sizeOfHashtable,&currentSizeOfHashtable);
+
+
 
     Waypoint *start = malloc(sizeof(struct Waypoint));
     Waypoint *destination = malloc(sizeof(struct Waypoint));
@@ -133,9 +142,10 @@ int main(int argc, char **argv){
 
 
 
-    Items **res = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane);
+    Items **res = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
 
 
+/*
 
    res[numberofitems+1] = addResult(res,numberofitems);
 
@@ -193,7 +203,7 @@ int main(int argc, char **argv){
   freeValue(v,numberofitems);
   freePS(ps);
   free(plane);
-
+  */
 }
 
 
