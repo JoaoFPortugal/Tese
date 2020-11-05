@@ -136,7 +136,6 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
     }
 
     return 1;
-    return 1;
 }
 
 

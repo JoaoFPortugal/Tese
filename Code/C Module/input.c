@@ -20,162 +20,101 @@
 #include <stdlib.h>
 #include <math.h>
 
-typedef struct Waypoint{
-    double latitude;
-    double longitude;
-    double altitude;
-    double distance_to_startingpoint;
-
-}Waypoint;
 
 
-typedef struct LineSegment{
-    double X[2];
-    double Y[2];
-    double Z[2];
-}LineSegment;
+static uint32_t *
+hinsert(uint32_t *ht, uint32_t *htsz, uint32_t *htn, struct edge *elst, uint32_t li) {
+
+    //concatenation
+
+    uint64_t tmp;
+    tmp = elst[li].x;
+    tmp <<= 32;
+    tmp |= elst[li].y;
 
 
+    if (*htn > ((*htsz) >> 1)) {
 
-typedef struct Restriction{
-    int type;
-    struct Sphere *sphere;
-    struct Restriction *next;
+        (*htsz) <<= 1; // multiplicar por 2
 
-}Restriction;
+        uint32_t *ht_old = ht;
+        ht = malloc(sizeof(uint32_t) * (*htsz));
+        memset(ht, 0xff, sizeof(uint32_t) * (*htsz));
+        *htn = 0;
 
-typedef struct Sphere{
-    double radius;
-    double xCenter;
-    double yCenter;
-    double zCenter;
+        uint32_t k;
+        for (k = 0; k < ((*htsz) >> 1); k++)
+            if (ht_old[k] != 0xffffffff)
+                ht = hinsert(ht, htsz, htn, elst, ht_old[k]);
 
-}Sphere;
-
-double deg2rad(double deg) {
-    return (deg * M_PI / 180);
-}
-
-
-int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
-
-    double R = 6371;
-
-    double xA = (R+ ls->Z[0] * 0.0003048) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
-    double yA = (R+ ls->Z[0] * 0.0003048)  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
-    double zA = (R+ ls->Z[0] * 0.0003048) * sin(deg2rad(ls->X[0]));
-
-    double xB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
-    double yB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
-    double zB = (R + ls->Z[1] * 0.0003048) * sin(deg2rad(ls->X[1]));
-
-    double xC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
-    double yC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
-    double zC = (R + sphere->zCenter * 0.0003048) * sin(deg2rad(sphere->xCenter));
-
-
-    double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
-    double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
-
-
-    double crossproductX = yA*zB - zA * yB;
-    double crossproductY = zA*xB - xA*zB;
-    double crossproductZ = xA*yB - yA*xB;
-
-
-    double normalX = crossproductX / (NA*NB);
-    double normalY = crossproductY / (NA*NB);
-    double normalZ = crossproductZ / (NA*NB);
-
-    double distance = normalX * xC + normalY * yC + normalZ * zC;
-
-    printf("distance is %f\n", fabs(distance));
-    if(fabs(distance) > sphere->radius){
-        return 0;
+        free(ht_old);
     }
 
-    return 1;
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+    while (ht[i] != 0xffffffff)
+        i = (i+1) % (*htsz);
+
+    ht[i] = li;
+    (*htn) ++;
+
+    return ht;
 }
+
+
+static uint32_t
+hfind(uint32_t *ht, uint32_t *htsz, struct edge * elst,
+      uint32_t x, uint32_t y) {
+
+    uint64_t tmp;
+    tmp = x;
+    tmp <<= 32;
+    tmp |= y;
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+
+    while (ht[i] != 0xffffffff)
+        if (x == elst[ht[i]].x && y == elst[ht[i]].y)
+            return ht[i];
+        else
+            i = (i+1) % (*htsz);
+
+    return 0xffffffff;
+}
+
+
+
+
+
+static uint32_t *
+hdelete(uint32_t *ht, uint32_t *htsz, uint32_t *htn, struct edge *elst,
+        uint32_t li) {
+
+    uint64_t tmp;
+    tmp = elst[li].x;
+    tmp <<= 32;
+    tmp |= elst[li].y;
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+
+    while (li != ht[i])
+        i = (i+1) % (*htsz);
+
+    ht[i] = 0xffffffff;
+    i = (i+1) % (*htsz);
+
+    while (ht[i] != 0xffffffff) {
+        li = ht[i];
+        ht[i] = 0xffffffff;
+        ht = hinsert(ht, htsz, htn, elst, li);
+        i = (i+1) % (*htsz);
+    }
+
+    (*htn) --;
+
+    return ht;
+}
+
 
 
 
 int main(int argc, char **argv) {
 
-    char var;
-    int type;
-    double latitude,longitude,altitude;
-    double radius;
-
-    scanf("%lf %lf %lf",&latitude,&longitude,&altitude);
-
-    Waypoint *start = malloc(sizeof(struct Waypoint));
-    Waypoint *destination = malloc(sizeof(struct Waypoint));
-
-    start->latitude = latitude;
-    start->longitude = longitude;
-    start->altitude = altitude;
-
-    printf("%f %f %f\n",start->latitude,start->longitude,start->altitude);
-
-    int numberofwaypoints;
-    scanf("%d",&numberofwaypoints);
-    int i = 0;
-
-    while(i!=numberofwaypoints){
-        printf("hello\n");
-        i++;
-    }
-
-    scanf("%lf %lf %lf\n",&destination->latitude,&destination->longitude,&destination->altitude);
-
-    printf("%f %f %f\n",destination->latitude,destination->longitude,destination->altitude);
-
-    int numberofrestrictions;
-    scanf("%d",&numberofrestrictions);
-
-
-    Restriction *res = NULL;
-
-    i=0;
-    while(i!= numberofrestrictions){
-        scanf("%d",&type);
-        if(type == 0){
-
-            if(res == NULL){
-                res = malloc(sizeof(struct Restriction));
-                res->type = 0;
-                res->sphere =  malloc(sizeof(struct Sphere));
-                scanf("%lf %lf %lf %lf",&res->sphere->xCenter,&res->sphere->yCenter,&res->sphere->zCenter,&res->sphere->radius);
-                res->next = NULL;
-            }
-            else{
-
-                Restriction *tmp = malloc(sizeof(struct Restriction));
-                tmp->type = 0;
-                tmp->sphere = malloc(sizeof(struct Sphere));
-                scanf("%lf %lf %lf %lf",&tmp->sphere->xCenter,&tmp->sphere->yCenter,&tmp->sphere->zCenter,&tmp->sphere->radius);
-                res->next = tmp;
-                res = res->next;
-            }
-        }
-        i++;
-    }
-
-    printf("I reach here\n");
-
-    LineSegment *segment = malloc(sizeof(struct LineSegment));
-
-    segment->X[0] = start->latitude;
-    segment->X[1] = destination->latitude;
-
-    segment->Y[0] = start->longitude;
-    segment->Y[1] = destination->longitude;
-
-    segment->Z[0] = start->altitude;
-    segment->Z[1] = destination->altitude;
-    int result = restrictionSphereCollision(segment,res->sphere);
-
-    printf("res is %d\n", result);
-    free(start);
-    free(destination);
 }
