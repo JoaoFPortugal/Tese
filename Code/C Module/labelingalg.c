@@ -45,7 +45,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
         int realj = j-1;
 
 
-
             arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S,listOfWaypoints,start,plane,j-1,capacity,&arrayofweightssize,htsize);
 
             for (a = 0; a < capacity + 1; a++) {
@@ -54,22 +53,21 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                     w_j = arrayofweights[av];
 
-
-                if (insideArray(T, a, TCounter) == 1 && insideArray(V,a,VCounter) == 0) {
-
+                    if (insideArray(T, a, TCounter) == 1 && insideArray(V,a,VCounter) == 0) {
 
 
-                    if (insideArray(T, (a - w_j), TCounter)) {
 
+                        if (insideArray(T, (a - w_j), TCounter)) {
 
-                        int flag1 = checkRestrictions(listOfWaypoints[realj], S, a, j-1, listOfRestrictions,
+                            int flag1 = checkRestrictions(listOfWaypoints[realj], S, a, j-1, listOfRestrictions,
                                                       listOfWaypoints, start,htsize);
 
-                        int flag2 = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1, listOfRestrictions,
+                            int flag2 = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1, listOfRestrictions,
                                                       listOfWaypoints, start,htsize);
 
 
-                        if (flag1 == 0 && flag2 == 0) {
+
+                            if (flag1 == 0 && flag2 == 0) {
 
 
                             V = addV(V, a, &VCounter);
@@ -119,6 +117,8 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
                         int flag = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1,listOfRestrictions,
                                                      listOfWaypoints, start,htsize);
+
+
 
                         if (flag == 0) {
 

@@ -21,8 +21,8 @@ void digestline(){
 
 int main(int argc, char **argv){
 
-    int numberofitems = 6;
-    int capacity = 50;
+    int numberofitems = 4;
+    int capacity = 5000;
     int size = 2;
     int i;
     double latitude,longitude,altitude;
@@ -58,9 +58,6 @@ int main(int argc, char **argv){
     start->latitude = latitude;
     start->longitude = longitude;
     start->altitude = altitude;
-
-    start->latitude = 5;
-    start->longitude = 10;
 
 
     scanf("%d",&numberofwaypoints);
@@ -185,11 +182,11 @@ int main(int argc, char **argv){
 
     Waypoint **head = list;
 
-    printf("%f %f\n", start->latitude,start->longitude);
+    printf("%f %f %f\n", start->latitude,start->longitude,start->altitude);
 
     for(i=0;i<numberofitems;i++){
         if(finalSolution[i] == 1){
-          printf("%f %f\n", head[i]->latitude,head[i]->longitude);
+          printf("%f %f %f\n", head[i]->latitude,head[i]->longitude,head[i]->altitude);
       }
   }
 

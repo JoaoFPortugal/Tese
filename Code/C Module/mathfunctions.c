@@ -103,31 +103,39 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
     double R = 6371;
 
-    double xA = (R+ ls->Z[0] * 0.0003048) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
-    double yA = (R+ ls->Z[0] * 0.0003048)  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
-    double zA = (R+ ls->Z[0] * 0.0003048) * sin(deg2rad(ls->X[0]));
-
-    double xB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
-    double yB = (R + ls->Z[1] * 0.0003048)  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
-    double zB = (R + ls->Z[1] * 0.0003048) * sin(deg2rad(ls->X[1]));
-
-    double xC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
-    double yC = (R + sphere->zCenter * 0.0003048) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
-    double zC = (R + sphere->zCenter * 0.0003048) * sin(deg2rad(sphere->xCenter));
+    double xA = (R+ (ls->Z[0] * 0.0003048)) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
+    double yA = (R+ (ls->Z[0] * 0.0003048))  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
+    double zA = (R+ (ls->Z[0] * 0.0003048)) * sin(deg2rad(ls->X[0]));
 
 
-    double NA = sqrt(pow(xA,2) + pow(yA,2) + pow(zA,2));
-    double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
+    double xB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
+    double yB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
+    double zB = (R + (ls->Z[1] * 0.0003048)) * sin(deg2rad(ls->X[1]));
+
+
+
+    double xC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
+    double yC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
+    double zC = (R + (sphere->zCenter * 0.0003048)) * sin(deg2rad(sphere->xCenter));
+
+
+
+    //double NA = R + ls->Z[0]*0.0003048
+    //double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
 
 
     double crossproductX = yA*zB - zA * yB;
     double crossproductY = zA*xB - xA*zB;
     double crossproductZ = xA*yB - yA*xB;
 
+    double N = sqrt(pow(crossproductX,2) + pow(crossproductY,2) + pow(crossproductZ,2));
 
-    double normalX = crossproductX / (NA*NB);
-    double normalY = crossproductY / (NA*NB);
-    double normalZ = crossproductZ / (NA*NB);
+
+    double normalX = crossproductX / N;
+    double normalY = crossproductY / N;
+    double normalZ = crossproductZ / N;
+
+
 
     double distance = normalX * xC + normalY * yC + normalZ * zC;
 

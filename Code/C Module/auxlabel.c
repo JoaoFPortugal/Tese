@@ -806,6 +806,7 @@ int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_
 }
 
 int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list){
+
     int flag = 0;
     Restriction *list = _list;
 
