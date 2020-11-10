@@ -1,0 +1,22 @@
+Start: 39.45, -5.32 20000
+
+Destination: 38.7, -9.1 20000
+
+
+Waypoints:
+
+
+1) 38.8, -7.16 20000
+
+2) 39.83, -7.5 20000
+
+
+Restrictions:
+
+
+39, -7, radius 20km
+
+
+Output esperado:
+
+Start, 2), Destination
