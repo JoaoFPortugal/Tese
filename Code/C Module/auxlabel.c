@@ -778,7 +778,7 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
 
 
 
-int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start, uint32_t *htsize){
+int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_list, Waypoint **listofWaypoints, Waypoint *start, uint32_t *htsize,Airplane *plane){
 
 
     Items *header;
@@ -793,19 +793,19 @@ int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_
     int lastWaypoint = header->lastitem;
     int flag;
     if(lastWaypoint == -1){
-        flag = verifyRestrictions(start,newItem,_list);
+        flag = verifyRestrictions(start,newItem,_list,plane);
     }
 
     else{
         Waypoint *b = listofWaypoints[lastWaypoint-1];
-        flag = verifyRestrictions(b,newItem,_list);
+        flag = verifyRestrictions(b,newItem,_list,plane);
     }
 
     return flag;
 
 }
 
-int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list){
+int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list,Airplane *plane){
 
     int flag = 0;
     Restriction *list = _list;
@@ -814,8 +814,8 @@ int verifyRestrictions(Waypoint *a, Waypoint *b, Restriction *_list){
         if(list->type == 0){
             flag = intersectsRestriction(a,b,list);
         }
-        else{
-            flag = breaksRestriction(a,b,list);
+        else if(list->type == 1){
+            flag = changeAltitudeFeasibility(a,b,plane->speed,list->maximumVRate);
         }
 
         if(flag == 1){

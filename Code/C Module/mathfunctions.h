@@ -27,6 +27,6 @@ double min(double a, double b);
 double time(double distance, double speed);
 double distancePointToSegment(Waypoint *point, LineSegment *ls);
 double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle);
-
+int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, double speed, double maximumrate);
 
 #endif //C_MODULE_MATHFUNCTIONS_H

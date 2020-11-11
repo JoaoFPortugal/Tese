@@ -275,7 +275,7 @@ int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, double speed, double max
     double timetochangealt = altdiff / maximumrate; //in minutes
 
     if(timetochangealt > time){
-        return -1;
+        return 1;
     }
     return 0;
 }

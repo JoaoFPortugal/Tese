@@ -60,10 +60,10 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
                         if (insideArray(T, (a - w_j), TCounter)) {
 
                             int flag1 = checkRestrictions(listOfWaypoints[realj], S, a, j-1, listOfRestrictions,
-                                                      listOfWaypoints, start,htsize);
+                                                      listOfWaypoints, start,htsize,plane);
 
                             int flag2 = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1, listOfRestrictions,
-                                                      listOfWaypoints, start,htsize);
+                                                      listOfWaypoints, start,htsize,plane);
 
 
 
@@ -116,7 +116,7 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
 
 
                         int flag = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1,listOfRestrictions,
-                                                     listOfWaypoints, start,htsize);
+                                                     listOfWaypoints, start,htsize,plane);
 
 
 

@@ -74,6 +74,7 @@ typedef struct Restriction{
     Equation *equation;
     Sphere *sphere;
     NoFlyZone *noFlyZone;
+    double maximumVRate;
     struct Restriction *next;
 
 }Restriction;
