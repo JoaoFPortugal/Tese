@@ -261,3 +261,21 @@ double turntime(int currentHeading, int futureHeading, double speed, int maxBank
     return time;
 
 }
+
+
+int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, double speed, double maximumrate){
+    double dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
+
+    double altdiff = fabs(a->altitude-b->altitude);
+
+    double time = dist / (speed*1.852); //in seconds
+
+    time = time / 60; //in minutes
+
+    double timetochangealt = altdiff / maximumrate; //in minutes
+
+    if(timetochangealt > time){
+        return -1;
+    }
+    return 0;
+}
