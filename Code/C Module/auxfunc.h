@@ -52,10 +52,13 @@ void printPS(PossibleSolution *ps,int numberofitems);
 void printWaypoints(Waypoint **list,int numberofitems);
 void printIntVector(int *v, int size);
 void freePS(PossibleSolution *ps);
-void freeItems(Items **res, int numberofitems);
+void freeItems(Items **res, uint32_t *sizeOfHashTable);
 void freeItemLabel(Items *item);
 void freeLabels(Label *label);
 void freeWaypoints(Waypoint ** list, int numberofitems);
+void freeRestrictions(Restriction *res);
+void freeSecondObjective(SecondObjective *secondObjective);
+
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #endif //C_MODULE_AUXFUNC_H

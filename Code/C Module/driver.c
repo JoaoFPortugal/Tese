@@ -81,22 +81,19 @@ int main(int argc, char **argv){
     i=0;
     int type = 0;
 
-    double xCenter, yCenter, zCenter, radius;
 
     while(i<numberofrestrictions){
 
         scanf("%d",&type);
 
         if(type == 0){
+
             if(listofRestrictions == NULL){
                 listofRestrictions = malloc(sizeof(struct Restriction));
                 listofRestrictions->type = 0;
                 listofRestrictions->sphere =  malloc(sizeof(struct Sphere));
-                scanf("%lf %lf %lf %lf",&xCenter,&yCenter,&zCenter,&radius);
-                listofRestrictions->sphere->xCenter = xCenter;
-                listofRestrictions->sphere->yCenter = yCenter;
-                listofRestrictions->sphere->zCenter = zCenter;
-                listofRestrictions->sphere->radius = radius;
+                scanf("%lf %lf %lf %lf",&listofRestrictions->sphere->xCenter,&listofRestrictions->sphere->yCenter,
+                      &listofRestrictions->sphere->zCenter,&listofRestrictions->sphere->radius);
                 listofRestrictions->next = NULL;
                 headOfRestrictions = listofRestrictions;
             }
@@ -104,6 +101,7 @@ int main(int argc, char **argv){
                 Restriction *tmp = malloc(sizeof(struct Restriction));
                 tmp->type = 0;
                 tmp->sphere = malloc(sizeof(struct Sphere));
+                tmp->next = NULL;
                 scanf("%lf %lf %lf %lf",&tmp->sphere->xCenter,&tmp->sphere->yCenter,&tmp->sphere->zCenter,&tmp->sphere->radius);
                 listofRestrictions->next = tmp;
                 listofRestrictions = listofRestrictions->next;
@@ -122,7 +120,11 @@ int main(int argc, char **argv){
 
     mergeSort(&list,0,numberofitems-2);
 
-    list[numberofitems-1] = destination;
+    free(list[numberofitems-1]);
+    list[numberofitems-1] = malloc(sizeof(struct Waypoint));
+    list[numberofitems-1]->latitude = destination->latitude;
+    list[numberofitems-1]->longitude = destination->longitude;
+    list[numberofitems-1]->altitude = destination->altitude;
 
     double **v = (double **)malloc(numberofitems * sizeof(double *));
 
@@ -193,11 +195,14 @@ int main(int argc, char **argv){
   free(indexarray);
   free(firstobjective);
   free(start);
- // freeItems(res,numberofitems+2);
+  free(destination);
+  freeItems(res,&sizeOfHashtable);
+  freeRestrictions(headOfRestrictions);
   freeWaypoints(list, numberofitems);
   freeValue(v,numberofitems);
   freePS(ps);
   free(plane);
+  freeSecondObjective(secondObjective);
 
 }
 

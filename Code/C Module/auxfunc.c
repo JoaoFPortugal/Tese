@@ -530,28 +530,25 @@ int lexmin(double *label1, double *label2, int size){
         Free functions
 
 *******************************/
-/*void freeItems(Items **res, int numberofitems){
+void freeItems(Items **res, uint32_t *sizeOfHashTable){
     int i;
-    for(i=0;i<numberofitems;i++){
-        freeItemLabel(res[i]);
+    for(i=0;i<*sizeOfHashTable;i++){
+        if(res[i]!=NULL){
+            freeItemLabel(res[i]);
+            free(res[i]);
+        }
     }
     free(res);
 }
 
 
-void freeItemLabel(Items *item){
+void freeItemLabel(Items *item) {
     Items *freed = item;
-    Items *prev;
     Label *label;
+    label = freed->label;
+    freeLabels(label);
 
-    while(freed!=NULL){
-        label = freed->label;
-        freeLabels(label);
-        prev = freed;
-        freed = freed->next;
-        free(prev);
-    }
-}*/
+}
 
 
 void freeLabels(Label *label){
@@ -593,12 +590,34 @@ void freeWaypoints(Waypoint ** list, int numberofitems){
     int i;
 
     for(i=0;i<numberofitems;i++){
-
-
         free(list[i]);
-
     }
     free(list);
+}
+
+
+
+void freeRestrictions(Restriction *res){
+    Restriction *prev;
+    while(res!=NULL){
+        if(res->type == 0){
+            free(res->sphere);
+        }
+
+        prev = res;
+        res = res->next;
+        free(prev);
+    }
+}
+
+void freeSecondObjective(SecondObjective *secondObjective){
+    SecondObjective *prev;
+    while(secondObjective != NULL){
+        free(secondObjective->objetivevalue);
+        prev = secondObjective;
+        secondObjective = secondObjective->next;
+        free(prev);
+    }
 }
 
 
