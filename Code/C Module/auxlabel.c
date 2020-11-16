@@ -50,6 +50,8 @@ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
         for (k = 0; k < ((*htsz) >> 1); k++)
             if (ht_old[k] != NULL)
                 ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a);
+            else
+                ht[k] = NULL;
 
         free(ht_old);
     }
@@ -103,8 +105,11 @@ Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSi
 
     int i;
 
-    Items **S = malloc(sizeof(struct Items*)* (*sizeOfHashtable));
+    Items **S = malloc(sizeof(struct Items*) * (*sizeOfHashtable));
 
+    for(i=0;i<*sizeOfHashtable;i++){
+        S[i] = NULL;
+    }
 
     for(i=1; i < numberofitems + 1; i++){
         S = hinsert(S,sizeOfHashtable,currentSize,i,0);
@@ -756,6 +761,7 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
             header->objetivevalue = malloc(sizeof(double)*numberofitems);
             header->next = NULL;
             memcpy(header->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            free(arrayofvalues);
             secondObj = header;
 
         }
@@ -764,7 +770,9 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
 
             SecondObjective *tmp = malloc(sizeof(struct SecondObjective));
             tmp->objetivevalue = malloc(sizeof(double)*numberofitems);
+            tmp->next = NULL;
             memcpy(tmp->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            free(arrayofvalues);
             header->next = tmp;
             header = header->next;
         }
