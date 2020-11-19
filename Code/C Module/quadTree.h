@@ -18,8 +18,8 @@
 #define QUADTREE_EMPTY (-2.f)
 
 typedef struct coords{
-    double mLon;
-    double mLat;
+    float mLon;
+    float mLat;
 }hs_coords;
 
 struct qt {
@@ -27,8 +27,8 @@ struct qt {
     /*@null@ *//*@dependent@ */ struct qt *fhd;
     /*@null@ *//*@dependent@ */ struct qt *fbg;
     /*@null@ *//*@dependent@ */ struct qt *fbd;
-    double value;
-    double weight;
+    float value;
+    float weight;
     size_t size;
     hs_coords coords;
 };
@@ -36,15 +36,15 @@ struct qt {
 
 
 typedef struct stock{
-    double lat;
-    double lon;
-    double pot;
+    float lat;
+    float lon;
+    float pot;
 } Stock;
 
 typedef struct qt *QuadT;
 
-double is_alone(const QuadT tree, const Stock * stocks,
-                size_t stocks_size, double *lat, double *lon);
+float is_alone(const QuadT tree, const Stock * stocks,
+                size_t stocks_size, float *lat, float *lon);
 
 QuadT create_quadtree();
 

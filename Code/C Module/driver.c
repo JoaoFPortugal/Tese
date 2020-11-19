@@ -21,12 +21,17 @@ void digestline(){
 
 int main(int argc, char **argv){
 
-    int numberofitems = 4;
+
+    FILE *fp;
+    fp = fopen("waypoints.txt","r");
+    int numberofitems;
+    fscanf(fp,"%d",&numberofitems);
+    numberofitems = numberofitems+1;
     int capacity = 5000;
     int size = 2;
     int i;
-    double latitude,longitude,altitude;
-    double *firstobjective = (double*)malloc(numberofitems * sizeof(double));
+    float latitude,longitude,altitude;
+    float *firstobjective = (float*)malloc(numberofitems * sizeof(float));
     int *indexarray = (int*)malloc(numberofitems *sizeof(int));
     int numberofwaypoints;
 
@@ -53,7 +58,7 @@ int main(int argc, char **argv){
     Waypoint *destination = malloc(sizeof(struct Waypoint));
 
 
-    scanf("%lf %lf %lf",&latitude,&longitude,&altitude);
+    scanf("%f %f %f",&latitude,&longitude,&altitude);
     digestline();
     start->latitude = latitude;
     start->longitude = longitude;
@@ -69,7 +74,7 @@ int main(int argc, char **argv){
     }
 
 
-    scanf("%lf %lf %lf\n",&destination->latitude,&destination->longitude,&destination->altitude);
+    scanf("%f %f %f\n",&destination->latitude,&destination->longitude,&destination->altitude);
 
     int numberofrestrictions;
     scanf("%d",&numberofrestrictions);
@@ -92,7 +97,7 @@ int main(int argc, char **argv){
                 listofRestrictions = malloc(sizeof(struct Restriction));
                 listofRestrictions->type = 0;
                 listofRestrictions->sphere =  malloc(sizeof(struct Sphere));
-                scanf("%lf %lf %lf %lf",&listofRestrictions->sphere->xCenter,&listofRestrictions->sphere->yCenter,
+                scanf("%f %f %f %f",&listofRestrictions->sphere->xCenter,&listofRestrictions->sphere->yCenter,
                       &listofRestrictions->sphere->zCenter,&listofRestrictions->sphere->radius);
                 listofRestrictions->next = NULL;
                 headOfRestrictions = listofRestrictions;
@@ -102,7 +107,7 @@ int main(int argc, char **argv){
                 tmp->type = 0;
                 tmp->sphere = malloc(sizeof(struct Sphere));
                 tmp->next = NULL;
-                scanf("%lf %lf %lf %lf",&tmp->sphere->xCenter,&tmp->sphere->yCenter,&tmp->sphere->zCenter,&tmp->sphere->radius);
+                scanf("%f %f %f %f",&tmp->sphere->xCenter,&tmp->sphere->yCenter,&tmp->sphere->zCenter,&tmp->sphere->radius);
                 listofRestrictions->next = tmp;
                 listofRestrictions = listofRestrictions->next;
             }
@@ -115,7 +120,7 @@ int main(int argc, char **argv){
     PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof (struct PossibleSolution));
     ps->next = NULL;
 
-    Waypoint **list = initWaypoints(numberofitems,start,destination);
+    Waypoint **list = initWaypoints(numberofitems,start,destination,fp);
 
 
     mergeSort(&list,0,numberofitems-2);
@@ -126,10 +131,10 @@ int main(int argc, char **argv){
     list[numberofitems-1]->longitude = destination->longitude;
     list[numberofitems-1]->altitude = destination->altitude;
 
-    double **v = (double **)malloc(numberofitems * sizeof(double *));
+    float **v = (float **)malloc(numberofitems * sizeof(float *));
 
     for (i=0; i<numberofitems; i++) {
-        v[i] = (double *) malloc(2 * sizeof(double));
+        v[i] = (float *) malloc(2 * sizeof(float));
 
     }
 
@@ -141,21 +146,36 @@ int main(int argc, char **argv){
 
 
 
-    Items **res = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
+    S = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
+    freeRestrictions(headOfRestrictions);
 
-    S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0);
+    S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0,NULL);
 
 
-    Items *finalItem = addResult(res,numberofitems,capacity,&sizeOfHashtable);
+    Items *finalItem = addResult(S,numberofitems,capacity,&sizeOfHashtable);
 
 
    if(finalItem->label == NULL){
        printf("Empty Solution\n");
+       fclose(fp);
+       free(indexarray);
+       free(firstobjective);
+       freeItems(S,&sizeOfHashtable);
+       free(start);
+       free(destination);
+       freeValue(v,numberofitems);
+       freeWaypoints(list, numberofitems);
+       free(ps);
+       free(plane);
        return 1;
    }
 
-    double *bestlabel = finalItem->label->value;
 
+
+    float *bestlabel = malloc(sizeof(float)*2);
+    memcpy(bestlabel,finalItem->label->value,sizeof(float)*2);
+
+    freeItems(S,&sizeOfHashtable);
 
     for(i=0;i<numberofitems;i++){
       //  printf("first objective is gonna be %f\n",v[i][0]);
@@ -181,10 +201,15 @@ int main(int argc, char **argv){
 
     int *finalSolution = findSecondSolution(ps,secondObjective,-bestlabel[1], numberofitems);
 
+    free(bestlabel);
 
     Waypoint **head = list;
 
     printf("%f %f %f\n", start->latitude,start->longitude,start->altitude);
+    if(finalSolution == NULL){
+        printf("Final Solution is NULL\n");
+        return 1;
+    }
 
     for(i=0;i<numberofitems;i++){
         if(finalSolution[i] == 1){
@@ -192,14 +217,13 @@ int main(int argc, char **argv){
       }
   }
 
+  fclose(fp);
   free(indexarray);
   free(firstobjective);
   free(start);
   free(destination);
-  freeItems(res,&sizeOfHashtable);
-  freeRestrictions(headOfRestrictions);
-  freeWaypoints(list, numberofitems);
   freeValue(v,numberofitems);
+  freeWaypoints(list, numberofitems);
   freePS(ps);
   free(plane);
   freeSecondObjective(secondObjective);

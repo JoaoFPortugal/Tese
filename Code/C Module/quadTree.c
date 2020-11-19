@@ -19,8 +19,8 @@ int build_quadtree(const Stock *stocks, size_t stocks_size, QuadT tree)
       QuadT fbd = NULL;
       QuadT fhg = NULL;
       QuadT fhd = NULL;
-      double lat = 0.f, lon = 0.f;
-      double res;
+      float lat = 0.f, lon = 0.f;
+      float res;
       assert(stocks != NULL);
       assert(tree != NULL);
       assert(tree->fbd == NULL);
@@ -163,12 +163,12 @@ int build_quadtree(const Stock *stocks, size_t stocks_size, QuadT tree)
       return stocks[b].lat <= tree->coords. mLat ? e : b;
   }
 
-  double is_alone(const QuadT tree, const Stock * stocks,
-     size_t stocks_size, double *lat, double *lon)
+  float is_alone(const QuadT tree, const Stock * stocks,
+     size_t stocks_size, float *lat, float *lon)
   {
 
       size_t count_valid;
-      double res;
+      float res;
       size_t begin, end, i;
       assert(stocks_size > 0);
       assert(stocks != NULL);

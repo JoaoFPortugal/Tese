@@ -14,30 +14,30 @@
 
 
 
-double fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane){
-    double dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
+float fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane){
+    float dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
 
-    double dz = fabs(a->altitude-b->altitude);
-    double finaldist = sqrt(pow(dist,2)+pow(dz,2));
-    double time = finaldist / (plane->speed*1.852);
-    double fuelconsump = plane->consumptionRate;
+    float dz = fabs(a->altitude-b->altitude);
+    float finaldist = sqrt(pow(dist,2)+pow(dz,2));
+    float time = finaldist / (plane->speed*1.852);
+    float fuelconsump = plane->consumptionRate;
     return time*fuelconsump;
 }
 
 
 
-double deg2rad(double deg) {
+float deg2rad(float deg) {
     return (deg * pi / 180);
 }
 
 
-double rad2deg(double rad) {
+float rad2deg(float rad) {
     return (rad * 180 / pi);
 }
 
-double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+float distance(float lat1, float lon1, float lat2, float lon2, char unit) {
 
-    double theta, dist;
+    float theta, dist;
     if ((fabs(lat1-lat2)<EPS) && (fabs(lon1-lon2)<EPS)) {
         return 0;
     }
@@ -63,15 +63,15 @@ double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
 
 
 
-double distanceinRads(double latitudeA, double longitudeA, double latitudeB, double longitudeB){
-    double R = 6371000;
-    double d = acos(sin(latitudeA)*sin(latitudeB) + cos(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA))*R;
+float distanceinRads(float latitudeA, float longitudeA, float latitudeB, float longitudeB){
+    float R = 6371000;
+    float d = acos(sin(latitudeA)*sin(latitudeB) + cos(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA))*R;
     return d;
 }
 
 
-double bear(double latitudeA, double longitudeA, double latitudeB, double longitudeB){
-    double b = atan2(sin(longitudeB-longitudeA)*cos(latitudeB),cos(latitudeA)*sin(latitudeB) - sin(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA));
+float bear(float latitudeA, float longitudeA, float latitudeB, float longitudeB){
+    float b = atan2(sin(longitudeB-longitudeA)*cos(latitudeB),cos(latitudeA)*sin(latitudeB) - sin(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA));
     return b;
 }
 
@@ -81,8 +81,8 @@ int inBoundary(NoFlyZone *nf, Waypoint *p){
         return 0;
     }
 
-    double x = p->latitude;
-    double y = p->longitude;
+    float x = p->latitude;
+    float y = p->longitude;
 
     if(x>=(nf->xBoundaries[0]) && x<=(nf->xBoundaries[1]) && y >= (nf->yBoundaries[0]) && y <= (nf->yBoundaries[1])){
         return 1;
@@ -101,43 +101,43 @@ int inBoundary(NoFlyZone *nf, Waypoint *p){
 
 int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 
-    double R = 6371;
+    float R = 6371;
 
-    double xA = (R+ (ls->Z[0] * 0.0003048)) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
-    double yA = (R+ (ls->Z[0] * 0.0003048))  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
-    double zA = (R+ (ls->Z[0] * 0.0003048)) * sin(deg2rad(ls->X[0]));
-
-
-    double xB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
-    double yB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
-    double zB = (R + (ls->Z[1] * 0.0003048)) * sin(deg2rad(ls->X[1]));
+    float xA = (R+ (ls->Z[0] * 0.0003048)) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
+    float yA = (R+ (ls->Z[0] * 0.0003048))  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
+    float zA = (R+ (ls->Z[0] * 0.0003048)) * sin(deg2rad(ls->X[0]));
 
 
-
-    double xC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
-    double yC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
-    double zC = (R + (sphere->zCenter * 0.0003048)) * sin(deg2rad(sphere->xCenter));
+    float xB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
+    float yB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
+    float zB = (R + (ls->Z[1] * 0.0003048)) * sin(deg2rad(ls->X[1]));
 
 
 
-    //double NA = R + ls->Z[0]*0.0003048
-    //double NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
-
-
-    double crossproductX = yA*zB - zA * yB;
-    double crossproductY = zA*xB - xA*zB;
-    double crossproductZ = xA*yB - yA*xB;
-
-    double N = sqrt(pow(crossproductX,2) + pow(crossproductY,2) + pow(crossproductZ,2));
-
-
-    double normalX = crossproductX / N;
-    double normalY = crossproductY / N;
-    double normalZ = crossproductZ / N;
+    float xC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * cos(deg2rad(sphere->yCenter));
+    float yC = (R + (sphere->zCenter * 0.0003048)) * cos(deg2rad(sphere->xCenter)) * sin(deg2rad(sphere->yCenter));
+    float zC = (R + (sphere->zCenter * 0.0003048)) * sin(deg2rad(sphere->xCenter));
 
 
 
-    double distance = normalX * xC + normalY * yC + normalZ * zC;
+    //float NA = R + ls->Z[0]*0.0003048
+    //float NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
+
+
+    float crossproductX = yA*zB - zA * yB;
+    float crossproductY = zA*xB - xA*zB;
+    float crossproductZ = xA*yB - yA*xB;
+
+    float N = sqrt(pow(crossproductX,2) + pow(crossproductY,2) + pow(crossproductZ,2));
+
+
+    float normalX = crossproductX / N;
+    float normalY = crossproductY / N;
+    float normalZ = crossproductZ / N;
+
+
+
+    float distance = normalX * xC + normalY * yC + normalZ * zC;
 
     if(fabs(distance) > sphere->radius){
         return 0;
@@ -147,7 +147,7 @@ int restrictionSphereCollision(LineSegment *ls, Sphere *sphere){
 }
 
 
-double max(double a, double b){
+float max(float a, float b){
     if(a>=b){
         return a;
     }
@@ -158,7 +158,7 @@ double max(double a, double b){
 }
 
 
-double min(double a, double b){
+float min(float a, float b){
     if(a<=b){
         return a;
     }
@@ -167,30 +167,30 @@ double min(double a, double b){
     }
 }
 
-double time(double distance, double speed) {             //speed in kts, distance in km
-    double time = distance * 3600 / (speed * 1.852);
+float time(float distance, float speed) {             //speed in kts, distance in km
+    float time = distance * 3600 / (speed * 1.852);
     return time;
 }
 
 
-double distancePointToSegment(Waypoint *point, LineSegment *ls){
-    double R = 6371;
+float distancePointToSegment(Waypoint *point, LineSegment *ls){
+    float R = 6371;
 
-    double lat1 = deg2rad(ls->X[0]);
-    double lat2 = deg2rad(ls->X[1]);
-    double lat3 = deg2rad(point->latitude);
-    double lon1 = deg2rad(ls->Y[0]);
-    double lon2 = deg2rad(ls->Y[1]);
-    double lon3 = deg2rad(point->longitude);
+    float lat1 = deg2rad(ls->X[0]);
+    float lat2 = deg2rad(ls->X[1]);
+    float lat3 = deg2rad(point->latitude);
+    float lon1 = deg2rad(ls->Y[0]);
+    float lon2 = deg2rad(ls->Y[1]);
+    float lon3 = deg2rad(point->longitude);
 
 
-    double bear12 = bear(lat1,lon1,lat2,lon2);
-    double bear13 = bear(lat1,lon1,lat3,lon3);
+    float bear12 = bear(lat1,lon1,lat2,lon2);
+    float bear13 = bear(lat1,lon1,lat3,lon3);
 
-    double dis13 = distanceinRads(lat1,lon1,lat3,lon3);
-    double diff = fabs(bear13-bear12);
+    float dis13 = distanceinRads(lat1,lon1,lat3,lon3);
+    float diff = fabs(bear13-bear12);
 
-    double result;
+    float result;
 
 
     if(diff > M_PI){
@@ -200,9 +200,9 @@ double distancePointToSegment(Waypoint *point, LineSegment *ls){
         result = dis13;
     }
     else{
-        double dxt = asin(sin(dis13/R)*sin(bear13-bear12))*R;
-        double dis12 = distanceinRads(lat1,lon1,lat2,lon2);
-        double dis14 = acos(cos(dis13/R) / cos(dxt/R)) * R;
+        float dxt = asin(sin(dis13/R)*sin(bear13-bear12))*R;
+        float dis12 = distanceinRads(lat1,lon1,lat2,lon2);
+        float dis14 = acos(cos(dis13/R) / cos(dxt/R)) * R;
         if(dis14/dis12){
             result = distanceinRads(lat2,lon2,lat3,lon3);
         }
@@ -211,17 +211,17 @@ double distancePointToSegment(Waypoint *point, LineSegment *ls){
         }
     }
 
-    double dz = fabs(ls->Z[0]-ls->Z[1]);
-    double finalresult;
+    float dz = fabs(ls->Z[0]-ls->Z[1]);
+    float finalresult;
 
     if(dz < EPS){
 
-        double ddz = fabs(ls->Z[0]-point->altitude);
+        float ddz = fabs(ls->Z[0]-point->altitude);
         finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
 
     }
     else{
-        double ddz = (ls->Z[0]+ls->Z[1])/2;
+        float ddz = (ls->Z[0]+ls->Z[1])/2;
         finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
     }
     return finalresult;
@@ -230,8 +230,8 @@ double distancePointToSegment(Waypoint *point, LineSegment *ls){
 
 
 
-double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle){
-    double rateofturn = (1.091 * tan(maxBankAngle))/speed;
+float turntime(int currentHeading, int futureHeading, float speed, int maxBankAngle){
+    float rateofturn = (1.091 * tan(maxBankAngle))/speed;
 
     int turnangle;
     int diff;
@@ -256,23 +256,23 @@ double turntime(int currentHeading, int futureHeading, double speed, int maxBank
         }
     }
 
-    double time = turnangle / rateofturn;
+    float time = turnangle / rateofturn;
 
     return time;
 
 }
 
 
-int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, double speed, double maximumrate){
-    double dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
+int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, float speed, float maximumrate){
+    float dist = distance(a->latitude,a->longitude,b->latitude,b->longitude,'K');
 
-    double altdiff = fabs(a->altitude-b->altitude);
+    float altdiff = fabs(a->altitude-b->altitude);
 
-    double time = dist / (speed*1.852); //in seconds
+    float time = dist / (speed*1.852); //in seconds
 
     time = time / 60; //in minutes
 
-    double timetochangealt = altdiff / maximumrate; //in minutes
+    float timetochangealt = altdiff / maximumrate; //in minutes
 
     if(timetochangealt > time){
         return 1;

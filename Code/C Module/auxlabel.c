@@ -25,7 +25,7 @@ uint32_t hash6432shift(uint64_t key) {
 }
 
 
-Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
+Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a, Label *label) {
 
     //concatenation
 
@@ -43,15 +43,17 @@ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
         Items** ht_old = ht;
 
         ht = malloc(sizeof(Items*) * (*htsz));
+        memset(ht,0,sizeof(Items*)*(*htsz));
 
         *htn = 0;
 
         uint32_t k;
         for (k = 0; k < ((*htsz) >> 1); k++)
-            if (ht_old[k] != NULL)
-                ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a);
-            else
-                ht[k] = NULL;
+            if (ht_old[k] != NULL) {
+                ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a,ht_old[k]->label);
+                free(ht_old[k]);
+            }
+
 
         free(ht_old);
     }
@@ -68,10 +70,9 @@ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a) {
     ht[i]->j = j;
     ht[i]->a = a;
     ht[i]->lastitem = -1;
-    ht[i]->label = NULL;
+    ht[i]->label = label;
 
     (*htn) ++;
-
 
     return ht;
 }
@@ -106,13 +107,11 @@ Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSi
     int i;
 
     Items **S = malloc(sizeof(struct Items*) * (*sizeOfHashtable));
+    memset(S,0,sizeof(Items*)*(*sizeOfHashtable));
 
-    for(i=0;i<*sizeOfHashtable;i++){
-        S[i] = NULL;
-    }
 
     for(i=1; i < numberofitems + 1; i++){
-        S = hinsert(S,sizeOfHashtable,currentSize,i,0);
+        S = hinsert(S,sizeOfHashtable,currentSize,i,0,NULL);
     }
 
 
@@ -121,14 +120,14 @@ Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSi
 
 
 
-Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane, uint32_t *htsize, uint32_t *currentsize){
+Items **initItems(Items **_S, float *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane, uint32_t *htsize, uint32_t *currentsize){
 
     Items **S = _S;
 
     Items *S_0 = hfind(S,htsize,1,0);
 
     if(S_0 == NULL){
-        S = hinsert(S,htsize,currentsize,1,0);
+        S = hinsert(S,htsize,currentsize,1,0,NULL);
         S_0 = hfind(S,htsize,1,0);
     }
 
@@ -137,7 +136,7 @@ Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint
     Label *header;
     header = (struct Label *) malloc(sizeof(struct Label));
     header->next = NULL;
-    header->value = malloc(size * sizeof(double));
+    header->value = malloc(size * sizeof(float));
 
     for(i=0;i<size;i++){
         header->value[i]=0;
@@ -155,7 +154,7 @@ Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint
     Items *ptr = hfind(S,htsize,1,w);
 
     if(ptr == NULL){
-        S = hinsert(S,htsize,currentsize,1,w);
+        S = hinsert(S,htsize,currentsize,1,w,NULL);
         ptr = hfind(S,htsize,1,w);
 
     }
@@ -164,15 +163,15 @@ Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint
 
     Label *new = (struct Label *) malloc(sizeof(struct Label));
 
-    new->value = malloc(size * sizeof(double));
+    new->value = malloc(size * sizeof(float));
     new->next = NULL;
 
     valor[1] = -fuelconsumption(start,destination,plane);
 
-    double *negativevalue = neg(valor,size);
+    float *negativevalue = neg(valor,size);
 
 
-    memcpy(new->value,negativevalue,size*sizeof(double));
+    memcpy(new->value,negativevalue,size*sizeof(float));
     free(negativevalue);
     ptr->label = new;
     ptr->lastitem = 1;
@@ -183,7 +182,7 @@ Items **initItems(Items **_S, double *valor, int size, Waypoint *start, Waypoint
 
 
 
-Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32_t *htsize, uint32_t *currentsize){
+Items **addLabels(Items **S, float * _v, int a, int wj, int size, int j, uint32_t *htsize, uint32_t *currentsize){
 
 
     Items *header;    //header = S[j]^a
@@ -195,7 +194,7 @@ Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a);
+        S = hinsert(S,htsize,currentsize,j,a,NULL);
         header = hfind(S,htsize,j,a);
     }
 
@@ -226,11 +225,11 @@ Items **addLabels(Items **S, double * _v, int a, int wj, int size, int j, uint32
 }
 
 
-Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, int size){
+Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, float * _v, int size){
 
     Items *result = _result;
 
-    double *v = _v;
+    float *v = _v;
 
     Label *start1 = Sj_1->label;
     Label *start2 = Sj_aw->label;
@@ -255,9 +254,9 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
 
             Label *tmp = (struct Label *) malloc(sizeof(struct Label));
             tmp->next = NULL;
-            tmp->value = malloc(size * sizeof(double));
+            tmp->value = malloc(size * sizeof(float));
 
-            memcpy(tmp->value,start1->value,size*sizeof(double));
+            memcpy(tmp->value,start1->value,size*sizeof(float));
 
             int v_dominated = dominated(tmp->value, head, size);
 
@@ -288,13 +287,13 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
 
         else if (start1 == NULL) {
 
-            double *sum;
+            float *sum;
             sum = labelsum(start2->value, v, size);
 
             Label *tmp = (struct Label *) malloc(sizeof(struct Label));
             tmp->next = NULL;
-            tmp->value = malloc(size * sizeof(double));
-            memcpy(tmp->value,sum,size*sizeof(double));
+            tmp->value = malloc(size * sizeof(float));
+            memcpy(tmp->value,sum,size*sizeof(float));
             free(sum);
 
 
@@ -329,7 +328,7 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
 
 
         else{
-            double *sum;
+            float *sum;
             sum = labelsum(start2->value, v, size);
 
             res = lexmin(start1->value, sum,size);
@@ -340,9 +339,9 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
                 free(sum);
                 Label *tmp = (struct Label *) malloc(sizeof(struct Label));
                 tmp->next = NULL;
-                tmp->value = malloc(size * sizeof(double));
+                tmp->value = malloc(size * sizeof(float));
 
-                memcpy(tmp->value,start1->value,size*sizeof(double));
+                memcpy(tmp->value,start1->value,size*sizeof(float));
 
 
 
@@ -373,9 +372,9 @@ Items * compareLabels(Items *_result, Items *Sj_1, Items *Sj_aw, double * _v, in
             else {
                 Label *tmp = (struct Label *) malloc(sizeof(struct Label));
                 tmp->next = NULL;
-                tmp->value = malloc(size * sizeof(double));
+                tmp->value = malloc(size * sizeof(float));
 
-                memcpy(tmp->value,sum,size*sizeof(double));
+                memcpy(tmp->value,sum,size*sizeof(float));
                 free(sum);
 
 
@@ -421,7 +420,7 @@ Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a);
+        S = hinsert(S,htsize,currentsize,j,a,NULL);
         header = hfind(S,htsize,j,a);
     }
 
@@ -443,8 +442,8 @@ Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *
 
             Label *tmp = (struct Label *) malloc(sizeof(struct Label));
             tmp->next = NULL;
-            tmp->value = malloc(size * sizeof(double));
-            memcpy(tmp->value,tocopy->value,size*sizeof(double));
+            tmp->value = malloc(size * sizeof(float));
+            memcpy(tmp->value,tocopy->value,size*sizeof(float));
 
             if(newlabel == NULL){
                 header->label = tmp;
@@ -466,7 +465,7 @@ Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *
 
 
 
-Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32_t *htsize, uint32_t *currentsize){
+Items **sumItems(Items ** _S, float *v, int a, int a_wj, int size, int j,uint32_t *htsize, uint32_t *currentsize){
 
     Items **S = _S;
 
@@ -476,7 +475,7 @@ Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a);
+        S = hinsert(S,htsize,currentsize,j,a,NULL);
         header = hfind(S,htsize,j,a);
     }
 
@@ -509,7 +508,7 @@ Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32
 
         Label *tmp = (struct Label *) malloc(sizeof(struct Label));
         tmp->next = NULL;
-        tmp->value = malloc(size * sizeof(double));
+        tmp->value = malloc(size * sizeof(float));
 
 
         for(x=0;x<size;x++){
@@ -540,10 +539,9 @@ Items **sumItems(Items ** _S, double *v, int a, int a_wj, int size, int j,uint32
 
 Items *addResult(Items **res, int numberofitems, int capacity, uint32_t *htsize){
 
-    Items *finalitem = res[numberofitems+1];
+    Items *finalitem;
 
     finalitem = hfind(res,htsize,numberofitems+1,0);
-
 
     Items *valuestoadd;
 
@@ -599,9 +597,9 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
   while(currentFinalList != NULL){
 
 
-    double *negv = neg(newValue->value,2);
+    float *negv = neg(newValue->value,2);
 
-    double *negf = neg(currentFinalList->value,2);
+    float *negf = neg(currentFinalList->value,2);
 
     int dominate = dominatedNeg(negf,negv,2);
 
@@ -613,8 +611,8 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 
         Label *tmp = (struct Label *) malloc(sizeof(struct Label));
         tmp->next = NULL;
-        tmp->value = malloc(2 * sizeof(double));
-        memcpy(tmp->value, currentFinalList->value, 2 * sizeof(double));
+        tmp->value = malloc(2 * sizeof(float));
+        memcpy(tmp->value, currentFinalList->value, 2 * sizeof(float));
 
         if (newList == NULL) {
             newList = tmp;
@@ -628,12 +626,12 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
     }
 
 
-    double *v = neg(newValue->value,2);
-    double *neggg = neg(currentFinalList->value,2);
+    float *v = neg(newValue->value,2);
+    float *neggg = neg(currentFinalList->value,2);
     Label *negff = (struct Label *) malloc(sizeof(struct Label));
     negff->next = NULL;
-    negff->value = malloc(2 * sizeof(double));
-    memcpy(negff->value,neggg,2*sizeof(double));
+    negff->value = malloc(2 * sizeof(float));
+    memcpy(negff->value,neggg,2*sizeof(float));
 
     dominate = dominated(v,negff,2);
 
@@ -655,8 +653,8 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 
         Label *tmp = (struct Label *) malloc(sizeof(struct Label));
         tmp->next = NULL;
-        tmp->value = malloc(2 * sizeof(double));
-        memcpy(tmp->value,newValue->value,2*sizeof(double));
+        tmp->value = malloc(2 * sizeof(float));
+        memcpy(tmp->value,newValue->value,2*sizeof(float));
 
 
         if(newList == NULL){
@@ -678,25 +676,24 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 }
 
 
-void findTargetSumSubsets(double *input, double target, double * _ramp, int index, int size,
+void findTargetSumSubsets(float *input, float target, float * _ramp, int index, int size,
                               PossibleSolution ** _ps, int originalsize, int * arrayofindexes) {
 
-        double *ramp = _ramp;
+
+        float *ramp = _ramp;
 
         PossibleSolution *ps = * _ps;
         PossibleSolution *head = *_ps;
-
-
 
         if(index > (originalsize - 1)) {
 
             if(fabs(getSum(ramp,size)-target)<EPS) {
 
                 PossibleSolution *tmp = malloc(sizeof(struct PossibleSolution));
-                tmp->v = malloc(size * sizeof(double));
+                tmp->v = malloc(size * sizeof(float));
                 tmp->indexarray = malloc(originalsize * sizeof(int));
                 memcpy(tmp->indexarray,arrayofindexes,originalsize * sizeof(int));
-                memcpy(tmp->v,ramp,size*sizeof(double));
+                memcpy(tmp->v,ramp,size*sizeof(float));
                 tmp->size = size;
                 tmp->next = NULL;
 
@@ -712,15 +709,22 @@ void findTargetSumSubsets(double *input, double target, double * _ramp, int inde
         }
 
         int newsize = size+1;
-        double *newramp =  malloc(newsize * sizeof(double));
-        memcpy(newramp,ramp,sizeof(double)*size);
+        float *newramp =  malloc(newsize * sizeof(float));
+        memcpy(newramp,ramp,sizeof(float)*size);
         newramp[newsize-1]=input[index];
 
-        arrayofindexes[index] = 1;
-        findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize, arrayofindexes);
-        arrayofindexes[index] = 0;
-        findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize,arrayofindexes);
+        if(fabs(getSum(newramp,size))>fabs(target)){
+            free(newramp);
+            arrayofindexes[index] = 0;
+            findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize,arrayofindexes);
+        }
 
+        else{
+            arrayofindexes[index] = 1;
+            findTargetSumSubsets(input, target, newramp, index + 1,size+1, &ps,originalsize, arrayofindexes);
+            arrayofindexes[index] = 0;
+            findTargetSumSubsets(input, target, ramp, index + 1,size,&ps, originalsize,arrayofindexes);
+        }
 }
 
 
@@ -737,7 +741,7 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
 
         int *indexarray = ps->indexarray;
 
-        double *arrayofvalues = malloc(sizeof(double)*numberofitems);
+        float *arrayofvalues = malloc(sizeof(float)*numberofitems);
 
         for(i=0;i<numberofitems;i++){
             if(prev == -1){
@@ -758,9 +762,9 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
         if(secondObj == NULL){
 
             header = malloc(sizeof(struct SecondObjective));
-            header->objetivevalue = malloc(sizeof(double)*numberofitems);
+            header->objetivevalue = malloc(sizeof(float)*numberofitems);
             header->next = NULL;
-            memcpy(header->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            memcpy(header->objetivevalue,arrayofvalues,sizeof(float)*numberofitems);
             free(arrayofvalues);
             secondObj = header;
 
@@ -769,9 +773,9 @@ SecondObjective *secondobjective(PossibleSolution *ps, int numberofitems,Waypoin
         else{
 
             SecondObjective *tmp = malloc(sizeof(struct SecondObjective));
-            tmp->objetivevalue = malloc(sizeof(double)*numberofitems);
+            tmp->objetivevalue = malloc(sizeof(float)*numberofitems);
             tmp->next = NULL;
-            memcpy(tmp->objetivevalue,arrayofvalues,sizeof(double)*numberofitems);
+            memcpy(tmp->objetivevalue,arrayofvalues,sizeof(float)*numberofitems);
             free(arrayofvalues);
             header->next = tmp;
             header = header->next;

@@ -22,42 +22,23 @@
 
 
 
-Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destination){
+Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destination,FILE *fp){
 
     int i;
 
     Waypoint **list = malloc(sizeof(struct Waypoint*)*(numberofitems));
 
-    for (i=0; i<numberofitems; i++) {
+    for (i=0; i<numberofitems-1; i++) {
         list[i] = malloc(sizeof(struct Waypoint));
-        list[i]->altitude = 20000;
+        fscanf(fp,"%f %f %f", &list[i]->latitude,&list[i]->longitude,&list[i]->altitude);
+        list[i]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[0]->latitude,list[0]->longitude,'K');
     }
 
-    // A
 
-
-
-
-
-    list[0]->latitude = 39.74;
-    list[0]->longitude = -8.8;
-    list[0]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[0]->latitude,list[0]->longitude,'K');
-
-
-    // B
-
-    list[1]->latitude = 39.6;
-    list[1]->longitude = -8.4;
-    list[1]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[1]->latitude,list[1]->longitude,'K');
-
-    list[2]->latitude = 40.66;
-    list[2]->longitude = -7.9;
-    list[2]->distance_to_startingpoint = distance(start->latitude,start->longitude,list[1]->latitude,list[1]->longitude,'K');
-
-
-    list[3]->latitude = destination->latitude;
-    list[3]->longitude = destination->longitude;
-    list[3]->altitude = destination->altitude;
+    list[numberofitems-1] = malloc(sizeof(struct Waypoint));
+    list[numberofitems-1]->latitude = destination->latitude;
+    list[numberofitems-1]->longitude = destination->longitude;
+    list[numberofitems-1]->altitude = destination->altitude;
 
     return list;
 }
@@ -72,7 +53,7 @@ Restriction *createRestrictions(){
 
 
 
-double calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination){
+float calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination){
 
     LineSegment *lineSegment = malloc(sizeof(struct LineSegment));
     lineSegment->X[0] = start->latitude;
@@ -82,14 +63,14 @@ double calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination
     lineSegment->Z[0] = start->altitude;
     lineSegment->Z[1] = destination->altitude;
 
-    double distance = distancePointToSegment(waypoint, lineSegment) * 100;
+    float distance = distancePointToSegment(waypoint, lineSegment) * 100;
     free(lineSegment);
     return -distance;
 
 }
 
 
-double calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane,uint32_t *htsize){
+float calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane,uint32_t *htsize){
 
     Items *header;
 
@@ -105,7 +86,7 @@ double calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Wa
         origin = listOfWaypoints[lastwaypoint-1];
     }
 
-    double newvalue = fuelconsumption(origin,destination,plane);
+    float newvalue = fuelconsumption(origin,destination,plane);
     return -newvalue;
 }
 
@@ -137,7 +118,7 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
             origin = listOfWaypoints[lastwaypoint - 1];
         }
 
-        double newvalue = fuelconsumption(origin, destination, plane);
+        float newvalue = fuelconsumption(origin, destination, plane);
 
         int finalvalue = round(newvalue * 10);
 
@@ -162,12 +143,12 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
 
 
 
-double *pickBestLabel(Label *label){
-    double *v = NULL;
-    double currentSum;
-    double newsum = 0;
+float *pickBestLabel(Label *label){
+    float *v = NULL;
+    float currentSum;
+    float newsum = 0;
     Label *head = label;
-    double *copy;
+    float *copy;
 
     while(head != NULL){
         copy = head->value;
@@ -196,14 +177,14 @@ double *pickBestLabel(Label *label){
 }
 
 
-int *findSecondSolution(PossibleSolution *ps, SecondObjective *secondobjective, double target, int size){
+int *findSecondSolution(PossibleSolution *ps, SecondObjective *secondobjective, float target, int size){
 
     int *indexofarrays;
 
     SecondObjective *header = secondobjective;
 
-    double sum=0;
-    double *secondobjectivevalue;
+    float sum=0;
+    float *secondobjectivevalue;
     int i;
 
     while(ps!=NULL){
@@ -400,17 +381,17 @@ int insideArray(int *T, int a, int size){
 
 
 
-int dominated(double *dominated, Label  *dominatorlabel, int size){
+int dominated(float *dominated, Label  *dominatorlabel, int size){
 
     if(dominatorlabel == NULL){
       return 0;
     }
 
-    double *dominator = dominatorlabel->value;
+    float *dominator = dominatorlabel->value;
 
     int i;
-    double x1;
-    double x2;
+    float x1;
+    float x2;
     for(i=0;i<size;i++){
         x1 = dominated[i];
         x2 = dominator[i];
@@ -423,13 +404,13 @@ int dominated(double *dominated, Label  *dominatorlabel, int size){
 }
 
 
-double *labelsum(double  *src1, double  *src2, int len){
+float *labelsum(float  *src1, float  *src2, int len){
 
-    double *v = (double*)malloc(sizeof(double)*len);
+    float *v = (float*)malloc(sizeof(float)*len);
     int i;
 
     for(i=0;i<len;i++){
-        double negv = -src2[i];
+        float negv = -src2[i];
        v[i] = src1[i] + negv;
     }
 
@@ -438,15 +419,15 @@ double *labelsum(double  *src1, double  *src2, int len){
 
 
 
-int dominatedNeg(double *dominated, double *v, int size){
+int dominatedNeg(float *dominated, float *v, int size){
 
-    double *dominator = v;
+    float *dominator = v;
 
 
 
     int i;
-    double x1;
-    double x2;
+    float x1;
+    float x2;
     for(i=0;i<size;i++){
         x1 = dominated[i];
         x2 = dominator[i];
@@ -464,17 +445,17 @@ int dominatedNeg(double *dominated, double *v, int size){
 
 
 
-double setSum(double *v){
+float setSum(float *v){
 
-  double sum = 0.5*(-v[0]) + 0.5*(-v[1]);
+  float sum = 0.5*(-v[0]) + 0.5*(-v[1]);
   return sum;
 
 }
 
 
-double getSum(double *v, int size) {
+float getSum(float *v, int size) {
         int i;
-        double sum = 0;
+        float sum = 0;
         for (i = 0; i < size; i++) {
             sum+=v[i];
         }
@@ -485,23 +466,23 @@ double getSum(double *v, int size) {
 
 
 int calculateHeading(Waypoint *start, Waypoint *destination){
-    double x1 = start->latitude;
-    double y1 = start->longitude;
-    double x2 = destination->latitude;
-    double y2 = destination->longitude;
+    float x1 = start->latitude;
+    float y1 = start->longitude;
+    float x2 = destination->latitude;
+    float y2 = destination->longitude;
 
-    double down = x2-x1;
-    double up = y2-y1;
-    double result = up / down;
-    double theta = atan(result);
+    float down = x2-x1;
+    float up = y2-y1;
+    float result = up / down;
+    float theta = atan(result);
     int res = round(theta);
     return abs((res%360));
 }
 
 
-double *neg(double* src, int size){
+float *neg(float* src, int size){
     int i;
-    double * p = malloc(size * sizeof(double));
+    float * p = malloc(size * sizeof(float));
     for(i=0;i<size;i++){
         p[i]= -src[i];
     }
@@ -509,7 +490,7 @@ double *neg(double* src, int size){
 }
 
 
-int lexmin(double *label1, double *label2, int size){
+int lexmin(float *label1, float *label2, int size){
     int i;
 
     for(i=0;i<size;i++){
@@ -565,7 +546,7 @@ void freeLabels(Label *label){
 }
 
 
-void freeValue(double **v, int r){
+void freeValue(float **v, int r){
     int i;
     for(i=0;i<r;i++){
         free(v[i]);
@@ -629,7 +610,7 @@ void freeSecondObjective(SecondObjective *secondObjective){
         Print functions
 
 *******************************/
-void printVector(double *T,int numberofelements){
+void printVector(float *T,int numberofelements){
     if(T==NULL){
         printf("Empty\n");
         return;

@@ -18,7 +18,7 @@ typedef struct Items{
 
 
 typedef struct Label{
-    double *value;
+    float *value;
     int *lastitem;
     
     struct Label *next;
@@ -26,7 +26,7 @@ typedef struct Label{
 
 typedef struct PossibleSolution {
 
-    double *v;
+    float *v;
     int size;
     int *indexarray;
     struct PossibleSolution *next;
@@ -35,22 +35,22 @@ typedef struct PossibleSolution {
 
 
 typedef struct NoFlyZone{
-    double xBoundaries[2];
-    double yBoundaries[2];
+    float xBoundaries[2];
+    float yBoundaries[2];
 }NoFlyZone;
 
 
 typedef struct LineSegment{
-    double X[2];
-    double Y[2];
-    double Z[2];
+    float X[2];
+    float Y[2];
+    float Z[2];
 }LineSegment;
 
 typedef struct Sphere{
-    double radius;
-    double xCenter;
-    double yCenter;
-    double zCenter;
+    float radius;
+    float xCenter;
+    float yCenter;
+    float zCenter;
 
 }Sphere;
 
@@ -61,10 +61,10 @@ typedef struct Equation{
 
 
 typedef struct Waypoint{
-    double latitude;
-    double longitude;
-    double altitude;
-    double distance_to_startingpoint;
+    float latitude;
+    float longitude;
+    float altitude;
+    float distance_to_startingpoint;
 
 }Waypoint;
 
@@ -74,22 +74,22 @@ typedef struct Restriction{
     Equation *equation;
     Sphere *sphere;
     NoFlyZone *noFlyZone;
-    double maximumVRate;
+    float maximumVRate;
     struct Restriction *next;
 
 }Restriction;
 
 
 typedef struct Airplane{
-    double weight;
-    double fuelQuantity;
-    double consumptionRate;
+    float weight;
+    float fuelQuantity;
+    float consumptionRate;
     int speed;
 }Airplane;
 
 
 typedef struct SecondObjective{
-    double *objetivevalue;
+    float *objetivevalue;
     struct SecondObjective *next;
 
 }SecondObjective;

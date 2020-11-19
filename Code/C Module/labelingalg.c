@@ -9,10 +9,10 @@
 #include "mathfunctions.h"
 
 
-Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size, Waypoint **_list, Restriction *_res, Waypoint *_start, Airplane *_plane, uint32_t *htsize, uint32_t *currentsize){
+Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size, Waypoint **_list, Restriction *_res, Waypoint *_start, Airplane *_plane, uint32_t *htsize, uint32_t *currentsize){
 
     Items (**S) = _S;
-    double (**v) = _v;
+    float (**v) = _v;
     int *V = NULL;
     int *T = NULL;
     int n = _numberofitems;
@@ -148,7 +148,6 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
         VCounter = 0;
         V = NULL;
 
-
     }
 
     free(T);
@@ -156,8 +155,5 @@ Items **run(Items **_S, double **_v, int _numberofitems,int _capacity, int _size
     return S;
 
 }
-
-
-
 
 

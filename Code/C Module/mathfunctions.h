@@ -16,17 +16,17 @@
 #include "structs.h"
 
 
-double fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane);
-double deg2rad(double deg);
-double rad2deg(double rad);
-double distance(double lat1, double lon1, double lat2, double lon2, char unit);
+float fuelconsumption(Waypoint *a, Waypoint *b, Airplane *plane);
+float deg2rad(float deg);
+float rad2deg(float rad);
+float distance(float lat1, float lon1, float lat2, float lon2, char unit);
 int inBoundary(NoFlyZone *nf, Waypoint *p);
 int restrictionSphereCollision(LineSegment *ls, Sphere *circle);
-double max(double a, double b);
-double min(double a, double b);
-double time(double distance, double speed);
-double distancePointToSegment(Waypoint *point, LineSegment *ls);
-double turntime(int currentHeading, int futureHeading, double speed, int maxBankAngle);
-int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, double speed, double maximumrate);
+float max(float a, float b);
+float min(float a, float b);
+float time(float distance, float speed);
+float distancePointToSegment(Waypoint *point, LineSegment *ls);
+float turntime(int currentHeading, int futureHeading, float speed, int maxBankAngle);
+int changeAltitudeFeasibility(Waypoint *a, Waypoint *b, float speed, float maximumrate);
 
 #endif //C_MODULE_MATHFUNCTIONS_H
