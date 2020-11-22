@@ -101,7 +101,6 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
 
    for(a = 0; a<capacity+1;a++){
 
-       printf("Bananas for %d %d\n",j,a);
        header = hfind(S,htsize,j,a);
        if(header == NULL){
            continue;
@@ -525,15 +524,39 @@ void freeItems(Items **res, uint32_t *sizeOfHashTable){
 
 
 
-void freeItem(Items **S, uint32_t *htsz, int j, int a){
+Items ** freeItem(Items **ht, uint32_t *htsz, uint32_t *htn, int j, int a) {
 
-    Items *item = hfind(S,htsz,j,a);
-    if(item!=NULL){
-        freeLabels(item->label);
-        free(item);
-        item=NULL;
+    uint64_t tmp;
+    tmp = j;
+    tmp <<= 32;
+    tmp |= a;
+    uint32_t i = hash6432shift(tmp) % (*htsz);
+
+    while(ht[i]!=NULL){
+        if(ht[i]->j == j && ht[i]->a == a){
+            break;
+        }
+        i = (i+1) % (*htsz);
     }
+
+    freeItemLabel(ht[i]);
+    free(ht[i]);
+    ht[i] = NULL;
+    i = (i+1) % (*htsz);
+
+    while (ht[i] != NULL) {
+        Items *li = ht[i];
+        free(ht[i]);
+        ht[i] = NULL;
+        ht = hinsert(ht, htsz, htn, li->j,li->a,li->label);
+        i = (i+1) % (*htsz);
+    }
+
+    (*htn) --;
+
+    return ht;
 }
+
 
 void freeItemLabel(Items *item) {
     Items *freed = item;

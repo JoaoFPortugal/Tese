@@ -27,7 +27,7 @@ int main(int argc, char **argv){
     int numberofitems;
     fscanf(fp,"%d",&numberofitems);
     numberofitems = numberofitems+1;
-    int capacity = 5000;
+    int capacity = 50000;
     int size = 2;
     int i;
     float latitude,longitude,altitude;
@@ -38,8 +38,6 @@ int main(int argc, char **argv){
 
     uint32_t sizeOfHashtable = numberofitems * capacity;
     uint32_t currentSizeOfHashtable = 0;
-
-
 
 
     Airplane *plane = malloc(sizeof(struct Airplane));
@@ -68,11 +66,6 @@ int main(int argc, char **argv){
     scanf("%d",&numberofwaypoints);
 
     i=0;
-    while(i!=numberofwaypoints){
-        printf("hello\n");
-        i++;
-    }
-
 
     scanf("%f %f %f\n",&destination->latitude,&destination->longitude,&destination->altitude);
 

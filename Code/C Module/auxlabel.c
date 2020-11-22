@@ -91,7 +91,6 @@ Items * hfind(Items **ht, uint32_t *htsz, uint32_t j, uint32_t a) {
     while (ht[i] != NULL) {
 
         if (j == ht[i]->j && a == ht[i]->a) {
-            printf("Found %d %d\n",j,a);
             return ht[i];
         } else {
             i = (i + 1) % (*htsz);
@@ -796,7 +795,6 @@ int checkRestrictions(Waypoint *newItem, Items **S, int a, int j, Restriction *_
 
     Items *header;
 
-    printf("HELLOOOOOOOOOOOO Item %d %d\n",j,a);
 
     header = hfind(S,htsize,j,a);
 
