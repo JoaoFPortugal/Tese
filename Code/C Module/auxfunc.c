@@ -523,6 +523,8 @@ void freeItems(Items **res, uint32_t *sizeOfHashTable){
     free(res);
 }
 
+
+
 void freeItem(Items **S, uint32_t *htsz, int j, int a){
 
     Items *item = hfind(S,htsz,j,a);
