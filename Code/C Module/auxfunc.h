@@ -53,6 +53,7 @@ void printWaypoints(Waypoint **list,int numberofitems);
 void printIntVector(int *v, int size);
 void freePS(PossibleSolution *ps);
 void freeItems(Items **res, uint32_t *sizeOfHashTable);
+void freeItem(Items **S, uint32_t *htsz, int j, int a);
 void freeItemLabel(Items *item);
 void freeLabels(Label *label);
 void freeWaypoints(Waypoint ** list, int numberofitems);

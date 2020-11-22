@@ -11,6 +11,7 @@
 
 Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size, Waypoint **_list, Restriction *_res, Waypoint *_start, Airplane *_plane, uint32_t *htsize, uint32_t *currentsize){
 
+
     Items (**S) = _S;
     float (**v) = _v;
     int *V = NULL;
@@ -31,7 +32,6 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
     Restriction *listOfRestrictions = _res;
     Airplane *plane = _plane;
 
-
     S = initItems(S,v[0],size,start,listOfWaypoints[0],plane,htsize,currentsize); // error checks
 
 
@@ -43,7 +43,6 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
     for(j=2;j<n+1;j++) {
 
         int realj = j-1;
-
 
             arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S,listOfWaypoints,start,plane,j-1,capacity,&arrayofweightssize,htsize);
 
@@ -108,13 +107,15 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
                         V = addV(V, a, &VCounter);
 
                         S = copyItems(S, j, a, size, htsize, currentsize); //error checks
-
+                        printf("Freeing Item %d %d\n",j-1,a);
+                        freeItem(S,htsize,j-1,a);
                     }
                 } else {
 
                     if (insideArray(T, (a - w_j), TCounter) && insideArray(V,a,VCounter) == 0) {
 
 
+                        printf("j is %d\n",j);
                         int flag = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1,listOfRestrictions,
                                                      listOfWaypoints, start,htsize,plane);
 
