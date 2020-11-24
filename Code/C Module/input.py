@@ -36,6 +36,10 @@ def input(numberofrestrictions):
         print("0" + " " + str(latitude) + " " + str(longitude) + " " + str(altitude) + " " + str(radius))
         i = i+1
 
+    print(5000)
+    print(350)
+    print(2)
+    print(95000)
     return 0
 
 

@@ -80,7 +80,7 @@ typedef struct Restriction{
 
 typedef struct Airplane{
     float weight;
-    float fuelQuantity;
+    int fuelQuantity;
     float consumptionRate;
     int speed;
 }Airplane;

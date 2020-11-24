@@ -22,12 +22,6 @@ void digestline(){
 int main(int argc, char **argv){
 
 
-    Airplane *plane = malloc(sizeof(struct Airplane));
-    int capacity = 5000;
-    plane->consumptionRate = 2;
-    plane->fuelQuantity = 500;
-    plane->speed = 350;
-    plane->weight = 9207;
 
 
 
@@ -43,11 +37,6 @@ int main(int argc, char **argv){
     int *indexarray = (int*)malloc(numberofitems *sizeof(int));
     int numberofwaypoints;
 
-    uint32_t sizeOfHashtable = numberofitems * numberofitems * 2;
-    uint32_t currentSizeOfHashtable = 0;
-
-
-    Items **S = initS(numberofitems,&sizeOfHashtable,&currentSizeOfHashtable);
 
 
 
@@ -107,6 +96,22 @@ int main(int argc, char **argv){
 
         i++;
     }
+
+    Airplane *plane = malloc(sizeof(struct Airplane));
+
+    scanf("%d",&plane->fuelQuantity);
+    scanf("%d",&plane->speed);
+    scanf("%f",&plane->consumptionRate);
+    scanf("%f",&plane->weight);
+
+
+    int capacity = plane->fuelQuantity;
+    
+    uint32_t sizeOfHashtable = numberofitems * numberofitems * 2;
+    uint32_t currentSizeOfHashtable = 0;
+
+
+    Items **S = initS(numberofitems,&sizeOfHashtable,&currentSizeOfHashtable);
 
 
     PossibleSolution *ps = (struct PossibleSolution*) malloc(sizeof (struct PossibleSolution));
