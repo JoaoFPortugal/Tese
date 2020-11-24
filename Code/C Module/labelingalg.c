@@ -79,7 +79,7 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
 
 
                             S = addLabels(S, v[realj], a, a - w_j, size, j,htsize,currentsize);
-                                if(j<n){
+                               if(j<n){
                                     S = freeItem(S,htsize,currentsize,j-1,a-w_j);
                                     S = freeItem(S,htsize,currentsize,j-1,a);
                                 }
@@ -90,7 +90,9 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
 
 
                             S = copyItems(S,j, a, size,htsize,currentsize); //error checks
-                            S = freeItem(S,htsize,currentsize,j-1,a);
+                            if(j<n){
+                                    S = freeItem(S,htsize,currentsize,j-1,a);
+                            }
 
                             } else if (flag1 == -1 && flag2 == 0) {
 
@@ -116,7 +118,7 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
                         V = addV(V, a, &VCounter);
 
                         S = copyItems(S, j, a, size, htsize, currentsize); //error checks
-                        if(j<n){
+                       if(j<n){
                             S = freeItem(S,htsize,currentsize,j-1,a);
                         }
                     }
@@ -137,8 +139,8 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
 
 
                             S = sumItems(S, v[realj], a, (a - w_j), size, j,htsize,currentsize); //error checks
-                            if(j<n){
-                                S = freeItem(S,htsize,currentsize,j-1,a-w_j);
+                          if(j<n) {
+                                S = freeItem(S, htsize, currentsize, j - 1, a - w_j);
                             }
                             V = addV(V, a, &VCounter);
 
@@ -150,6 +152,7 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
             }
 
         }
+
 
 
 

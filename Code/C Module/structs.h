@@ -19,8 +19,6 @@ typedef struct Items{
 
 typedef struct Label{
     float *value;
-    int *lastitem;
-    
     struct Label *next;
 }Label;
 

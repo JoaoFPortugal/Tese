@@ -22,6 +22,15 @@ void digestline(){
 int main(int argc, char **argv){
 
 
+    Airplane *plane = malloc(sizeof(struct Airplane));
+    int capacity = 5000;
+    plane->consumptionRate = 2;
+    plane->fuelQuantity = 500;
+    plane->speed = 350;
+    plane->weight = 9207;
+
+
+
     FILE *fp;
     fp = fopen("waypoints.txt","r");
     int numberofitems;
@@ -34,17 +43,8 @@ int main(int argc, char **argv){
     int *indexarray = (int*)malloc(numberofitems *sizeof(int));
     int numberofwaypoints;
 
-
-    uint32_t sizeOfHashtable = numberofitems * capacity;
+    uint32_t sizeOfHashtable = numberofitems * numberofitems * 2;
     uint32_t currentSizeOfHashtable = 0;
-
-    Airplane *plane = malloc(sizeof(struct Airplane));
-    int capacity = 50000;
-    plane->consumptionRate = 2;
-    plane->fuelQuantity = 500;
-    plane->speed = 350;
-    plane->weight = 9207;
-
 
 
     Items **S = initS(numberofitems,&sizeOfHashtable,&currentSizeOfHashtable);
@@ -141,7 +141,7 @@ int main(int argc, char **argv){
     S = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
     freeRestrictions(headOfRestrictions);
 
-    S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0,NULL);
+    S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0,NULL,-1);
 
 
     Items *finalItem = addResult(S,numberofitems,capacity,&sizeOfHashtable);

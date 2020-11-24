@@ -16,7 +16,7 @@
 #include "mathfunctions.h"
 
 Items * hfind(Items **ht, uint32_t *htsz, uint32_t j, uint32_t a);
-Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a,Label *label);
+Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a,Label *label, int lastitem);
 uint32_t hash6432shift(uint64_t key);
 Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSize);
 Items **initItems(Items **_S, float *valor, int size, Waypoint *start, Waypoint *destination, Airplane *plane, uint32_t *htsize, uint32_t *currentsize);

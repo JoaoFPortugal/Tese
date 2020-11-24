@@ -63,7 +63,7 @@ float calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination)
     lineSegment->Z[0] = start->altitude;
     lineSegment->Z[1] = destination->altitude;
 
-    float distance = distancePointToSegment(waypoint, lineSegment) * 100;
+    float distance = distancePointToSegment(waypoint, lineSegment);
     free(lineSegment);
     return -distance;
 
@@ -523,6 +523,15 @@ void freeItems(Items **res, uint32_t *sizeOfHashTable){
 }
 
 
+Items ** deleteItems(Items **ht, uint32_t *htsz, uint32_t *htn, int j, int *itemstodelete, int counter){
+    int i;
+    Items **S;
+    for(i=0;i<counter;i++){
+        S = freeItem(ht,htsz,htn,j,itemstodelete[i]);
+    }
+    return S;
+}
+
 
 Items ** freeItem(Items **ht, uint32_t *htsz, uint32_t *htn, int j, int a) {
 
@@ -539,16 +548,22 @@ Items ** freeItem(Items **ht, uint32_t *htsz, uint32_t *htn, int j, int a) {
         i = (i+1) % (*htsz);
     }
 
+    if(ht[i]==NULL){
+        return ht;
+    }
     freeItemLabel(ht[i]);
     free(ht[i]);
     ht[i] = NULL;
     i = (i+1) % (*htsz);
 
     while (ht[i] != NULL) {
-        Items *li = ht[i];
+        int j = ht[i]->j;
+        int a = ht[i]->a;
+        Label *label = ht[i]->label;
+        int lastitem = ht[i]->lastitem;
         free(ht[i]);
         ht[i] = NULL;
-        ht = hinsert(ht, htsz, htn, li->j,li->a,li->label);
+        ht = hinsert(ht, htsz, htn, j,a,label,lastitem);
         i = (i+1) % (*htsz);
     }
 
@@ -556,6 +571,9 @@ Items ** freeItem(Items **ht, uint32_t *htsz, uint32_t *htn, int j, int a) {
 
     return ht;
 }
+
+
+
 
 
 void freeItemLabel(Items *item) {
@@ -645,6 +663,19 @@ void freeSecondObjective(SecondObjective *secondObjective){
         Print functions
 
 *******************************/
+
+
+
+void printS(Items **S, uint32_t *htsize){
+    int i;
+    for(i=0;i<*htsize;i++){
+        Items *item = S[i];
+        if(item != NULL){
+            printItems(item);
+        }
+    }
+}
+
 void printVector(float *T,int numberofelements){
     if(T==NULL){
         printf("Empty\n");
@@ -710,16 +741,11 @@ void printLabels(Label *label){
     }
 }
 
-/*
-void printItems(Items *S){
-    while(S!=NULL){
-        printf("Item labels with tag %d are: \n",S->tag);
-        printLabels(S->label);
-        printf("And last item was: %d\n", S->lastitem);
-        S = S->next;
-    }
-}
-*/
 
+void printItems(Items *S){
+    printf("j and a are %d %d\n",S->j,S->a);
+    printLabels(S->label);
+    printf("And last item was: %d\n", S->lastitem);
+}
 
 

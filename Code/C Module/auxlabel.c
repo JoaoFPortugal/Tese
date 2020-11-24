@@ -25,7 +25,7 @@ uint32_t hash6432shift(uint64_t key) {
 }
 
 
-Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a, Label *label) {
+Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a, Label *label, int lastitem) {
 
     //concatenation
 
@@ -50,8 +50,9 @@ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a, Label *
         uint32_t k;
         for (k = 0; k < ((*htsz) >> 1); k++)
             if (ht_old[k] != NULL) {
-                ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a,ht_old[k]->label);
+                ht = hinsert(ht, htsz, htn, ht_old[k]->j, ht_old[k]->a,ht_old[k]->label,ht_old[k]->lastitem);
                 free(ht_old[k]);
+                ht_old[k] = NULL;
             }
 
 
@@ -69,7 +70,7 @@ Items ** hinsert(Items **ht, uint32_t *htsz, uint32_t *htn, int j,int a, Label *
     ht[i] = malloc(sizeof(Items));
     ht[i]->j = j;
     ht[i]->a = a;
-    ht[i]->lastitem = -1;
+    ht[i]->lastitem = lastitem;
     ht[i]->label = label;
 
     (*htn) ++;
@@ -111,7 +112,7 @@ Items ** initS(int numberofitems, uint32_t *sizeOfHashtable, uint32_t *currentSi
 
 
     for(i=1; i < numberofitems + 1; i++){
-        S = hinsert(S,sizeOfHashtable,currentSize,i,0,NULL);
+        S = hinsert(S,sizeOfHashtable,currentSize,i,0,NULL,-1);
     }
 
 
@@ -127,7 +128,7 @@ Items **initItems(Items **_S, float *valor, int size, Waypoint *start, Waypoint 
     Items *S_0 = hfind(S,htsize,1,0);
 
     if(S_0 == NULL){
-        S = hinsert(S,htsize,currentsize,1,0,NULL);
+        S = hinsert(S,htsize,currentsize,1,0,NULL,-1);
         S_0 = hfind(S,htsize,1,0);
     }
 
@@ -154,7 +155,7 @@ Items **initItems(Items **_S, float *valor, int size, Waypoint *start, Waypoint 
     Items *ptr = hfind(S,htsize,1,w);
 
     if(ptr == NULL){
-        S = hinsert(S,htsize,currentsize,1,w,NULL);
+        S = hinsert(S,htsize,currentsize,1,w,NULL,-1);
         ptr = hfind(S,htsize,1,w);
 
     }
@@ -194,7 +195,7 @@ Items **addLabels(Items **S, float * _v, int a, int wj, int size, int j, uint32_
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a,NULL);
+        S = hinsert(S,htsize,currentsize,j,a,NULL,-1);
         header = hfind(S,htsize,j,a);
     }
 
@@ -420,7 +421,7 @@ Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a,NULL);
+        S = hinsert(S,htsize,currentsize,j,a,NULL,-1);
         header = hfind(S,htsize,j,a);
     }
 
@@ -428,7 +429,6 @@ Items **copyItems(Items **_S,int j,int a, int size, uint32_t *htsize, uint32_t *
     //scan for S[j-1]^a
 
     Items *sndHeader = hfind(S,htsize,j-1,a); //sndHeader = S[j-1]^a
-
 
     header->lastitem = sndHeader->lastitem;
 
@@ -475,7 +475,7 @@ Items **sumItems(Items ** _S, float *v, int a, int a_wj, int size, int j,uint32_
     header = hfind(S,htsize,j,a);
 
     if(header == NULL){
-        S = hinsert(S,htsize,currentsize,j,a,NULL);
+        S = hinsert(S,htsize,currentsize,j,a,NULL,-1);
         header = hfind(S,htsize,j,a);
     }
 
@@ -598,7 +598,6 @@ Label *iterateValues(Label *_newValue, Label *_currentFinalList){
 
 
     float *negv = neg(newValue->value,2);
-
     float *negf = neg(currentFinalList->value,2);
 
     int dominate = dominatedNeg(negf,negv,2);

@@ -71,7 +71,12 @@ float distanceinRads(float latitudeA, float longitudeA, float latitudeB, float l
 
 
 float bear(float latitudeA, float longitudeA, float latitudeB, float longitudeB){
-    float b = atan2(sin(longitudeB-longitudeA)*cos(latitudeB),cos(latitudeA)*sin(latitudeB) - sin(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA));
+
+    float item1 = sin(longitudeB-longitudeA) * cos(latitudeB);
+    float item2 = cos(latitudeA)*sin(latitudeB);
+    float item3 = sin(latitudeA)*cos(latitudeB)*cos(longitudeB-longitudeA);
+
+    float b = atan2(item1,item2-item3);
     return b;
 }
 
@@ -176,56 +181,43 @@ float time(float distance, float speed) {             //speed in kts, distance i
 float distancePointToSegment(Waypoint *point, LineSegment *ls){
     float R = 6371;
 
-    float lat1 = deg2rad(ls->X[0]);
-    float lat2 = deg2rad(ls->X[1]);
-    float lat3 = deg2rad(point->latitude);
-    float lon1 = deg2rad(ls->Y[0]);
-    float lon2 = deg2rad(ls->Y[1]);
-    float lon3 = deg2rad(point->longitude);
+    float xA = (R+ (ls->Z[0] * 0.0003048)) * cos(deg2rad(ls->X[0])) * cos(deg2rad(ls->Y[0]));
+    float yA = (R+ (ls->Z[0] * 0.0003048))  * cos(deg2rad(ls->X[0])) * sin(deg2rad(ls->Y[0]));
+    float zA = (R+ (ls->Z[0] * 0.0003048)) * sin(deg2rad(ls->X[0]));
 
 
-    float bear12 = bear(lat1,lon1,lat2,lon2);
-    float bear13 = bear(lat1,lon1,lat3,lon3);
-
-    float dis13 = distanceinRads(lat1,lon1,lat3,lon3);
-    float diff = fabs(bear13-bear12);
-
-    float result;
+    float xB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * cos(deg2rad(ls->Y[1]));
+    float yB = (R + (ls->Z[1] * 0.0003048))  * cos(deg2rad(ls->X[1])) * sin(deg2rad(ls->Y[1]));
+    float zB = (R + (ls->Z[1] * 0.0003048)) * sin(deg2rad(ls->X[1]));
 
 
-    if(diff > M_PI){
-        diff = 2*pi - diff;
-    }
-    if(diff>(M_PI_2)){
-        result = dis13;
-    }
-    else{
-        float dxt = asin(sin(dis13/R)*sin(bear13-bear12))*R;
-        float dis12 = distanceinRads(lat1,lon1,lat2,lon2);
-        float dis14 = acos(cos(dis13/R) / cos(dxt/R)) * R;
-        if(dis14/dis12){
-            result = distanceinRads(lat2,lon2,lat3,lon3);
-        }
-        else{
-            result = fabs(dxt);
-        }
-    }
 
-    float dz = fabs(ls->Z[0]-ls->Z[1]);
-    float finalresult;
+    float xC = (R + (point->altitude * 0.0003048)) * cos(deg2rad(point->latitude)) * cos(deg2rad(point->longitude));
+    float yC = (R + (point->altitude * 0.0003048)) * cos(deg2rad(point->latitude)) * sin(deg2rad(point->longitude));
+    float zC = (R + (point->altitude * 0.0003048)) * sin(deg2rad(point->latitude));
 
-    if(dz < EPS){
 
-        float ddz = fabs(ls->Z[0]-point->altitude);
-        finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
 
-    }
-    else{
-        float ddz = (ls->Z[0]+ls->Z[1])/2;
-        finalresult = sqrt(pow(result,2)+pow(ddz*0.0003048,2));
-    }
-    return finalresult;
+    //float NA = R + ls->Z[0]*0.0003048
+    //float NB = sqrt(pow(xB,2) + pow(yB,2) + pow(zB,2));
 
+
+    float crossproductX = yA*zB - zA * yB;
+    float crossproductY = zA*xB - xA*zB;
+    float crossproductZ = xA*yB - yA*xB;
+
+    float N = sqrt(pow(crossproductX,2) + pow(crossproductY,2) + pow(crossproductZ,2));
+
+
+    float normalX = crossproductX / N;
+    float normalY = crossproductY / N;
+    float normalZ = crossproductZ / N;
+
+
+
+    float distance = normalX * xC + normalY * yC + normalZ * zC;
+
+    return fabs(distance);
 }
 
 
