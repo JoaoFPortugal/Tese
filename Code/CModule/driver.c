@@ -144,15 +144,14 @@ int main(int argc, char **argv){
 
 
     S = run(S,v,numberofitems,capacity,size,list,headOfRestrictions,start,plane,&sizeOfHashtable,&currentSizeOfHashtable);
-    freeRestrictions(headOfRestrictions);
 
     S = hinsert(S,&sizeOfHashtable,&currentSizeOfHashtable,numberofitems+1,0,NULL,-1);
 
 
-    Items *finalItem = addResult(S,numberofitems,capacity,&sizeOfHashtable);
+    //Items *finalItem = addResult(S,numberofitems,capacity,&sizeOfHashtable);
 
-
-   if(finalItem->label == NULL){
+    Items *finalItem = NULL;
+   if(finalItem == NULL){
        printf("Empty Solution\n");
        fclose(fp);
        free(indexarray);
@@ -164,6 +163,7 @@ int main(int argc, char **argv){
        freeWaypoints(list, numberofitems);
        free(ps);
        free(plane);
+       freeRestrictions(headOfRestrictions);
        return 1;
    }
 
@@ -175,7 +175,6 @@ int main(int argc, char **argv){
     freeItems(S,&sizeOfHashtable);
 
     for(i=0;i<numberofitems;i++){
-      //  printf("first objective is gonna be %f\n",v[i][0]);
         firstobjective[i] = v[i][0];
         indexarray[i] = 0;
     }
@@ -223,6 +222,7 @@ int main(int argc, char **argv){
   freeWaypoints(list, numberofitems);
   freePS(ps);
   free(plane);
+  freeRestrictions(headOfRestrictions);
   freeSecondObjective(secondObjective);
 
 }

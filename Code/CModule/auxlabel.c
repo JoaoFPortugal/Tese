@@ -147,7 +147,7 @@ Items **initItems(Items **_S, float *valor, int size, Waypoint *start, Waypoint 
 
     S_0->label = header;
 
-    int w = round(fuelconsumption(start,destination,plane)*10);
+    int w = round(fuelconsumption(start,destination,plane));
 
 
 
@@ -556,6 +556,7 @@ Items *addResult(Items **res, int numberofitems, int capacity, uint32_t *htsize)
             continue;
         }
         if(valuestoadd->lastitem == numberofitems){
+            printf("hello\n");
             currentfinalist = iterateLabels(valuestoadd,currentfinalist);
         }
     }

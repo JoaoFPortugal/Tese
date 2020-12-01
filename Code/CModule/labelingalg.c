@@ -37,14 +37,15 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
 
     T = (int *) malloc(2*sizeof(int));
     T[0]=0;
-    T[1]=round(fuelconsumption(start,listOfWaypoints[0],plane)*10);
+    T[1]=round(fuelconsumption(start,listOfWaypoints[0],plane));
 
 
     for(j=2;j<n+1;j++) {
 
         int realj = j-1;
 
-            arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S,listOfWaypoints,start,plane,j-1,capacity,&arrayofweightssize,htsize);
+
+            arrayofweights = calculateWeightRestriction(listOfWaypoints[realj],S,listOfWaypoints,start,plane,j-1,T,TCounter,&arrayofweightssize,htsize);
 
             for (a = 0; a < capacity + 1; a++) {
 
@@ -63,7 +64,6 @@ Items **run(Items **_S, float **_v, int _numberofitems,int _capacity, int _size,
 
                             int flag2 = checkRestrictions(listOfWaypoints[realj], S, a - w_j, j-1, listOfRestrictions,
                                                       listOfWaypoints, start,htsize,plane);
-
 
 
                             if (flag1 == 0 && flag2 == 0) {

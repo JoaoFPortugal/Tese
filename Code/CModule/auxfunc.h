@@ -28,7 +28,7 @@ Waypoint **initWaypoints(int numberofitems, Waypoint *start, Waypoint *destinati
 Restriction *createRestrictions();
 float calculateValue(Waypoint *waypoint, Waypoint *start, Waypoint *destination);
 float calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, uint32_t *htsize);
-int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int j, int capacity, int *_arrayweightsize, uint32_t *htsize);
+int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int j, int *T, int TCounter, int *_arrayweightsize, uint32_t *htsize);
 float *pickBestLabel(Label *label);
 int *findSecondSolution(struct PossibleSolution *ps, SecondObjective *secondobjective, float target, int size);
 void mergeSort(Waypoint ***_arr, int l, int r);

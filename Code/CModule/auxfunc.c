@@ -91,7 +91,7 @@ float calculateWeightValue(Waypoint *destination, Items **S,int a_w_j,int j, Way
 }
 
 
-int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int j, int capacity, int *_arrayweightsize, uint32_t *htsize){
+int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **listOfWaypoints, Waypoint *start, Airplane *plane, int j, int *T, int TCounter, int *_arrayweightsize, uint32_t *htsize){
 
     int arrayweightsize = 0;
     int *newarrayofweights = NULL;
@@ -99,9 +99,9 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
     int a;
     Items *header;
 
-   for(a = 0; a<capacity+1;a++){
+   for(a = 0; a<TCounter;a++){
 
-       header = hfind(S,htsize,j,a);
+       header = hfind(S,htsize,j,T[a]);
        if(header == NULL){
            continue;
        }
@@ -120,7 +120,7 @@ int* calculateWeightRestriction(Waypoint *destination, Items **S,Waypoint **list
 
         float newvalue = fuelconsumption(origin, destination, plane);
 
-        int finalvalue = round(newvalue * 10);
+        int finalvalue = round(newvalue);
 
         if (newarrayofweights == NULL) {
             newarrayofweights = malloc(sizeof(int));

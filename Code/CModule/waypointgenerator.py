@@ -4,22 +4,22 @@ import sys
 
 def input(numberofwaypoints):
 
-    maxlongitude = 180
-    minlongitude = -180
+    maxlatitude = 43
+    minlatitude = 36
 
-    maxlatitude = 90
-    minlatitude = -90
+    minlongitude = -9.14
+    maxlongitude = 3.25
+
     latitude, longitude = 0, 0
     altitude = 0
     i = 0
     print(numberofwaypoints)
     while i != numberofwaypoints:
-
-        latitude = round(random.uniform(minlatitude,maxlongitude),2)
-        longitude = round(random.uniform(minlongitude,maxlongitude),2)
-        altitude = random.randint(5000,30000)
+        latitude = round(random.uniform(minlatitude, maxlatitude), 4)
+        longitude = round(random.uniform(minlongitude, maxlongitude), 4)
+        altitude = random.randint(30000, 30000)
         print(str(latitude) + " " + str(longitude) + " " + str(altitude))
-        i = i+1
+        i = i + 1
 
     return 0
 
