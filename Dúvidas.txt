@@ -1,1 +1,15 @@
-﻿
+﻿Se nao houver muitas restriçoes, o algoritmo explode. Possivel mitigaçao: 
+
+Usar técnicas de diagonalizaçao (manter apenas os estados que estão perto da soluçao otima) 
+(longest common subsequence and diagonalization) (single objective)
+
+
+
+Metodologia de testes, ir aumentando waypoints e res num espaço limitado (em vez do mundo inteiro) e ver como se comporta
+
+EXAbstract
+
+
+Cortar background, falar approach - como modelei como otimizei - implementation details o que é que fiz de diff 
+- experimental evaluation discutir resultados - Final remarks como resolver problemas
+
